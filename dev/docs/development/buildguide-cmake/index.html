@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Build from Source | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Build from Source | MNE-CPP"><meta data-rh="true" name="description" content="MNE-CPP uses CMake as its build system and requires C++20 and Qt 6. This guide walks through compiling MNE-CPP from source on Windows, Linux, and macOS."><meta data-rh="true" property="og:description" content="MNE-CPP uses CMake as its build system and requires C++20 and Qt 6. This guide walks through compiling MNE-CPP from source on Windows, Linux, and macOS."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Build from Source","item":"https://mne-cpp.github.io/dev/docs/development/buildguide-cmake"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.2fde3c3a.css">
-<script src="/dev/assets/js/runtime~main.795ea889.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.4d898207.js" defer="defer"></script>
 <script src="/dev/assets/js/main.76ab1788.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,9 +31,9 @@
 </li>
 <li class="">After installation, add the Qt <code>bin</code> folder to your <code>PATH</code>:<!-- -->
 <ul>
-<li class=""><strong>Windows:</strong> e.g. <code>C:\Qt\6.10.2\msvc2022_64\bin</code></li>
-<li class=""><strong>Linux:</strong> e.g. <code>$HOME/Qt/6.10.2/gcc_64/bin</code> — also add the <code>lib</code> folder to <code>LD_LIBRARY_PATH</code></li>
-<li class=""><strong>macOS:</strong> e.g. <code>$HOME/Qt/6.10.2/macos/bin</code> — also add the <code>lib</code> folder to <code>DYLD_LIBRARY_PATH</code></li>
+<li class=""><strong>Windows:</strong> e.g. <code>C:\Qt\6.11.0\msvc2022_64\bin</code></li>
+<li class=""><strong>Linux:</strong> e.g. <code>$HOME/Qt/6.11.0/gcc_64/bin</code> — also add the <code>lib</code> folder to <code>LD_LIBRARY_PATH</code></li>
+<li class=""><strong>macOS:</strong> e.g. <code>$HOME/Qt/6.11.0/macos/bin</code> — also add the <code>lib</code> folder to <code>DYLD_LIBRARY_PATH</code></li>
 </ul>
 </li>
 </ol>
@@ -62,7 +62,7 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="via-qt-creator">Via Qt Creator<a href="#via-qt-creator" class="hash-link" aria-label="Direct link to Via Qt Creator" title="Direct link to Via Qt Creator" translate="no">​</a></h3>
 <ol>
 <li class="">Open Qt Creator and select <strong>File &gt; Open File or Project</strong>. Navigate to the <code>mne-cpp</code> root folder and select the top-level <code>CMakeLists.txt</code>.</li>
-<li class="">When prompted, select a kit with your Qt 6 installation — e.g. <code>Desktop Qt 6.10.2 MSVC2022 64bit</code>.</li>
+<li class="">When prompted, select a kit with your Qt 6 installation — e.g. <code>Desktop Qt 6.11.0 MSVC2022 64bit</code>.</li>
 <li class="">Select <strong>Release</strong> mode in the lower-left corner.</li>
 <li class="">In the Projects pane, right-click the top-level <code>mne_cpp</code> target and select <strong>Run CMake</strong>.</li>
 <li class="">Right-click again and select <strong>Build</strong> (this may take some time).</li>
