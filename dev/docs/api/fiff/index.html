@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-api/fiff/fiff" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.0">
+<title data-rh="true">FIFFLIB::Fiff | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::Fiff | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library &amp;nbsp;·&amp;nbsp; Header: fiff/fiff.h"><meta data-rh="true" property="og:description" content="Namespace FIFF Library &amp;nbsp;·&amp;nbsp; Header: fiff/fiff.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Fiff","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.07f554f1.css">
+<script src="/dev/assets/js/runtime~main.6347db29.js" defer="defer"></script>
+<script src="/dev/assets/js/main.b678d58d.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/dev/"><div class="navbar__logo"><img src="/dev/img/logo.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/dev/img/logo-dark.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/dev/docs/overview">Documentation</a><a class="navbar__item navbar__link" href="/dev/docs/development/buildguide-cmake">Development</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/dev/docs/api">API</a><a class="navbar__item navbar__link" href="/dev/download">Download</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link navbar-version-dropdown">dev (latest)</a><ul class="dropdown__menu"><li><a href="https://mne-cpp.github.io/" target="_blank" rel="noopener noreferrer" class="dropdown__link">v2.2.1 (Stable)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://mne-cpp.github.io/dev/" target="_blank" rel="noopener noreferrer" class="dropdown__link">dev (Latest Development)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dev/docs/api"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/dev/docs/api/fiff/fiff-stream"><span title="FIFF Library" class="categoryLinkLabel_W154">FIFF Library</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-stream"><span title="FiffStream" class="linkLabel_WmDU">FiffStream</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-raw-data"><span title="FiffRawData" class="linkLabel_WmDU">FiffRawData</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-info"><span title="FiffInfo" class="linkLabel_WmDU">FiffInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-evoked"><span title="FiffEvoked" class="linkLabel_WmDU">FiffEvoked</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-epochs"><span title="FiffEpochs" class="linkLabel_WmDU">FiffEpochs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-cov"><span title="FiffCov" class="linkLabel_WmDU">FiffCov</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-proj"><span title="FiffProj" class="linkLabel_WmDU">FiffProj</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-coord-trans"><span title="FiffCoordTrans" class="linkLabel_WmDU">FiffCoordTrans</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-annotations"><span title="FiffAnnotations" class="linkLabel_WmDU">FiffAnnotations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-annotation-event-utils"><span title="FiffAnnotationEventUtils" class="linkLabel_WmDU">FiffAnnotationEventUtils</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/dev/docs/api/fiff/"><span title="Fiff" class="linkLabel_WmDU">Fiff</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-ch-info"><span title="FiffChInfo" class="linkLabel_WmDU">FiffChInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-ch-pos"><span title="FiffChPos" class="linkLabel_WmDU">FiffChPos</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-coord-trans-set"><span title="FiffCoordTransSet" class="linkLabel_WmDU">FiffCoordTransSet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-ctf-comp"><span title="FiffCtfComp" class="linkLabel_WmDU">FiffCtfComp</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-data-ref"><span title="FiffDataRef" class="linkLabel_WmDU">FiffDataRef</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-dig-point"><span title="FiffDigPoint" class="linkLabel_WmDU">FiffDigPoint</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-dig-point-set"><span title="FiffDigPointSet" class="linkLabel_WmDU">FiffDigPointSet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-digitizer-data"><span title="FiffDigitizerData" class="linkLabel_WmDU">FiffDigitizerData</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-dir-entry"><span title="FiffDirEntry" class="linkLabel_WmDU">FiffDirEntry</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-dir-node"><span title="FiffDirNode" class="linkLabel_WmDU">FiffDirNode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-events"><span title="FiffEvents" class="linkLabel_WmDU">FiffEvents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-file-sharer"><span title="FiffFileSharer" class="linkLabel_WmDU">FiffFileSharer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-id"><span title="FiffId" class="linkLabel_WmDU">FiffId</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-info-base"><span title="FiffInfoBase" class="linkLabel_WmDU">FiffInfoBase</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-named-matrix"><span title="FiffNamedMatrix" class="linkLabel_WmDU">FiffNamedMatrix</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-raw-dir"><span title="FiffRawDir" class="linkLabel_WmDU">FiffRawDir</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-sparse-matrix"><span title="FiffSparseMatrix" class="linkLabel_WmDU">FiffSparseMatrix</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-tag"><span title="FiffTag" class="linkLabel_WmDU">FiffTag</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-time"><span title="FiffTime" class="linkLabel_WmDU">FiffTime</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/mne/mne-forward-solution"><span title="MNE Library" class="categoryLinkLabel_W154">MNE Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/fwd/compute-fwd"><span title="Forward Library" class="categoryLinkLabel_W154">Forward Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/inv/inv-minimum-norm"><span title="Inverse Library" class="categoryLinkLabel_W154">Inverse Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/dsp/filter-kernel"><span title="DSP Library" class="categoryLinkLabel_W154">DSP Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/conn/connectivity"><span title="Connectivity Library" class="categoryLinkLabel_W154">Connectivity Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/decoding/decoding-csp"><span title="Decoding Library" class="categoryLinkLabel_W154">Decoding Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/ml/ml-tensor"><span title="Machine Learning Library" class="categoryLinkLabel_W154">Machine Learning Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/sts/sts-cov-estimators"><span title="Statistics Library" class="categoryLinkLabel_W154">Statistics Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/fs/fs-surface"><span title="FreeSurfer Library" class="categoryLinkLabel_W154">FreeSurfer Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/math/k-means"><span title="Math Library" class="categoryLinkLabel_W154">Math Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/mri/mri-cor-fif-io"><span title="MRI Library" class="categoryLinkLabel_W154">MRI Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/bids/bids-path"><span title="BIDS Library" class="categoryLinkLabel_W154">BIDS Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/utils/standard-montage"><span title="Utilities Library" class="categoryLinkLabel_W154">Utilities Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/lsl/stream_info"><span title="LSL Library" class="categoryLinkLabel_W154">LSL Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/mna/mna-graph"><span title="MNA Library (Modular Architecture)" class="categoryLinkLabel_W154">MNA Library (Modular Architecture)</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/disp/abstract-view"><span title="Display Library" class="categoryLinkLabel_W154">Display Library</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/disp3-d/electrode-object"><span title="3D Display Library" class="categoryLinkLabel_W154">3D Display Library</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/dev/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">FIFF Library</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Fiff</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Fiff</h1></header>
+<p><strong>Namespace:</strong> <code>FIFFLIB</code>  ·  <strong>Library:</strong> FIFF Library  ·  <strong>Header:</strong> <code>fiff/fiff.h</code></p>
+<p><code>#include &lt;fiff/fiff.h&gt;</code></p>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">FIFFLIB</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">Fiff</span><br></div></code></pre></div></div>
+<p>MATLAB-style static facade re-exporting every public <code>FIFFLIB</code> reader/writer for parity with the mne-matlab toolbox.</p>
+<p>Only wrappers — no state. Each method forwards to the matching method on <code>FiffStream</code> / FiffRawData / <code>FiffEvoked</code> / <code>FiffEvokedSet</code> / <code>FiffCov</code> / <code>FiffInfo</code>. Prefer the underlying classes for new code; this class exists so Matlab-style ports compile unchanged.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiff-1">~Fiff()<a href="#fiff-1" class="hash-link" aria-label="Direct link to ~Fiff()" title="Direct link to ~Fiff()" translate="no">​</a></h3>
+<p>dtor</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="copy_treep_pstreamin-in_id-p_nodes-p_pstreamout">copy_tree(p_pStreamIn, in_id, p_Nodes, p_pStreamOut)<a href="#copy_treep_pstreamin-in_id-p_nodes-p_pstreamout" class="hash-link" aria-label="Direct link to copy_tree(p_pStreamIn, in_id, p_Nodes, p_pStreamOut)" title="Direct link to copy_tree(p_pStreamIn, in_id, p_Nodes, p_pStreamOut)" translate="no">​</a></h3>
+<p>fiff_copy_tree</p>
+<p>Wrapper for the static <code>FiffDirNode::copy_tree</code> function</p>
+<p>Copies directory subtrees from fidin to fidout</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStreamIn</strong> : <em>FiffStream::SPtr</em>
+fiff file to copy from.</p>
+</li>
+<li class="">
+<p><strong>in_id</strong> : <em>const FiffId &amp;</em>
+file id description.</p>
+</li>
+<li class="">
+<p><strong>p_Nodes</strong> : <em>const QList&lt; FiffDirNode::SPtr &gt; &amp;</em>
+subtree directories to be copied.</p>
+</li>
+<li class="">
+<p><strong>p_pStreamOut</strong> : <em>FiffStream::SPtr &amp;</em>
+fiff file to write to.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="end_blockp_pstream-kind">end_block(p_pStream, kind)<a href="#end_blockp_pstream-kind" class="hash-link" aria-label="Direct link to end_block(p_pStream, kind)" title="Direct link to end_block(p_pStream, kind)" translate="no">​</a></h3>
+<p>fiff_end_block</p>
+<p>Wrapper for the <code>FiffStream</code> end_block member function</p>
+<p>Writes a FIFF_BLOCK_END tag</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+the opened fiff file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The block kind to end.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="end_filep_pstream">end_file(p_pStream)<a href="#end_filep_pstream" class="hash-link" aria-label="Direct link to end_file(p_pStream)" title="Direct link to end_file(p_pStream)" translate="no">​</a></h3>
+<p>fiff_end_file</p>
+<p>Wrapper for the <code>FiffStream</code> end_file member function</p>
+<p>Writes the closing tags to a fif file and closes the file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_pStream</strong> : *FiffStream **
+the opened fiff file.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="finish_writing_rawp_pstream">finish_writing_raw(p_pStream)<a href="#finish_writing_rawp_pstream" class="hash-link" aria-label="Direct link to finish_writing_raw(p_pStream)" title="Direct link to finish_writing_raw(p_pStream)" translate="no">​</a></h3>
+<p>fiff_finish_writing_raw</p>
+<p>Wrapper for the <code>FiffStream</code> finish_writing_raw member function</p>
+<p>Finishes a raw file by writing all necessary end tags.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_pStream</strong> : *FiffStream **
+the opened fiff file.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dir_tree_findp_node-p_kind">dir_tree_find(p_Node, p_kind)<a href="#dir_tree_findp_node-p_kind" class="hash-link" aria-label="Direct link to dir_tree_find(p_Node, p_kind)" title="Direct link to dir_tree_find(p_Node, p_kind)" translate="no">​</a></h3>
+<p>fiff_dir_tree_find</p>
+<p>Wrapper for the <code>FiffDirNode</code> dir_tree_find member function</p>
+<p>Find nodes of the given kind from a directory tree structure</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_Node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The directory tree structure.</p>
+</li>
+<li class="">
+<p><strong>p_kind</strong> : <em>fiff_int_t</em>
+The given kind.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QList&lt; FiffDirNode::SPtr &gt;</em> — the found nodes.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="invert_transformp_transform">invert_transform(p_Transform)<a href="#invert_transformp_transform" class="hash-link" aria-label="Direct link to invert_transform(p_Transform)" title="Direct link to invert_transform(p_Transform)" translate="no">​</a></h3>
+<p>fiff_invert_transform</p>
+<p>Wrapper for the static <code>FiffCoordTrans::invert_transform</code> function</p>
+<p>Invert a coordinate transformation</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_Transform</strong> : <em>FiffCoordTrans &amp;</em>
+The transformation which should be inverted.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="openp_iodevice-p_pstream">open(p_IODevice, p_pStream)<a href="#openp_iodevice-p_pstream" class="hash-link" aria-label="Direct link to open(p_IODevice, p_pStream)" title="Direct link to open(p_IODevice, p_pStream)" translate="no">​</a></h3>
+<p>fiff_open</p>
+<p>Wrapper for the <code>FiffStream</code> open member function</p>
+<p>Opens a fif file and provides the directory of tags</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+file which is openened.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pick_channelsch_names-include-exclude">pick_channels(ch_names, include, exclude)<a href="#pick_channelsch_names-include-exclude" class="hash-link" aria-label="Direct link to pick_channels(ch_names, include, exclude)" title="Direct link to pick_channels(ch_names, include, exclude)" translate="no">​</a></h3>
+<p>fiff_pick_channels</p>
+<p>Wrapper for the <code>FiffInfo::pick_channels</code> static function</p>
+<p>Make a selector to pick desired channels from data</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>ch_names</strong> : <em>QStringList &amp;</em></p>
+<ul>
+<li class="">The channel name list to consult.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>include</strong> : <em>const QStringList &amp;</em></p>
+<ul>
+<li class="">Channels to include (if empty, include all available).</li>
+</ul>
+</li>
+<li class="">
+<p><strong>exclude</strong> : <em>const QStringList &amp;</em></p>
+<ul>
+<li class="">Channels to exclude (if empty, do not exclude any).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::RowVectorXi</em> — the selector matrix (row Vector).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pick_channelsorig-include-exclude">pick_channels(orig, include, exclude)<a href="#pick_channelsorig-include-exclude" class="hash-link" aria-label="Direct link to pick_channels(orig, include, exclude)" title="Direct link to pick_channels(orig, include, exclude)" translate="no">​</a></h3>
+<p>fiff_pick_channels_evoked</p>
+<p>Wrapper for the FiffEvokedDataSet pick_channels_evoked member function</p>
+<p>Pick desired channels from evoked-response data</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>orig</strong> : <em>FiffEvokedSet &amp;</em>
+The original data.</p>
+</li>
+<li class="">
+<p><strong>include</strong> : <em>const QStringList &amp;</em></p>
+<ul>
+<li class="">Channels to include (if empty, include all available).</li>
+</ul>
+</li>
+<li class="">
+<p><strong>exclude</strong> : <em>const QStringList &amp;</em></p>
+<ul>
+<li class="">Channels to exclude (if empty, do not exclude any).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffEvokedSet</em> — the desired fiff evoked data set.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_evokedorig">find_evoked(orig)<a href="#find_evokedorig" class="hash-link" aria-label="Direct link to find_evoked(orig)" title="Direct link to find_evoked(orig)" translate="no">​</a></h3>
+<p>fiff_find_evoked</p>
+<p>Wrapper for the FiffEvokedDataSet find_evoked member function</p>
+<p>Find evoked data sets</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>orig</strong> : <em>FiffEvokedSet &amp;</em>
+The read evoked data set.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true when any set was found, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pick_infoinfo-sel">pick_info(info, sel)<a href="#pick_infoinfo-sel" class="hash-link" aria-label="Direct link to pick_info(info, sel)" title="Direct link to pick_info(info, sel)" translate="no">​</a></h3>
+<p>fiff_pick_info</p>
+<p>Wrapper for the <code>FiffInfo</code> pick_info member function</p>
+<p>Pick desired channels from measurement info</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>info</strong> : <em>const FiffInfo &amp;</em>
+The original data.</p>
+</li>
+<li class="">
+<p><strong>sel</strong> : <em>const Eigen::RowVectorXi &amp;</em>
+List of channels to select.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffInfo</em> — Info modified according to sel.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pick_typesinfo-meg-eeg-stim-include-exclude">pick_types(info, meg, eeg, stim, include, exclude)<a href="#pick_typesinfo-meg-eeg-stim-include-exclude" class="hash-link" aria-label="Direct link to pick_types(info, meg, eeg, stim, include, exclude)" title="Direct link to pick_types(info, meg, eeg, stim, include, exclude)" translate="no">​</a></h3>
+<p>fiff_pick_types</p>
+<p>Wrapper for the <code>FiffInfo</code> pick_types member function</p>
+<p>Create a selector to pick desired channel types from data</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>info</strong> : <em>FiffInfo &amp;</em>
+The measurement info.</p>
+</li>
+<li class="">
+<p><strong>meg</strong> : <em>bool</em>
+Include MEG channels.</p>
+</li>
+<li class="">
+<p><strong>eeg</strong> : <em>bool</em>
+Include EEG channels.</p>
+</li>
+<li class="">
+<p><strong>stim</strong> : <em>bool</em>
+Include stimulus channels.</p>
+</li>
+<li class="">
+<p><strong>include</strong> : <em>const QStringList &amp;</em>
+Additional channels to include (if empty, do not add any).</p>
+</li>
+<li class="">
+<p><strong>exclude</strong> : <em>const QStringList &amp;</em>
+Channels to exclude (if empty, do not exclude any).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::RowVectorXi</em> — the selector matrix (row vector).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_bad_channelsp_pstream-p_node">read_bad_channels(p_pStream, p_Node)<a href="#read_bad_channelsp_pstream-p_node" class="hash-link" aria-label="Direct link to read_bad_channels(p_pStream, p_Node)" title="Direct link to read_bad_channels(p_pStream, p_Node)" translate="no">​</a></h3>
+<p>fiff_read_bad_channels</p>
+<p>Wrapper for the <code>FiffStream</code> read_bad_channels member function</p>
+<p>Reads the bad channel list from a node if it exists</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+The opened fif file to read from.</p>
+</li>
+<li class="">
+<p><strong>p_Node</strong> : <em>FiffDirNode::SPtr &amp;</em>
+The node of interest.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QStringList</em> — the bad channel list.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_ctf_compp_pstream-p_node-p_chs">read_ctf_comp(p_pStream, p_Node, p_Chs)<a href="#read_ctf_compp_pstream-p_node-p_chs" class="hash-link" aria-label="Direct link to read_ctf_comp(p_pStream, p_Node, p_Chs)" title="Direct link to read_ctf_comp(p_pStream, p_Node, p_Chs)" translate="no">​</a></h3>
+<p>fiff_read_ctf_comp</p>
+<p>Wrapper for the <code>FiffStream</code> read_ctf_comp member function</p>
+<p>Read the CTF software compensation data from the given node</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+The opened fif file to read from.</p>
+</li>
+<li class="">
+<p><strong>p_Node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The node of interest.</p>
+</li>
+<li class="">
+<p><strong>p_Chs</strong> : <em>const QList&lt; FiffChInfo &gt; &amp;</em>
+channels with the calibration info.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QList&lt; FiffCtfComp &gt;</em> — the CTF software compensation data.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_evokedp_iodevice-data-setno-baseline-proj-p_aspect_kind">read_evoked(p_IODevice, data, setno, baseline, proj, p_aspect_kind)<a href="#read_evokedp_iodevice-data-setno-baseline-proj-p_aspect_kind" class="hash-link" aria-label="Direct link to read_evoked(p_IODevice, data, setno, baseline, proj, p_aspect_kind)" title="Direct link to read_evoked(p_IODevice, data, setno, baseline, proj, p_aspect_kind)" translate="no">​</a></h3>
+<p>fiff_read_evoked</p>
+<p>Wrapper for the <code>FiffEvoked::read</code> static function</p>
+<p>Read one evoked data set</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>FiffEvoked &amp;</em>
+The read evoked data.</p>
+</li>
+<li class="">
+<p><strong>setno</strong> : <em>QVariant</em>
+the set to pick.</p>
+</li>
+<li class="">
+<p><strong>baseline</strong> : <em>QPair&lt; float, float &gt;</em>
+The time interval to apply rescaling / baseline correction. If None do not apply it. If baseline is (a, b). the interval is between &quot;a (s)&quot; and &quot;b (s)&quot;. If a is None the beginning of the data is used and if b is None then b is set to the end of the interval. If baseline is equal ot (None, None) all the time interval is used. If None, no correction is applied.</p>
+</li>
+<li class="">
+<p><strong>proj</strong> : <em>bool</em>
+Apply SSP projection vectors (optional, default = true).</p>
+</li>
+<li class="">
+<p><strong>p_aspect_kind</strong> : <em>fiff_int_t</em>
+Either &quot;FIFFV_ASPECT_AVERAGE&quot; or &quot;FIFFV_ASPECT_STD_ERR&quot;. The type of data to read. Only used if &quot;setno&quot; is a str.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if successful, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_evoked_setp_iodevice-data">read_evoked_set(p_IODevice, data)<a href="#read_evoked_setp_iodevice-data" class="hash-link" aria-label="Direct link to read_evoked_set(p_IODevice, data)" title="Direct link to read_evoked_set(p_IODevice, data)" translate="no">​</a></h3>
+<p>Read all evoked data from one file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>FiffEvokedSet &amp;</em>
+The read evoked data.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if successful, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_meas_infop_pstream-p_node-p_info-p_nodeinfo">read_meas_info(p_pStream, p_Node, p_Info, p_NodeInfo)<a href="#read_meas_infop_pstream-p_node-p_info-p_nodeinfo" class="hash-link" aria-label="Direct link to read_meas_info(p_pStream, p_Node, p_Info, p_NodeInfo)" title="Direct link to read_meas_info(p_pStream, p_Node, p_Info, p_NodeInfo)" translate="no">​</a></h3>
+<p>fiff_read_meas_info</p>
+<p>Wrapper for the <code>FiffStream</code> read_meas_info member function</p>
+<p>Read the measurement info Source is assumed to be an open fiff stream.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+The opened fiff stream to read from.</p>
+</li>
+<li class="">
+<p><strong>p_Node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The node of interest.</p>
+</li>
+<li class="">
+<p><strong>p_Info</strong> : <em>FiffInfo &amp;</em>
+The read measurement info.</p>
+</li>
+<li class="">
+<p><strong>p_NodeInfo</strong> : <em>FiffDirNode::SPtr &amp;</em>
+The to measurement corresponding fiff_dir_tree.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_named_matrixp_pstream-p_node-matkind-mat">read_named_matrix(p_pStream, p_Node, matkind, mat)<a href="#read_named_matrixp_pstream-p_node-matkind-mat" class="hash-link" aria-label="Direct link to read_named_matrix(p_pStream, p_Node, matkind, mat)" title="Direct link to read_named_matrix(p_pStream, p_Node, matkind, mat)" translate="no">​</a></h3>
+<p>fiff_read_named_matrix</p>
+<p>Wrapper for the <code>FiffStream</code> read_named_matrix member function</p>
+<p>Reads a named matrix.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+The opened fif file to read from.</p>
+</li>
+<li class="">
+<p><strong>p_Node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The node of interest.</p>
+</li>
+<li class="">
+<p><strong>matkind</strong> : <em>fiff_int_t</em>
+The matrix kind to look for.</p>
+</li>
+<li class="">
+<p><strong>mat</strong> : <em>FiffNamedMatrix &amp;</em>
+The named matrix.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_projp_pstream-p_node">read_proj(p_pStream, p_Node)<a href="#read_projp_pstream-p_node" class="hash-link" aria-label="Direct link to read_proj(p_pStream, p_Node)" title="Direct link to read_proj(p_pStream, p_Node)" translate="no">​</a></h3>
+<p>[ projdata ] = fiff_read_proj(fid,node)</p>
+<p>Read the SSP data under a given directory node</p>
+<p>Wrapper for the <code>FiffStream</code> read_proj member function</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+The opened fif file to read from.</p>
+</li>
+<li class="">
+<p><strong>p_Node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The node of interest.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QList&lt; FiffProj &gt;</em> — a list of SSP projectors.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_raw_segmentraw-data-times-from-to-sel">read_raw_segment(raw, data, times, from, to, sel)<a href="#read_raw_segmentraw-data-times-from-to-sel" class="hash-link" aria-label="Direct link to read_raw_segment(raw, data, times, from, to, sel)" title="Direct link to read_raw_segment(raw, data, times, from, to, sel)" translate="no">​</a></h3>
+<p>fiff_read_raw_segment</p>
+<p>Wrapper for the FiffRawData read_raw_segment member function</p>
+<p>Read a specific raw data segment</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>raw</strong> : <em>FiffRawData &amp;</em>
+structure returned by fiff_setup_read_raw.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>Eigen::MatrixXd &amp;</em>
+returns the data matrix (channels x samples).</p>
+</li>
+<li class="">
+<p><strong>times</strong> : <em>Eigen::MatrixXd &amp;</em>
+returns the time values corresponding to the samples.</p>
+</li>
+<li class="">
+<p><strong>from</strong> : <em>fiff_int_t</em>
+first sample to include. If omitted, defaults to the first sample in data (optional).</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>fiff_int_t</em>
+last sample to include. If omitted, defaults to the last sample in data (optional).</p>
+</li>
+<li class="">
+<p><strong>sel</strong> : <em>Eigen::MatrixXi</em>
+channel selection vector (optional).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_raw_segmentraw-data-times-mult-from-to-sel">read_raw_segment(raw, data, times, mult, from, to, sel)<a href="#read_raw_segmentraw-data-times-mult-from-to-sel" class="hash-link" aria-label="Direct link to read_raw_segment(raw, data, times, mult, from, to, sel)" title="Direct link to read_raw_segment(raw, data, times, mult, from, to, sel)" translate="no">​</a></h3>
+<p>fiff_read_raw_segment</p>
+<p>Wrapper for the FiffRawData read_raw_segment member function</p>
+<p>Read a specific raw data segment</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>raw</strong> : <em>FiffRawData &amp;</em>
+structure returned by fiff_setup_read_raw.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>Eigen::MatrixXd &amp;</em>
+returns the data matrix (channels x samples).</p>
+</li>
+<li class="">
+<p><strong>times</strong> : <em>Eigen::MatrixXd &amp;</em>
+returns the time values corresponding to the samples.</p>
+</li>
+<li class="">
+<p><strong>mult</strong> : <em>Eigen::SparseMatrix&lt; double &gt; &amp;</em>
+matrix to store used multiplication matrix (compensator,projection,calibration).</p>
+</li>
+<li class="">
+<p><strong>from</strong> : <em>fiff_int_t</em>
+first sample to include. If omitted, defaults to the first sample in data (optional).</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>fiff_int_t</em>
+last sample to include. If omitted, defaults to the last sample in data (optional).</p>
+</li>
+<li class="">
+<p><strong>sel</strong> : <em>Eigen::MatrixXi</em>
+channel selection vector (optional).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_tagp_pstream-p_ptag-pos">read_tag(p_pStream, p_pTag, pos)<a href="#read_tagp_pstream-p_ptag-pos" class="hash-link" aria-label="Direct link to read_tag(p_pStream, p_pTag, pos)" title="Direct link to read_tag(p_pStream, p_pTag, pos)" translate="no">​</a></h3>
+<p>fiff_read_tag</p>
+<p>Wrapper for the FiffTag::read_tag function</p>
+<p>Read one tag from a fif file. if pos is not provided, reading starts from the current file position</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+opened fif file.</p>
+</li>
+<li class="">
+<p><strong>p_pTag</strong> : <em>FiffTag::UPtr &amp;</em>
+the read tag.</p>
+</li>
+<li class="">
+<p><strong>pos</strong> : <em>qint64</em>
+position of the tag inside the fif file.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_tag_infop_pstream-p_ptag">read_tag_info(p_pStream, p_pTag)<a href="#read_tag_infop_pstream-p_ptag" class="hash-link" aria-label="Direct link to read_tag_info(p_pStream, p_pTag)" title="Direct link to read_tag_info(p_pStream, p_pTag)" translate="no">​</a></h3>
+<p>fiff_read_tag_info</p>
+<p>Wrapper for the FiffTag::read_tag_info function</p>
+<p>Read tag information of one tag from a fif file. if pos is not provided, reading starts from the current file position</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : <em>FiffStream::SPtr &amp;</em>
+opened fif file.</p>
+</li>
+<li class="">
+<p><strong>p_pTag</strong> : <em>FiffTag::UPtr &amp;</em>
+the read tag info.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setup_read_rawp_iodevice-data-allow_maxshield">setup_read_raw(p_IODevice, data, allow_maxshield)<a href="#setup_read_rawp_iodevice-data-allow_maxshield" class="hash-link" aria-label="Direct link to setup_read_raw(p_IODevice, data, allow_maxshield)" title="Direct link to setup_read_raw(p_IODevice, data, allow_maxshield)" translate="no">​</a></h3>
+<p>fiff_setup_read_raw</p>
+<p>Wrapper for the <code>FiffStream::setup_read_raw</code> static function</p>
+<p>Read information about raw data file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>FiffRawData &amp;</em>
+The raw data information - contains the opened fiff file.</p>
+</li>
+<li class="">
+<p><strong>allow_maxshield</strong> : <em>bool</em>
+Accept unprocessed MaxShield data.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="split_name_listp_snamelist">split_name_list(p_sNameList)<a href="#split_name_listp_snamelist" class="hash-link" aria-label="Direct link to split_name_list(p_sNameList)" title="Direct link to split_name_list(p_sNameList)" translate="no">​</a></h3>
+<p>fiff_split_name_list</p>
+<p>Wrapper for the <code>FiffStream::split_name_list</code> static function</p>
+<p>Splits a string by looking for seperator &quot;:&quot;</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_sNameList</strong> : <em>QString</em>
+string to split.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QStringList</em> — the splitted string list.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="start_blockp_pstream-kind">start_block(p_pStream, kind)<a href="#start_blockp_pstream-kind" class="hash-link" aria-label="Direct link to start_block(p_pStream, kind)" title="Direct link to start_block(p_pStream, kind)" translate="no">​</a></h3>
+<p>fiff_start_block</p>
+<p>Wrapper for the <code>FiffStream</code> start_block member function</p>
+<p>Writes a FIFF_BLOCK_START tag</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file to write to.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The block kind to start.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="start_filep_iodevice">start_file(p_IODevice)<a href="#start_filep_iodevice" class="hash-link" aria-label="Direct link to start_file(p_IODevice)" title="Direct link to start_file(p_IODevice)" translate="no">​</a></h3>
+<p>fiff_start_file</p>
+<p>Wrapper for the <code>FiffStream::start_file</code> static function</p>
+<p>Opens a fiff file for writing and writes the compulsory header tags</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffStream::SPtr</em> — The opened file.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="start_writing_rawp_iodevice-info-cals-sel">start_writing_raw(p_IODevice, info, cals, sel)<a href="#start_writing_rawp_iodevice-info-cals-sel" class="hash-link" aria-label="Direct link to start_writing_raw(p_IODevice, info, cals, sel)" title="Direct link to start_writing_raw(p_IODevice, info, cals, sel)" translate="no">​</a></h3>
+<p>fiff_start_writing_raw</p>
+<p>Wrapper for the <code>FiffStream::start_writing_raw</code> static function</p>
+<p>function [fid,cals] = fiff_start_writing_raw(name,info,sel)</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>info</strong> : <em>const FiffInfo &amp;</em>
+The measurement info block of the source file.</p>
+</li>
+<li class="">
+<p><strong>cals</strong> : <em>Eigen::RowVectorXd &amp;</em>
+Thecalibration matrix.</p>
+</li>
+<li class="">
+<p><strong>sel</strong> : <em>Eigen::MatrixXi</em>
+Which channels will be included in the output file (optional).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffStream::SPtr</em> — the started fiff file.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_ch_infop_pstream-ch">write_ch_info(p_pStream, ch)<a href="#write_ch_infop_pstream-ch" class="hash-link" aria-label="Direct link to write_ch_info(p_pStream, ch)" title="Direct link to write_ch_info(p_pStream, ch)" translate="no">​</a></h3>
+<p>fiff_write_ch_info</p>
+<p>Wrapper for the <code>FiffStream</code> write_ch_info member function</p>
+<p>Writes a channel information record to a fif file The type, cal, unit, and pos members are explained in Table 9.5 of the MNE manual</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>ch</strong> : <em>const FiffChInfo &amp;</em>
+The channel information structure to write.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_coord_transp_pstream-trans">write_coord_trans(p_pStream, trans)<a href="#write_coord_transp_pstream-trans" class="hash-link" aria-label="Direct link to write_coord_trans(p_pStream, trans)" title="Direct link to write_coord_trans(p_pStream, trans)" translate="no">​</a></h3>
+<p>fiff_write_coord_trans</p>
+<p>Wrapper for the <code>FiffStream</code> write_coord_trans member function</p>
+<p>Writes a coordinate transformation structure</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>trans</strong> : <em>FiffCoordTrans &amp;</em>
+The coordinate transfomation structure.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_ctf_compp_pstream-comps">write_ctf_comp(p_pStream, comps)<a href="#write_ctf_compp_pstream-comps" class="hash-link" aria-label="Direct link to write_ctf_comp(p_pStream, comps)" title="Direct link to write_ctf_comp(p_pStream, comps)" translate="no">​</a></h3>
+<p>fiff_write_ctf_comp</p>
+<p>Wrapper for the <code>FiffStream</code> write_ctf_comp member function</p>
+<p>Writes the CTF compensation data into a fif file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>comps</strong> : <em>QList&lt; FiffCtfComp &gt; &amp;</em>
+The compensation data to write.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_dig_pointp_pstream-dig">write_dig_point(p_pStream, dig)<a href="#write_dig_pointp_pstream-dig" class="hash-link" aria-label="Direct link to write_dig_point(p_pStream, dig)" title="Direct link to write_dig_point(p_pStream, dig)" translate="no">​</a></h3>
+<p>fiff_write_dig_point</p>
+<p>Wrapper for the <code>FiffStream</code> write_dig_point member function</p>
+<p>Writes a digitizer data point into a fif file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em>FiffDigPoint &amp;</em>
+The point to write.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_idp_pstream-kind-id">write_id(p_pStream, kind, id)<a href="#write_idp_pstream-kind-id" class="hash-link" aria-label="Direct link to write_id(p_pStream, kind, id)" title="Direct link to write_id(p_pStream, kind, id)" translate="no">​</a></h3>
+<p>fiff_write_id</p>
+<p>Wrapper for the <code>FiffStream</code> write_id member function</p>
+<p>Writes fiff id If the id argument is missing it will be generated here</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The tag kind.</p>
+</li>
+<li class="">
+<p><strong>id</strong> : <em>FiffId &amp;</em>
+The id to write.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_intp_pstream-kind-data-nel">write_int(p_pStream, kind, data, nel)<a href="#write_intp_pstream-kind-data-nel" class="hash-link" aria-label="Direct link to write_int(p_pStream, kind, data, nel)" title="Direct link to write_int(p_pStream, kind, data, nel)" translate="no">​</a></h3>
+<p>fiff_write_int</p>
+<p>Wrapper for the <code>FiffStream</code> write_int member function</p>
+<p>Writes a 32-bit integer tag to a fif file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+Tag kind.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : *const fiff_int_t **
+The integer data pointer.</p>
+</li>
+<li class="">
+<p><strong>nel</strong> : <em>fiff_int_t</em>
+Number of integers to write (default = 1).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_floatp_pstream-kind-data-nel">write_float(p_pStream, kind, data, nel)<a href="#write_floatp_pstream-kind-data-nel" class="hash-link" aria-label="Direct link to write_float(p_pStream, kind, data, nel)" title="Direct link to write_float(p_pStream, kind, data, nel)" translate="no">​</a></h3>
+<p>fiff_write_float</p>
+<p>Wrapper for the <code>FiffStream</code> write_float member function</p>
+<p>Writes a single-precision floating point tag to a fif file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+Tag kind.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : *float **
+The float data pointer.</p>
+</li>
+<li class="">
+<p><strong>nel</strong> : <em>fiff_int_t</em>
+Number of floats to write (default = 1).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_float_matrixp_pstream-kind-mat">write_float_matrix(p_pStream, kind, mat)<a href="#write_float_matrixp_pstream-kind-mat" class="hash-link" aria-label="Direct link to write_float_matrix(p_pStream, kind, mat)" title="Direct link to write_float_matrix(p_pStream, kind, mat)" translate="no">​</a></h3>
+<p>fiff_write_float_matrix</p>
+<p>Wrapper for the <code>FiffStream</code> write_float_matrix member function</p>
+<p>Writes a single-precision floating-point matrix tag</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The tag kind.</p>
+</li>
+<li class="">
+<p><strong>mat</strong> : <em>Eigen::MatrixXf &amp;</em>
+The data matrix.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_name_listp_pstream-kind-data">write_name_list(p_pStream, kind, data)<a href="#write_name_listp_pstream-kind-data" class="hash-link" aria-label="Direct link to write_name_list(p_pStream, kind, data)" title="Direct link to write_name_list(p_pStream, kind, data)" translate="no">​</a></h3>
+<p>fiff_write_name_list</p>
+<p>Wrapper for the <code>FiffStream</code> write_name_list member function</p>
+<p>Writes a colon-separated list of names</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The tag kind.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>QStringList &amp;</em>
+An array of names to create the list from.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_named_matrixp_pstream-kind-mat">write_named_matrix(p_pStream, kind, mat)<a href="#write_named_matrixp_pstream-kind-mat" class="hash-link" aria-label="Direct link to write_named_matrix(p_pStream, kind, mat)" title="Direct link to write_named_matrix(p_pStream, kind, mat)" translate="no">​</a></h3>
+<p>fiff_write_named_matrix</p>
+<p>Wrapper for the <code>FiffStream</code> write_named_matrix member function</p>
+<p>Writes a named single-precision floating-point matrix</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The tag kind to use for the data.</p>
+</li>
+<li class="">
+<p><strong>mat</strong> : <em>FiffNamedMatrix &amp;</em>
+The data matrix.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_projp_pstream-projs">write_proj(p_pStream, projs)<a href="#write_projp_pstream-projs" class="hash-link" aria-label="Direct link to write_proj(p_pStream, projs)" title="Direct link to write_proj(p_pStream, projs)" translate="no">​</a></h3>
+<p>fiff_write_proj</p>
+<p>Wrapper for the <code>FiffStream</code> write_proj member function</p>
+<p>Writes the projection data into a fif file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>projs</strong> : <em>QList&lt; FiffProj &gt; &amp;</em>
+The compensation data to write.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_raw_bufferp_pstream-buf-cals">write_raw_buffer(p_pStream, buf, cals)<a href="#write_raw_bufferp_pstream-buf-cals" class="hash-link" aria-label="Direct link to write_raw_buffer(p_pStream, buf, cals)" title="Direct link to write_raw_buffer(p_pStream, buf, cals)" translate="no">​</a></h3>
+<p>fiff_write_raw_buffer</p>
+<p>Wrapper for the <code>FiffStream</code> write_raw_buffer member function</p>
+<p>Writes a raw buffer.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>buf</strong> : <em>const Eigen::MatrixXd &amp;</em>
+the buffer to write.</p>
+</li>
+<li class="">
+<p><strong>cals</strong> : <em>const Eigen::MatrixXd &amp;</em>
+calibration factors.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_stringp_pstream-kind-data">write_string(p_pStream, kind, data)<a href="#write_stringp_pstream-kind-data" class="hash-link" aria-label="Direct link to write_string(p_pStream, kind, data)" title="Direct link to write_string(p_pStream, kind, data)" translate="no">​</a></h3>
+<p>fiff_write_string</p>
+<p>Wrapper for the <code>FiffStream</code> write_string member function</p>
+<p>Writes a string tag</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_pStream</strong> : *FiffStream **
+An open fif file.</p>
+</li>
+<li class="">
+<p><strong>kind</strong> : <em>fiff_int_t</em>
+The tag kind.</p>
+</li>
+<li class="">
+<p><strong>data</strong> : <em>QString &amp;</em>
+The string data to write.</p>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
+<p><em>No authors recorded in the source file.</em></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-annotation-event-utils"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffAnnotationEventUtils</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-ch-info"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffChInfo</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiff-1" class="table-of-contents__link toc-highlight">~Fiff()</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#copy_treep_pstreamin-in_id-p_nodes-p_pstreamout" class="table-of-contents__link toc-highlight">copy_tree(p_pStreamIn, in_id, p_Nodes, p_pStreamOut)</a></li><li><a href="#end_blockp_pstream-kind" class="table-of-contents__link toc-highlight">end_block(p_pStream, kind)</a></li><li><a href="#end_filep_pstream" class="table-of-contents__link toc-highlight">end_file(p_pStream)</a></li><li><a href="#finish_writing_rawp_pstream" class="table-of-contents__link toc-highlight">finish_writing_raw(p_pStream)</a></li><li><a href="#dir_tree_findp_node-p_kind" class="table-of-contents__link toc-highlight">dir_tree_find(p_Node, p_kind)</a></li><li><a href="#invert_transformp_transform" class="table-of-contents__link toc-highlight">invert_transform(p_Transform)</a></li><li><a href="#openp_iodevice-p_pstream" class="table-of-contents__link toc-highlight">open(p_IODevice, p_pStream)</a></li><li><a href="#pick_channelsch_names-include-exclude" class="table-of-contents__link toc-highlight">pick_channels(ch_names, include, exclude)</a></li><li><a href="#pick_channelsorig-include-exclude" class="table-of-contents__link toc-highlight">pick_channels(orig, include, exclude)</a></li><li><a href="#find_evokedorig" class="table-of-contents__link toc-highlight">find_evoked(orig)</a></li><li><a href="#pick_infoinfo-sel" class="table-of-contents__link toc-highlight">pick_info(info, sel)</a></li><li><a href="#pick_typesinfo-meg-eeg-stim-include-exclude" class="table-of-contents__link toc-highlight">pick_types(info, meg, eeg, stim, include, exclude)</a></li><li><a href="#read_bad_channelsp_pstream-p_node" class="table-of-contents__link toc-highlight">read_bad_channels(p_pStream, p_Node)</a></li><li><a href="#read_ctf_compp_pstream-p_node-p_chs" class="table-of-contents__link toc-highlight">read_ctf_comp(p_pStream, p_Node, p_Chs)</a></li><li><a href="#read_evokedp_iodevice-data-setno-baseline-proj-p_aspect_kind" class="table-of-contents__link toc-highlight">read_evoked(p_IODevice, data, setno, baseline, proj, p_aspect_kind)</a></li><li><a href="#read_evoked_setp_iodevice-data" class="table-of-contents__link toc-highlight">read_evoked_set(p_IODevice, data)</a></li><li><a href="#read_meas_infop_pstream-p_node-p_info-p_nodeinfo" class="table-of-contents__link toc-highlight">read_meas_info(p_pStream, p_Node, p_Info, p_NodeInfo)</a></li><li><a href="#read_named_matrixp_pstream-p_node-matkind-mat" class="table-of-contents__link toc-highlight">read_named_matrix(p_pStream, p_Node, matkind, mat)</a></li><li><a href="#read_projp_pstream-p_node" class="table-of-contents__link toc-highlight">read_proj(p_pStream, p_Node)</a></li><li><a href="#read_raw_segmentraw-data-times-from-to-sel" class="table-of-contents__link toc-highlight">read_raw_segment(raw, data, times, from, to, sel)</a></li><li><a href="#read_raw_segmentraw-data-times-mult-from-to-sel" class="table-of-contents__link toc-highlight">read_raw_segment(raw, data, times, mult, from, to, sel)</a></li><li><a href="#read_tagp_pstream-p_ptag-pos" class="table-of-contents__link toc-highlight">read_tag(p_pStream, p_pTag, pos)</a></li><li><a href="#read_tag_infop_pstream-p_ptag" class="table-of-contents__link toc-highlight">read_tag_info(p_pStream, p_pTag)</a></li><li><a href="#setup_read_rawp_iodevice-data-allow_maxshield" class="table-of-contents__link toc-highlight">setup_read_raw(p_IODevice, data, allow_maxshield)</a></li><li><a href="#split_name_listp_snamelist" class="table-of-contents__link toc-highlight">split_name_list(p_sNameList)</a></li><li><a href="#start_blockp_pstream-kind" class="table-of-contents__link toc-highlight">start_block(p_pStream, kind)</a></li><li><a href="#start_filep_iodevice" class="table-of-contents__link toc-highlight">start_file(p_IODevice)</a></li><li><a href="#start_writing_rawp_iodevice-info-cals-sel" class="table-of-contents__link toc-highlight">start_writing_raw(p_IODevice, info, cals, sel)</a></li><li><a href="#write_ch_infop_pstream-ch" class="table-of-contents__link toc-highlight">write_ch_info(p_pStream, ch)</a></li><li><a href="#write_coord_transp_pstream-trans" class="table-of-contents__link toc-highlight">write_coord_trans(p_pStream, trans)</a></li><li><a href="#write_ctf_compp_pstream-comps" class="table-of-contents__link toc-highlight">write_ctf_comp(p_pStream, comps)</a></li><li><a href="#write_dig_pointp_pstream-dig" class="table-of-contents__link toc-highlight">write_dig_point(p_pStream, dig)</a></li><li><a href="#write_idp_pstream-kind-id" class="table-of-contents__link toc-highlight">write_id(p_pStream, kind, id)</a></li><li><a href="#write_intp_pstream-kind-data-nel" class="table-of-contents__link toc-highlight">write_int(p_pStream, kind, data, nel)</a></li><li><a href="#write_floatp_pstream-kind-data-nel" class="table-of-contents__link toc-highlight">write_float(p_pStream, kind, data, nel)</a></li><li><a href="#write_float_matrixp_pstream-kind-mat" class="table-of-contents__link toc-highlight">write_float_matrix(p_pStream, kind, mat)</a></li><li><a href="#write_name_listp_pstream-kind-data" class="table-of-contents__link toc-highlight">write_name_list(p_pStream, kind, data)</a></li><li><a href="#write_named_matrixp_pstream-kind-mat" class="table-of-contents__link toc-highlight">write_named_matrix(p_pStream, kind, mat)</a></li><li><a href="#write_projp_pstream-projs" class="table-of-contents__link toc-highlight">write_proj(p_pStream, projs)</a></li><li><a href="#write_raw_bufferp_pstream-buf-cals" class="table-of-contents__link toc-highlight">write_raw_buffer(p_pStream, buf, cals)</a></li><li><a href="#write_stringp_pstream-kind-data" class="table-of-contents__link toc-highlight">write_string(p_pStream, kind, data)</a></li></ul></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
