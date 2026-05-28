@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-api/fiff/fiff-coord-trans" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.0">
+<title data-rh="true">FIFFLIB::FiffCoordTrans | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::FiffCoordTrans | MNE-CPP"><meta data-rh="true" name="description" content="mne.transforms.Transform in MNE-Python."><meta data-rh="true" property="og:description" content="mne.transforms.Transform in MNE-Python."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FiffCoordTrans","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.07f554f1.css">
+<script src="/dev/assets/js/runtime~main.aa966d13.js" defer="defer"></script>
+<script src="/dev/assets/js/main.987b1f21.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/dev/"><div class="navbar__logo"><img src="/dev/img/logo.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/dev/img/logo-dark.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/dev/docs/overview">Documentation</a><a class="navbar__item navbar__link" href="/dev/docs/development/buildguide-cmake">Development</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/dev/docs/api">API</a><a class="navbar__item navbar__link" href="/dev/download">Download</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link navbar-version-dropdown">dev (latest)</a><ul class="dropdown__menu"><li><a href="https://mne-cpp.github.io/" target="_blank" rel="noopener noreferrer" class="dropdown__link">v2.2.1 (Stable)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://mne-cpp.github.io/dev/" target="_blank" rel="noopener noreferrer" class="dropdown__link">dev (Latest Development)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/dev/docs/api"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/dev/docs/api/fiff/fiff-stream"><span title="FIFFLIB" class="categoryLinkLabel_W154">FIFFLIB</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-stream"><span title="FiffStream" class="linkLabel_WmDU">FiffStream</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-raw-data"><span title="FiffRawData" class="linkLabel_WmDU">FiffRawData</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-info"><span title="FiffInfo" class="linkLabel_WmDU">FiffInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-evoked"><span title="FiffEvoked" class="linkLabel_WmDU">FiffEvoked</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-epochs"><span title="FiffEpochs" class="linkLabel_WmDU">FiffEpochs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-cov"><span title="FiffCov" class="linkLabel_WmDU">FiffCov</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-proj"><span title="FiffProj" class="linkLabel_WmDU">FiffProj</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/dev/docs/api/fiff/fiff-coord-trans"><span title="FiffCoordTrans" class="linkLabel_WmDU">FiffCoordTrans</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-annotations"><span title="FiffAnnotations" class="linkLabel_WmDU">FiffAnnotations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/fiff/fiff-annotation-event-utils"><span title="FiffAnnotationEventUtils" class="linkLabel_WmDU">FiffAnnotationEventUtils</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/mne/mne-forward-solution"><span title="MNELIB" class="categoryLinkLabel_W154">MNELIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/fwd/compute-fwd"><span title="FWDLIB" class="categoryLinkLabel_W154">FWDLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/inv/inv-minimum-norm"><span title="INVLIB" class="categoryLinkLabel_W154">INVLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/dsp/filter-kernel"><span title="DSPLIB" class="categoryLinkLabel_W154">DSPLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/conn/connectivity"><span title="CONNLIB" class="categoryLinkLabel_W154">CONNLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/decoding/decoding-csp"><span title="DECODINGLIB" class="categoryLinkLabel_W154">DECODINGLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/ml/ml-tensor"><span title="MLLIB" class="categoryLinkLabel_W154">MLLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/sts/sts-cov-estimators"><span title="STSLIB" class="categoryLinkLabel_W154">STSLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/fs/fs-surface"><span title="FSLIB" class="categoryLinkLabel_W154">FSLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/math/k-means"><span title="MATHLIB" class="categoryLinkLabel_W154">MATHLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/bids/bids-path"><span title="BIDSLIB" class="categoryLinkLabel_W154">BIDSLIB</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/dev/docs/api/utils/standard-montage"><span title="UTILSLIB" class="categoryLinkLabel_W154">UTILSLIB</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/dev/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">FIFFLIB</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">FiffCoordTrans</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>FiffCoordTrans</h1></header>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Python equivalent</div><div class="admonitionContent_BuS1"><p><code>mne.transforms.Transform</code> in MNE-Python.</p></div></div>
+<p><code>#include &lt;fiff/fiff_coord_trans.h&gt;</code></p>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">FIFFLIB</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">FiffCoordTrans</span><br></div></code></pre></div></div>
+<p>Labelled 4x4 FIFF affine: source frame, destination frame, rotation, translation and cached inverse.</p>
+<p>Each transform carries its source (<code>from</code>) and destination (<code>to</code>) <code>FIFFV_COORD_*</code> frame identifiers so the inverse and any chained composition can be type-checked at runtime. The inverse is stored alongside the forward transform because both directions are routinely needed (device→head for head-position tracking, head→MRI for source space registration, etc.).</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtrans-1">FiffCoordTrans()<a href="#fiffcoordtrans-1" class="hash-link" aria-label="Direct link to FiffCoordTrans()" title="Direct link to FiffCoordTrans()" translate="no">​</a></h3>
+<p>Constructs the coordinate transformation descriptor.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtransp_iodevice">FiffCoordTrans(p_IODevice)<a href="#fiffcoordtransp_iodevice" class="hash-link" aria-label="Direct link to FiffCoordTrans(p_IODevice)" title="Direct link to FiffCoordTrans(p_IODevice)" translate="no">​</a></h3>
+<p>Constructs a coordinate transformation, by reading from a IO device.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+IO device to read from the coordinate transform.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtransp_fiffcoordtrans">FiffCoordTrans(p_FiffCoordTrans)<a href="#fiffcoordtransp_fiffcoordtrans" class="hash-link" aria-label="Direct link to FiffCoordTrans(p_FiffCoordTrans)" title="Direct link to FiffCoordTrans(p_FiffCoordTrans)" translate="no">​</a></h3>
+<p>Copy constructor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_FiffCoordTrans</strong> : <em>const FiffCoordTrans &amp;</em>
+Coordinate transformation description which should be copied.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtransfrom-to-rot-move">FiffCoordTrans(from, to, rot, move)<a href="#fiffcoordtransfrom-to-rot-move" class="hash-link" aria-label="Direct link to FiffCoordTrans(from, to, rot, move)" title="Direct link to FiffCoordTrans(from, to, rot, move)" translate="no">​</a></h3>
+<p>Constructs a coordinate transformation from a rotation matrix and translation vector.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Destination coordinate system.</p>
+</li>
+<li class="">
+<p><strong>rot</strong> : <em>const Eigen::Matrix3f &amp;</em>
+The forward transform (3×3 rotation matrix).</p>
+</li>
+<li class="">
+<p><strong>move</strong> : <em>const Eigen::Vector3f &amp;</em>
+The forward transform (3×1 translation vector).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtransfrom-to-mattrans-bstandard">FiffCoordTrans(from, to, matTrans, bStandard)<a href="#fiffcoordtransfrom-to-mattrans-bstandard" class="hash-link" aria-label="Direct link to FiffCoordTrans(from, to, matTrans, bStandard)" title="Direct link to FiffCoordTrans(from, to, matTrans, bStandard)" translate="no">​</a></h3>
+<p>Constructs a coordinate transformation from a 4×4 homogeneous matrix.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Destination coordinate system.</p>
+</li>
+<li class="">
+<p><strong>matTrans</strong> : <em>const Eigen::Matrix4f &amp;</em>
+The 4×4 forward transform.</p>
+</li>
+<li class="">
+<p><strong>bStandard</strong> : <em>bool</em>
+When true, enforce standard transform (last row = [0,0,0,1]). Defaults to false.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffcoordtrans-2">~FiffCoordTrans()<a href="#fiffcoordtrans-2" class="hash-link" aria-label="Direct link to ~FiffCoordTrans()" title="Direct link to ~FiffCoordTrans()" translate="no">​</a></h3>
+<p>Destroys the coordinate transformation descriptor.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clear">clear()<a href="#clear" class="hash-link" aria-label="Direct link to clear()" title="Direct link to clear()" translate="no">​</a></h3>
+<p>Initializes the coordinate transformation descriptor.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="invert_transform">invert_transform()<a href="#invert_transform" class="hash-link" aria-label="Direct link to invert_transform()" title="Direct link to invert_transform()" translate="no">​</a></h3>
+<p>Invert a coordinate transformation (actual obsolete - cause trans and inverse are both stored).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isempty">isEmpty()<a href="#isempty" class="hash-link" aria-label="Direct link to isEmpty()" title="Direct link to isEmpty()" translate="no">​</a></h3>
+<p>Returns true if coordinate transform contains no data.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if coordinate transform is empty.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_transrr-do_move">apply_trans(rr, do_move)<a href="#apply_transrr-do_move" class="hash-link" aria-label="Direct link to apply_trans(rr, do_move)" title="Direct link to apply_trans(rr, do_move)" translate="no">​</a></h3>
+<p>TODO: dest - The id of the destination coordinate system (FIFFV_COORD_...).</p>
+<p>Applies the coordinate transform to given coordinates and returns the transformed coordinates</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>rr</strong> : <em>const Eigen::MatrixX3f &amp;</em>
+The coordinates.</p>
+</li>
+<li class="">
+<p><strong>do_move</strong> : <em>bool</em>
+Perform translation next to rotation yes/no.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixX3f</em> — Transformed coordinates.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_inverse_transrr-do_move">apply_inverse_trans(rr, do_move)<a href="#apply_inverse_transrr-do_move" class="hash-link" aria-label="Direct link to apply_inverse_trans(rr, do_move)" title="Direct link to apply_inverse_trans(rr, do_move)" translate="no">​</a></h3>
+<p>Applies the inverse coordinate transform to given coordinates and returns the transformed coordinates.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>rr</strong> : <em>const Eigen::MatrixX3f &amp;</em>
+The coordinates.</p>
+</li>
+<li class="">
+<p><strong>do_move</strong> : <em>bool</em>
+Perform translation next to rotation yes/no.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixX3f</em> — Transformed coordinates.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inverted">inverted()<a href="#inverted" class="hash-link" aria-label="Direct link to inverted()" title="Direct link to inverted()" translate="no">​</a></h3>
+<p>Returns a new inverted copy of this transformation (swaps from/to and trans/invtrans).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The inverted transformation.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="print">print()<a href="#print" class="hash-link" aria-label="Direct link to print()" title="Direct link to print()" translate="no">​</a></h3>
+<p>Prints the coordinate transform.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writep_iodevice">write(p_IODevice)<a href="#writep_iodevice" class="hash-link" aria-label="Direct link to write(p_IODevice)" title="Direct link to write(p_IODevice)" translate="no">​</a></h3>
+<p>Writes the transformation to file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+IO device to write the transformation to.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writetostreamp_pstream">writeToStream(p_pStream)<a href="#writetostreamp_pstream" class="hash-link" aria-label="Direct link to writeToStream(p_pStream)" title="Direct link to writeToStream(p_pStream)" translate="no">​</a></h3>
+<p>Writes the transformation to a FIFF stream.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_pStream</strong> : *FiffStream **
+Pointer to the FIFF stream to write to.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="angletomtransdest">angleTo(mTransDest)<a href="#angletomtransdest" class="hash-link" aria-label="Direct link to angleTo(mTransDest)" title="Direct link to angleTo(mTransDest)" translate="no">​</a></h3>
+<p>Calculate rotation as angle between two rotation matrices.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>mTransDest</strong> : <em>Eigen::MatrixX4f</em>
+The destination transformation matrix.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — The angle of rotation between two rotation matrices in degrees.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="translationtomtransdest">translationTo(mTransDest)<a href="#translationtomtransdest" class="hash-link" aria-label="Direct link to translationTo(mTransDest)" title="Direct link to translationTo(mTransDest)" translate="no">​</a></h3>
+<p>Calculate translation between two rotation matrices in meter.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>mTransDest</strong> : <em>Eigen::MatrixX4f</em>
+The destination transformation matrix.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — The translation between two rotation matrices in m.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readp_iodevice-p_trans">read(p_IODevice, p_Trans)<a href="#readp_iodevice-p_trans" class="hash-link" aria-label="Direct link to read(p_IODevice, p_Trans)" title="Direct link to read(p_IODevice, p_Trans)" translate="no">​</a></h3>
+<p>Reads a coordinate transform from a fif file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
+A fiff IO device like a fiff QFile or QTCPSocket.</p>
+</li>
+<li class="">
+<p><strong>p_Trans</strong> : <em>FiffCoordTrans &amp;</em>
+A coordinate transform from a fif file.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readtransformname-from-to">readTransform(name, from, to)<a href="#readtransformname-from-to" class="hash-link" aria-label="Direct link to readTransform(name, from, to)" title="Direct link to readTransform(name, from, to)" translate="no">​</a></h3>
+<p>Reads a specified coordinate transform from a FIFF file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>name</strong> : <em>const QString &amp;</em>
+FIFF file path.</p>
+</li>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Expected source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Expected destination coordinate system.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The coordinate transform, or an empty transform if not found.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readmritransformname">readMriTransform(name)<a href="#readmritransformname" class="hash-link" aria-label="Direct link to readMriTransform(name)" title="Direct link to readMriTransform(name)" translate="no">​</a></h3>
+<p>Reads the MRI → head coordinate transform from a FIFF file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>name</strong> : <em>const QString &amp;</em>
+FIFF file path.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The MRI→head transform, or an empty transform if not found.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readmeastransformname">readMeasTransform(name)<a href="#readmeastransformname" class="hash-link" aria-label="Direct link to readMeasTransform(name)" title="Direct link to readMeasTransform(name)" translate="no">​</a></h3>
+<p>Reads the MEG device → head coordinate transform from a FIFF file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>name</strong> : <em>const QString &amp;</em>
+FIFF file path.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The device→head transform, or an empty transform if not found.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readtransformasciiname-from-to">readTransformAscii(name, from, to)<a href="#readtransformasciiname-from-to" class="hash-link" aria-label="Direct link to readTransformAscii(name, from, to)" title="Direct link to readTransformAscii(name, from, to)" translate="no">​</a></h3>
+<p>Reads a coordinate transform from an ASCII 4×3 matrix file (mm-to-m conversion applied).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>name</strong> : <em>const QString &amp;</em>
+ASCII file path.</p>
+</li>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Destination coordinate system.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The coordinate transform, or an empty transform on failure.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readfshead2mritransformname">readFShead2mriTransform(name)<a href="#readfshead2mritransformname" class="hash-link" aria-label="Direct link to readFShead2mriTransform(name)" title="Direct link to readFShead2mriTransform(name)" translate="no">​</a></h3>
+<p>Reads the FreeSurfer head → MRI transform from an ASCII file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>name</strong> : <em>const QString &amp;</em>
+ASCII file path.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The head→MRI transform, or an empty transform on failure.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_transr-t-do_move">apply_trans(r, t, do_move)<a href="#apply_transr-t-do_move" class="hash-link" aria-label="Direct link to apply_trans(r, t, do_move)" title="Direct link to apply_trans(r, t, do_move)" translate="no">​</a></h3>
+<p>Applies the coordinate transform to a single 3D point in place.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>r</strong> : <em>float</em>
+3-element float array to transform in place.</p>
+</li>
+<li class="">
+<p><strong>t</strong> : <em>const FiffCoordTrans &amp;</em>
+The coordinate transformation to apply.</p>
+</li>
+<li class="">
+<p><strong>do_move</strong> : <em>bool</em>
+If true, apply translation; if false, rotation only.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="apply_inverse_transr-t-do_move">apply_inverse_trans(r, t, do_move)<a href="#apply_inverse_transr-t-do_move" class="hash-link" aria-label="Direct link to apply_inverse_trans(r, t, do_move)" title="Direct link to apply_inverse_trans(r, t, do_move)" translate="no">​</a></h3>
+<p>Applies the inverse coordinate transform to a single 3D point in place.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>r</strong> : <em>float</em>
+3-element float array to transform in place.</p>
+</li>
+<li class="">
+<p><strong>t</strong> : <em>const FiffCoordTrans &amp;</em>
+The coordinate transformation whose inverse to apply.</p>
+</li>
+<li class="">
+<p><strong>do_move</strong> : <em>bool</em>
+If true, apply translation; if false, rotation only.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="frame_nameframe">frame_name(frame)<a href="#frame_nameframe" class="hash-link" aria-label="Direct link to frame_name(frame)" title="Direct link to frame_name(frame)" translate="no">​</a></h3>
+<p>Map coordinate frame integers to human-readable names.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>frame</strong> : <em>int</em>
+The coordinate frame integer.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QString</em> — Human readable form of the coordinate frame.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="identityfrom-to">identity(from, to)<a href="#identityfrom-to" class="hash-link" aria-label="Direct link to identity(from, to)" title="Direct link to identity(from, to)" translate="no">​</a></h3>
+<p>Creates an identity transformation between two coordinate systems.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Destination coordinate system.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — An identity coordinate transformation.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="combinefrom-to-t1-t2">combine(from, to, t1, t2)<a href="#combinefrom-to-t1-t2" class="hash-link" aria-label="Direct link to combine(from, to, t1, t2)" title="Direct link to combine(from, to, t1, t2)" translate="no">​</a></h3>
+<p>Combines two coordinate transformations to yield a transform from <code>from</code> to <code>to</code>.</p>
+<p>Automatically handles inversion and ordering of the input transforms.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Desired source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Desired destination coordinate system.</p>
+</li>
+<li class="">
+<p><strong>t1</strong> : <em>const FiffCoordTrans &amp;</em>
+First transformation.</p>
+</li>
+<li class="">
+<p><strong>t2</strong> : <em>const FiffCoordTrans &amp;</em>
+Second transformation.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The combined transformation, or an empty transform on failure.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromcardinalpointsfrom-to-rl-rn-rr">fromCardinalPoints(from, to, rL, rN, rR)<a href="#fromcardinalpointsfrom-to-rl-rn-rr" class="hash-link" aria-label="Direct link to fromCardinalPoints(from, to, rL, rN, rR)" title="Direct link to fromCardinalPoints(from, to, rL, rN, rR)" translate="no">​</a></h3>
+<p>Constructs a coordinate transformation from cardinal points (LPA, Nasion, RPA).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Destination coordinate system (in which the points are expressed).</p>
+</li>
+<li class="">
+<p><strong>rL</strong> : *const float **
+Left auricular point (3 floats).</p>
+</li>
+<li class="">
+<p><strong>rN</strong> : *const float **
+Nasion point (3 floats).</p>
+</li>
+<li class="">
+<p><strong>rR</strong> : *const float **
+Right auricular point (3 floats).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The coordinate transformation.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="addinverset">addInverse(t)<a href="#addinverset" class="hash-link" aria-label="Direct link to addInverse(t)" title="Direct link to addInverse(t)" translate="no">​</a></h3>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>t</strong> : <em>FiffCoordTrans &amp;</em>
+<code>Fiff</code> coordinate transform to which the inverse should be added.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True when successful.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="storagesize">storageSize()<a href="#storagesize" class="hash-link" aria-label="Direct link to storageSize()" title="Direct link to storageSize()" translate="no">​</a></h3>
+<p>Size of the old struct (fiffCoordTransRec) 26<em>int = 26</em>4 = 104.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>qint32</em> — the size of the old struct fiffCoordTransRec.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readfromtagtag">readFromTag(tag)<a href="#readfromtagtag" class="hash-link" aria-label="Direct link to readFromTag(tag)" title="Direct link to readFromTag(tag)" translate="no">​</a></h3>
+<p>Reads a coordinate transform from a FIFF tag.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>tag</strong> : <em>const std::unique_ptr&lt; FiffTag &gt; &amp;</em>
+The FIFF tag to read from.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The coordinate transform, or an empty transform if the tag is invalid.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readtransformfromnodestream-node-from-to">readTransformFromNode(stream, node, from, to)<a href="#readtransformfromnodestream-node-from-to" class="hash-link" aria-label="Direct link to readTransformFromNode(stream, node, from, to)" title="Direct link to readTransformFromNode(stream, node, from, to)" translate="no">​</a></h3>
+<p>Reads a coordinate transform from a FIFF stream node.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>stream</strong> : <em>FiffStream::SPtr &amp;</em>
+The FIFF stream.</p>
+</li>
+<li class="">
+<p><strong>node</strong> : <em>const FiffDirNode::SPtr &amp;</em>
+The directory node to search.</p>
+</li>
+<li class="">
+<p><strong>from</strong> : <em>int</em>
+Expected source coordinate system.</p>
+</li>
+<li class="">
+<p><strong>to</strong> : <em>int</em>
+Expected destination coordinate system.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The coordinate transform, or an empty transform if not found.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="procrustesalignfrom_frame-to_frame-fromp-top-w-max_diff">procrustesAlign(from_frame, to_frame, fromp, top, w, max_diff)<a href="#procrustesalignfrom_frame-to_frame-fromp-top-w-max_diff" class="hash-link" aria-label="Direct link to procrustesAlign(from_frame, to_frame, fromp, top, w, max_diff)" title="Direct link to procrustesAlign(from_frame, to_frame, fromp, top, w, max_diff)" translate="no">​</a></h3>
+<p>Performs a Procrustes alignment between two sets of corresponding 3D points.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>from_frame</strong> : <em>int</em>
+Source coordinate frame ID.</p>
+</li>
+<li class="">
+<p><strong>to_frame</strong> : <em>int</em>
+Destination coordinate frame ID.</p>
+</li>
+<li class="">
+<p><strong>fromp</strong> : <em>const Eigen::MatrixXf &amp;</em>
+Point locations in the source frame (np×3 matrix).</p>
+</li>
+<li class="">
+<p><strong>top</strong> : <em>const Eigen::MatrixXf &amp;</em>
+Point locations in the destination frame (np×3 matrix).</p>
+</li>
+<li class="">
+<p><strong>w</strong> : <em>const Eigen::VectorXf &amp;</em>
+Weights (np elements), or empty vector for equal weight.</p>
+</li>
+<li class="">
+<p><strong>max_diff</strong> : <em>float</em>
+Maximum allowed difference between transformed and target.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>FiffCoordTrans</em> — The alignment transform, or an empty transform on failure.</li>
+</ul>
+<hr></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-proj"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffProj</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-annotations"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffAnnotations</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiffcoordtrans-1" class="table-of-contents__link toc-highlight">FiffCoordTrans()</a></li><li><a href="#fiffcoordtransp_iodevice" class="table-of-contents__link toc-highlight">FiffCoordTrans(p_IODevice)</a></li><li><a href="#fiffcoordtransp_fiffcoordtrans" class="table-of-contents__link toc-highlight">FiffCoordTrans(p_FiffCoordTrans)</a></li><li><a href="#fiffcoordtransfrom-to-rot-move" class="table-of-contents__link toc-highlight">FiffCoordTrans(from, to, rot, move)</a></li><li><a href="#fiffcoordtransfrom-to-mattrans-bstandard" class="table-of-contents__link toc-highlight">FiffCoordTrans(from, to, matTrans, bStandard)</a></li><li><a href="#fiffcoordtrans-2" class="table-of-contents__link toc-highlight">~FiffCoordTrans()</a></li><li><a href="#clear" class="table-of-contents__link toc-highlight">clear()</a></li><li><a href="#invert_transform" class="table-of-contents__link toc-highlight">invert_transform()</a></li><li><a href="#isempty" class="table-of-contents__link toc-highlight">isEmpty()</a></li><li><a href="#apply_transrr-do_move" class="table-of-contents__link toc-highlight">apply_trans(rr, do_move)</a></li><li><a href="#apply_inverse_transrr-do_move" class="table-of-contents__link toc-highlight">apply_inverse_trans(rr, do_move)</a></li><li><a href="#inverted" class="table-of-contents__link toc-highlight">inverted()</a></li><li><a href="#print" class="table-of-contents__link toc-highlight">print()</a></li><li><a href="#writep_iodevice" class="table-of-contents__link toc-highlight">write(p_IODevice)</a></li><li><a href="#writetostreamp_pstream" class="table-of-contents__link toc-highlight">writeToStream(p_pStream)</a></li><li><a href="#angletomtransdest" class="table-of-contents__link toc-highlight">angleTo(mTransDest)</a></li><li><a href="#translationtomtransdest" class="table-of-contents__link toc-highlight">translationTo(mTransDest)</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#readp_iodevice-p_trans" class="table-of-contents__link toc-highlight">read(p_IODevice, p_Trans)</a></li><li><a href="#readtransformname-from-to" class="table-of-contents__link toc-highlight">readTransform(name, from, to)</a></li><li><a href="#readmritransformname" class="table-of-contents__link toc-highlight">readMriTransform(name)</a></li><li><a href="#readmeastransformname" class="table-of-contents__link toc-highlight">readMeasTransform(name)</a></li><li><a href="#readtransformasciiname-from-to" class="table-of-contents__link toc-highlight">readTransformAscii(name, from, to)</a></li><li><a href="#readfshead2mritransformname" class="table-of-contents__link toc-highlight">readFShead2mriTransform(name)</a></li><li><a href="#apply_transr-t-do_move" class="table-of-contents__link toc-highlight">apply_trans(r, t, do_move)</a></li><li><a href="#apply_inverse_transr-t-do_move" class="table-of-contents__link toc-highlight">apply_inverse_trans(r, t, do_move)</a></li><li><a href="#frame_nameframe" class="table-of-contents__link toc-highlight">frame_name(frame)</a></li><li><a href="#identityfrom-to" class="table-of-contents__link toc-highlight">identity(from, to)</a></li><li><a href="#combinefrom-to-t1-t2" class="table-of-contents__link toc-highlight">combine(from, to, t1, t2)</a></li><li><a href="#fromcardinalpointsfrom-to-rl-rn-rr" class="table-of-contents__link toc-highlight">fromCardinalPoints(from, to, rL, rN, rR)</a></li><li><a href="#addinverset" class="table-of-contents__link toc-highlight">addInverse(t)</a></li><li><a href="#storagesize" class="table-of-contents__link toc-highlight">storageSize()</a></li><li><a href="#readfromtagtag" class="table-of-contents__link toc-highlight">readFromTag(tag)</a></li><li><a href="#readtransformfromnodestream-node-from-to" class="table-of-contents__link toc-highlight">readTransformFromNode(stream, node, from, to)</a></li><li><a href="#procrustesalignfrom_frame-to_frame-fromp-top-w-max_diff" class="table-of-contents__link toc-highlight">procrustesAlign(from_frame, to_frame, fromp, top, w, max_diff)</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
