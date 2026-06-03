@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">MNE Analyze Studio Walkthrough | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNE Analyze Studio Walkthrough | MNE-CPP"><meta data-rh="true" name="description" content="This walkthrough targets the staging branch of MNE Analyze Studio (v2.3.0). For an"><meta data-rh="true" property="og:description" content="This walkthrough targets the staging branch of MNE Analyze Studio (v2.3.0). For an"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual","item":"https://mne-cpp.github.io/dev/docs/manual/intro"},{"@type":"ListItem","position":2,"name":"MNA Studio Walkthrough","item":"https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.07f554f1.css">
-<script src="/dev/assets/js/runtime~main.4b60b2bd.js" defer="defer"></script>
-<script src="/dev/assets/js/main.cff81a66.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.2923fd83.js" defer="defer"></script>
+<script src="/dev/assets/js/main.ea4bd961.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -20,7 +20,7 @@ files referenced below, see <a class="" href="/dev/docs/manual/mna-format">MNA F
 workflows that ship under <code>src/applications/mne_analyze_studio/examples/workflows/</code>
 to illustrate how an <strong>MNA</strong> (MNE Node Authoring) project is loaded, inspected
 and executed through the three project-level skills bundled with the Studio.</p>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/mne-analyze-studio/workbench-overview.png" alt="Full Workbench window with the Workflow Map and an MNA file open in an editor tab" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Full Workbench window with the Workflow Map and an MNA file open in an editor tab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mna-in-one-minute">MNA in one minute<a href="#mna-in-one-minute" class="hash-link" aria-label="Direct link to MNA in one minute" title="Direct link to MNA in one minute" translate="no">​</a></h2>
 <p>An <strong>MNA project</strong> is a declarative description of an analysis pipeline. It is a
 small JSON document (<code>.mna</code>) — or its compact CBOR sibling (<code>.mnx</code>) — listing:</p>
@@ -60,7 +60,7 @@ project, wraps <code>pipeline</code> into a transient <code>MnaGraph</code>, exe
 <code>MnaGraphExecutor</code>, and reports <code>node_count: 4</code> plus the <code>result_keys</code>
 published by each filter node.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/mne-analyze-studio/temporal-filter-demo.png" alt="Workflow Map for temporal_filter_demo.mna with op_preclean fanning out to alpha and beta branches" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Workflow Map for temporal_filter_demo.mna with op_preclean fanning out to alpha and beta branches" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="demo-2--filter_then_source_estimation_demomna">Demo 2 — <code>filter_then_source_estimation_demo.mna</code><a href="#demo-2--filter_then_source_estimation_demomna" class="hash-link" aria-label="Direct link to demo-2--filter_then_source_estimation_demomna" title="Direct link to demo-2--filter_then_source_estimation_demomna" translate="no">​</a></h2>
 <p>A two-node MEG/EEG pipeline that filters a raw recording and then applies a
 pre-computed inverse operator to produce distributed source timecourses.</p>
@@ -87,7 +87,7 @@ to <code>source_est</code> via the inputs map, and finally publishes
 for both nodes; the Studio&#x27;s Analysis Results widget will pick the STC up
 for cortical-surface rendering.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/mne-analyze-studio/filter-then-source-estimation-demo.png" alt="Source Estimation result rendered on the cortex after running filter_then_source_estimation_demo.mna" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Source Estimation result rendered on the cortex after running filter_then_source_estimation_demo.mna" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="demo-3--source_estimation_multimodal_demomna">Demo 3 — <code>source_estimation_multimodal_demo.mna</code><a href="#demo-3--source_estimation_multimodal_demomna" class="hash-link" aria-label="Direct link to demo-3--source_estimation_multimodal_demomna" title="Direct link to demo-3--source_estimation_multimodal_demomna" translate="no">​</a></h2>
 <p>A full auditory source-estimation pipeline (<code>Auditory_Source_Estimation_Demo</code>)
 that fuses MEG/EEG and MRI branches. All nodes in the shipped file are
@@ -127,7 +127,7 @@ executor walks all twelve nodes in topological order and reports
 downstream Studio steps can pick the final <code>source_estimates_01</code> for
 visualisation.</li>
 </ol>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/mne-analyze-studio/source-estimation-multimodal-demo.png" alt="Workflow Map for source_estimation_multimodal_demo.mna showing the MEG/EEG and MRI branches converging at op_forward_solution and op_inverse_operator" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Workflow Map for source_estimation_multimodal_demo.mna showing the MEG/EEG and MRI branches converging at op_forward_solution and op_inverse_operator" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="skills-reference">Skills reference<a href="#skills-reference" class="hash-link" aria-label="Direct link to Skills reference" title="Direct link to Skills reference" translate="no">​</a></h2>
 <p>The three skills below live under
 <code>src/applications/mne_analyze_studio/extensions/mna_skills/</code> and ship in the
@@ -180,7 +180,7 @@ executor published during the run.</li>
 <code>MnaGraph</code>. If <code>MnaGraph::validate</code> fails the skill returns <code>status: &quot;error&quot;</code> with the validation messages; otherwise it reports
 <code>status: &quot;completed&quot;</code> together with the result summary above.</li>
 </ul>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/mne-analyze-studio/skill-run-mna-graph.png" alt="Skill inspector panel showing the schema for mne.skills.run_mna_graph" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Skill inspector panel showing the schema for mne.skills.run_mna_graph" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="see-also">See also<a href="#see-also" class="hash-link" aria-label="Direct link to See also" title="Direct link to See also" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/dev/docs/manual/analyze-studio">MNE Analyze Studio</a> — architectural overview of the

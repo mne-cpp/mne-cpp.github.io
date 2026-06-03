@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">MNE Inspect — Multimodal Workflow | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNE Inspect — Multimodal Workflow | MNE-CPP"><meta data-rh="true" name="description" content="Screenshots will be captured against the v2.3.0 release build."><meta data-rh="true" property="og:description" content="Screenshots will be captured against the v2.3.0 release build."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual","item":"https://mne-cpp.github.io/dev/docs/manual/intro"},{"@type":"ListItem","position":2,"name":"MNE Inspect Multimodal","item":"https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.07f554f1.css">
-<script src="/dev/assets/js/runtime~main.4b60b2bd.js" defer="defer"></script>
-<script src="/dev/assets/js/main.cff81a66.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.2923fd83.js" defer="defer"></script>
+<script src="/dev/assets/js/main.ea4bd961.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -30,7 +30,7 @@ to see recorded data and source estimates rendered in registration with
 that anatomy. The same <code>MultimodalScene</code> controller backs <code>mne_align</code>
 and the cortical workflow in <code>mne_analyze</code>, so layer / pick / overlay
 behaviour is consistent across the apps.</p>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/inspect-multimodal/overview.png" alt="Multimodal scene overview" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Multimodal scene overview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h2>
 <p>Before you start, make sure you have:</p>
 <ul>
@@ -69,7 +69,7 @@ coronal, sagittal) — one <code>SceneLayer</code> of kind <code>MriSlice</code>
 all sharing the same volume payload. The slice planes are placed at
 the volume centre on first load; you can drag them with the middle
 mouse button or scrub them from the <strong>Layers</strong> dock.</p>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/inspect-multimodal/load-mri.png" alt="Load MRI dialog" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Load MRI dialog" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-file--load-surface">3. File → Load Surface…<a href="#3-file--load-surface" class="hash-link" aria-label="Direct link to 3. File → Load Surface…" title="Direct link to 3. File → Load Surface…" translate="no">​</a></h3>
 <p><code>File ▸ Load Surface…</code> opens the FreeSurfer subject browser. Pick a
 subject directory, then tick the surfaces you want (typically
@@ -80,13 +80,13 @@ default cortical colormap.</p>
 If you supplied <code>--subjectPath</code> on the command line it pre-selects that
 subject.</p></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-file--load-electrodes">4. File → Load Electrodes…<a href="#4-file--load-electrodes" class="hash-link" aria-label="Direct link to 4. File → Load Electrodes…" title="Direct link to 4. File → Load Electrodes…" translate="no">​</a></h3>
-<p><code>File  ▸ Load Electrodes…</code> accepts three input shapes:</p>
+<p><code>File ▸ Load Electrodes…</code> accepts three input shapes:</p>
 <table><thead><tr><th>Input</th><th>Notes</th></tr></thead><tbody><tr><td>FIFF</td><td>Uses the intracranial points in <code>ISOTRAK</code>. Groups are inferred from contact name prefixes.</td></tr><tr><td>BIDS <code>*_electrodes.tsv</code></td><td>The companion <code>*_coordsystem.json</code> selects the source coordinate frame.</td></tr><tr><td>CSV (<code>name,x,y,z[,group]</code>)</td><td>Coordinates are assumed to be in the frame of the currently loaded MRI.</td></tr></tbody></table>
 <p>The loader produces one <code>ElectrodeArray</code> per group, classified as
 <code>Depth</code> (sEEG), <code>Strip</code>, or <code>Grid</code> (ECoG) based on the contact layout.
 Each array becomes a <code>SceneLayer</code> of kind <code>Electrode</code> and the layout
 type drives the default geometry (cylindrical depths, planar grids).</p>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/inspect-multimodal/load-electrodes.png" alt="Electrode loader" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Electrode loader" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-toggle-modalities-in-the-layers-dock">5. Toggle modalities in the Layers dock<a href="#5-toggle-modalities-in-the-layers-dock" class="hash-link" aria-label="Direct link to 5. Toggle modalities in the Layers dock" title="Direct link to 5. Toggle modalities in the Layers dock" translate="no">​</a></h3>
 <p>The <strong>Layers</strong> dock lists every registered <code>SceneLayer</code> grouped by
 modality. For each row you can:</p>
@@ -103,7 +103,7 @@ so changes are reflected immediately without re-loading.</p>
 <code>PickResult</code> and the <strong>Pick</strong> dock displays the readout for whatever
 modality was hit. The contact / vertex / voxel is highlighted in the
 scene until the next pick.</p>
-<p><img decoding="async" loading="lazy" src="/img/manual/auto/inspect-multimodal/pick-dock.png" alt="Pick dock" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Pick dock" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4DwAAAQEABRjYTgAAAABJRU5ErkJggg==" width="1" height="1" class="img_ev3q"></p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-drive-the-overlay-dock">7. Drive the Overlay dock<a href="#7-drive-the-overlay-dock" class="hash-link" aria-label="Direct link to 7. Drive the Overlay dock" title="Direct link to 7. Drive the Overlay dock" translate="no">​</a></h3>
 <p>The <strong>Overlay</strong> dock binds a <em>data source</em> to a <em>layer kind</em> through a
 <em>colormap</em> and a shared <em>time cursor</em>:</p>
