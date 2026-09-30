@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FIFFLIB::Fiff | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-class"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::Fiff | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library"><meta data-rh="true" property="og:description" content="Namespace FIFF Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-class"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-class" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-class" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIFF Library","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"},{"@type":"ListItem","position":2,"name":"Fiff","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-class"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.1c5aa8b3.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.867e0df6.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <p><code>#include &lt;fiff/fiff.h&gt;</code></p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">FIFFLIB</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">Fiff</span><br></div></code></pre></div></div>
 <p>MATLAB-style static facade re-exporting every public <code>FIFFLIB</code> reader/writer for parity with the mne-matlab toolbox.</p>
-<p>Only wrappers — no state. Each method forwards to the matching method on <a class="" href="/dev/docs/api/fiff/fiff-stream"><code>FiffStream</code></a> / <a class="" href="/dev/docs/api/fiff/fiff-raw-data">FiffRawData</a> / <a class="" href="/dev/docs/api/fiff/fiff-evoked"><code>FiffEvoked</code></a> / <code>FiffEvokedSet</code> / <a class="" href="/dev/docs/api/fiff/fiff-cov"><code>FiffCov</code></a> / <a class="" href="/dev/docs/api/fiff/fiff-info"><code>FiffInfo</code></a>. Prefer the underlying classes for new code; this class exists so Matlab-style ports compile unchanged.</p>
+<p>Only wrappers — no state. Each method forwards to the matching method on <a class="" href="/dev/docs/api/fiff/fiff-stream"><code>FiffStream</code></a> / <a class="" href="/dev/docs/api/fiff/fiff-raw-data"><code>FiffRawData</code></a> / <a class="" href="/dev/docs/api/fiff/fiff-evoked"><code>FiffEvoked</code></a> / <code>FiffEvokedSet</code> / <a class="" href="/dev/docs/api/fiff/fiff-cov"><code>FiffCov</code></a> / <a class="" href="/dev/docs/api/fiff/fiff-info"><code>FiffInfo</code></a>. Prefer the underlying classes for new code; this class exists so Matlab-style ports compile unchanged.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiff-1">~Fiff()<a href="#fiff-1" class="hash-link" aria-label="Direct link to ~Fiff()" title="Direct link to ~Fiff()" translate="no">​</a></h3>
@@ -445,7 +445,7 @@ The node of interest.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_raw_segmentraw-data-times-from-to-sel">read_raw_segment(raw, data, times, from, to, sel)<a href="#read_raw_segmentraw-data-times-from-to-sel" class="hash-link" aria-label="Direct link to read_raw_segment(raw, data, times, from, to, sel)" title="Direct link to read_raw_segment(raw, data, times, from, to, sel)" translate="no">​</a></h3>
 <p>fiff_read_raw_segment</p>
-<p>Wrapper for the <a class="" href="/dev/docs/api/fiff/fiff-raw-data">FiffRawData</a> read_raw_segment member function</p>
+<p>Wrapper for the <a class="" href="/dev/docs/api/fiff/fiff-raw-data"><code>FiffRawData</code></a> read_raw_segment member function</p>
 <p>Read a specific raw data segment</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -481,7 +481,7 @@ channel selection vector (optional).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_raw_segmentraw-data-times-mult-from-to-sel">read_raw_segment(raw, data, times, mult, from, to, sel)<a href="#read_raw_segmentraw-data-times-mult-from-to-sel" class="hash-link" aria-label="Direct link to read_raw_segment(raw, data, times, mult, from, to, sel)" title="Direct link to read_raw_segment(raw, data, times, mult, from, to, sel)" translate="no">​</a></h3>
 <p>fiff_read_raw_segment</p>
-<p>Wrapper for the <a class="" href="/dev/docs/api/fiff/fiff-raw-data">FiffRawData</a> read_raw_segment member function</p>
+<p>Wrapper for the <a class="" href="/dev/docs/api/fiff/fiff-raw-data"><code>FiffRawData</code></a> read_raw_segment member function</p>
 <p>Read a specific raw data segment</p>
 <p><strong>Parameters:</strong></p>
 <ul>
