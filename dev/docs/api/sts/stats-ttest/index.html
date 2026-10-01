@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">STSLIB::StatsTtest | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/sts/stats-ttest"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="STSLIB::StatsTtest | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Statistics Library"><meta data-rh="true" property="og:description" content="Namespace Statistics Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/sts/stats-ttest"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/sts/stats-ttest" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/sts/stats-ttest" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Statistics Library","item":"https://mne-cpp.github.io/dev/docs/api/sts/"},{"@type":"ListItem","position":2,"name":"StatsTtest","item":"https://mne-cpp.github.io/dev/docs/api/sts/stats-ttest"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -108,6 +108,25 @@ Degrees of freedom.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="regularizedbetax-a-b">regularizedBeta(x, a, b)<a href="#regularizedbetax-a-b" class="hash-link" aria-label="Direct link to regularizedBeta(x, a, b)" title="Direct link to regularizedBeta(x, a, b)" translate="no">​</a></h3>
 <p>Regularized incomplete beta function I_x(a, b).</p>
 <p>Public because it is also used by <a class="" href="/dev/docs/api/sts/stats-ftest"><code>StatsFtest</code></a>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>x</strong> : <em>double</em>
+Upper integration limit in [0, 1].</p>
+</li>
+<li class="">
+<p><strong>a</strong> : <em>double</em>
+First shape parameter (positive).</p>
+</li>
+<li class="">
+<p><strong>b</strong> : <em>double</em>
+Second shape parameter (positive).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — I_x(a, b) in [0, 1]; 0 for x at or below 0 and 1 for x at or above 1.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

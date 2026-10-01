@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FWDLIB::FwdEegSphereModel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FWDLIB::FwdEegSphereModel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Forward Library"><meta data-rh="true" property="og:description" content="Namespace Forward Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forward Library","item":"https://mne-cpp.github.io/dev/docs/api/fwd/"},{"@type":"ListItem","position":2,"name":"FwdEegSphereModel","item":"https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -52,14 +52,16 @@ coefficient to which the expansion shopuld be calculated.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>rad.</strong></p>
+<p><strong>rad</strong> : <em>float</em>
+Scalp radius in meters.</p>
 </li>
 <li class="">
 <p><strong>fit_berg_scherg</strong> : <em>bool</em>
 If Fit Berg Scherg should be performed.</p>
 </li>
 <li class="">
-<p><strong>nfit.</strong></p>
+<p><strong>nFit</strong> : <em>int</em>
+Number of Berg-Scherg equivalent dipoles to fit.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -73,11 +75,11 @@ If Fit Berg Scherg should be performed.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>nterms</strong>
+<p><strong>nTerms</strong> : <em>int</em>
 Number of terms in the series expansion.</p>
 </li>
 <li class="">
-<p><strong>nfit</strong>
+<p><strong>nFit</strong> : <em>int</em>
 Number of equivalent dipoles to fit (must be &gt;= 2).</p>
 </li>
 <li class="">
@@ -310,6 +312,10 @@ Number of electrodes.</p>
 <p><strong>Vval_vec</strong> : <em>Eigen::MatrixXf &amp;</em>
 The potential values Vval_vec[0][k] potentials given by Q = (1.0,0.0,0.0) at electrode k; Vval_vec[1][k] potentials given by Q = (0.0,1.0,0.0) at electrode k; Vval_vec[2][k] potentials given by Q = (0.0,0.0,1.0) at electrode k.</p>
 </li>
+<li class="">
+<p><strong>client</strong> : *void **
+The <a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model"><code>FwdEegSphereModel</code></a> to evaluate (passed as client data).</p>
+</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
@@ -335,7 +341,8 @@ Electrode positions.</p>
 The potential values; Vval_vec[0][k] potentials given by Q = (1.0,0.0,0.0) at electrode k; Vval_vec[1][k] potentials given by Q = (0.0,1.0,0.0) at electrode k; Vval_vec[2][k] potentials given by Q = (0.0,0.0,1.0) at electrode k.</p>
 </li>
 <li class="">
-<p><strong>client.</strong></p>
+<p><strong>client</strong> : *void **
+The <a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model"><code>FwdEegSphereModel</code></a> to evaluate (passed as client data).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -412,7 +419,8 @@ Number of electrodes.</p>
 The potential values.</p>
 </li>
 <li class="">
-<p><strong>client.</strong></p>
+<p><strong>client</strong> : *void **
+The <a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model"><code>FwdEegSphereModel</code></a> to evaluate (passed as client data).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -442,7 +450,8 @@ Electrode positions.</p>
 The potential values.</p>
 </li>
 <li class="">
-<p><strong>client.</strong></p>
+<p><strong>client</strong> : *void **
+The <a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model"><code>FwdEegSphereModel</code></a> to evaluate (passed as client data).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>

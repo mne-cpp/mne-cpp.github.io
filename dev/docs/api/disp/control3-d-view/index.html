@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::Control3DView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/control3-d-view"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::Control3DView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/control3-d-view"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/control3-d-view" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/control3-d-view" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"Control3DView","item":"https://mne-cpp.github.io/dev/docs/api/disp/control3-d-view"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -26,6 +26,10 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
+<p><strong>sSettingsPath</strong> : <em>const QString &amp;</em>
+Settings path under which the widget persists its state (empty = no persistence).</p>
+</li>
+<li class="">
 <p><strong>parent</strong> : *QWidget **
 The parent of the QObject.</p>
 </li>
@@ -34,7 +38,8 @@ The parent of the QObject.</p>
 The flags indicating which tools to display. Scaling is displayed as default. Possible flags are: &quot;Data&quot;, &quot;View&quot;, &quot;Light&quot;.</p>
 </li>
 <li class="">
-<p><strong>type.</strong></p>
+<p><strong>type</strong> : <em>Qt::WindowType</em>
+Qt window type passed to the QWidget constructor.</p>
 </li>
 </ul>
 <hr>
@@ -61,14 +66,8 @@ The delegate.</li>
 <p>Init the control widget based on the 3D view and data model.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class="">
-<p><strong>pData3DTreeModel</strong>
-The 3D data tree model.</p>
-</li>
-<li class="">
-<p><strong>pView3D</strong>
-The view3D to bec connected to this widget.</p>
-</li>
+<li class=""><strong>pDataTreeModel</strong> : *QStandardItemModel **
+The 3D data tree model.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ontreeviewheaderhide">onTreeViewHeaderHide()<a href="#ontreeviewheaderhide" class="hash-link" aria-label="Direct link to onTreeViewHeaderHide()" title="Direct link to onTreeViewHeaderHide()" translate="no">​</a></h3>
@@ -76,6 +75,11 @@ The view3D to bec connected to this widget.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ontreeviewremoveitemindex">onTreeViewRemoveItem(index)<a href="#ontreeviewremoveitemindex" class="hash-link" aria-label="Direct link to onTreeViewRemoveItem(index)" title="Direct link to onTreeViewRemoveItem(index)" translate="no">​</a></h3>
 <p>Slot called when an item should be removed.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>index</strong> : <em>const QModelIndex &amp;</em>
+Model index of the tree view row to remove; ignored if invalid.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ontreeviewdescriptionhide">onTreeViewDescriptionHide()<a href="#ontreeviewdescriptionhide" class="hash-link" aria-label="Direct link to onTreeViewDescriptionHide()" title="Direct link to onTreeViewDescriptionHide()" translate="no">​</a></h3>
 <p>Slot called when tree view description visibilty changed.</p>

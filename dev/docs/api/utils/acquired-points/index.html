@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::AcquiredPoints | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/acquired-points"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::AcquiredPoints | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/acquired-points"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/acquired-points" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/acquired-points" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"AcquiredPoints","item":"https://mne-cpp.github.io/dev/docs/api/utils/acquired-points"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -26,25 +26,62 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="points">points()<a href="#points" class="hash-link" aria-label="Direct link to points()" title="Direct link to points()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="appendp">append(p)<a href="#appendp" class="hash-link" aria-label="Direct link to append(p)" title="Direct link to append(p)" translate="no">​</a></h3>
-<p>Append a new point and emit pointsChanged.</p>
+<p>Append a new point and emit <code>UTILSLIB::AcquiredPoints::pointsChanged</code> &quot;pointsChanged&quot;.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p</strong> : <em>const DigitizedPoint &amp;</em>
+Captured point to append.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="undolastkind">undoLast(kind)<a href="#undolastkind" class="hash-link" aria-label="Direct link to undoLast(kind)" title="Direct link to undoLast(kind)" translate="no">​</a></h3>
 <p>Remove the most recently captured point matching <code>kind</code>, if any.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>kind</strong> : <em>PointKind</em>
+Point kind whose most recent entry is removed.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clear">clear()<a href="#clear" class="hash-link" aria-label="Direct link to clear()" title="Direct link to clear()" translate="no">​</a></h3>
 <p>Drop every captured point.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiducialid">fiducial(id)<a href="#fiducialid" class="hash-link" aria-label="Direct link to fiducial(id)" title="Direct link to fiducial(id)" translate="no">​</a></h3>
 <p>Convenience accessor: returns the captured fiducial position for <code>id</code>, or a default-constructed <code>QVector3D</code> if not yet captured.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>id</strong> : <em>FiducialId</em>
+Fiducial to look up.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector3D</em> — Captured fiducial position, or a zero vector if not yet captured.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hasfiducialid">hasFiducial(id)<a href="#hasfiducialid" class="hash-link" aria-label="Direct link to hasFiducial(id)" title="Direct link to hasFiducial(id)" translate="no">​</a></h3>
 <p>True iff a fiducial of the given id has been captured.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>id</strong> : <em>FiducialId</em>
+Fiducial to check.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the fiducial has been captured, false otherwise.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="removefiducialid">removeFiducial(id)<a href="#removefiducialid" class="hash-link" aria-label="Direct link to removeFiducial(id)" title="Direct link to removeFiducial(id)" translate="no">​</a></h3>
 <p>Remove a previously captured fiducial so it can be re-recorded.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>id</strong> : <em>FiducialId</em>
+Fiducial whose captured points are all removed.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hasallfiducials">hasAllFiducials()<a href="#hasallfiducials" class="hash-link" aria-label="Direct link to hasAllFiducials()" title="Direct link to hasAllFiducials()" translate="no">​</a></h3>
 <p>True iff all three cardinal fiducials have been captured.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if NAS, LPA, and RPA have all been captured.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="countofkind">countOf(kind)<a href="#countofkind" class="hash-link" aria-label="Direct link to countOf(kind)" title="Direct link to countOf(kind)" translate="no">​</a></h3>
 <hr>

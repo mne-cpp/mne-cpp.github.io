@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">BIDSLIB::BidsRawData | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/bids/bids-raw-data"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BIDSLIB::BidsRawData | MNE-CPP"><meta data-rh="true" name="description" content="Namespace BIDS Library"><meta data-rh="true" property="og:description" content="Namespace BIDS Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-raw-data"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-raw-data" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-raw-data" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BIDS Library","item":"https://mne-cpp.github.io/dev/docs/api/bids/"},{"@type":"ListItem","position":2,"name":"BidsRawData","item":"https://mne-cpp.github.io/dev/docs/api/bids/bids-raw-data"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -72,12 +72,36 @@ Write options (overwrite, dataset name, etc.).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writebidspath-sourcepath">write(bidsPath, sourcePath)<a href="#writebidspath-sourcepath" class="hash-link" aria-label="Direct link to write(bidsPath, sourcePath)" title="Direct link to write(bidsPath, sourcePath)" translate="no">​</a></h3>
 <p>Convenience overload — write with default options.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>bidsPath</strong> : <em>const <a class="" href="/dev/docs/api/bids/bids-path">BIDSPath</a> &amp;</em>
+Target <a class="" href="/dev/docs/api/bids/bids-path"><code>BIDSPath</code></a> (root, subject, task, datatype, suffix, extension).</p>
+</li>
+<li class="">
+<p><strong>sourcePath</strong> : <em>const QString &amp;</em>
+Path to the original raw data file to copy; if empty, it is not copied.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/bids/bids-path">BIDSPath</a></em> — <a class="" href="/dev/docs/api/bids/bids-path"><code>BIDSPath</code></a> of the written data file, or empty <a class="" href="/dev/docs/api/bids/bids-path"><code>BIDSPath</code></a> on failure.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isvalid">isValid()<a href="#isvalid" class="hash-link" aria-label="Direct link to isValid()" title="Direct link to isValid()" translate="no">​</a></h3>
 <p>Returns true if the data was loaded successfully.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the data is valid, false otherwise.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvalidbvalid">setValid(bValid)<a href="#setvalidbvalid" class="hash-link" aria-label="Direct link to setValid(bValid)" title="Direct link to setValid(bValid)" translate="no">​</a></h3>
 <p>Marks the data as valid or invalid.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>bValid</strong> : <em>bool</em>
+True to mark the data as valid, false to mark it invalid.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clear">clear()<a href="#clear" class="hash-link" aria-label="Direct link to clear()" title="Direct link to clear()" translate="no">​</a></h3>
 <p>Clears all data members and resets to invalid state.</p>

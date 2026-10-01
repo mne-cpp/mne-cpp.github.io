@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISP3DLIB::VideoOverlay | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp3-d/video-overlay"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISP3DLIB::VideoOverlay | MNE-CPP"><meta data-rh="true" name="description" content="Namespace 3D Display Library"><meta data-rh="true" property="og:description" content="Namespace 3D Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/video-overlay"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/video-overlay" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/video-overlay" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"3D Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/"},{"@type":"ListItem","position":2,"name":"VideoOverlay","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/video-overlay"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -52,9 +52,18 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setframeimage">setFrame(image)<a href="#setframeimage" class="hash-link" aria-label="Direct link to setFrame(image)" title="Direct link to setFrame(image)" translate="no">​</a></h3>
 <p>Push a new video frame; bumps the generation counter so the GPU re-uploads.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>image</strong> : <em>const QImage &amp;</em>
+New video frame; null images are ignored.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="framegeneration">frameGeneration()<a href="#framegeneration" class="hash-link" aria-label="Direct link to frameGeneration()" title="Direct link to frameGeneration()" translate="no">​</a></h3>
 <p>Monotonic counter, incremented on every <code>setFrame()</code> call.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>quint64</em> — Current video frame generation.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opacity">opacity()<a href="#opacity" class="hash-link" aria-label="Direct link to opacity()" title="Direct link to opacity()" translate="no">​</a></h3>
 <p><strong>Returns:</strong></p>
@@ -67,6 +76,10 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="uphint">upHint()<a href="#uphint" class="hash-link" aria-label="Direct link to upHint()" title="Direct link to upHint()" translate="no">​</a></h3>
 <p>Hint direction used as the quad&#x27;s &quot;up&quot; axis.</p>
 <p>When set (non-zero), the quad&#x27;s long edge is perpendicular to this direction instead of using the default world-up billboard.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector3D</em> — Up-hint direction, or a zero vector if unset.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setuphintdir">setUpHint(dir)<a href="#setuphintdir" class="hash-link" aria-label="Direct link to setUpHint(dir)" title="Direct link to setUpHint(dir)" translate="no">​</a></h3>
 <hr>
@@ -80,6 +93,11 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setdepthframeimage">setDepthFrame(image)<a href="#setdepthframeimage" class="hash-link" aria-label="Direct link to setDepthFrame(image)" title="Direct link to setDepthFrame(image)" translate="no">​</a></h3>
 <p>Push a new monocular depth map (single-channel or RGBA grayscale).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>image</strong> : <em>const QImage &amp;</em>
+New depth map; null images are ignored.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="depthframe">depthFrame()<a href="#depthframe" class="hash-link" aria-label="Direct link to depthFrame()" title="Direct link to depthFrame()" translate="no">​</a></h3>
 <hr>

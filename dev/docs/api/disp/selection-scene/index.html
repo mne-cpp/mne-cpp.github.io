@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::SelectionScene | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::SelectionScene | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"SelectionScene","item":"https://mne-cpp.github.io/dev/docs/api/disp/selection-scene"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -23,6 +23,17 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selectionsceneview-parent">SelectionScene(view, parent)<a href="#selectionsceneview-parent" class="hash-link" aria-label="Direct link to SelectionScene(view, parent)" title="Direct link to SelectionScene(view, parent)" translate="no">​</a></h3>
 <p>Constructs a <a class="" href="/dev/docs/api/disp/selection-scene"><code>SelectionScene</code></a>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>view</strong> : *QGraphicsView **
+Graphics view that displays this scene.</p>
+</li>
+<li class="">
+<p><strong>parent</strong> : *QObject **
+Parent QObject (default 0).</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="repaintitemslayoutmap-badchannels">repaintItems(layoutMap, badChannels)<a href="#repaintitemslayoutmap-badchannels" class="hash-link" aria-label="Direct link to repaintItems(layoutMap, badChannels)" title="Direct link to repaintItems(layoutMap, badChannels)" translate="no">​</a></h3>
 <p>Updates layout data.</p>
@@ -33,8 +44,8 @@
 layout data map.</p>
 </li>
 <li class="">
-<p><strong>bad</strong>
-channel list.</p>
+<p><strong>badChannels</strong> : <em>QStringList</em>
+Names of the bad channels.</p>
 </li>
 </ul>
 <hr>
@@ -42,7 +53,7 @@ channel list.</p>
 <p>Hides all items described in list.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>list</strong>
+<li class=""><strong>visibleItems</strong> : <em>QStringList</em>
 string list with items name which are to be hidden.</li>
 </ul>
 <hr>

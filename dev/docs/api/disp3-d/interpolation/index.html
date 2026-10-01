@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISP3DLIB::Interpolation | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp3-d/interpolation"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISP3DLIB::Interpolation | MNE-CPP"><meta data-rh="true" name="description" content="Namespace 3D Display Library"><meta data-rh="true" property="og:description" content="Namespace 3D Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/interpolation"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/interpolation" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/interpolation" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"3D Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/"},{"@type":"ListItem","position":2,"name":"Interpolation","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/interpolation"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -24,24 +24,117 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="createinterpolationmatvecprojectedsensors-matdistancetable-interpolationfunction-dcanceldist-vecexcludeindex">createInterpolationMat(vecProjectedSensors, matDistanceTable, interpolationFunction, dCancelDist, vecExcludeIndex)<a href="#createinterpolationmatvecprojectedsensors-matdistancetable-interpolationfunction-dcanceldist-vecexcludeindex" class="hash-link" aria-label="Direct link to createInterpolationMat(vecProjectedSensors, matDistanceTable, interpolationFunction, dCancelDist, vecExcludeIndex)" title="Direct link to createInterpolationMat(vecProjectedSensors, matDistanceTable, interpolationFunction, dCancelDist, vecExcludeIndex)" translate="no">​</a></h3>
 <p>createInterpolationMat Calculates the weight matrix for interpolation.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>vecProjectedSensors</strong> : <em>const Eigen::VectorXi &amp;</em>
+Mesh vertex index of each sensor (one column per sensor).</p>
+</li>
+<li class="">
+<p><strong>matDistanceTable</strong> : <em>const QSharedPointer&lt;Eigen::MatrixXd&gt;</em>
+Distance table (nVertices x nSensors), e.g. from <code>GeometryInfo::scdc</code>.</p>
+</li>
+<li class="">
+<p><strong>interpolationFunction</strong> : <em>double(</em>)(double)*
+Distance function whose inverse magnitude gives the weight.</p>
+</li>
+<li class="">
+<p><strong>dCancelDist</strong> : <em>const double</em>
+Distances at or above this value get zero weight.</p>
+</li>
+<li class="">
+<p><strong>vecExcludeIndex</strong> : <em>const Eigen::VectorXi &amp;</em>
+Sensor column indices that are not pinned to their own vertex.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QSharedPointer&lt; Eigen::SparseMatrix&lt; float &gt; &gt;</em> — Row-normalised sparse weight matrix (nVertices x nSensors), or an empty matrix if the table is empty.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="interpolatesignalmatinterpolationmatrix-vecmeasurementdata">interpolateSignal(matInterpolationMatrix, vecMeasurementData)<a href="#interpolatesignalmatinterpolationmatrix-vecmeasurementdata" class="hash-link" aria-label="Direct link to interpolateSignal(matInterpolationMatrix, vecMeasurementData)" title="Direct link to interpolateSignal(matInterpolationMatrix, vecMeasurementData)" translate="no">​</a></h3>
 <p>interpolateSignal Interpolates sensor data using the weight matrix (shared pointer version).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>matInterpolationMatrix</strong> : <em>const QSharedPointer&lt; Eigen::SparseMatrix&lt; float &gt; &gt;</em>
+Weight matrix (nVertices x nSensors).</p>
+</li>
+<li class="">
+<p><strong>vecMeasurementData</strong> : <em>const QSharedPointer&lt;Eigen::VectorXf&gt; &amp;</em>
+Sensor values (nSensors).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::VectorXf</em> — Interpolated vertex values, or an empty vector on dimension mismatch.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="interpolatesignalmatinterpolationmatrix-vecmeasurementdata-1">interpolateSignal(matInterpolationMatrix, vecMeasurementData)<a href="#interpolatesignalmatinterpolationmatrix-vecmeasurementdata-1" class="hash-link" aria-label="Direct link to interpolateSignal(matInterpolationMatrix, vecMeasurementData)" title="Direct link to interpolateSignal(matInterpolationMatrix, vecMeasurementData)" translate="no">​</a></h3>
 <p>interpolateSignal Interpolates sensor data using the weight matrix (reference version).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>matInterpolationMatrix</strong> : <em>const Eigen::SparseMatrix&lt; float &gt; &amp;</em>
+Weight matrix (nVertices x nSensors).</p>
+</li>
+<li class="">
+<p><strong>vecMeasurementData</strong> : <em>const Eigen::VectorXf &amp;</em>
+Sensor values (nSensors).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::VectorXf</em> — Interpolated vertex values, or an empty vector on dimension mismatch.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lineardin">linear(dIn)<a href="#lineardin" class="hash-link" aria-label="Direct link to linear(dIn)" title="Direct link to linear(dIn)" translate="no">​</a></h3>
 <p>linear Identity interpolation function.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>dIn</strong> : <em>const double</em>
+Input distance.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — dIn unchanged.</li>
+</ul>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gaussiandin">gaussian(dIn)<a href="#gaussiandin" class="hash-link" aria-label="Direct link to gaussian(dIn)" title="Direct link to gaussian(dIn)" translate="no">  ​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gaussiandin">gaussian(dIn)<a href="#gaussiandin" class="hash-link" aria-label="Direct link to gaussian(dIn)" title="Direct link to gaussian(dIn)" translate="no">​</a></h3>
 <p>gaussian Gaussian interpolation function (sigma=1).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>dIn</strong> : <em>const double</em>
+Input distance.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — exp(-dIn^2 / 2).</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="squaredin">square(dIn)<a href="#squaredin" class="hash-link" aria-label="Direct link to square(dIn)" title="Direct link to square(dIn)" translate="no">​</a></h3>
 <p>square Negative parabola interpolation function with y-offset of 1.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>dIn</strong> : <em>const double</em>
+Input distance.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — max(1 - dIn^2 / 9, 0).</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cubicdin">cubic(dIn)<a href="#cubicdin" class="hash-link" aria-label="Direct link to cubic(dIn)" title="Direct link to cubic(dIn)" translate="no">​</a></h3>
 <p>cubic Cubic hyperbola interpolation function.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>dIn</strong> : <em>const double</em>
+Input distance.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — dIn^3.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::FrequencySpectrumDelegate | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/frequency-spectrum-delegate"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::FrequencySpectrumDelegate | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/frequency-spectrum-delegate"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/frequency-spectrum-delegate" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/frequency-spectrum-delegate" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"FrequencySpectrumDelegate","item":"https://mne-cpp.github.io/dev/docs/api/disp/frequency-spectrum-delegate"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -25,15 +25,22 @@
 <p>Creates a new abstract item delegate with the given parent.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>parent</strong> : *QObject **
-Parent of the delegate.</li>
+<li class="">
+<p><strong>m_pTableView</strong> : *QTableView **
+Table view the delegate paints into.</p>
+</li>
+<li class="">
+<p><strong>parent</strong> : *QObject **
+Parent of the delegate.</p>
+</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscaletypescaletype">setScaleType(ScaleType)<a href="#setscaletypescaletype" class="hash-link" aria-label="Direct link to setScaleType(ScaleType)" title="Direct link to setScaleType(ScaleType)" translate="no">​</a></h3>
 <p>Set scale type.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>ScaleType.</strong></li>
+<li class=""><strong>ScaleType</strong> : <em>qint8</em>
+Frequency axis scale type.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paintpainter-option-index">paint(painter, option, index)<a href="#paintpainter-option-index" class="hash-link" aria-label="Direct link to paint(painter, option, index)" title="Direct link to paint(painter, option, index)" translate="no">​</a></h3>
@@ -67,6 +74,10 @@ Describes the parameters used to draw an item in a view widget.</p>
 <p><strong>index</strong> : <em>const QModelIndex &amp;</em>
 Used to locate data in a data model.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QSize</em> — 20 pixels wide by the row height for column 0, an invalid QSize otherwise.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rcvmouselocrow-x-y-visrect">rcvMouseLoc(row, x, y, visRect)<a href="#rcvmouselocrow-x-y-visrect" class="hash-link" aria-label="Direct link to rcvMouseLoc(row, x, y, visRect)" title="Direct link to rcvMouseLoc(row, x, y, visRect)" translate="no">​</a></h3>

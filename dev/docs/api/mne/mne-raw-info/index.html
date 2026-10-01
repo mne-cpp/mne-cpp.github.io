@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNERawInfo | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-raw-info"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNERawInfo | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-raw-info"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-raw-info" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-raw-info" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNERawInfo","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-raw-info"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -130,6 +130,49 @@ Measurement start time. Populated from FIFF_MEAS_DATE if present; otherwise from
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_meas_infostream-node-id-nchan-sfreq-highpass-lowpass-chp-trans">get_meas_info(stream, node, id, nchan, sfreq, highpass, lowpass, chp, trans)<a href="#get_meas_infostream-node-id-nchan-sfreq-highpass-lowpass-chp-trans" class="hash-link" aria-label="Direct link to get_meas_info(stream, node, id, nchan, sfreq, highpass, lowpass, chp, trans)" title="Direct link to get_meas_info(stream, node, id, nchan, sfreq, highpass, lowpass, chp, trans)" translate="no">​</a></h3>
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Overload that does not return the measurement start time.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>stream</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-stream">FIFFLIB::FiffStream</a>::SPtr &amp;</em>
+Open FIFF stream to read tags from.</p>
+</li>
+<li class="">
+<p><strong>node</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dir-node">FIFFLIB::FiffDirNode</a>::SPtr &amp;</em>
+Starting directory node (typically the raw data node).</p>
+</li>
+<li class="">
+<p><strong>id</strong> : <em>std::unique_ptr&lt; <a class="" href="/dev/docs/api/fiff/fiff-id">FiffId</a> &gt; &amp;</em>
+Measurement ID (managed via unique_ptr). Reset if absent.</p>
+</li>
+<li class="">
+<p><strong>nchan</strong> : *int **
+Number of channels.</p>
+</li>
+<li class="">
+<p><strong>sfreq</strong> : *float **
+Sampling frequency in Hz.</p>
+</li>
+<li class="">
+<p><strong>highpass</strong> : *float **
+Highpass filter cutoff frequency in Hz.</p>
+</li>
+<li class="">
+<p><strong>lowpass</strong> : *float **
+Lowpass filter cutoff frequency in Hz.</p>
+</li>
+<li class="">
+<p><strong>chp</strong> : <em>QList&lt; <a class="" href="/dev/docs/api/fiff/fiff-ch-info">FiffChInfo</a> &gt; &amp;</em>
+List of channel information structures, one per channel.</p>
+</li>
+<li class="">
+<p><strong>trans</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-coord-trans">FiffCoordTrans</a> &amp;</em>
+Device-to-head coordinate transformation.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — 0 on success, -1 on failure.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="loadname-allow_maxshield-infop">load(name, allow_maxshield, infop)<a href="#loadname-allow_maxshield-infop" class="hash-link" aria-label="Direct link to load(name, allow_maxshield, infop)" title="Direct link to load(name, allow_maxshield, infop)" translate="no">​</a></h3>
 <p>Loads raw data information from a FIFF file.</p>

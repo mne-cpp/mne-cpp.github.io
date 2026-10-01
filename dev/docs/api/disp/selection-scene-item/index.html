@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::SelectionSceneItem | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene-item"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::SelectionSceneItem | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene-item"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene-item" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/selection-scene-item" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"SelectionSceneItem","item":"https://mne-cpp.github.io/dev/docs/api/disp/selection-scene-item"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -22,13 +22,63 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selectionsceneitemchannelname-channelnumber-channelposition-channelkind-channelunit-channelcolor-bisbadchannel">SelectionSceneItem(channelName, channelNumber, channelPosition, channelKind, channelUnit, channelColor, bIsBadChannel)<a href="#selectionsceneitemchannelname-channelnumber-channelposition-channelkind-channelunit-channelcolor-bisbadchannel" class="hash-link" aria-label="Direct link to SelectionSceneItem(channelName, channelNumber, channelPosition, channelKind, channelUnit, channelColor, bIsBadChannel)" title="Direct link to SelectionSceneItem(channelName, channelNumber, channelPosition, channelKind, channelUnit, channelColor, bIsBadChannel)" translate="no">​</a></h3>
 <p>Constructs a <a class="" href="/dev/docs/api/disp/selection-scene-item"><code>SelectionSceneItem</code></a>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>channelName</strong> : <em>QString</em>
+Name of the channel shown by this item.</p>
+</li>
+<li class="">
+<p><strong>channelNumber</strong> : <em>int</em>
+Index of the channel in the measurement info.</p>
+</li>
+<li class="">
+<p><strong>channelPosition</strong> : <em>QPointF</em>
+2-D layout position (scaled by 10 when painted).</p>
+</li>
+<li class="">
+<p><strong>channelKind</strong> : <em>int</em>
+FIFF channel kind (e.g. FIFFV_MEG_CH).</p>
+</li>
+<li class="">
+<p><strong>channelUnit</strong> : <em>int</em>
+FIFF unit of the channel data.</p>
+</li>
+<li class="">
+<p><strong>channelColor</strong> : <em>QColor</em>
+Fill colour of the electrode marker (default Qt::blue).</p>
+</li>
+<li class="">
+<p><strong>bIsBadChannel</strong> : <em>bool</em>
+True to paint the channel as bad (red) (default false).</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="boundingrect">boundingRect()<a href="#boundingrect" class="hash-link" aria-label="Direct link to boundingRect()" title="Direct link to boundingRect()" translate="no">​</a></h3>
 <p>Returns the bounding rect of the electrode item.</p>
 <p>This rect describes the area which the item uses to plot in.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QRectF</em> — Fixed 50 x 50 rectangle with top-left corner at (-25, -30) in item coordinates.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="paintpainter-option-widget">paint(painter, option, widget)<a href="#paintpainter-option-widget" class="hash-link" aria-label="Direct link to paint(painter, option, widget)" title="Direct link to paint(painter, option, widget)" translate="no">​</a></h3>
 <p>Reimplemented paint function.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>painter</strong> : *QPainter **
+Painter used to draw the electrode marker and label.</p>
+</li>
+<li class="">
+<p><strong>option</strong> : *const QStyleOptionGraphicsItem **
+Style options (unused).</p>
+</li>
+<li class="">
+<p><strong>widget</strong> : *QWidget **
+Widget being painted on (unused).</p>
+</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

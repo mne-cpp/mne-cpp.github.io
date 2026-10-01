@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::FilterDesignView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/filter-design-view"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::FilterDesignView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/filter-design-view"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/filter-design-view" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/filter-design-view" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"FilterDesignView","item":"https://mne-cpp.github.io/dev/docs/api/disp/filter-design-view"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -25,8 +25,18 @@
 <p>Constructs a <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> dialog which is a child of parent.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>parent</strong> : *QWidget **
-pointer to parent widget; If parent is 0, the new <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> becomes a window. If parent is another widget, <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> becomes a child window inside parent. <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> is deleted when its parent is deleted.</li>
+<li class="">
+<p><strong>sSettingsPath</strong> : <em>const QString &amp;</em>
+Settings path under which the widget persists its state (empty = no persistence).</p>
+</li>
+<li class="">
+<p><strong>parent</strong> : *QWidget **
+pointer to parent widget; If parent is 0, the new <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> becomes a window. If parent is another widget, <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> becomes a child window inside parent. <a class="" href="/dev/docs/api/disp/filter-design-view"><code>FilterDesignView</code></a> is deleted when its parent is deleted.</p>
+</li>
+<li class="">
+<p><strong>f</strong> : <em>Qt::WindowFlags</em>
+Qt window flags passed to the QWidget constructor.</p>
+</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="filterdesignview-1">~FilterDesignView()<a href="#filterdesignview-1" class="hash-link" aria-label="Direct link to ~FilterDesignView()" title="Direct link to ~FilterDesignView()" translate="no">​</a></h3>
@@ -122,6 +132,11 @@ The new channel type to be filtered.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="guistylechangedstyle">guiStyleChanged(style)<a href="#guistylechangedstyle" class="hash-link" aria-label="Direct link to guiStyleChanged(style)" title="Direct link to guiStyleChanged(style)" translate="no">​</a></h3>
 <p>Process the event of style mode change in an upper class.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>style</strong> : <em><a class="" href="/dev/docs/api/disp/abstract-view">DISPLIB::AbstractView</a>::StyleMode</em>
+New style mode (unused; the filter plot is simply redrawn).</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

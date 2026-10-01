@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::LayoutLoader | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/layout-loader"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::LayoutLoader | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/layout-loader"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/layout-loader" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/layout-loader" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"LayoutLoader","item":"https://mne-cpp.github.io/dev/docs/api/utils/layout-loader"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -28,12 +28,20 @@
 holds the file path of the elc file which is to be read.</p>
 </li>
 <li class="">
+<p><strong>channelNames</strong> : <em>QStringList &amp;</em>
+Receives the channel names.</p>
+</li>
+<li class="">
 <p><strong>location3D</strong> : <em>QList&lt; QVector&lt; float &gt; &gt; &amp;</em>
 holds the vector to which the read 3D positions are stored.</p>
 </li>
 <li class="">
 <p><strong>location2D</strong> : <em>QList&lt; QVector&lt; float &gt; &gt; &amp;</em>
 holds the vector to which the read 2D positions are stored.</p>
+</li>
+<li class="">
+<p><strong>unit</strong> : <em>QString &amp;</em>
+Receives the unit of the positions.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -50,12 +58,20 @@ holds the vector to which the read 2D positions are stored.</p>
 holds the file path of the elc file which is to be read.</p>
 </li>
 <li class="">
+<p><strong>channelNames</strong> : <em>std::vector&lt; std::string &gt; &amp;</em>
+Receives the channel names.</p>
+</li>
+<li class="">
 <p><strong>location3D</strong> : <em>std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</em>
 holds the vector to which the read 3D positions are stored.</p>
 </li>
 <li class="">
 <p><strong>location2D</strong> : <em>std::vector&lt; std::vector&lt; float &gt; &gt; &amp;</em>
 holds the vector to which the read 2D positions are stored.</p>
+</li>
+<li class="">
+<p><strong>unit</strong> : <em>std::string &amp;</em>
+Receives the unit of the positions.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -72,8 +88,8 @@ holds the vector to which the read 2D positions are stored.</p>
 holds the file path of the lout file which is to be read.</p>
 </li>
 <li class="">
-<p><strong>channel</strong>
-data holds the x,y and channel number for every channel. The map keys are the channel names (i.e. &#x27;MEG 0113&#x27;).</p>
+<p><strong>channelData</strong> : <em>QMap&lt; QString, QPointF &gt; &amp;</em>
+holds the x,y and channel number for every channel. The map keys are the channel names (i.e. &#x27;MEG 0113&#x27;).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -90,8 +106,8 @@ data holds the x,y and channel number for every channel. The map keys are the ch
 holds the file path of the lout file which is to be read.</p>
 </li>
 <li class="">
-<p><strong>channel</strong>
-data holds the x,y and channel number for every channel. The map keys are the channel names (i.e. &#x27;MEG 0113&#x27;).</p>
+<p><strong>channelData</strong> : <em>QMap&lt; std::string, QPointF &gt; &amp;</em>
+holds the x,y and channel number for every channel. The map keys are the channel names (i.e. &#x27;MEG 0113&#x27;).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNEForwardSolution | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-forward-solution"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNEForwardSolution | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-forward-solution"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-forward-solution" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-forward-solution" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNEForwardSolution","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-forward-solution"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -76,9 +76,23 @@ If true bads are also read; default = false (optional).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mneforwardsolutionother">MNEForwardSolution(other)<a href="#mneforwardsolutionother" class="hash-link" aria-label="Direct link to MNEForwardSolution(other)" title="Direct link to MNEForwardSolution(other)" translate="no">​</a></h3>
 <p>Move constructs an <a class="" href="/dev/docs/api/mne/mne-forward-solution"><code>MNEForwardSolution</code></a>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>other</strong> : <em>MNEForwardSolution &amp;&amp;</em>
+Forward solution to move from; left in a valid but unspecified state.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operatorother-1">operator=(other)<a href="#operatorother-1" class="hash-link" aria-label="Direct link to operator=(other)" title="Direct link to operator=(other)" translate="no">​</a></h3>
 <p>Move assignment operator.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>other</strong> : <em><a class="" href="/dev/docs/api/mne/mne-forward-solution">MNEForwardSolution</a> &amp;&amp;</em>
+Forward solution to move from; left in a valid but unspecified state.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/mne/mne-forward-solution">MNEForwardSolution</a> &amp;</em> — Reference to this object.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mneforwardsolution-2">~MNEForwardSolution()<a href="#mneforwardsolution-2" class="hash-link" aria-label="Direct link to ~MNEForwardSolution()" title="Direct link to ~MNEForwardSolution()" translate="no">​</a></h3>
 <p>Destroys the <a class="" href="/dev/docs/api/mne/mne-forward-solution"><code>MNEForwardSolution</code></a>.</p>
@@ -104,10 +118,12 @@ Maximal cluster size per roi.</p>
 The cluster operator.</p>
 </li>
 <li class="">
-<p><strong>p_pNoise_cov.</strong></p>
+<p><strong>p_pNoise_cov</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-cov">FiffCov</a> &amp;</em>
+Noise covariance used to whiten the gain matrix before clustering (optional).</p>
 </li>
 <li class="">
-<p><strong>p_pInfo.</strong></p>
+<p><strong>p_pInfo</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-info">FiffInfo</a> &amp;</em>
+Measurement info matching the noise covariance (optional).</p>
 </li>
 <li class="">
 <p><strong>p_sMethod</strong> : <em>QString</em>
@@ -227,7 +243,7 @@ The noise covariance matrix.</p>
 Calculate pca or not.</p>
 </li>
 <li class="">
-<p><strong>ch_names</strong>
+<p><strong>p_outFwdInfo</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-info">FiffInfo</a> &amp;</em>
 Selected channel names.</p>
 </li>
 <li class="">

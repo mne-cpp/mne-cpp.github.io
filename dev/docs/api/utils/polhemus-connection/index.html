@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::PolhemusConnection | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-connection"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::PolhemusConnection | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-connection"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-connection" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-connection" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"PolhemusConnection","item":"https://mne-cpp.github.io/dev/docs/api/utils/polhemus-connection"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -37,6 +37,10 @@ Empty → mock backend. Non-empty → hardware backend.</p>
 Serial transport configuration; ignored by the mock backend.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if connected (or already connected), false if the backend failed to open.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="close">close()<a href="#close" class="hash-link" aria-label="Direct link to close()" title="Direct link to close()" translate="no">​</a></h3>
 <p>Close the active connection.</p>
@@ -50,10 +54,18 @@ Serial transport configuration; ignored by the mock backend.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="availableports">availablePorts()<a href="#availableports" class="hash-link" aria-label="Direct link to availablePorts()" title="Direct link to availablePorts()" translate="no">​</a></h3>
 <p>Enumerate every serial port currently visible to the OS.</p>
 <p>Convenience wrapper around <code>QSerialPortInfo::availablePorts</code> that returns just the system port names (e.g. <code>/dev/cu.usbserial-AB0</code>, <code>COM3</code>) so callers can populate a combo box without pulling in <code>QSerialPortInfo</code> themselves.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QStringList</em> — System port names of all visible serial ports; empty if none.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="autodetectportname">autoDetectPortName()<a href="#autodetectportname" class="hash-link" aria-label="Direct link to autoDetectPortName()" title="Direct link to autoDetectPortName()" translate="no">​</a></h3>
 <p>Best-effort auto-detection of an attached Fastrak/FastSCAN.</p>
 <p>Polhemus Fastrak/FastSCAN units ship with an FTDI USB-serial bridge (vendor id 0x0F44 for newer Polhemus-branded units, 0x0403 for the generic FTDI chip used in older units). This scan returns the first matching port name, or an empty string if no candidate is found.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QString</em> — Port name of a Polhemus-vendor port, else the first FTDI port, else an empty string.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

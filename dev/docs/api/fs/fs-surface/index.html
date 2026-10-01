@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FSLIB::FsSurface | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fs/fs-surface"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FSLIB::FsSurface | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FreeSurfer Library"><meta data-rh="true" property="og:description" content="Namespace FreeSurfer Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fs/fs-surface"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fs/fs-surface" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fs/fs-surface" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FreeSurfer Library","item":"https://mne-cpp.github.io/dev/docs/api/fs/"},{"@type":"ListItem","position":2,"name":"FsSurface","item":"https://mne-cpp.github.io/dev/docs/api/fs/fs-surface"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -69,10 +69,6 @@ Which hemisphere to load {0 -&gt; lh, 1 -&gt; rh}.</p>
 <p><strong>surf</strong> : <em>const QString &amp;</em>
 Name of the surface to load (eg. inflated, orig ...).</p>
 </li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class="">true if read sucessful, false otherwise.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fssurface-2">~FsSurface()<a href="#fssurface-2" class="hash-link" aria-label="Direct link to ~FsSurface()" title="Direct link to ~FsSurface()" translate="no">​</a></h3>
@@ -251,6 +247,11 @@ True if the curvature should be read (optional, default = true).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_curvp_sfilename">read_curv(p_sFileName)<a href="#read_curvp_sfilename" class="hash-link" aria-label="Direct link to read_curv(p_sFileName)" title="Direct link to read_curv(p_sFileName)" translate="no">​</a></h3>
 <p>reads a binary curvature file into a vector</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_sFileName</strong> : <em>const QString &amp;</em>
+Path to the FreeSurfer curvature file (e.g. lh.curv).</li>
+</ul>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>Eigen::VectorXf</em> — the read curvature.</li>

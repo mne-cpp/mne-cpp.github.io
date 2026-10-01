@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::ChannelDataView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/channel-data-view"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::ChannelDataView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-data-view"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-data-view" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-data-view" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ChannelDataView","item":"https://mne-cpp.github.io/dev/docs/api/disp/channel-data-view"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -54,7 +54,7 @@ Shared pointer to FiffInfo.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>data</strong>
+<p><strong>matData</strong> : <em>const Eigen::MatrixXd &amp;</em>
 Channels × samples matrix.</p>
 </li>
 <li class="">
@@ -67,7 +67,7 @@ Absolute sample index of column 0.</p>
 <p>Append new samples (real-time streaming use-case).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>data</strong>
+<li class=""><strong>matData</strong> : <em>const Eigen::MatrixXd &amp;</em>
 Channels × new-samples matrix.</li>
 </ul>
 <hr>
@@ -96,6 +96,10 @@ Duration of the visible window.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="windowsize">windowSize()<a href="#windowsize" class="hash-link" aria-label="Direct link to windowSize()" title="Direct link to windowSize()" translate="no">​</a></h3>
 <p>Get the current visible time window in seconds.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Visible window duration in seconds.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setzoomfactor">setZoom(factor)<a href="#setzoomfactor" class="hash-link" aria-label="Direct link to setZoom(factor)" title="Direct link to setZoom(factor)" translate="no">​</a></h3>
 <p>Set the zoom factor (&gt; 1 = zoom in, &lt; 1 = zoom out relative to default).</p>
@@ -107,6 +111,10 @@ Zoom multiplier applied to the default samples-per-pixel.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zoom">zoom()<a href="#zoom" class="hash-link" aria-label="Direct link to zoom()" title="Direct link to zoom()" translate="no">​</a></h3>
 <p>Return the current zoom factor.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>double</em> — Zoom multiplier relative to the default samples-per-pixel (at least 0.001).</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbackgroundcolorcolor">setBackgroundColor(color)<a href="#setbackgroundcolorcolor" class="hash-link" aria-label="Direct link to setBackgroundColor(color)" title="Direct link to setBackgroundColor(color)" translate="no">​</a></h3>
 <p>Set the background colour of the rendering surface.</p>
@@ -234,6 +242,11 @@ List of AnnotationSpan objects.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationselectionenabledenabled">setAnnotationSelectionEnabled(enabled)<a href="#setannotationselectionenabledenabled" class="hash-link" aria-label="Direct link to setAnnotationSelectionEnabled(enabled)" title="Direct link to setAnnotationSelectionEnabled(enabled)" translate="no">​</a></h3>
 <p>Enable or disable annotation span selection in the raw browser.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to allow selecting annotation spans with the mouse.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seteventsvisiblevisible">setEventsVisible(visible)<a href="#seteventsvisiblevisible" class="hash-link" aria-label="Direct link to setEventsVisible(visible)" title="Direct link to setEventsVisible(visible)" translate="no">​</a></h3>
 <hr>
@@ -257,16 +270,31 @@ List of AnnotationSpan objects.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcrosshairenabledenabled">setCrosshairEnabled(enabled)<a href="#setcrosshairenabledenabled" class="hash-link" aria-label="Direct link to setCrosshairEnabled(enabled)" title="Direct link to setCrosshairEnabled(enabled)" translate="no">​</a></h3>
 <p>Enable or disable the crosshair cursor with coordinate readout.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to show the crosshair and its time/amplitude readout.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crosshairenabled">crosshairEnabled()<a href="#crosshairenabled" class="hash-link" aria-label="Direct link to crosshairEnabled()" title="Direct link to crosshairEnabled()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscalebarsvisiblevisible">setScalebarsVisible(visible)<a href="#setscalebarsvisiblevisible" class="hash-link" aria-label="Direct link to setScalebarsVisible(visible)" title="Direct link to setScalebarsVisible(visible)" translate="no">​</a></h3>
 <p>Show or hide per-channel-type amplitude scalebars.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw the scalebars.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scalebarsvisible">scalebarsVisible()<a href="#scalebarsvisible" class="hash-link" aria-label="Direct link to scalebarsVisible()" title="Direct link to scalebarsVisible()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbutterflymodeenabled">setButterflyMode(enabled)<a href="#setbutterflymodeenabled" class="hash-link" aria-label="Direct link to setButterflyMode(enabled)" title="Direct link to setButterflyMode(enabled)" translate="no">​</a></h3>
 <p>Toggle butterfly mode (overlay all same-type channels).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to overlay channels of the same type in one lane.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="butterflymode">butterflyMode()<a href="#butterflymode" class="hash-link" aria-label="Direct link to butterflyMode()" title="Direct link to butterflyMode()" translate="no">​</a></h3>
 <hr>
@@ -275,6 +303,11 @@ List of AnnotationSpan objects.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setclocktimeformatuseclock">setClockTimeFormat(useClock)<a href="#setclocktimeformatuseclock" class="hash-link" aria-label="Direct link to setClockTimeFormat(useClock)" title="Direct link to setClockTimeFormat(useClock)" translate="no">​</a></h3>
 <p>Set clock time format on the ruler.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>useClock</strong> : <em>bool</em>
+True for HH:MM<!-- -->:SS<!-- --> clock time, false for float seconds.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clocktimeformat">clockTimeFormat()<a href="#clocktimeformat" class="hash-link" aria-label="Direct link to clockTimeFormat()" title="Direct link to clockTimeFormat()" translate="no">​</a></h3>
 <hr>
@@ -289,11 +322,19 @@ List of AnnotationSpan objects.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="firstvisiblesample">firstVisibleSample()<a href="#firstvisiblesample" class="hash-link" aria-label="Direct link to firstVisibleSample()" title="Direct link to firstVisibleSample()" translate="no">​</a></h3>
 <p>Returns the first currently visible sample.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Absolute index of the first visible sample, or 0 if no render view exists.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblesamplecount">visibleSampleCount()<a href="#visiblesamplecount" class="hash-link" aria-label="Direct link to visibleSampleCount()" title="Direct link to visibleSampleCount()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="signalviewportrect">signalViewportRect()<a href="#signalviewportrect" class="hash-link" aria-label="Direct link to signalViewportRect()" title="Direct link to signalViewportRect()" translate="no">​</a></h3>
 <p>Returns the geometry of the actual QRHI signal viewport in ChannelDataView-local coordinates.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QRect</em> — Viewport rectangle, or a null QRect if no render view exists.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sampletoviewportxsample">sampleToViewportX(sample)<a href="#sampletoviewportxsample" class="hash-link" aria-label="Direct link to sampleToViewportX(sample)" title="Direct link to sampleToViewportX(sample)" translate="no">​</a></h3>
 <p>Maps an absolute sample index to an x coordinate inside the signal viewport.</p>
@@ -322,6 +363,10 @@ ChannelDataView-local x coordinate.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="model">model()<a href="#model" class="hash-link" aria-label="Direct link to model()" title="Direct link to model()" translate="no">​</a></h3>
 <p>Returns the underlying data model (non-owning pointer).</p>
 <p>Use for advanced configuration such as setMaxStoredSamples().</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class="">*<a class="" href="/dev/docs/api/disp/channel-data-model">ChannelDataModel</a> ** — Non-owning pointer to the <a class="" href="/dev/docs/api/disp/channel-data-model"><code>ChannelDataModel</code></a>.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

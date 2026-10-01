@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::RtFiffRawViewModel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::RtFiffRawViewModel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"RtFiffRawViewModel","item":"https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -271,7 +271,7 @@ The current state of teh SPHARA tool.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>sSystemType</strong>
+<p><strong>sSytemType</strong> : <em>const QString &amp;</em>
 The current acquisition system type (VectorView, BabyMEG, EEG).</p>
 </li>
 <li class="">
@@ -329,12 +329,12 @@ the channel names which are to be filtered.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>chlist</strong>
+<p><strong>ch</strong> : <em>QModelIndex</em>
 index that is selected for marking.</p>
 </li>
 <li class="">
 <p><strong>status</strong> : <em>bool</em>
--&gt; mark as bad, status=0 -&gt; mark as good.</p>
+Mark as bad when true, as good when false.</p>
 </li>
 </ul>
 <hr>
@@ -348,7 +348,7 @@ is the list of indices that are selected for marking.</p>
 </li>
 <li class="">
 <p><strong>status</strong> : <em>bool</em>
--&gt; mark as bad, status=0 -&gt; mark as good.</p>
+Mark as bad when true, as good when false.</p>
 </li>
 </ul>
 <hr>
@@ -361,7 +361,7 @@ is the list of indices that are selected for marking.</p>
 color for each trigger channel.</p>
 </li>
 <li class="">
-<p><strong>activ</strong>
+<p><strong>active</strong> : <em>bool</em>
 real time trigger detection active.</p>
 </li>
 <li class="">
@@ -481,8 +481,8 @@ the new distance for the time spacers.</li>
 <p>range value in <a class="" href="/dev/docs/api/fiff/fiff-ch-info">FiffChInfo</a> does not seem to contain a reasonable value</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>Row</strong>
-of the model</li>
+<li class=""><strong>row</strong> : <em>int</em>
+Row of the model.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
@@ -493,9 +493,8 @@ of the model</li>
 <p>Adds event based on input parameters.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class="">
-<hr>
-</li>
+<li class=""><strong>iSample</strong> : <em>int</em>
+Sample of the new event.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="geteventstodisplayibegin-iend">getEventsToDisplay(iBegin, iEnd)<a href="#geteventstodisplayibegin-iend" class="hash-link" aria-label="Direct link to getEventsToDisplay(iBegin, iEnd)" title="Direct link to getEventsToDisplay(iBegin, iEnd)" translate="no">​</a></h3>

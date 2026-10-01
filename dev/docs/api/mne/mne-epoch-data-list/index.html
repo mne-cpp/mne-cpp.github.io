@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNEEpochDataList | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-epoch-data-list"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNEEpochDataList | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-epoch-data-list"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-epoch-data-list" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-epoch-data-list" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNEEpochDataList","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-epoch-data-list"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -33,7 +33,7 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>info</strong>
+<p><strong>p_info</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-info">FiffInfo</a> &amp;</em>
 measurement info.</p>
 </li>
 <li class="">
@@ -52,6 +52,10 @@ Which epochs should be averaged (optional).</p>
 <p><strong>proj</strong> : <em>bool</em>
 Apply SSP projection vectors (optional, default = false).</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-evoked">FiffEvoked</a></em> — Averaged evoked response; aspect_kind is FIFFV_ASPECT_STD_ERR with no data if the list is empty.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applybaselinecorrectionbaseline">applyBaselineCorrection(baseline)<a href="#applybaselinecorrectionbaseline" class="hash-link" aria-label="Direct link to applyBaselineCorrection(baseline)" title="Direct link to applyBaselineCorrection(baseline)" translate="no">​</a></h3>
@@ -99,6 +103,10 @@ The end time relative to the event in seconds.</p>
 The event kind.</p>
 </li>
 <li class="">
+<p><strong>mapReject</strong> : <em>const QMap&lt; QString, double &gt; &amp;</em>
+Peak-to-peak rejection thresholds per channel type (e.g. &quot;grad&quot;, &quot;mag&quot;, &quot;eeg&quot;).</p>
+</li>
+<li class="">
 <p><strong>lExcludeChs</strong> : <em>const QStringList &amp;</em>
 List of channel names to exclude.</p>
 </li>
@@ -106,6 +114,10 @@ List of channel names to exclude.</p>
 <p><strong>picks</strong> : <em>const Eigen::RowVectorXi &amp;</em>
 Which channels to pick.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/mne/mne-epoch-data-list">MNEEpochDataList</a></em> — List of epochs with rejection flags set; empty if no matching events are found.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="checkforartifactdata-pfiffinfo-mapreject-lexcludechs">checkForArtifact(data, pFiffInfo, mapReject, lExcludeChs)<a href="#checkforartifactdata-pfiffinfo-mapreject-lexcludechs" class="hash-link" aria-label="Direct link to checkForArtifact(data, pFiffInfo, mapReject, lExcludeChs)" title="Direct link to checkForArtifact(data, pFiffInfo, mapReject, lExcludeChs)" translate="no">​</a></h3>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNEMshDisplaySurface | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-msh-display-surface"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNEMshDisplaySurface | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-msh-display-surface"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-msh-display-surface" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-msh-display-surface" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNEMshDisplaySurface","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-msh-display-surface"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -40,10 +40,6 @@ MEG digitizer data (transformed in-place).</p>
 MRI digitizer data with fiducial locations.</p>
 </li>
 <li class="">
-<p><strong>head_surf</strong>
-The scalp surface used for ICP.</p>
-</li>
-<li class="">
 <p><strong>niter</strong> : <em>int</em>
 Number of ICP iterations.</p>
 </li>
@@ -67,21 +63,103 @@ If non-null, receives the per-axis scale factors applied.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="get_head_scaledig-mri_fid-scales">get_head_scale(dig, mri_fid, scales)<a href="#get_head_scaledig-mri_fid-scales" class="hash-link" aria-label="Direct link to get_head_scale(dig, mri_fid, scales)" title="Direct link to get_head_scale(dig, mri_fid, scales)" translate="no">​</a></h3>
 <p>Compute a uniform head scale factor by fitting spheres.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-digitizer-data">FiffDigitizerData</a> &amp;</em>
+Digitizer data; points with positive z are used for the sphere fit.</p>
+</li>
+<li class="">
+<p><strong>mri_fid</strong> : <em>const Eigen::Matrix3f &amp;</em>
+MRI fiducial locations (LPA, nasion, RPA rows), in m.</p>
+</li>
+<li class="">
+<p><strong>scales</strong> : <em>Eigen::Vector3f &amp;</em>
+Receives the per-axis scale factors (all set to 1 if a sphere fit fails).</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="discard_outlier_digitizer_pointsd-maxdist">discard_outlier_digitizer_points(d, maxdist)<a href="#discard_outlier_digitizer_pointsd-maxdist" class="hash-link" aria-label="Direct link to discard_outlier_digitizer_points(d, maxdist)" title="Direct link to discard_outlier_digitizer_points(d, maxdist)" translate="no">​</a></h3>
 <p>Mark digitizer points whose distance to the head surface exceeds maxdist.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>d</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-digitizer-data">FiffDigitizerData</a> &amp;</em>
+Digitizer data; its discard flags and distances are updated.</p>
+</li>
+<li class="">
+<p><strong>maxdist</strong> : <em>float</em>
+Maximum allowed distance to the surface, in m; cardinal and HPI points are never discarded.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Number of points discarded.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="calculate_digitizer_distancesdig-do_all-do_approx">calculate_digitizer_distances(dig, do_all, do_approx)<a href="#calculate_digitizer_distancesdig-do_all-do_approx" class="hash-link" aria-label="Direct link to calculate_digitizer_distances(dig, do_all, do_approx)" title="Direct link to calculate_digitizer_distances(dig, do_all, do_approx)" translate="no">​</a></h3>
 <p>Compute the distance from each active digitizer point to the head surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-digitizer-data">FiffDigitizerData</a> &amp;</em>
+Digitizer data; dist, closest and closest_point are updated.</p>
+</li>
+<li class="">
+<p><strong>do_all</strong> : <em>bool</em>
+If true, include inactive and discarded points.</p>
+</li>
+<li class="">
+<p><strong>do_approx</strong> : <em>bool</em>
+If true, start the closest-point search from the previously found triangles.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="iterate_alignment_oncedig-nasion_weight-nasion_mri-last_step">iterate_alignment_once(dig, nasion_weight, nasion_mri, last_step)<a href="#iterate_alignment_oncedig-nasion_weight-nasion_mri-last_step" class="hash-link" aria-label="Direct link to iterate_alignment_once(dig, nasion_weight, nasion_mri, last_step)" title="Direct link to iterate_alignment_once(dig, nasion_weight, nasion_mri, last_step)" translate="no">​</a></h3>
 <p>Perform one iteration of ICP-like alignment.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-digitizer-data">FiffDigitizerData</a> &amp;</em>
+Digitizer data; head_mri_t_adj and distances are updated.</p>
+</li>
+<li class="">
+<p><strong>nasion_weight</strong> : <em>int</em>
+Weight of the nasion point in the Procrustes fit.</p>
+</li>
+<li class="">
+<p><strong>nasion_mri</strong> : <em>const std::optional&lt; Eigen::Vector3f &gt; &amp;</em>
+Optional fixed MRI location of the nasion, in m.</p>
+</li>
+<li class="">
+<p><strong>last_step</strong> : <em>int</em>
+Non-zero if this is the final iteration (enables exact distances).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — OK on success, FAIL if no adjustable transform exists, fewer than 3 points are active, or the fit fails.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rms_digitizer_distancedig">rms_digitizer_distance(dig)<a href="#rms_digitizer_distancedig" class="hash-link" aria-label="Direct link to rms_digitizer_distance(dig)" title="Direct link to rms_digitizer_distance(dig)" translate="no">​</a></h3>
 <p>Compute the RMS distance from active digitizer points to the head surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-digitizer-data">FiffDigitizerData</a> &amp;</em>
+Digitizer data; distances are recomputed if not valid.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — RMS distance of the active, non-discarded points, in m.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scalescales">scale(scales)<a href="#scalescales" class="hash-link" aria-label="Direct link to scale(scales)" title="Direct link to scale(scales)" translate="no">​</a></h3>
 <p>Scale a display surface&#x27;s bounding box and all vertex positions.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>scales</strong> : <em>const Eigen::Vector3f &amp;</em>
+Per-axis scale factors (x, y, z).</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="decide_surface_extenttag">decide_surface_extent(tag)<a href="#decide_surface_extenttag" class="hash-link" aria-label="Direct link to decide_surface_extent(tag)" title="Direct link to decide_surface_extent(tag)" translate="no">​</a></h3>
 <p>Compute and store the axis-aligned bounding box and field-of-view radius by iterating all vertex positions.</p>

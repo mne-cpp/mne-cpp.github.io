@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::Report | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/report"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::Report | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/report"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/report" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/report" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"Report","item":"https://mne-cpp.github.io/dev/docs/api/utils/report"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -23,6 +23,11 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reportstitle">Report(sTitle)<a href="#reportstitle" class="hash-link" aria-label="Direct link to Report(sTitle)" title="Direct link to Report(sTitle)" translate="no">​</a></h3>
 <p>Construct a report with a title.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>sTitle</strong> : <em>const QString &amp;</em>
+<a class="" href="/dev/docs/api/utils/report"><code>Report</code></a> title, used for the HTML page title and main heading.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="addtextstitle-scontent">addText(sTitle, sContent)<a href="#addtextstitle-scontent" class="hash-link" aria-label="Direct link to addText(sTitle, sContent)" title="Direct link to addText(sTitle, sContent)" translate="no">​</a></h3>
 <p>Add a text section.</p>
@@ -72,12 +77,31 @@ List of (key, value) pairs.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="addcodestitle-scode">addCode(sTitle, sCode)<a href="#addcodestitle-scode" class="hash-link" aria-label="Direct link to addCode(sTitle, sCode)" title="Direct link to addCode(sTitle, sCode)" translate="no">​</a></h3>
 <p>Add a preformatted code block.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>sTitle</strong> : <em>const QString &amp;</em>
+Section title.</p>
+</li>
+<li class="">
+<p><strong>sCode</strong> : <em>const QString &amp;</em>
+Code text; it is HTML-escaped and wrapped in a preformatted block.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sectioncount">sectionCount()<a href="#sectioncount" class="hash-link" aria-label="Direct link to sectionCount()" title="Direct link to sectionCount()" translate="no">​</a></h3>
 <p>Get the number of sections.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Number of sections added so far.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tohtml">toHtml()<a href="#tohtml" class="hash-link" aria-label="Direct link to toHtml()" title="Direct link to toHtml()" translate="no">​</a></h3>
 <p>Generate the full HTML string.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QString</em> — Self-contained HTML document containing the title and all sections.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="savespath">save(sPath)<a href="#savespath" class="hash-link" aria-label="Direct link to save(sPath)" title="Direct link to save(sPath)" translate="no">​</a></h3>
 <p>Save the report to an HTML file.</p>
@@ -93,6 +117,10 @@ Output file path.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="title">title()<a href="#title" class="hash-link" aria-label="Direct link to title()" title="Direct link to title()" translate="no">​</a></h3>
 <p>Get the report title.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>const QString &amp;</em> — Title passed at construction.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

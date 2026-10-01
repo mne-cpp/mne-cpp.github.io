@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">INVLIB::InvSourceEstimate | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/inv/inv-source-estimate"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="INVLIB::InvSourceEstimate | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Inverse Library"><meta data-rh="true" property="og:description" content="Namespace Inverse Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-source-estimate"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-source-estimate" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-source-estimate" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inverse Library","item":"https://mne-cpp.github.io/dev/docs/api/inv/"},{"@type":"ListItem","position":2,"name":"InvSourceEstimate","item":"https://mne-cpp.github.io/dev/docs/api/inv/inv-source-estimate"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -31,16 +31,20 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>p_sol.</strong></p>
+<p><strong>p_sol</strong> : <em>const Eigen::MatrixXd &amp;</em>
+Source amplitudes (sources x time points).</p>
 </li>
 <li class="">
-<p><strong>p_vertices.</strong></p>
+<p><strong>p_vertices</strong> : <em>const Eigen::VectorXi &amp;</em>
+Source space vertex numbers of the rows of p_sol.</p>
 </li>
 <li class="">
-<p><strong>p_tmin.</strong></p>
+<p><strong>p_tmin</strong> : <em>float</em>
+Time of the first sample in seconds.</p>
 </li>
 <li class="">
-<p><strong>p_tstep.</strong></p>
+<p><strong>p_tstep</strong> : <em>float</em>
+Time between samples in seconds.</p>
 </li>
 </ul>
 <hr>
@@ -76,6 +80,10 @@ The start index to cut the estimate from.</p>
 Number of samples to cut from start index.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/inv/inv-source-estimate">InvSourceEstimate</a></em> — Copy of this estimate restricted to samples [start, start + n), with tmin updated accordingly.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writep_iodevice">write(p_IODevice)<a href="#writep_iodevice" class="hash-link" aria-label="Direct link to write(p_IODevice)" title="Direct link to write(p_IODevice)" translate="no">​</a></h3>
 <p>mne_write_stc_file</p>
@@ -84,6 +92,10 @@ Number of samples to cut from start index.</p>
 <ul>
 <li class=""><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
 IO device to write the stc to.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if successful, false if the device could not be opened for writing.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writehemispherepairsbasepath">writeHemispherePair(sBasePath)<a href="#writehemispherepairsbasepath" class="hash-link" aria-label="Direct link to writeHemispherePair(sBasePath)" title="Direct link to writeHemispherePair(sBasePath)" translate="no">​</a></h3>

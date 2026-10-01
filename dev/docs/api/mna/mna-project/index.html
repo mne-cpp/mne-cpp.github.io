@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNALIB::MnaProject | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mna/mna-project"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNALIB::MnaProject | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNA Library"><meta data-rh="true" property="og:description" content="Namespace MNA Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-project"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-project" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-project" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNA Library","item":"https://mne-cpp.github.io/dev/docs/api/mna/"},{"@type":"ListItem","position":2,"name":"MnaProject","item":"https://mne-cpp.github.io/dev/docs/api/mna/mna-project"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -24,16 +24,42 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tojson">toJson()<a href="#tojson" class="hash-link" aria-label="Direct link to toJson()" title="Direct link to toJson()" translate="no">​</a></h3>
 <p>Serialize to QJsonObject.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QJsonObject</em> — JSON object with all project fields, subjects, pipeline nodes and preserved extras.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tocbor">toCbor()<a href="#tocbor" class="hash-link" aria-label="Direct link to toCbor()" title="Direct link to toCbor()" translate="no">​</a></h3>
 <p>Serialize to QCborMap.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QCborMap</em> — CBOR map with all project fields, subjects, pipeline nodes and preserved extras.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromjsonjson">fromJson(json)<a href="#fromjsonjson" class="hash-link" aria-label="Direct link to fromJson(json)" title="Direct link to fromJson(json)" translate="no">​</a></h3>
 <p>Deserialize from QJsonObject.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>json</strong> : <em>const QJsonObject &amp;</em>
+JSON object as produced by <code>toJson()</code>.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/mna/mna-project">MnaProject</a></em> — The project; missing keys take default values and unknown keys go to extras.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromcborcbor">fromCbor(cbor)<a href="#fromcborcbor" class="hash-link" aria-label="Direct link to fromCbor(cbor)" title="Direct link to fromCbor(cbor)" translate="no">​</a></h3>
 <p>Deserialize from QCborMap.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>cbor</strong> : <em>const QCborMap &amp;</em>
+CBOR map as produced by <code>toCbor()</code>.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/mna/mna-project">MnaProject</a></em> — The project; missing keys take default values and unknown keys go to extras.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readpath">read(path)<a href="#readpath" class="hash-link" aria-label="Direct link to read(path)" title="Direct link to read(path)" translate="no">​</a></h3>
 <p>Read an MNA project from file.</p>

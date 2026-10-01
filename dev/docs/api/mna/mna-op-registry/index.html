@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNALIB::MnaOpRegistry | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mna/mna-op-registry"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNALIB::MnaOpRegistry | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNA Library"><meta data-rh="true" property="og:description" content="Namespace MNA Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-op-registry"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-op-registry" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mna/mna-op-registry" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNA Library","item":"https://mne-cpp.github.io/dev/docs/api/mna/"},{"@type":"ListItem","position":2,"name":"MnaOpRegistry","item":"https://mne-cpp.github.io/dev/docs/api/mna/mna-op-registry"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -21,21 +21,68 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="registeropschema">registerOp(schema)<a href="#registeropschema" class="hash-link" aria-label="Direct link to registerOp(schema)" title="Direct link to registerOp(schema)" translate="no">​</a></h3>
 <p>Register an operation schema.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>schema</strong> : <em>const <a class="" href="/dev/docs/api/mna/mna-op-schema">MnaOpSchema</a> &amp;</em>
+Schema to store; replaces any existing schema with the same opType.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hasopoptype">hasOp(opType)<a href="#hasopoptype" class="hash-link" aria-label="Direct link to hasOp(opType)" title="Direct link to hasOp(opType)" translate="no">​</a></h3>
 <p>Check if an operation type is registered.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>opType</strong> : <em>const QString &amp;</em>
+Operation type name to look up.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — true if a schema is registered for opType, false otherwise.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="schemaoptype">schema(opType)<a href="#schemaoptype" class="hash-link" aria-label="Direct link to schema(opType)" title="Direct link to schema(opType)" translate="no">​</a></h3>
 <p>Get the schema for an operation type.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>opType</strong> : <em>const QString &amp;</em>
+Operation type name to look up.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/mna/mna-op-schema">MnaOpSchema</a></em> — The registered schema, or a default-constructed schema if opType is unknown.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="registeredops">registeredOps()<a href="#registeredops" class="hash-link" aria-label="Direct link to registeredOps()" title="Direct link to registeredOps()" translate="no">​</a></h3>
 <p>List all registered operation types.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QStringList</em> — Names of all operation types that have a registered schema.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="registeropfuncoptype-func">registerOpFunc(opType, func)<a href="#registeropfuncoptype-func" class="hash-link" aria-label="Direct link to registerOpFunc(opType, func)" title="Direct link to registerOpFunc(opType, func)" translate="no">​</a></h3>
 <p>Register an implementation function for an operation type.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>opType</strong> : <em>const QString &amp;</em>
+Operation type name the function implements.</p>
+</li>
+<li class="">
+<p><strong>func</strong> : <em>OpFunc</em>
+Callback mapping inputs and attributes to outputs; replaces any existing one.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opfuncoptype">opFunc(opType)<a href="#opfuncoptype" class="hash-link" aria-label="Direct link to opFunc(opType)" title="Direct link to opFunc(opType)" translate="no">​</a></h3>
 <p>Get the implementation function for an operation type.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>opType</strong> : <em>const QString &amp;</em>
+Operation type name to look up.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>OpFunc</em> — The registered callback, or an empty <code>OpFunc</code> if none is registered.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="loadregistryfiles">loadRegistryFiles()<a href="#loadregistryfiles" class="hash-link" aria-label="Direct link to loadRegistryFiles()" title="Direct link to loadRegistryFiles()" translate="no">​</a></h3>
 <p>Load registry files from the standard resources/mna/ directory.</p>
@@ -49,7 +96,7 @@
 <p>Return op types referenced in a project that have no registered schema.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>project</strong>
+<li class=""><strong>pipelineTools</strong> : <em>const QStringList &amp;</em>
 The MNA project to check.</li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -60,6 +107,10 @@ The MNA project to check.</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="instance">instance()<a href="#instance" class="hash-link" aria-label="Direct link to instance()" title="Direct link to instance()" translate="no">​</a></h3>
 <p>Access the singleton instance.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>MnaOpRegistry &amp;</em> — Reference to the process-wide registry.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

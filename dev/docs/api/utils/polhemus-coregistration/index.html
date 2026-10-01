@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::PolhemusCoregistration | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-coregistration"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::PolhemusCoregistration | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-coregistration"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-coregistration" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/polhemus-coregistration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"PolhemusCoregistration","item":"https://mne-cpp.github.io/dev/docs/api/utils/polhemus-coregistration"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -51,6 +51,17 @@ A continuously updated device-to-world transform (from the tracker station + use
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setaxismirrormirrorx-mirrory">setAxisMirror(mirrorX, mirrorY)<a href="#setaxismirrormirrorx-mirrory" class="hash-link" aria-label="Direct link to setAxisMirror(mirrorX, mirrorY)" title="Direct link to setAxisMirror(mirrorX, mirrorY)" translate="no">​</a></h3>
 <p>Negate X and/or Y of incoming Polhemus positions.</p>
 <p>The Polhemus Fastrak coordinate system depends on the physical placement and orientation of the transmitter. When the transmitter is oriented such that its axes are mirrored relative to the expected neuroscience convention, enable the corresponding mirror flags here.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>mirrorX</strong> : <em>bool</em>
+True to negate the X coordinate of incoming positions.</p>
+</li>
+<li class="">
+<p><strong>mirrorY</strong> : <em>bool</em>
+True to negate the Y coordinate of incoming positions.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mirrorx">mirrorX()<a href="#mirrorx" class="hash-link" aria-label="Direct link to mirrorX()" title="Direct link to mirrorX()" translate="no">​</a></h3>
 <hr>
@@ -119,6 +130,10 @@ Rotation from tracker body frame to device frame.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="objectivecenterlocal">objectiveCenterLocal()<a href="#objectivecenterlocal" class="hash-link" aria-label="Direct link to objectiveCenterLocal()" title="Direct link to objectiveCenterLocal()" translate="no">​</a></h3>
 <p>Captured objective center in tracker body frame (metres).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector3D</em> — Objective center in the tracker body frame in metres; only meaningful if <code>hasObjectiveCenter()</code> is true.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="solveopticalcalibration">solveOpticalCalibration()<a href="#solveopticalcalibration" class="hash-link" aria-label="Direct link to solveOpticalCalibration()" title="Direct link to solveOpticalCalibration()" translate="no">​</a></h3>
 <p>Fit a 3D line through the focus points in tracker-local frame.</p>
@@ -131,6 +146,11 @@ Rotation from tracker body frame to device frame.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setknowntrackertoobjectivedistancemetres">setKnownTrackerToObjectiveDistance(metres)<a href="#setknowntrackertoobjectivedistancemetres" class="hash-link" aria-label="Direct link to setKnownTrackerToObjectiveDistance(metres)" title="Direct link to setKnownTrackerToObjectiveDistance(metres)" translate="no">​</a></h3>
 <p>Set the known perpendicular distance from tracker sensor to the objective center (metres).</p>
 <p>When nonzero, the solver constrains the optical center to lie at this distance from the tracker origin, vastly improving accuracy. Default: 0.200 m (~200 mm for ZEISS Kinevo). Set to 0 to disable.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>metres</strong> : <em>float</em>
+Tracker-to-objective distance in metres; 0 disables the constraint.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="knowntrackertoobjectivedistance">knownTrackerToObjectiveDistance()<a href="#knowntrackertoobjectivedistance" class="hash-link" aria-label="Direct link to knownTrackerToObjectiveDistance()" title="Direct link to knownTrackerToObjectiveDistance()" translate="no">​</a></h3>
 <hr>
@@ -142,15 +162,31 @@ Rotation from tracker body frame to device frame.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opticalaxislocal">opticalAxisLocal()<a href="#opticalaxislocal" class="hash-link" aria-label="Direct link to opticalAxisLocal()" title="Direct link to opticalAxisLocal()" translate="no">​</a></h3>
 <p>Direction of the optical axis in the tracker body frame (unit vector).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector3D</em> — Unit optical-axis direction in the tracker body frame; only meaningful if <code>opticalCalibrationValid()</code> is true.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opticalcenterlocal">opticalCenterLocal()<a href="#opticalcenterlocal" class="hash-link" aria-label="Direct link to opticalCenterLocal()" title="Direct link to opticalCenterLocal()" translate="no">​</a></h3>
 <p>Position of the optical center in the tracker body frame (metres).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector3D</em> — Optical center in the tracker body frame in metres.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opticalcalibresidualmm">opticalCalibResidualMm()<a href="#opticalcalibresidualmm" class="hash-link" aria-label="Direct link to opticalCalibResidualMm()" title="Direct link to opticalCalibResidualMm()" translate="no">​</a></h3>
 <p>RMS residual of the last optical calibration (mm).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — RMS distance of the focus points from the fitted optical axis in millimetres.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="opticalcalibdepthspreadmm">opticalCalibDepthSpreadMm()<a href="#opticalcalibdepthspreadmm" class="hash-link" aria-label="Direct link to opticalCalibDepthSpreadMm()" title="Direct link to opticalCalibDepthSpreadMm()" translate="no">​</a></h3>
 <p>Depth spread of calibration samples along the optical axis (mm).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Extent of the calibration focus points along the optical axis in millimetres.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applyopticalaxisfineadjusttargetworldpos-correctiondeg">applyOpticalAxisFineAdjust(targetWorldPos, correctionDeg)<a href="#applyopticalaxisfineadjusttargetworldpos-correctiondeg" class="hash-link" aria-label="Direct link to applyOpticalAxisFineAdjust(targetWorldPos, correctionDeg)" title="Direct link to applyOpticalAxisFineAdjust(targetWorldPos, correctionDeg)" translate="no">​</a></h3>
 <p>Fine-adjust the optical axis so it passes through a known world-frame point (e.g.</p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNESurfaceOrVolume | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-surface-or-volume"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNESurfaceOrVolume | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-surface-or-volume"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-surface-or-volume" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-surface-or-volume" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNESurfaceOrVolume","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-surface-or-volume"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -41,36 +41,16 @@
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="add_triangle_data">add_triangle_data()<a href="#add_triangle_data" class="hash-link" aria-label="Direct link to add_triangle_data()" title="Direct link to add_triangle_data()" translate="no">​</a></h3>
 <p>Populate the <a class="" href="/dev/docs/api/mne/mne-triangle"><code>MNETriangle</code></a> structures for both the full and in-use triangulations by computing edge vectors, normals, and areas.</p>
 <p>Accumulates the total surface area into tot_area.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>s</strong>
-The source space whose triangle data is filled in.</li>
-</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compute_surface_cm">compute_surface_cm()<a href="#compute_surface_cm" class="hash-link" aria-label="Direct link to compute_surface_cm()" title="Direct link to compute_surface_cm()" translate="no">​</a></h3>
 <p>Compute and store the center of mass of a surface&#x27;s vertices.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>s</strong>
-The surface whose cm field is set.</li>
-</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="calculate_vertex_distances">calculate_vertex_distances()<a href="#calculate_vertex_distances" class="hash-link" aria-label="Direct link to calculate_vertex_distances()" title="Direct link to calculate_vertex_distances()" translate="no">​</a></h3>
 <p>Compute the Euclidean distances from each vertex to its topological neighbors and store them in the vert_dist array.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>s</strong>
-The source space with neighbor_vert already set.</li>
-</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="add_vertex_normals">add_vertex_normals()<a href="#add_vertex_normals" class="hash-link" aria-label="Direct link to add_vertex_normals()" title="Direct link to add_vertex_normals()" translate="no">​</a></h3>
 <p>Compute vertex normals by area-weighted accumulation of triangle normals, then normalize to unit length.</p>
 <p>Also calls <code>add_triangle_data()</code> and <code>compute_surface_cm()</code>.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>s</strong>
-The source space to update.</li>
-</ul>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>int</em> — OK on success, FAIL on error.</li>
@@ -81,10 +61,6 @@ The source space to update.</li>
 <p>Optionally checks for topological defects (excessive number of neighbors).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class="">
-<p><strong>s</strong>
-The source space to augment.</p>
-</li>
 <li class="">
 <p><strong>do_normals</strong> : <em>bool</em>
 If non-zero, compute vertex normals.</p>
@@ -103,14 +79,8 @@ If non-zero, fail on excessive neighbor count.</p>
 <p>Convenience overload that adds geometry information with border detection disabled and excess-neighbor checking enabled.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class="">
-<p><strong>s</strong>
-The source space to augment.</p>
-</li>
-<li class="">
-<p><strong>do_normals</strong> : <em>bool</em>
-If non-zero, compute vertex normals.</p>
-</li>
+<li class=""><strong>do_normals</strong> : <em>bool</em>
+If non-zero, compute vertex normals.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
@@ -121,14 +91,8 @@ If non-zero, compute vertex normals.</p>
 <p>Add geometry information with excess-neighbor checking disabled (warns instead of failing when a vertex has too many neighbors).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class="">
-<p><strong>s</strong>
-The source space to augment.</p>
-</li>
-<li class="">
-<p><strong>do_normals</strong> : <em>bool</em>
-If non-zero, compute vertex normals.</p>
-</li>
+<li class=""><strong>do_normals</strong> : <em>bool</em>
+If non-zero, compute vertex normals.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
@@ -168,12 +132,39 @@ Distance to nearest in-use vertex for each vertex.</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointk">point(k)<a href="#pointk" class="hash-link" aria-label="Direct link to point(k)" title="Direct link to point(k)" translate="no">​</a></h3>
 <p>Return a read-only map to the k-th vertex position (3 contiguous floats).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>k</strong> : <em>int</em>
+Vertex index (0 to np - 1).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::Map&lt; const Eigen::Vector3f &gt;</em> — Read-only view of row k of rr, in m.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pointk-1">point(k)<a href="#pointk-1" class="hash-link" aria-label="Direct link to point(k)" title="Direct link to point(k)" translate="no">​</a></h3>
 <p>Return a mutable map to the k-th vertex position.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>k</strong> : <em>int</em>
+Vertex index (0 to np - 1).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::Map&lt; Eigen::Vector3f &gt;</em> — Writable view of row k of rr, in m.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="normalk">normal(k)<a href="#normalk" class="hash-link" aria-label="Direct link to normal(k)" title="Direct link to normal(k)" translate="no">​</a></h3>
 <p>Return a read-only map to the k-th vertex normal (3 contiguous floats).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>k</strong> : <em>int</em>
+Vertex index (0 to np - 1).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::Map&lt; const Eigen::Vector3f &gt;</em> — Read-only view of row k of nn (unit normal).</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="solid_anglefrom-tri">solid_angle(from, tri)<a href="#solid_anglefrom-tri" class="hash-link" aria-label="Direct link to solid_angle(from, tri)" title="Direct link to solid_angle(from, tri)" translate="no">​</a></h3>

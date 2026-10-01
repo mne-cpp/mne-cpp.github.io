@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FIFFLIB::FiffSparseMatrix | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-sparse-matrix"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::FiffSparseMatrix | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library"><meta data-rh="true" property="og:description" content="Namespace FIFF Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-sparse-matrix"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-sparse-matrix" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-sparse-matrix" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIFF Library","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"},{"@type":"ListItem","position":2,"name":"FiffSparseMatrix","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-sparse-matrix"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -38,15 +38,33 @@ FIFF storage coding (FIFFTS_MC_RCS or FIFFTS_MC_CCS).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffsparsematrixmat">FiffSparseMatrix(mat)<a href="#fiffsparsematrixmat" class="hash-link" aria-label="Direct link to FiffSparseMatrix(mat)" title="Direct link to FiffSparseMatrix(mat)" translate="no">​</a></h3>
 <p>Default copy constructor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>mat</strong> : <em>const FiffSparseMatrix &amp;</em>
+Sparse matrix to copy.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffsparsematrixmat-1">FiffSparseMatrix(mat)<a href="#fiffsparsematrixmat-1" class="hash-link" aria-label="Direct link to FiffSparseMatrix(mat)" title="Direct link to FiffSparseMatrix(mat)" translate="no">​</a></h3>
 <p>Default move constructor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>mat</strong> : <em>FiffSparseMatrix &amp;&amp;</em>
+Sparse matrix to move from; left in a valid but unspecified state.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operator">operator=()<a href="#operator" class="hash-link" aria-label="Direct link to operator=()" title="Direct link to operator=()" translate="no">​</a></h3>
 <p>Default copy-assignment operator.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-sparse-matrix">FiffSparseMatrix</a> &amp;</em> — Reference to this object.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operator-1">operator=()<a href="#operator-1" class="hash-link" aria-label="Direct link to operator=()" title="Direct link to operator=()" translate="no">​</a></h3>
 <p>Default move-assignment operator.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-sparse-matrix">FiffSparseMatrix</a> &amp;</em> — Reference to this object.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fiffsparsematrix-2">~FiffSparseMatrix()<a href="#fiffsparsematrix-2" class="hash-link" aria-label="Direct link to ~FiffSparseMatrix()" title="Direct link to ~FiffSparseMatrix()" translate="no">​</a></h3>
 <p>Default destructor.</p>
@@ -70,12 +88,24 @@ FIFF storage coding (FIFFTS_MC_RCS or FIFFTS_MC_CCS).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rows">rows()<a href="#rows" class="hash-link" aria-label="Direct link to rows()" title="Direct link to rows()" translate="no">​</a></h3>
 <p>Number of rows.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Row count of the underlying Eigen sparse matrix.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cols">cols()<a href="#cols" class="hash-link" aria-label="Direct link to cols()" title="Direct link to cols()" translate="no">​</a></h3>
 <p>Number of columns.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Column count of the underlying Eigen sparse matrix.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nonzeros">nonZeros()<a href="#nonzeros" class="hash-link" aria-label="Direct link to nonZeros()" title="Direct link to nonZeros()" translate="no">​</a></h3>
 <p>Number of stored non-zero elements.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Count of explicitly stored entries in the underlying Eigen sparse matrix.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mne_add_upper_triangle_rcs">mne_add_upper_triangle_rcs()<a href="#mne_add_upper_triangle_rcs" class="hash-link" aria-label="Direct link to mne_add_upper_triangle_rcs()" title="Direct link to mne_add_upper_triangle_rcs()" translate="no">​</a></h3>
 <p>Add the upper triangle to a lower-triangular sparse RCS matrix.</p>

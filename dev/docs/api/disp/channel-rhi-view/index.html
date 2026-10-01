@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::ChannelRhiView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/channel-rhi-view"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::ChannelRhiView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-rhi-view"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-rhi-view" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-rhi-view" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ChannelRhiView","item":"https://mne-cpp.github.io/dev/docs/api/disp/channel-rhi-view"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -68,6 +68,11 @@ List of <code>AnnotationSpan</code> objects.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationselectionenabledenabled">setAnnotationSelectionEnabled(enabled)<a href="#setannotationselectionenabledenabled" class="hash-link" aria-label="Direct link to setAnnotationSelectionEnabled(enabled)" title="Direct link to setAnnotationSelectionEnabled(enabled)" translate="no">​</a></h3>
 <p>Enable or disable annotation range selection.</p>
 <p>When enabled, Shift+drag emits sampleRangeSelected on mouse release instead of acting as a pure measurement tool.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to make Shift+drag select annotation ranges.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seteventsvisiblevisible">setEventsVisible(visible)<a href="#seteventsvisiblevisible" class="hash-link" aria-label="Direct link to setEventsVisible(visible)" title="Direct link to setEventsVisible(visible)" translate="no">​</a></h3>
 <hr>
@@ -149,9 +154,17 @@ Prefetch factor.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblefirstsample">visibleFirstSample()<a href="#visiblefirstsample" class="hash-link" aria-label="Direct link to visibleFirstSample()" title="Direct link to visibleFirstSample()" translate="no">​</a></h3>
 <p>Returns the absolute sample index currently shown at x = 0 (left edge).</p>
 <p>(Same as scrollSample rounded to int.)</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Absolute sample index at the left viewport edge.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblesamplecount">visibleSampleCount()<a href="#visiblesamplecount" class="hash-link" aria-label="Direct link to visibleSampleCount()" title="Direct link to visibleSampleCount()" translate="no">​</a></h3>
 <p>Returns the number of samples currently visible.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Widget width in pixels times samples per pixel, truncated to int.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setchannelindicesindices">setChannelIndices(indices)<a href="#setchannelindicesindices" class="hash-link" aria-label="Direct link to setChannelIndices(indices)" title="Direct link to setChannelIndices(indices)" translate="no">​</a></h3>
 <p>Restrict rendering to a specific subset of channel indices.</p>
@@ -164,6 +177,10 @@ Ordered list of model channel indices to display. Pass an empty vector to clear 
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="totallogicalchannels">totalLogicalChannels()<a href="#totallogicalchannels" class="hash-link" aria-label="Direct link to totalLogicalChannels()" title="Direct link to totalLogicalChannels()" translate="no">​</a></h3>
 <p>Total number of logical channels available for scrolling (respects active filter).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Number of channels after applying the index filter and bad-channel hiding.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfirstvisiblechannelch">setFirstVisibleChannel(ch)<a href="#setfirstvisiblechannelch" class="hash-link" aria-label="Direct link to setFirstVisibleChannel(ch)" title="Direct link to setFirstVisibleChannel(ch)" translate="no">​</a></h3>
 <p>Set the index of the first visible channel row.</p>
@@ -188,17 +205,32 @@ Number of channels to show (clamped to 1–model count).</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfrozenfrozen">setFrozen(frozen)<a href="#setfrozenfrozen" class="hash-link" aria-label="Direct link to setFrozen(frozen)" title="Direct link to setFrozen(frozen)" translate="no">​</a></h3>
 <p>Freeze or unfreeze drag-panning (mouse drag and inertia).</p>
 <p>Wheel scroll and the scrollbar remain active when frozen.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>frozen</strong> : <em>bool</em>
+True to disable drag-panning.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isfrozen">isFrozen()<a href="#isfrozen" class="hash-link" aria-label="Direct link to isFrozen()" title="Direct link to isFrozen()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setgridvisiblevisible">setGridVisible(visible)<a href="#setgridvisiblevisible" class="hash-link" aria-label="Direct link to setGridVisible(visible)" title="Direct link to setGridVisible(visible)" translate="no">​</a></h3>
 <p>Show or hide the time and amplitude grid overlay.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw the grid.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gridvisible">gridVisible()<a href="#gridvisible" class="hash-link" aria-label="Direct link to gridVisible()" title="Direct link to gridVisible()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsfreqsfreq">setSfreq(sfreq)<a href="#setsfreqsfreq" class="hash-link" aria-label="Direct link to setSfreq(sfreq)" title="Direct link to setSfreq(sfreq)" translate="no">​</a></h3>
 <p>Set the sampling frequency (Hz) used to place time-grid tick lines.</p>
 <p>Call this from <code>ChannelDataView::init()</code> after <a class="" href="/dev/docs/api/fiff/fiff-info">FiffInfo</a> is available.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>sfreq</strong> : <em>float</em>
+Sampling frequency in Hz.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfirstfilesamplefirst">setFirstFileSample(first)<a href="#setfirstfilesamplefirst" class="hash-link" aria-label="Direct link to setFirstFileSample(first)" title="Direct link to setFirstFileSample(first)" translate="no">​</a></h3>
 <p>Set the absolute sample index of the first sample in the file.</p>
@@ -249,21 +281,41 @@ true = remove bad channels from the visible trace list.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcrosshairenabledenabled">setCrosshairEnabled(enabled)<a href="#setcrosshairenabledenabled" class="hash-link" aria-label="Direct link to setCrosshairEnabled(enabled)" title="Direct link to setCrosshairEnabled(enabled)" translate="no">​</a></h3>
 <p>Enable or disable the crosshair cursor overlay.</p>
 <p>When enabled, a vertical + horizontal cross follows the mouse and the view continuously emits <code>cursorDataChanged()</code> with the time/amplitude under the cursor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to show the crosshair overlay.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crosshairenabled">crosshairEnabled()<a href="#crosshairenabled" class="hash-link" aria-label="Direct link to crosshairEnabled()" title="Direct link to crosshairEnabled()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setclocktimeformatuseclock">setClockTimeFormat(useClock)<a href="#setclocktimeformatuseclock" class="hash-link" aria-label="Direct link to setClockTimeFormat(useClock)" title="Direct link to setClockTimeFormat(useClock)" translate="no">​</a></h3>
 <p>Set whether the crosshair label uses clock time (mm<!-- -->:ss<!-- -->.ms) or seconds.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>useClock</strong> : <em>bool</em>
+True for clock time, false for float seconds.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clocktimeformat">clockTimeFormat()<a href="#clocktimeformat" class="hash-link" aria-label="Direct link to clockTimeFormat()" title="Direct link to clockTimeFormat()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscalebarsvisiblevisible">setScalebarsVisible(visible)<a href="#setscalebarsvisiblevisible" class="hash-link" aria-label="Direct link to setScalebarsVisible(visible)" title="Direct link to setScalebarsVisible(visible)" translate="no">​</a></h3>
 <p>Show or hide per-channel-type scalebars in the bottom-right corner.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw the scalebars.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scalebarsvisible">scalebarsVisible()<a href="#scalebarsvisible" class="hash-link" aria-label="Direct link to scalebarsVisible()" title="Direct link to scalebarsVisible()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbutterflymodeenabled">setButterflyMode(enabled)<a href="#setbutterflymodeenabled" class="hash-link" aria-label="Direct link to setButterflyMode(enabled)" title="Direct link to setButterflyMode(enabled)" translate="no">​</a></h3>
 <p>Toggle butterfly mode: all channels of the same type are overlaid in a single lane.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to enable butterfly mode.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="butterflymode">butterflyMode()<a href="#butterflymode" class="hash-link" aria-label="Direct link to butterflyMode()" title="Direct link to butterflyMode()" translate="no">​</a></h3>
 <hr>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::ScalingView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/scaling-view"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::ScalingView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/scaling-view"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/scaling-view" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/scaling-view" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ScalingView","item":"https://mne-cpp.github.io/dev/docs/api/disp/scaling-view"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -25,8 +25,22 @@
 <p>Constructs a <a class="" href="/dev/docs/api/disp/scaling-view"><code>ScalingView</code></a> which is a child of parent.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>parent</strong> : *QWidget **
-Parent of widget.</li>
+<li class="">
+<p><strong>sSettingsPath</strong> : <em>const QString &amp;</em>
+Settings path under which the widget persists its state (empty = no persistence).</p>
+</li>
+<li class="">
+<p><strong>parent</strong> : *QWidget **
+Parent of widget.</p>
+</li>
+<li class="">
+<p><strong>f</strong> : <em>Qt::WindowFlags</em>
+Qt window flags passed to the QWidget constructor.</p>
+</li>
+<li class="">
+<p><strong>lChannelsToShow</strong> : <em>const QStringList &amp;</em>
+Channel types to show scaling controls for (&quot;all&quot; = every type).</p>
+</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scalingview-1">~ScalingView()<a href="#scalingview-1" class="hash-link" aria-label="Direct link to ~ScalingView()" title="Direct link to ~ScalingView()" translate="no">​</a></h3>
@@ -42,6 +56,11 @@ Parent of widget.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscalemapqmapchscaling">setScaleMap(qMapChScaling)<a href="#setscalemapqmapchscaling" class="hash-link" aria-label="Direct link to setScaleMap(qMapChScaling)" title="Direct link to setScaleMap(qMapChScaling)" translate="no">​</a></h3>
 <p>Set the current scaling map.</p>
 <p>This also recreates the GUI.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>qMapChScaling</strong> : <em>const QMap&lt; qint32, float &gt; &amp;</em>
+Map from FIFF channel kind/unit key to amplitude scale.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="savesettings">saveSettings()<a href="#savesettings" class="hash-link" aria-label="Direct link to saveSettings()" title="Direct link to saveSettings()" translate="no">​</a></h3>
 <p>Saves all important settings of this view via QSettings.</p>

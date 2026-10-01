@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FWDLIB::FwdCoil | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-coil"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FWDLIB::FwdCoil | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Forward Library"><meta data-rh="true" property="og:description" content="Namespace Forward Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-coil"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-coil" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-coil" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forward Library","item":"https://mne-cpp.github.io/dev/docs/api/fwd/"},{"@type":"ListItem","position":2,"name":"FwdCoil","item":"https://mne-cpp.github.io/dev/docs/api/fwd/fwd-coil"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -21,6 +21,11 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwdcoilp_np">FwdCoil(p_np)<a href="#fwdcoilp_np" class="hash-link" aria-label="Direct link to FwdCoil(p_np)" title="Direct link to FwdCoil(p_np)" translate="no">​</a></h3>
 <p>Constructs the Forward Coil.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>p_np</strong> : <em>int</em>
+Number of integration points; rmag, cosmag and w are zero-initialized to this size.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwdcoilp_fwdcoil">FwdCoil(p_FwdCoil)<a href="#fwdcoilp_fwdcoil" class="hash-link" aria-label="Direct link to FwdCoil(p_FwdCoil)" title="Direct link to FwdCoil(p_FwdCoil)" translate="no">​</a></h3>
 <p>Copy constructor.</p>
@@ -63,9 +68,27 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="posj">pos(j)<a href="#posj" class="hash-link" aria-label="Direct link to pos(j)" title="Direct link to pos(j)" translate="no">​</a></h3>
 <p>Return a read-only map to the j-th integration point position (3 contiguous floats).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>j</strong> : <em>int</em>
+Integration point index (0 to np - 1).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::Map&lt; const Eigen::Vector3f &gt;</em> — Read-only view of row j of rmag, in m.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="dirj">dir(j)<a href="#dirj" class="hash-link" aria-label="Direct link to dir(j)" title="Direct link to dir(j)" translate="no">​</a></h3>
 <p>Return a read-only map to the j-th integration point direction cosine.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>j</strong> : <em>int</em>
+Integration point index (0 to np - 1).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::Map&lt; const Eigen::Vector3f &gt;</em> — Read-only view of row j of cosmag (unit direction vector).</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="create_eeg_elch-t">create_eeg_el(ch, t)<a href="#create_eeg_elch-t" class="hash-link" aria-label="Direct link to create_eeg_el(ch, t)" title="Direct link to create_eeg_el(ch, t)" translate="no">​</a></h3>

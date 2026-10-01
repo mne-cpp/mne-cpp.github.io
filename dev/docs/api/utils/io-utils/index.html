@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::IOUtils | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/io-utils"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::IOUtils | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/io-utils"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/io-utils" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/io-utils" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"IOUtils","item":"https://mne-cpp.github.io/dev/docs/api/utils/io-utils"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -24,6 +24,25 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_eigen_matrixin-spath-sdescription">write_eigen_matrix(in, sPath, sDescription)<a href="#write_eigen_matrixin-spath-sdescription" class="hash-link" aria-label="Direct link to write_eigen_matrix(in, sPath, sDescription)" title="Direct link to write_eigen_matrix(in, sPath, sDescription)" translate="no">​</a></h3>
 <p>Write Eigen Matrix to file (QString path).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>in</strong> : <em>const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;</em>
+Matrix to write as whitespace-separated text, one row per line.</p>
+</li>
+<li class="">
+<p><strong>sPath</strong> : <em>const QString &amp;</em>
+Path of the output file; an existing file is overwritten.</p>
+</li>
+<li class="">
+<p><strong>sDescription</strong> : <em>const QString &amp;</em>
+Optional description; if non-empty, a dimensions and description header is written.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the file could not be opened for writing.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_eigen_matrixin-spath-sdescription-1">write_eigen_matrix(in, sPath, sDescription)<a href="#write_eigen_matrixin-spath-sdescription-1" class="hash-link" aria-label="Direct link to write_eigen_matrix(in, sPath, sDescription)" title="Direct link to write_eigen_matrix(in, sPath, sDescription)" translate="no">​</a></h3>
 <hr>
@@ -31,6 +50,25 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_eigen_matrixin-spath-sdescription-3">write_eigen_matrix(in, sPath, sDescription)<a href="#write_eigen_matrixin-spath-sdescription-3" class="hash-link" aria-label="Direct link to write_eigen_matrix(in, sPath, sDescription)" title="Direct link to write_eigen_matrix(in, sPath, sDescription)" translate="no">​</a></h3>
 <p>Write Eigen Matrix to file (std::string path).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>in</strong> : <em>const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;</em>
+Matrix to write as whitespace-separated text, one row per line.</p>
+</li>
+<li class="">
+<p><strong>sPath</strong> : <em>const std::string &amp;</em>
+Path of the output file; an existing file is overwritten.</p>
+</li>
+<li class="">
+<p><strong>sDescription</strong> : <em>const std::string &amp;</em>
+Optional description; if non-empty, a dimensions and description header is written.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the file could not be opened for writing.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="write_eigen_matrixin-spath-sdescription-4">write_eigen_matrix(in, sPath, sDescription)<a href="#write_eigen_matrixin-spath-sdescription-4" class="hash-link" aria-label="Direct link to write_eigen_matrix(in, sPath, sDescription)" title="Direct link to write_eigen_matrix(in, sPath, sDescription)" translate="no">​</a></h3>
 <hr>
@@ -38,6 +76,21 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_eigen_matrixout-path">read_eigen_matrix(out, path)<a href="#read_eigen_matrixout-path" class="hash-link" aria-label="Direct link to read_eigen_matrix(out, path)" title="Direct link to read_eigen_matrix(out, path)" translate="no">​</a></h3>
 <p>Read Eigen Matrix from file (QString path).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>out</strong> : <em>Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;</em>
+Matrix resized and filled with the values read; lines containing &#x27;#&#x27; are skipped.</p>
+</li>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+Path of the whitespace-separated text file to read.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the file could not be opened.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_eigen_matrixout-path-1">read_eigen_matrix(out, path)<a href="#read_eigen_matrixout-path-1" class="hash-link" aria-label="Direct link to read_eigen_matrix(out, path)" title="Direct link to read_eigen_matrix(out, path)" translate="no">​</a></h3>
 <hr>
@@ -45,6 +98,21 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_eigen_matrixout-path-3">read_eigen_matrix(out, path)<a href="#read_eigen_matrixout-path-3" class="hash-link" aria-label="Direct link to read_eigen_matrix(out, path)" title="Direct link to read_eigen_matrix(out, path)" translate="no">​</a></h3>
 <p>Read Eigen Matrix from file (std::string path).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>out</strong> : <em>Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;</em>
+Matrix resized and filled with the values read; lines containing &#x27;#&#x27; are skipped.</p>
+</li>
+<li class="">
+<p><strong>path</strong> : <em>const std::string &amp;</em>
+Path of the whitespace-separated text file to read.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the file could not be opened.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="read_eigen_matrixout-path-4">read_eigen_matrix(out, path)<a href="#read_eigen_matrixout-path-4" class="hash-link" aria-label="Direct link to read_eigen_matrix(out, path)" title="Direct link to read_eigen_matrix(out, path)" translate="no">​</a></h3>
 <hr>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISP3DLIB::MultimodalScene | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp3-d/multimodal-scene"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISP3DLIB::MultimodalScene | MNE-CPP"><meta data-rh="true" name="description" content="Namespace 3D Display Library"><meta data-rh="true" property="og:description" content="Namespace 3D Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/multimodal-scene"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/multimodal-scene" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/multimodal-scene" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"3D Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/"},{"@type":"ListItem","position":2,"name":"MultimodalScene","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/multimodal-scene"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -74,10 +74,32 @@ Layer id.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setlayervisibleid-visible">setLayerVisible(id, visible)<a href="#setlayervisibleid-visible" class="hash-link" aria-label="Direct link to setLayerVisible(id, visible)" title="Direct link to setLayerVisible(id, visible)" translate="no">​</a></h3>
 <p>Toggle visibility of a layer.</p>
 <p>No-op if the id is unknown.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>id</strong> : <em>const QString &amp;</em>
+Layer id.</p>
+</li>
+<li class="">
+<p><strong>visible</strong> : <em>bool</em>
+True to show the layer, false to hide it.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setlayeropacityid-opacity">setLayerOpacity(id, opacity)<a href="#setlayeropacityid-opacity" class="hash-link" aria-label="Direct link to setLayerOpacity(id, opacity)" title="Direct link to setLayerOpacity(id, opacity)" translate="no">​</a></h3>
 <p>Set per-layer opacity in [0, 1].</p>
 <p>No-op if the id is unknown.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>id</strong> : <em>const QString &amp;</em>
+Layer id.</p>
+</li>
+<li class="">
+<p><strong>opacity</strong> : <em>float</em>
+Opacity, clamped to [0, 1].</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="currenttimesample">currentTimeSample()<a href="#currenttimesample" class="hash-link" aria-label="Direct link to currentTimeSample()" title="Direct link to currentTimeSample()" translate="no">​</a></h3>
 <p><strong>Returns:</strong></p>
@@ -88,6 +110,11 @@ Layer id.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcurrenttimesamplesample">setCurrentTimeSample(sample)<a href="#setcurrenttimesamplesample" class="hash-link" aria-label="Direct link to setCurrentTimeSample(sample)" title="Direct link to setCurrentTimeSample(sample)" translate="no">​</a></h3>
 <p>Set the current time index.</p>
 <p>Emits <code>timeSampleChanged</code> if it actually changes. Negative values are clamped to -1.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>sample</strong> : <em>int</em>
+New time sample index, or -1 for no time-resolved data.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="timecursor">timeCursor()<a href="#timecursor" class="hash-link" aria-label="Direct link to timeCursor()" title="Direct link to timeCursor()" translate="no">​</a></h3>
 <p><strong>Returns:</strong></p>
@@ -98,6 +125,11 @@ Layer id.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settimecursorseconds">setTimeCursor(seconds)<a href="#settimecursorseconds" class="hash-link" aria-label="Direct link to setTimeCursor(seconds)" title="Direct link to setTimeCursor(seconds)" translate="no">​</a></h3>
 <p>Set the shared time cursor in seconds.</p>
 <p>Emits <code>timeCursorChanged</code> if the value actually changes.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>seconds</strong> : <em>double</em>
+New time cursor position in seconds.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overlayfmin">overlayFmin()<a href="#overlayfmin" class="hash-link" aria-label="Direct link to overlayFmin()" title="Direct link to overlayFmin()" translate="no">​</a></h3>
 <p><strong>Returns:</strong></p>
@@ -120,6 +152,21 @@ Layer id.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setoverlaythresholdsfmin-fmid-fmax">setOverlayThresholds(fmin, fmid, fmax)<a href="#setoverlaythresholdsfmin-fmid-fmax" class="hash-link" aria-label="Direct link to setOverlayThresholds(fmin, fmid, fmax)" title="Direct link to setOverlayThresholds(fmin, fmid, fmax)" translate="no">​</a></h3>
 <p>Set the shared (fmin, fmid, fmax) overlay thresholds used by the data-driven Overlay dock and the renderables it drives.</p>
 <p>The values are clamped to fmin &lt;= fmid &lt;= fmax. Emits <code>overlayThresholdsChanged</code> if any value actually changes.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>fmin</strong> : <em>float</em>
+Minimum threshold.</p>
+</li>
+<li class="">
+<p><strong>fmid</strong> : <em>float</em>
+Mid threshold, raised to fmin if smaller.</p>
+</li>
+<li class="">
+<p><strong>fmax</strong> : <em>float</em>
+Maximum threshold, raised to fmid if smaller.</p>
+</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lastpick">lastPick()<a href="#lastpick" class="hash-link" aria-label="Direct link to lastPick()" title="Direct link to lastPick()" translate="no">​</a></h3>
 <p><strong>Returns:</strong></p>
@@ -130,16 +177,41 @@ Layer id.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reportpickpick">reportPick(pick)<a href="#reportpickpick" class="hash-link" aria-label="Direct link to reportPick(pick)" title="Direct link to reportPick(pick)" translate="no">​</a></h3>
 <p><a class="" href="/dev/docs/api/utils/report">Report</a> a pick result from a layer&#x27;s renderer or hit-tester.</p>
 <p>Emits <code>picked</code>. Used by both real ray-cast picking and synthetic picks (e.g. wizard &quot;show this contact&quot; navigation).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>pick</strong> : <em>const PickResult &amp;</em>
+Pick result to store as the last pick and broadcast.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="worldboundsbbmin-bbmax">worldBounds(bbMin, bbMax)<a href="#worldboundsbbmin-bbmax" class="hash-link" aria-label="Direct link to worldBounds(bbMin, bbMax)" title="Direct link to worldBounds(bbMin, bbMax)" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
+<p>Scene-wide axis-aligned bounding box union of all visible layers, computed by the supplied per-kind extractor.</p>
+<p>The scene itself does not know how to read each payload type; the host registers extractors via <code>registerBoundsFn</code>.</p>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><em>void</em> — Scene-wide axis-aligned bounding box union of all visible layers, computed by the supplied per-kind extractor. The scene itself does not know how to read each payload type; the host registers extractors via <code>registerBoundsFn</code>.</li>
+<li class="">
+<p><strong>bbMin</strong> : <em>QVector3D &amp;</em>
+Minimum corner of the union box; (-1, -1, -1) if no layer contributed.</p>
+</li>
+<li class="">
+<p><strong>bbMax</strong> : <em>QVector3D &amp;</em>
+Maximum corner of the union box; (1, 1, 1) if no layer contributed.</p>
+</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="registerboundsfnkind-fn">registerBoundsFn(kind, fn)<a href="#registerboundsfnkind-fn" class="hash-link" aria-label="Direct link to registerBoundsFn(kind, fn)" title="Direct link to registerBoundsFn(kind, fn)" translate="no">​</a></h3>
 <p>Register an AABB extractor for a given layer kind.</p>
 <p>Replaces any previously registered fn for that kind.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>kind</strong> : <em>SceneLayerKind</em>
+Layer kind the extractor handles.</p>
+</li>
+<li class="">
+<p><strong>fn</strong> : <em>BoundsFn</em>
+Extractor returning false when the layer has no bounds.</p>
+</li>
+</ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::SelectionIO | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/selection-io"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::SelectionIO | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/selection-io"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/selection-io" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/selection-io" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"SelectionIO","item":"https://mne-cpp.github.io/dev/docs/api/utils/selection-io"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -36,6 +36,10 @@ holds the file path of the .sel file which is to be read.</p>
 holds the map to which the read selection groups are stored.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .sel extension or the file cannot be opened.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readmneselfilepath-selectionmap-1">readMNESelFile(path, selectionMap)<a href="#readmneselfilepath-selectionmap-1" class="hash-link" aria-label="Direct link to readMNESelFile(path, selectionMap)" title="Direct link to readMNESelFile(path, selectionMap)" translate="no">​</a></h3>
 <p>Reads the specified <a class="" href="/dev/docs/api/mne/mne-class">MNE</a> sel file.</p>
@@ -49,6 +53,10 @@ holds the file path of the .sel file which is to be read.</p>
 <p><strong>selectionMap</strong> : <em>std::multimap&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</em>
 holds the map to which the read selection groups are stored.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .sel extension or the file cannot be opened.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readbrainstormmonfilepath-selectionmap">readBrainstormMonFile(path, selectionMap)<a href="#readbrainstormmonfilepath-selectionmap" class="hash-link" aria-label="Direct link to readBrainstormMonFile(path, selectionMap)" title="Direct link to readBrainstormMonFile(path, selectionMap)" translate="no">​</a></h3>
@@ -64,6 +72,10 @@ holds the file path of the .mon file which is to be read.</p>
 holds the map to which the read selection groups are stored.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .mon extension or the file cannot be opened.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readbrainstormmonfilepath-selectionmap-1">readBrainstormMonFile(path, selectionMap)<a href="#readbrainstormmonfilepath-selectionmap-1" class="hash-link" aria-label="Direct link to readBrainstormMonFile(path, selectionMap)" title="Direct link to readBrainstormMonFile(path, selectionMap)" translate="no">​</a></h3>
 <p>Reads the specified Brainstorm montage file.</p>
@@ -77,6 +89,10 @@ holds the file path of the .mon file which is to be read.</p>
 <p><strong>selectionMap</strong> : <em>std::multimap&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</em>
 holds the map to which the read selection groups are stored.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .mon extension or the file cannot be opened.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writemneselfilepath-selectionmap">writeMNESelFile(path, selectionMap)<a href="#writemneselfilepath-selectionmap" class="hash-link" aria-label="Direct link to writeMNESelFile(path, selectionMap)" title="Direct link to writeMNESelFile(path, selectionMap)" translate="no">​</a></h3>
@@ -92,6 +108,10 @@ holds the file path of the .sel file which is to be read.</p>
 holds the map to which the read selection groups are stored.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .sel extension or the file cannot be opened for writing.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writemneselfilepath-selectionmap-1">writeMNESelFile(path, selectionMap)<a href="#writemneselfilepath-selectionmap-1" class="hash-link" aria-label="Direct link to writeMNESelFile(path, selectionMap)" title="Direct link to writeMNESelFile(path, selectionMap)" translate="no">​</a></h3>
 <p>Writes the specified selection groups to a single <a class="" href="/dev/docs/api/mne/mne-class">MNE</a> .sel file.</p>
@@ -105,6 +125,10 @@ holds the file path of the .sel file which is to be read.</p>
 <p><strong>selectionMap</strong> : <em>const std::map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</em>
 holds the map to which the read selection groups are stored.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True on success, false if the path lacks a .sel extension or the file cannot be opened for writing.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writebrainstormmonfilespath-selectionmap">writeBrainstormMonFiles(path, selectionMap)<a href="#writebrainstormmonfilespath-selectionmap" class="hash-link" aria-label="Direct link to writeBrainstormMonFiles(path, selectionMap)" title="Direct link to writeBrainstormMonFiles(path, selectionMap)" translate="no">​</a></h3>
@@ -121,6 +145,10 @@ holds the file path of the .mon file which is to be read.</p>
 holds the map to which the read selection groups are stored.</p>
 </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if all .mon files were written, false if any file could not be opened for writing.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writebrainstormmonfilespath-selectionmap-1">writeBrainstormMonFiles(path, selectionMap)<a href="#writebrainstormmonfilespath-selectionmap-1" class="hash-link" aria-label="Direct link to writeBrainstormMonFiles(path, selectionMap)" title="Direct link to writeBrainstormMonFiles(path, selectionMap)" translate="no">​</a></h3>
 <p>Writes the specified selection groups to different Brainstorm .mon files.</p>
@@ -135,6 +163,10 @@ holds the file path of the .mon file which is to be read.</p>
 <p><strong>selectionMap</strong> : <em>const std::map&lt; std::string, std::vector&lt; std::string &gt; &gt; &amp;</em>
 holds the map to which the read selection groups are stored.</p>
 </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if all .mon files were written, false if any file could not be opened for writing.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>

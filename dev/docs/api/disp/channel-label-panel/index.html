@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">DISPLIB::ChannelLabelPanel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/channel-label-panel"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISPLIB::ChannelLabelPanel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library"><meta data-rh="true" property="og:description" content="Namespace Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-label-panel"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-label-panel" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-label-panel" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ChannelLabelPanel","item":"https://mne-cpp.github.io/dev/docs/api/disp/channel-label-panel"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -27,9 +27,19 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfirstvisiblechannelch">setFirstVisibleChannel(ch)<a href="#setfirstvisiblechannelch" class="hash-link" aria-label="Direct link to setFirstVisibleChannel(ch)" title="Direct link to setFirstVisibleChannel(ch)" translate="no">​</a></h3>
 <p>Set the index of the first visible channel row (kept in sync with <a class="" href="/dev/docs/api/disp/channel-rhi-view"><code>ChannelRhiView</code></a>).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>ch</strong> : <em>int</em>
+Index of the first visible row in the displayed channel list.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvisiblechannelcountcount">setVisibleChannelCount(count)<a href="#setvisiblechannelcountcount" class="hash-link" aria-label="Direct link to setVisibleChannelCount(count)" title="Direct link to setVisibleChannelCount(count)" translate="no">​</a></h3>
 <p>Set how many channel rows are simultaneously visible (kept in sync with <a class="" href="/dev/docs/api/disp/channel-rhi-view"><code>ChannelRhiView</code></a>).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>count</strong> : <em>int</em>
+Number of simultaneously visible channel rows.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setchannelindicesindices">setChannelIndices(indices)<a href="#setchannelindicesindices" class="hash-link" aria-label="Direct link to setChannelIndices(indices)" title="Direct link to setChannelIndices(indices)" translate="no">​</a></h3>
 <p>Restrict the panel to a subset of model channel indices.</p>
@@ -43,6 +53,11 @@ Ordered list of model channel indices to display.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sethidebadchannelshide">setHideBadChannels(hide)<a href="#sethidebadchannelshide" class="hash-link" aria-label="Direct link to setHideBadChannels(hide)" title="Direct link to setHideBadChannels(hide)" translate="no">​</a></h3>
 <p>Show or hide bad-channel rows.</p>
 <p>When <code>hide</code> is true, bad channels are removed from the visible row list so the panel stays aligned with the trace view.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>hide</strong> : <em>bool</em>
+True to hide bad-channel rows.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbutterflymodeenabled">setButterflyMode(enabled)<a href="#setbutterflymodeenabled" class="hash-link" aria-label="Direct link to setButterflyMode(enabled)" title="Direct link to setButterflyMode(enabled)" translate="no">​</a></h3>
 <p>Enable or disable butterfly mode.</p>

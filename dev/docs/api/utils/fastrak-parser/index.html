@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::FastrakParser | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/fastrak-parser"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::FastrakParser | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/fastrak-parser"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/fastrak-parser" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/fastrak-parser" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"FastrakParser","item":"https://mne-cpp.github.io/dev/docs/api/utils/fastrak-parser"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -23,14 +23,29 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setunitsunits">setUnits(units)<a href="#setunitsunits" class="hash-link" aria-label="Direct link to setUnits(units)" title="Direct link to setUnits(units)" translate="no">​</a></h3>
 <p>Configure the linear unit reported by the device.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>units</strong> : <em>Units</em>
+Unit of incoming positions; samples are converted to metres.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="units">units()<a href="#units" class="hash-link" aria-label="Direct link to units()" title="Direct link to units()" translate="no">​</a></h3>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="appendchunk">append(chunk)<a href="#appendchunk" class="hash-link" aria-label="Direct link to append(chunk)" title="Direct link to append(chunk)" translate="no">​</a></h3>
 <p>Append raw bytes received from the serial port.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>chunk</strong> : <em>const QByteArray &amp;</em>
+Raw bytes to append to the internal buffer; may contain partial records.</li>
+</ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nextsampleout">nextSample(out)<a href="#nextsampleout" class="hash-link" aria-label="Direct link to nextSample(out)" title="Direct link to nextSample(out)" translate="no">​</a></h3>
 <p>Pop the next fully-decoded sample, if any.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>out</strong> : <em>FastrakSample &amp;</em>
+Receives the decoded sample; malformed lines are skipped.</li>
+</ul>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>bool</em> — true when <code>out</code> was populated; false when the buffer does not yet contain a complete record.</li>
@@ -42,6 +57,21 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parserecordrecord-units-out">parseRecord(record, units, out)<a href="#parserecordrecord-units-out" class="hash-link" aria-label="Direct link to parseRecord(record, units, out)" title="Direct link to parseRecord(record, units, out)" translate="no">​</a></h3>
 <p>Parse one record line (without trailing CR/LF) — exposed for unit tests and for callers that pre-frame their data.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>record</strong> : <em>const QByteArray &amp;</em>
+One ASCII record: station, x, y, z, and optional Euler angles or quaternion.</p>
+</li>
+<li class="">
+<p><strong>units</strong> : <em>Units</em>
+Unit of the positions in <code>record</code>.</p>
+</li>
+<li class="">
+<p><strong>out</strong> : <em>FastrakSample &amp;</em>
+Receives the decoded sample with the position in metres.</p>
+</li>
+</ul>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>bool</em> — true on success; false on malformed input.</li>

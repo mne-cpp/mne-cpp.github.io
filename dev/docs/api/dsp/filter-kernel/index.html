@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::FilterKernel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/dsp/filter-kernel"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::FilterKernel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace DSP Library"><meta data-rh="true" property="og:description" content="Namespace DSP Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/dsp/filter-kernel"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/dsp/filter-kernel" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/dsp/filter-kernel" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DSP Library","item":"https://mne-cpp.github.io/dev/docs/api/dsp/"},{"@type":"ListItem","position":2,"name":"FilterKernel","item":"https://mne-cpp.github.io/dev/docs/api/dsp/filter-kernel"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.d9ff7875.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.11141a3f.js" defer="defer"></script>
 <script src="/dev/assets/js/main.fb4c2ded.js" defer="defer"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
 Defines the name of the generated filter.</p>
 </li>
 <li class="">
-<p><strong>type</strong>
+<p><strong>iFilterType</strong> : <em>int</em>
 Tyep of the filter: LPF, HPF, BPF, NOTCH (from enum FilterType).</p>
 </li>
 <li class="">
@@ -56,7 +56,7 @@ Determines the width of the filter slopes (steepness) - normed to sFreq/2 (nyqui
 The sampling frequency.</p>
 </li>
 <li class="">
-<p><strong>designMethod</strong>
+<p><strong>iDesignMethod</strong> : <em>int</em>
 Specifies the design method to use. Choose between Cosind and Tschebyscheff.</p>
 </li>
 </ul>
@@ -100,10 +100,6 @@ Holds the data to be filtered. Gets overwritten with its filtered result.</p>
 <p><strong>bKeepOverhead</strong> : <em>bool</em>
 Whether the result should still include the overhead information in front and back of the data. Default is set to false.</p>
 </li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>void</em> — the filtered data in form of a RowVectorXd.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getname">getName()<a href="#getname" class="hash-link" aria-label="Direct link to getName()" title="Direct link to getName()" translate="no">​</a></h3>
