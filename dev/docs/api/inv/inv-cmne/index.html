@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">INVLIB::InvCMNE | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/inv/inv-cmne"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="INVLIB::InvCMNE | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Inverse Library"><meta data-rh="true" property="og:description" content="Namespace Inverse Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-cmne"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-cmne" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/inv/inv-cmne" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inverse Library","item":"https://mne-cpp.github.io/dev/docs/api/inv/"},{"@type":"ListItem","position":2,"name":"InvCMNE","item":"https://mne-cpp.github.io/dev/docs/api/inv/inv-cmne"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.acf8f274.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.33d3a0fe.js" defer="defer"></script>
 <script src="/dev/assets/js/main.e436bb50.js" defer="defer"></script>
 </head>
 <body>
@@ -51,26 +51,67 @@ CMNE settings.</p>
 <li class=""><em>InvCMNEResult</em> — <code>InvCMNEResult</code> containing dSPM and CMNE source estimates.</li>
 </ul>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applylstmcorrectionmatdspmdata-onnxmodelpath-lookback">applyLstmCorrection(matDspmData, onnxModelPath, lookBack)<a href="#applylstmcorrectionmatdspmdata-onnxmodelpath-lookback" class="hash-link" aria-label="Direct link to applyLstmCorrection(matDspmData, onnxModelPath, lookBack)" title="Direct link to applyLstmCorrection(matDspmData, onnxModelPath, lookBack)" translate="no">​</a></h3>
-<p>Apply LSTM-based temporal correction to z-scored rectified dSPM data.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applycmnematdspmdata-onnxmodelpath-sensing-prediction-cmne">applyCmne(matDspmData, onnxModelPath, sensing, prediction, cmne)<a href="#applycmnematdspmdata-onnxmodelpath-sensing-prediction-cmne" class="hash-link" aria-label="Direct link to applyCmne(matDspmData, onnxModelPath, sensing, prediction, cmne)" title="Direct link to applyCmne(matDspmData, onnxModelPath, sensing, prediction, cmne)" translate="no">​</a></h3>
+<p>Contextual estimate of Eqs.</p>
+<p>9-13, as cmne.apply_cmne with normalised weights.</p>
+<p>The model must be exported by cmne.export_onnx: look-back, source count and rectification are read from its <code>cmne_config</code> metadata.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
 <p><strong>matDspmData</strong> : <em>const Eigen::MatrixXd &amp;</em>
-Z-scored rectified dSPM data (n_sources x n_times).</p>
+Signed dSPM estimate (n_sources x n_times).</p>
 </li>
 <li class="">
 <p><strong>onnxModelPath</strong> : <em>const QString &amp;</em>
-Path to ONNX model file.</p>
+Path to the ONNX model.</p>
 </li>
 <li class="">
-<p><strong>lookBack</strong> : <em>int</em>
-Number of past time steps (k).</p>
+<p><strong>sensing</strong> : <em>Eigen::MatrixXd &amp;</em>
+q_t (Eq. 9).</p>
+</li>
+<li class="">
+<p><strong>prediction</strong> : <em>Eigen::MatrixXd &amp;</em>
+LSTM prediction (q_t for the first k samples).</p>
+</li>
+<li class="">
+<p><strong>cmne</strong> : <em>Eigen::MatrixXd &amp;</em>
+Contextual estimate b_t.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>Eigen::MatrixXd</em> — Corrected source data (n_sources x n_times).</li>
+<li class=""><em>bool</em> — False if the model cannot be loaded, does not fit the data, or there are no more than k samples.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="controlestimatematdspmdata-lookback">controlEstimate(matDspmData, lookBack)<a href="#controlestimatematdspmdata-lookback" class="hash-link" aria-label="Direct link to controlEstimate(matDspmData, lookBack)" title="Direct link to controlEstimate(matDspmData, lookBack)" translate="no">​</a></h3>
+<p>Control estimate of the paper (cmne.control_estimate): q_t times the mean of q over the previous <code>lookBack</code> samples, without an LSTM.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>matDspmData</strong> : <em>const Eigen::MatrixXd &amp;</em>
+Signed dSPM estimate (n_sources x n_times).</p>
+</li>
+<li class="">
+<p><strong>lookBack</strong> : <em>int</em>
+Window length k.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixXd</em> — Control estimate (n_sources x n_times).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zscorerectifymatstcdata">zScoreRectify(matStcData)<a href="#zscorerectifymatstcdata" class="hash-link" aria-label="Direct link to zScoreRectify(matStcData)" title="Direct link to zScoreRectify(matStcData)" translate="no">​</a></h3>
+<p>Rectify and z-score each source over time (Eq.</p>
+<p>9).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>matStcData</strong> : <em>const Eigen::MatrixXd &amp;</em>
+Source data (n_sources x n_times).</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixXd</em> — |x| standardised per row; constant rows are centred only.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="trainlstmfwdpath-covpath-epochspath-outonnxpath-settings-gtstcprefix-hiddensize-numlayers-trainepochs-learningrate-batchsize-finetuneonnxpath-pythonexe">trainLstm(fwdPath, covPath, epochsPath, outOnnxPath, settings, gtStcPrefix, hiddenSize, numLayers, trainEpochs, learningRate, batchSize, finetuneOnnxPath, pythonExe)<a href="#trainlstmfwdpath-covpath-epochspath-outonnxpath-settings-gtstcprefix-hiddensize-numlayers-trainepochs-learningrate-batchsize-finetuneonnxpath-pythonexe" class="hash-link" aria-label="Direct link to trainLstm(fwdPath, covPath, epochsPath, outOnnxPath, settings, gtStcPrefix, hiddenSize, numLayers, trainEpochs, learningRate, batchSize, finetuneOnnxPath, pythonExe)" title="Direct link to trainLstm(fwdPath, covPath, epochsPath, outOnnxPath, settings, gtStcPrefix, hiddenSize, numLayers, trainEpochs, learningRate, batchSize, finetuneOnnxPath, pythonExe)" translate="no">​</a></h3>
@@ -144,6 +185,6 @@ Python interpreter (default &quot;python3&quot;).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>
 <li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/inv/inv-minimum-norm"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">InvMinimumNorm</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/inv/inv-lcmv"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">InvLCMV</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#computematevoked-matgain-matnoisecov-matsrccov-settings" class="table-of-contents__link toc-highlight">compute(matEvoked, matGain, matNoiseCov, matSrcCov, settings)</a></li><li><a href="#applylstmcorrectionmatdspmdata-onnxmodelpath-lookback" class="table-of-contents__link toc-highlight">applyLstmCorrection(matDspmData, onnxModelPath, lookBack)</a></li><li><a href="#trainlstmfwdpath-covpath-epochspath-outonnxpath-settings-gtstcprefix-hiddensize-numlayers-trainepochs-learningrate-batchsize-finetuneonnxpath-pythonexe" class="table-of-contents__link toc-highlight">trainLstm(fwdPath, covPath, epochsPath, outOnnxPath, settings, gtStcPrefix, hiddenSize, numLayers, trainEpochs, learningRate, batchSize, finetuneOnnxPath, pythonExe)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/inv/inv-minimum-norm"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">InvMinimumNorm</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/inv/inv-lcmv"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">InvLCMV</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#computematevoked-matgain-matnoisecov-matsrccov-settings" class="table-of-contents__link toc-highlight">compute(matEvoked, matGain, matNoiseCov, matSrcCov, settings)</a></li><li><a href="#applycmnematdspmdata-onnxmodelpath-sensing-prediction-cmne" class="table-of-contents__link toc-highlight">applyCmne(matDspmData, onnxModelPath, sensing, prediction, cmne)</a></li><li><a href="#controlestimatematdspmdata-lookback" class="table-of-contents__link toc-highlight">controlEstimate(matDspmData, lookBack)</a></li><li><a href="#zscorerectifymatstcdata" class="table-of-contents__link toc-highlight">zScoreRectify(matStcData)</a></li><li><a href="#trainlstmfwdpath-covpath-epochspath-outonnxpath-settings-gtstcprefix-hiddensize-numlayers-trainepochs-learningrate-batchsize-finetuneonnxpath-pythonexe" class="table-of-contents__link toc-highlight">trainLstm(fwdPath, covPath, epochsPath, outOnnxPath, settings, gtStcPrefix, hiddenSize, numLayers, trainEpochs, learningRate, batchSize, finetuneOnnxPath, pythonExe)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
