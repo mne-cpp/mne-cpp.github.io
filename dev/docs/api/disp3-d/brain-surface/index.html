@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-api/disp3-d/brain-surface" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">DISP3DLIB::BrainSurface | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp3-d/brain-surface"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DISP3DLIB::BrainSurface | MNE-CPP"><meta data-rh="true" name="description" content="Namespace 3D Display Library"><meta data-rh="true" property="og:description" content="Namespace 3D Display Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/brain-surface"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/brain-surface" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp3-d/brain-surface" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"3D Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/"},{"@type":"ListItem","position":2,"name":"BrainSurface","item":"https://mne-cpp.github.io/dev/docs/api/disp3-d/brain-surface"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
+<script src="/dev/assets/js/runtime~main.cd531d32.js" defer="defer"></script>
+<script src="/dev/assets/js/main.e943a6f8.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/dev/"><div class="navbar__logo"><img src="/dev/img/logo.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/dev/img/logo-dark.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/dev/docs/overview">Documentation</a><a class="navbar__item navbar__link" href="/dev/docs/development/buildguide-cmake">Development</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/dev/docs/api/">API</a><a class="navbar__item navbar__link" href="/dev/download">Download</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link navbar-version-dropdown">dev (latest)</a><ul class="dropdown__menu"><li><a href="https://mne-cpp.github.io/" target="_blank" rel="noopener noreferrer" class="dropdown__link">v2.3.0 (Stable)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://mne-cpp.github.io/dev/" target="_blank" rel="noopener noreferrer" class="dropdown__link">dev (Latest Development)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><svg aria-hidden="true" class="searchIcon_T3tP" focusable="false" viewBox="0 0 16 16"><path fill="currentColor" d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"></path></svg><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/"><span class="categoryLinkLabel_W154">Overview</span></a><button aria-label="Collapse sidebar category &#x27;Overview&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/namespaces"><span class="linkLabel_WmDU">Namespaces</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/classes"><span class="linkLabel_WmDU">Classes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/files"><span class="linkLabel_WmDU">Files</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/hierarchy"><span class="linkLabel_WmDU">Class Hierarchy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/class-members"><span class="linkLabel_WmDU">Class Members</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/namespace-members"><span class="linkLabel_WmDU">Namespace Members</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fiff/"><span class="categoryLinkLabel_W154">FIFF Library</span></a><button aria-label="Expand sidebar category &#x27;FIFF Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mne/"><span class="categoryLinkLabel_W154">MNE Library</span></a><button aria-label="Expand sidebar category &#x27;MNE Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fwd/"><span class="categoryLinkLabel_W154">Forward Library</span></a><button aria-label="Expand sidebar category &#x27;Forward Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/inv/"><span class="categoryLinkLabel_W154">Inverse Library</span></a><button aria-label="Expand sidebar category &#x27;Inverse Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/dsp/"><span class="categoryLinkLabel_W154">DSP Library</span></a><button aria-label="Expand sidebar category &#x27;DSP Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/connectivity/"><span class="categoryLinkLabel_W154">Connectivity Library</span></a><button aria-label="Expand sidebar category &#x27;Connectivity Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/decoding/"><span class="categoryLinkLabel_W154">Decoding Library</span></a><button aria-label="Expand sidebar category &#x27;Decoding Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/ml/"><span class="categoryLinkLabel_W154">Machine Learning Library</span></a><button aria-label="Expand sidebar category &#x27;Machine Learning Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/sts/"><span class="categoryLinkLabel_W154">Statistics Library</span></a><button aria-label="Expand sidebar category &#x27;Statistics Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fs/"><span class="categoryLinkLabel_W154">FreeSurfer Library</span></a><button aria-label="Expand sidebar category &#x27;FreeSurfer Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/math/"><span class="categoryLinkLabel_W154">Math Library</span></a><button aria-label="Expand sidebar category &#x27;Math Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mri/"><span class="categoryLinkLabel_W154">MRI Library</span></a><button aria-label="Expand sidebar category &#x27;MRI Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/bids/"><span class="categoryLinkLabel_W154">BIDS Library</span></a><button aria-label="Expand sidebar category &#x27;BIDS Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/utils/"><span class="categoryLinkLabel_W154">Utilities Library</span></a><button aria-label="Expand sidebar category &#x27;Utilities Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/lsl/"><span class="categoryLinkLabel_W154">LSL Library</span></a><button aria-label="Expand sidebar category &#x27;LSL Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mna/"><span class="categoryLinkLabel_W154">MNA Library</span></a><button aria-label="Expand sidebar category &#x27;MNA Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/disp/"><span class="categoryLinkLabel_W154">Display Library</span></a><button aria-label="Expand sidebar category &#x27;Display Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/dev/docs/api/disp3-d/"><span class="categoryLinkLabel_W154">3D Display Library</span></a><button aria-label="Collapse sidebar category &#x27;3D Display Library&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/electrode-object"><span class="linkLabel_WmDU">ElectrodeObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/geometry-info"><span class="linkLabel_WmDU">GeometryInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/interpolation"><span class="linkLabel_WmDU">Interpolation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/multimodal-scene"><span class="linkLabel_WmDU">MultimodalScene</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-sensor-data-worker"><span class="linkLabel_WmDU">RtSensorDataWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-sensor-interpolation-mat-worker"><span class="linkLabel_WmDU">RtSensorInterpolationMatWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-source-data-worker"><span class="linkLabel_WmDU">RtSourceDataWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-source-interpolation-mat-worker"><span class="linkLabel_WmDU">RtSourceInterpolationMatWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/slice-object"><span class="linkLabel_WmDU">SliceObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/video-overlay"><span class="linkLabel_WmDU">VideoOverlay</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/electrode-array"><span class="linkLabel_WmDU">ElectrodeArray</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/electrode-contact"><span class="linkLabel_WmDU">ElectrodeContact</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/pick-result"><span class="linkLabel_WmDU">PickResult</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/scene-layer"><span class="linkLabel_WmDU">SceneLayer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/abstract-tree-item"><span class="linkLabel_WmDU">AbstractTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/bem-tree-item"><span class="linkLabel_WmDU">BemTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/brain-renderer"><span class="linkLabel_WmDU">BrainRenderer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/dev/docs/api/disp3-d/brain-surface"><span class="linkLabel_WmDU">BrainSurface</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/brain-tree-model"><span class="linkLabel_WmDU">BrainTreeModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/brain-view"><span class="linkLabel_WmDU">BrainView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/camera-controller"><span class="linkLabel_WmDU">CameraController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/camera-result"><span class="linkLabel_WmDU">CameraResult</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/data-loader"><span class="linkLabel_WmDU">DataLoader</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/digitizer-set-tree-item"><span class="linkLabel_WmDU">DigitizerSetTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/digitizer-tree-item"><span class="linkLabel_WmDU">DigitizerTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/dipole-object"><span class="linkLabel_WmDU">DipoleObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/dipole-tree-item"><span class="linkLabel_WmDU">DipoleTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/live-marker"><span class="linkLabel_WmDU">LiveMarker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/mesh-factory"><span class="linkLabel_WmDU">MeshFactory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/multi-view-layout"><span class="linkLabel_WmDU">MultiViewLayout</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/network-object"><span class="linkLabel_WmDU">NetworkObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/network-tree-item"><span class="linkLabel_WmDU">NetworkTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/polyline-object"><span class="linkLabel_WmDU">PolylineObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/ray-hit"><span class="linkLabel_WmDU">RayHit</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/ray-picker"><span class="linkLabel_WmDU">RayPicker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-sensor-data-controller"><span class="linkLabel_WmDU">RtSensorDataController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-sensor-stream-manager"><span class="linkLabel_WmDU">RtSensorStreamManager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/rt-source-data-controller"><span class="linkLabel_WmDU">RtSourceDataController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/sensor-field-mapper"><span class="linkLabel_WmDU">SensorFieldMapper</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/sensor-tree-item"><span class="linkLabel_WmDU">SensorTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/source-estimate-manager"><span class="linkLabel_WmDU">SourceEstimateManager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/source-estimate-overlay"><span class="linkLabel_WmDU">SourceEstimateOverlay</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/source-space-tree-item"><span class="linkLabel_WmDU">SourceSpaceTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/stc-loading-worker"><span class="linkLabel_WmDU">StcLoadingWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/sub-view"><span class="linkLabel_WmDU">SubView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/surface-tree-item"><span class="linkLabel_WmDU">SurfaceTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/vertex-data"><span class="linkLabel_WmDU">VertexData</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/disp3-d/view-visibility-profile"><span class="linkLabel_WmDU">ViewVisibilityProfile</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/dev/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/dev/docs/api/disp3-d/"><span>3D Display Library</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">BrainSurface</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>BrainSurface</h1></header>
+<p><strong>Namespace:</strong> <code>DISP3DLIB</code>  ·  <strong>Library:</strong> 3D Display Library</p>
+<p><code>#include &lt;disp3D/brainsurface.h&gt;</code></p>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">DISP3DLIB</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">BrainSurface</span><br></div></code></pre></div></div>
+<p><a class="" href="/dev/docs/api/disp3-d/brain-surface"><code>BrainSurface</code></a> manages the geometry and visual properties of a single brain mesh.</p>
+<p>Renderable cortical surface mesh with per-vertex color, curvature data, and GPU buffer management.</p>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_OeMC">src/examples/ex_disp3d_scene/main.cpp</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token comment" style="color:rgb(98, 114, 164)">// A 2 x 2 cm flat patch at z = 0 (metres), picked by a ray cast straight down</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">MatrixX3f </span><span class="token function" style="color:rgb(80, 250, 123)">patchVertices</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">4</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">patchVertices </span><span class="token operator">&lt;&lt;</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.02f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.02f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.02f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.02f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">MatrixX3i </span><span class="token function" style="color:rgb(80, 250, 123)">patchTriangles</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">patchTriangles </span><span class="token operator">&lt;&lt;</span><span class="token plain"> </span><span class="token number">0</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">3</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">BrainSurface patch</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">patch</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">createFromData</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">patchVertices</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> patchTriangles</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> Qt</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">gray</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">patch</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">setHemi</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">0</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">float</span><span class="token plain"> hitDistance </span><span class="token operator">=</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">int</span><span class="token plain"> hitVertex </span><span class="token operator">=</span><span class="token plain"> </span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">bool</span><span class="token plain"> picked </span><span class="token operator">=</span><span class="token plain"> patch</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">intersects</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token function" style="color:rgb(80, 250, 123)">QVector3D</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">0.019f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.019f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.05f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token function" style="color:rgb(80, 250, 123)">QVector3D</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token number">0.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> </span><span class="token operator">-</span><span class="token number">1.0f</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> hitDistance</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> hitVertex</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">const</span><span class="token plain"> VertexData</span><span class="token operator">&amp;</span><span class="token plain"> corner </span><span class="token operator">=</span><span class="token plain"> patch</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">vertexDataRef</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">at</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token number">2</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// interleaved position, normal and packed ABGR colour</span><br></div></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="brainsurface-1">BrainSurface()<a href="#brainsurface-1" class="hash-link" aria-label="Direct link to BrainSurface()" title="Direct link to BrainSurface()" translate="no">​</a></h3>
+<p>Default Constructor.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="brainsurface-2">~BrainSurface()<a href="#brainsurface-2" class="hash-link" aria-label="Direct link to ~BrainSurface()" title="Direct link to ~BrainSurface()" translate="no">​</a></h3>
+<p>Destructor.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvisiblevisible">setVisible(visible)<a href="#setvisiblevisible" class="hash-link" aria-label="Direct link to setVisible(visible)" title="Direct link to setVisible(visible)" translate="no">​</a></h3>
+<p>Set the visibility of the surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isvisible">isVisible()<a href="#isvisible" class="hash-link" aria-label="Direct link to isVisible()" title="Direct link to isVisible()" translate="no">​</a></h3>
+<p>Check if the surface is visible.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sethemihemi">setHemi(hemi)<a href="#sethemihemi" class="hash-link" aria-label="Direct link to setHemi(hemi)" title="Direct link to setHemi(hemi)" translate="no">​</a></h3>
+<p>Set the hemisphere index.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>hemi</strong> : <em>int</em>
+0 for Left, 1 for Right.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settissuetypetype">setTissueType(type)<a href="#settissuetypetype" class="hash-link" aria-label="Direct link to setTissueType(type)" title="Direct link to setTissueType(type)" translate="no">​</a></h3>
+<p>Set the tissue type (Brain, Skin, Skull, etc.).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>type</strong> : <em>TissueType</em>
+TissueType enum value.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tissuetype">tissueType()<a href="#tissuetype" class="hash-link" aria-label="Direct link to tissueType()" title="Direct link to tissueType()" translate="no">​</a></h3>
+<p>Get the tissue type.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>TissueType</em> — TissueType enum value.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hemi">hemi()<a href="#hemi" class="hash-link" aria-label="Direct link to hemi()" title="Direct link to hemi()" translate="no">​</a></h3>
+<p>Get the hemisphere index.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Hemisphere index (0=LH, 1=RH).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fromsurfacesurf">fromSurface(surf)<a href="#fromsurfacesurf" class="hash-link" aria-label="Direct link to fromSurface(surf)" title="Direct link to fromSurface(surf)" translate="no">​</a></h3>
+<p>Load geometry from a FreeSurfer surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>surf</strong> : <em>const <a class="" href="/dev/docs/api/fs/fs-surface">FsSurface</a> &amp;</em>
+Input FreeSurfer surface.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="frombemsurfacesurf-color">fromBemSurface(surf, color)<a href="#frombemsurfacesurf-color" class="hash-link" aria-label="Direct link to fromBemSurface(surf, color)" title="Direct link to fromBemSurface(surf, color)" translate="no">​</a></h3>
+<p>Load geometry from a <a class="" href="/dev/docs/api/mne/mne-class">MNE</a> BEM surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>surf</strong> : <em>const <a class="" href="/dev/docs/api/mne/mne-bem-surface">MNEBemSurface</a> &amp;</em>
+Input BEM surface.</p>
+</li>
+<li class="">
+<p><strong>color</strong> : <em>const QColor &amp;</em>
+Base color for the surface.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="createfromdatavertices-triangles-color">createFromData(vertices, triangles, color)<a href="#createfromdatavertices-triangles-color" class="hash-link" aria-label="Direct link to createFromData(vertices, triangles, color)" title="Direct link to createFromData(vertices, triangles, color)" translate="no">​</a></h3>
+<p>Create surface from raw vertex and triangle data.</p>
+<p>Vertex normals are the sums of the adjacent face normals.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>vertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
+Nx3 matrix of vertex positions.</p>
+</li>
+<li class="">
+<p><strong>triangles</strong> : <em>const Eigen::MatrixX3i &amp;</em>
+Mx3 matrix of triangle indices.</p>
+</li>
+<li class="">
+<p><strong>color</strong> : <em>const QColor &amp;</em>
+FsSurface color.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="createfromdatavertices-normals-triangles-color">createFromData(vertices, normals, triangles, color)<a href="#createfromdatavertices-normals-triangles-color" class="hash-link" aria-label="Direct link to createFromData(vertices, normals, triangles, color)" title="Direct link to createFromData(vertices, normals, triangles, color)" translate="no">​</a></h3>
+<p>Create surface from raw vertex, normal and triangle data.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>vertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
+Nx3 matrix of vertex positions.</p>
+</li>
+<li class="">
+<p><strong>normals</strong> : <em>const Eigen::MatrixX3f &amp;</em>
+Nx3 matrix of vertex normals.</p>
+</li>
+<li class="">
+<p><strong>triangles</strong> : <em>const Eigen::MatrixX3i &amp;</em>
+Mx3 matrix of triangle indices.</p>
+</li>
+<li class="">
+<p><strong>color</strong> : <em>const QColor &amp;</em>
+FsSurface color.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="loadannotationpath">loadAnnotation(path)<a href="#loadannotationpath" class="hash-link" aria-label="Direct link to loadAnnotation(path)" title="Direct link to loadAnnotation(path)" translate="no">​</a></h3>
+<p>Load annotation data from file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>path</strong> : <em>const QString &amp;</em>
+Path to the .annot file.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if successful.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="addannotationannotation">addAnnotation(annotation)<a href="#addannotationannotation" class="hash-link" aria-label="Direct link to addAnnotation(annotation)" title="Direct link to addAnnotation(annotation)" translate="no">​</a></h3>
+<p>Add annotation data directly.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>annotation</strong> : <em>const <a class="" href="/dev/docs/api/fs/fs-annotation">FsAnnotation</a> &amp;</em>
+Input annotation data.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvisualizationmodemode">setVisualizationMode(mode)<a href="#setvisualizationmodemode" class="hash-link" aria-label="Direct link to setVisualizationMode(mode)" title="Direct link to setVisualizationMode(mode)" translate="no">​</a></h3>
+<p>Set the visualization mode (<a class="" href="/dev/docs/api/fs/fs-surface">FsSurface</a>, <a class="" href="/dev/docs/api/fs/fs-annotation">FsAnnotation</a>, Scientific).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>mode</strong> : <em>VisualizationMode</em>
+VisualizationMode enum.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applysourceestimatecolorscolors">applySourceEstimateColors(colors)<a href="#applysourceestimatecolorscolors" class="hash-link" aria-label="Direct link to applySourceEstimateColors(colors)" title="Direct link to applySourceEstimateColors(colors)" translate="no">​</a></h3>
+<p>Apply source estimate colors to vertices.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>colors</strong> : <em>const QVector&lt; uint32_t &gt; &amp;</em>
+Vector of packed ABGR colors, one per vertex.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clearsourceestimatecolors">clearSourceEstimateColors()<a href="#clearsourceestimatecolors" class="hash-link" aria-label="Direct link to clearSourceEstimateColors()" title="Direct link to clearSourceEstimateColors()" translate="no">​</a></h3>
+<p>Clear source estimate overlay colors and restore curvature-based coloring.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="updatebuffersrhi-u">updateBuffers(rhi, u)<a href="#updatebuffersrhi-u" class="hash-link" aria-label="Direct link to updateBuffers(rhi, u)" title="Direct link to updateBuffers(rhi, u)" translate="no">​</a></h3>
+<p>Update graphics buffers (vertex/index) on the GPU.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>rhi</strong> : *QRhi **
+Pointer to QRhi instance.</p>
+</li>
+<li class="">
+<p><strong>u</strong> : *QRhiResourceUpdateBatch **
+Resource update batch.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexbuffer">vertexBuffer()<a href="#vertexbuffer" class="hash-link" aria-label="Direct link to vertexBuffer()" title="Direct link to vertexBuffer()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="indexbuffer">indexBuffer()<a href="#indexbuffer" class="hash-link" aria-label="Direct link to indexBuffer()" title="Direct link to indexBuffer()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="indexcount">indexCount()<a href="#indexcount" class="hash-link" aria-label="Direct link to indexCount()" title="Direct link to indexCount()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexcount">vertexCount()<a href="#vertexcount" class="hash-link" aria-label="Direct link to vertexCount()" title="Direct link to vertexCount()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexpositions">vertexPositions()<a href="#vertexpositions" class="hash-link" aria-label="Direct link to vertexPositions()" title="Direct link to vertexPositions()" translate="no">​</a></h3>
+<p>Get a copy of the current vertex positions.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixX3f</em> — Nx3 matrix of the current (possibly transformed) vertex positions.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexnormals">vertexNormals()<a href="#vertexnormals" class="hash-link" aria-label="Direct link to vertexNormals()" title="Direct link to vertexNormals()" translate="no">​</a></h3>
+<p>Get a copy of the current vertex normals.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixX3f</em> — Nx3 matrix of the current vertex normals.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="triangleindices">triangleIndices()<a href="#triangleindices" class="hash-link" aria-label="Direct link to triangleIndices()" title="Direct link to triangleIndices()" translate="no">​</a></h3>
+<p>Get the triangle index buffer.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QVector&lt; uint32_t &gt;</em> — Copy of the index data, three vertex indices per triangle.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexdataref">vertexDataRef()<a href="#vertexdataref" class="hash-link" aria-label="Direct link to vertexDataRef()" title="Direct link to vertexDataRef()" translate="no">​</a></h3>
+<p>Const-ref access to CPU-side vertex data (used by merged rendering).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>const QVector&lt; <a class="" href="/dev/docs/api/disp3-d/vertex-data">VertexData</a> &gt; &amp;</em> — Reference to the internal vertex array, valid while this surface lives.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="indexdataref">indexDataRef()<a href="#indexdataref" class="hash-link" aria-label="Direct link to indexDataRef()" title="Direct link to indexDataRef()" translate="no">​</a></h3>
+<p>Const-ref access to CPU-side index data (used by merged rendering).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>const QVector&lt; uint32_t &gt; &amp;</em> — Reference to the internal triangle index array, valid while this surface lives.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="vertexgeneration">vertexGeneration()<a href="#vertexgeneration" class="hash-link" aria-label="Direct link to vertexGeneration()" title="Direct link to vertexGeneration()" translate="no">​</a></h3>
+<p>Monotonically increasing counter bumped whenever vertex data changes.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>quint64</em> — Current vertex data generation counter.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="minx">minX()<a href="#minx" class="hash-link" aria-label="Direct link to minX()" title="Direct link to minX()" translate="no">​</a></h3>
+<p>Get minimum X coordinate.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Minimum X value.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="maxx">maxX()<a href="#maxx" class="hash-link" aria-label="Direct link to maxX()" title="Direct link to maxX()" translate="no">​</a></h3>
+<p>Get maximum X coordinate.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Maximum X value.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="boundingboxmin-max">boundingBox(min, max)<a href="#boundingboxmin-max" class="hash-link" aria-label="Direct link to boundingBox(min, max)" title="Direct link to boundingBox(min, max)" translate="no">​</a></h3>
+<p>Get bounding box of the surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>min</strong> : <em>QVector3D &amp;</em>
+Minimum coordinates.</p>
+</li>
+<li class="">
+<p><strong>max</strong> : <em>QVector3D &amp;</em>
+Maximum coordinates.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="intersectsrayorigin-raydir-dist-vertexidx">intersects(rayOrigin, rayDir, dist, vertexIdx)<a href="#intersectsrayorigin-raydir-dist-vertexidx" class="hash-link" aria-label="Direct link to intersects(rayOrigin, rayDir, dist, vertexIdx)" title="Direct link to intersects(rayOrigin, rayDir, dist, vertexIdx)" translate="no">​</a></h3>
+<p>Test ray intersection with this surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>rayOrigin</strong> : <em>const QVector3D &amp;</em>
+Ray origin in world/local space (object is assumed at 0,0,0 usually unless transformed externally). Note: The <a class="" href="/dev/docs/api/disp3-d/brain-surface"><code>BrainSurface</code></a> vertices are typically already transformed (e.g. by View3D model matrix logic? No, <a class="" href="/dev/docs/api/disp3-d/brain-view"><code>BrainView</code></a> applies matrix in shader. The vertices here are raw. So ray must be transformed to local space OR vertices transformed to world.</p>
+</li>
+<li class="">
+<p><strong>rayDir</strong> : <em>const QVector3D &amp;</em>
+Ray direction (normalized).</p>
+</li>
+<li class="">
+<p><strong>dist</strong> : <em>float &amp;</em>
+Distance to intersection.</p>
+</li>
+<li class="">
+<p><strong>vertexIdx</strong> : <em>int &amp;</em>
+Index of the vertex closest to the intersection.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if intersected.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getannotationlabelvertexidx">getAnnotationLabel(vertexIdx)<a href="#getannotationlabelvertexidx" class="hash-link" aria-label="Direct link to getAnnotationLabel(vertexIdx)" title="Direct link to getAnnotationLabel(vertexIdx)" translate="no">​</a></h3>
+<p>Get the annotation label name for a given vertex.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>vertexIdx</strong> : <em>int</em>
+Index of the vertex.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QString</em> — FsLabel name.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getannotationlabelidvertexidx">getAnnotationLabelId(vertexIdx)<a href="#getannotationlabelidvertexidx" class="hash-link" aria-label="Direct link to getAnnotationLabelId(vertexIdx)" title="Direct link to getAnnotationLabelId(vertexIdx)" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setselectedregionregionid">setSelectedRegion(regionId)<a href="#setselectedregionregionid" class="hash-link" aria-label="Direct link to setSelectedRegion(regionId)" title="Direct link to setSelectedRegion(regionId)" translate="no">​</a></h3>
+<p>Set the selected region for highlighting.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>regionId</strong> : <em>int</em>
+The ID of the region to highlight.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="translatexoffset">translateX(offset)<a href="#translatexoffset" class="hash-link" aria-label="Direct link to translateX(offset)" title="Direct link to translateX(offset)" translate="no">​</a></h3>
+<p>Translate all vertices along the X axis.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>offset</strong> : <em>float</em>
+Amount to translate.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transformm">transform(m)<a href="#transformm" class="hash-link" aria-label="Direct link to transform(m)" title="Direct link to transform(m)" translate="no">​</a></h3>
+<p>Apply a generic 4x4 transformation matrix to all vertices and normals.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>m</strong> : <em>const QMatrix4x4 &amp;</em>
+Transformation matrix.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applytransformm">applyTransform(m)<a href="#applytransformm" class="hash-link" aria-label="Direct link to applyTransform(m)" title="Direct link to applyTransform(m)" translate="no">​</a></h3>
+<p>Apply a transformation to the surface starting from the original data.</p>
+<p>Note: This prevents transformation accumulation.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>m</strong> : <em>const QMatrix4x4 &amp;</em>
+Transformation matrix.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="computeneighbors">computeNeighbors()<a href="#computeneighbors" class="hash-link" aria-label="Direct link to computeNeighbors()" title="Direct link to computeNeighbors()" translate="no">​</a></h3>
+<p>Compute neighbor vertices from triangle connectivity.</p>
+<p>Required for surface-constrained distance calculations.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>std::vector&lt; Eigen::VectorXi &gt;</em> — Vector of neighbor indices for each vertex.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="verticesasmatrix">verticesAsMatrix()<a href="#verticesasmatrix" class="hash-link" aria-label="Direct link to verticesAsMatrix()" title="Direct link to verticesAsMatrix()" translate="no">​</a></h3>
+<p>Get vertex positions as Eigen matrix.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>Eigen::MatrixX3f</em> — Nx3 matrix of vertex positions.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setusedefaultcolorusedefault">setUseDefaultColor(useDefault)<a href="#setusedefaultcolorusedefault" class="hash-link" aria-label="Direct link to setUseDefaultColor(useDefault)" title="Direct link to setUseDefaultColor(useDefault)" translate="no">​</a></h3>
+<p>Set/Get whether to use the default surface color.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>useDefault</strong> : <em>bool</em>
+True to use the surface&#x27;s default color as base, false for white.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setselectedselected">setSelected(selected)<a href="#setselectedselected" class="hash-link" aria-label="Direct link to setSelected(selected)" title="Direct link to setSelected(selected)" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isselected">isSelected()<a href="#isselected" class="hash-link" aria-label="Direct link to isSelected()" title="Direct link to isSelected()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selectedregionid">selectedRegionId()<a href="#selectedregionid" class="hash-link" aria-label="Direct link to selectedRegionId()" title="Direct link to selectedRegionId()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selectedvertexstart">selectedVertexStart()<a href="#selectedvertexstart" class="hash-link" aria-label="Direct link to selectedVertexStart()" title="Direct link to selectedVertexStart()" translate="no">​</a></h3>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setselectedvertexrangestart-count">setSelectedVertexRange(start, count)<a href="#setselectedvertexrangestart-count" class="hash-link" aria-label="Direct link to setSelectedVertexRange(start, count)" title="Direct link to setSelectedVertexRange(start, count)" translate="no">​</a></h3>
+<p>Highlight a contiguous range of vertices (e.g.</p>
+<p>a single sphere in a batched mesh). Pass start=-1 to clear the vertex range highlight.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>start</strong> : <em>int</em>
+First vertex index to highlight (-1 to clear).</p>
+</li>
+<li class="">
+<p><strong>count</strong> : <em>int</em>
+Number of vertices to highlight.</p>
+</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
+<ul>
+<li class="">Full source: <a href="https://github.com/mne-tools/mne-cpp/tree/staging/src/examples/ex_disp3d_scene/main.cpp" target="_blank" rel="noopener noreferrer" class=""><code>src/examples/ex_disp3d_scene/main.cpp</code></a></li>
+<li class="">Build target: <code>ex_disp3d_scene</code> (runs under CTest)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
+<ul>
+<li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/disp3-d/brain-renderer"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">BrainRenderer</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/disp3-d/brain-tree-model"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">BrainTreeModel</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#brainsurface-1" class="table-of-contents__link toc-highlight">BrainSurface()</a></li><li><a href="#brainsurface-2" class="table-of-contents__link toc-highlight">~BrainSurface()</a></li><li><a href="#setvisiblevisible" class="table-of-contents__link toc-highlight">setVisible(visible)</a></li><li><a href="#isvisible" class="table-of-contents__link toc-highlight">isVisible()</a></li><li><a href="#sethemihemi" class="table-of-contents__link toc-highlight">setHemi(hemi)</a></li><li><a href="#settissuetypetype" class="table-of-contents__link toc-highlight">setTissueType(type)</a></li><li><a href="#tissuetype" class="table-of-contents__link toc-highlight">tissueType()</a></li><li><a href="#hemi" class="table-of-contents__link toc-highlight">hemi()</a></li><li><a href="#fromsurfacesurf" class="table-of-contents__link toc-highlight">fromSurface(surf)</a></li><li><a href="#frombemsurfacesurf-color" class="table-of-contents__link toc-highlight">fromBemSurface(surf, color)</a></li><li><a href="#createfromdatavertices-triangles-color" class="table-of-contents__link toc-highlight">createFromData(vertices, triangles, color)</a></li><li><a href="#createfromdatavertices-normals-triangles-color" class="table-of-contents__link toc-highlight">createFromData(vertices, normals, triangles, color)</a></li><li><a href="#loadannotationpath" class="table-of-contents__link toc-highlight">loadAnnotation(path)</a></li><li><a href="#addannotationannotation" class="table-of-contents__link toc-highlight">addAnnotation(annotation)</a></li><li><a href="#setvisualizationmodemode" class="table-of-contents__link toc-highlight">setVisualizationMode(mode)</a></li><li><a href="#applysourceestimatecolorscolors" class="table-of-contents__link toc-highlight">applySourceEstimateColors(colors)</a></li><li><a href="#clearsourceestimatecolors" class="table-of-contents__link toc-highlight">clearSourceEstimateColors()</a></li><li><a href="#updatebuffersrhi-u" class="table-of-contents__link toc-highlight">updateBuffers(rhi, u)</a></li><li><a href="#vertexbuffer" class="table-of-contents__link toc-highlight">vertexBuffer()</a></li><li><a href="#indexbuffer" class="table-of-contents__link toc-highlight">indexBuffer()</a></li><li><a href="#indexcount" class="table-of-contents__link toc-highlight">indexCount()</a></li><li><a href="#vertexcount" class="table-of-contents__link toc-highlight">vertexCount()</a></li><li><a href="#vertexpositions" class="table-of-contents__link toc-highlight">vertexPositions()</a></li><li><a href="#vertexnormals" class="table-of-contents__link toc-highlight">vertexNormals()</a></li><li><a href="#triangleindices" class="table-of-contents__link toc-highlight">triangleIndices()</a></li><li><a href="#vertexdataref" class="table-of-contents__link toc-highlight">vertexDataRef()</a></li><li><a href="#indexdataref" class="table-of-contents__link toc-highlight">indexDataRef()</a></li><li><a href="#vertexgeneration" class="table-of-contents__link toc-highlight">vertexGeneration()</a></li><li><a href="#minx" class="table-of-contents__link toc-highlight">minX()</a></li><li><a href="#maxx" class="table-of-contents__link toc-highlight">maxX()</a></li><li><a href="#boundingboxmin-max" class="table-of-contents__link toc-highlight">boundingBox(min, max)</a></li><li><a href="#intersectsrayorigin-raydir-dist-vertexidx" class="table-of-contents__link toc-highlight">intersects(rayOrigin, rayDir, dist, vertexIdx)</a></li><li><a href="#getannotationlabelvertexidx" class="table-of-contents__link toc-highlight">getAnnotationLabel(vertexIdx)</a></li><li><a href="#getannotationlabelidvertexidx" class="table-of-contents__link toc-highlight">getAnnotationLabelId(vertexIdx)</a></li><li><a href="#setselectedregionregionid" class="table-of-contents__link toc-highlight">setSelectedRegion(regionId)</a></li><li><a href="#translatexoffset" class="table-of-contents__link toc-highlight">translateX(offset)</a></li><li><a href="#transformm" class="table-of-contents__link toc-highlight">transform(m)</a></li><li><a href="#applytransformm" class="table-of-contents__link toc-highlight">applyTransform(m)</a></li><li><a href="#computeneighbors" class="table-of-contents__link toc-highlight">computeNeighbors()</a></li><li><a href="#verticesasmatrix" class="table-of-contents__link toc-highlight">verticesAsMatrix()</a></li><li><a href="#setusedefaultcolorusedefault" class="table-of-contents__link toc-highlight">setUseDefaultColor(useDefault)</a></li><li><a href="#setselectedselected" class="table-of-contents__link toc-highlight">setSelected(selected)</a></li><li><a href="#isselected" class="table-of-contents__link toc-highlight">isSelected()</a></li><li><a href="#selectedregionid" class="table-of-contents__link toc-highlight">selectedRegionId()</a></li><li><a href="#selectedvertexstart" class="table-of-contents__link toc-highlight">selectedVertexStart()</a></li><li><a href="#setselectedvertexrangestart-count" class="table-of-contents__link toc-highlight">setSelectedVertexRange(start, count)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
