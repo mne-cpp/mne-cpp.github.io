@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FIFFLIB::FiffCoordTrans | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::FiffCoordTrans | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library"><meta data-rh="true" property="og:description" content="Namespace FIFF Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIFF Library","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"},{"@type":"ListItem","position":2,"name":"FiffCoordTrans","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-coord-trans"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.3cd32a80.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.9fd0265e.js" defer="defer"></script>
 <script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
@@ -170,6 +170,10 @@ Perform translation next to rotation yes/no.</p>
 <ul>
 <li class=""><strong>p_IODevice</strong> : <em>QIODevice &amp;</em>
 IO device to write the transformation to.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the device cannot be opened for writing.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="writetostreamp_pstream">writeToStream(p_pStream)<a href="#writetostreamp_pstream" class="hash-link" aria-label="Direct link to writeToStream(p_pStream)" title="Direct link to writeToStream(p_pStream)" translate="no">​</a></h3>
@@ -457,7 +461,7 @@ The FIFF tag to read from.</li>
 <li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-coord-trans">FiffCoordTrans</a></em> — The coordinate transform, or an empty transform if the tag is invalid.</li>
 </ul>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readtransformfromnodestream-node-from-to">readTransformFromNode(stream, node, from, to)<a href="#readtransformfromnodestream-node-from-to" class="hash-link" aria-label="Direct link to readTransformFromNode(stream, node, from, to)" title="Direct link to readTransformFromNode(stream, node, from, to)" translate="no"> ​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readtransformfromnodestream-node-from-to">readTransformFromNode(stream, node, from, to)<a href="#readtransformfromnodestream-node-from-to" class="hash-link" aria-label="Direct link to readTransformFromNode(stream, node, from, to)" title="Direct link to readTransformFromNode(stream, node, from, to)" translate="no">​</a></h3>
 <p>Reads a coordinate transform from a FIFF stream node.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
