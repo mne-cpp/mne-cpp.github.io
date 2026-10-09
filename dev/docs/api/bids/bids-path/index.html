@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">BIDSLIB::BIDSPath | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/bids/bids-path"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BIDSLIB::BIDSPath | MNE-CPP"><meta data-rh="true" name="description" content="Namespace BIDS Library"><meta data-rh="true" property="og:description" content="Namespace BIDS Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-path"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-path" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/bids/bids-path" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BIDS Library","item":"https://mne-cpp.github.io/dev/docs/api/bids/"},{"@type":"ListItem","position":2,"name":"BIDSPath","item":"https://mne-cpp.github.io/dev/docs/api/bids/bids-path"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.9fd0265e.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.48d2a3de.js" defer="defer"></script>
 <script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
@@ -285,7 +285,7 @@ File extension including the leading dot.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="basename">basename()<a href="#basename" class="hash-link" aria-label="Direct link to basename()" title="Direct link to basename()" translate="no">​</a></h3>
 <p>Constructs the BIDS-compliant filename (without directory).</p>
-<p>Format: <code>sub-&lt;label&gt;[_ses-&lt;label&gt;][_task-&lt;label&gt;][_acq-&lt;label&gt;][_run-&lt;index&gt;]</code> <code>[_proc-&lt;label&gt;][_space-&lt;label&gt;][_rec-&lt;label&gt;][_split-&lt;index&gt;]</code> <code>[_desc-&lt;label&gt;]_&lt;</code>suffix<code>&gt;&lt;</code>extension<code>&gt;</code></p>
+<p>Format: <code>sub-&lt;label&gt;[_ses-&lt;label&gt;][_task-&lt;label&gt;][_acq-&lt;label&gt;][_run-&lt;index&gt;]</code> <code>[_proc-&lt;label&gt;][_space-&lt;label&gt;][_recording-&lt;label&gt;][_split-&lt;index&gt;]</code> <code>[_desc-&lt;label&gt;]_&lt;</code>suffix<code>&gt;&lt;</code>extension<code>&gt;</code></p>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>QString</em> — The BIDS filename.</li>
@@ -376,11 +376,10 @@ New extension (e.g. &quot;.tsv&quot;, &quot;.json&quot;).</p>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="match">match()<a href="#match" class="hash-link" aria-label="Direct link to match()" title="Direct link to match()" translate="no">​</a></h3>
-<p>Searches the BIDS root for all files matching the current entities.</p>
-<p>Wildcards are used for unset entities.</p>
+<p>Searches the BIDS root (all subject, session and datatype folders) for files whose entities, datatype, suffix and extension equal the ones set here; unset ones match anything, as in mne_bids.BIDSPath.match.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QList&lt; <a class="" href="/dev/docs/api/bids/bids-path">BIDSPath</a> &gt;</em> — List of matching <a class="" href="/dev/docs/api/bids/bids-path"><code>BIDSPath</code></a> objects.</li>
+<li class=""><em>QList&lt; <a class="" href="/dev/docs/api/bids/bids-path">BIDSPath</a> &gt;</em> — Matching paths, sorted by file path.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operatorother">operator=(other)<a href="#operatorother" class="hash-link" aria-label="Direct link to operator=(other)" title="Direct link to operator=(other)" translate="no">​</a></h3>
