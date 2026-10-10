@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FIFFLIB::FiffDigPointSet | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-dig-point-set"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::FiffDigPointSet | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library"><meta data-rh="true" property="og:description" content="Namespace FIFF Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-dig-point-set"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-dig-point-set" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-dig-point-set" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIFF Library","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"},{"@type":"ListItem","position":2,"name":"FiffDigPointSet","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-dig-point-set"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.47d9f953.js" defer="defer"></script>
-<script src="/dev/assets/js/main.900d2ced.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7a3383d4.js" defer="defer"></script>
+<script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -219,6 +219,161 @@ The read digitizer point set.</p>
 <li class=""><em>bool</em> — true if succeeded, false otherwise.</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readpolhemusisotrakpath-dig-chnames-unit">readPolhemusIsotrak(path, dig, chNames, unit)<a href="#readpolhemusisotrakpath-dig-chnames-unit" class="hash-link" aria-label="Direct link to readPolhemusIsotrak(path, dig, chNames, unit)" title="Direct link to readPolhemusIsotrak(path, dig, chNames, unit)" translate="no">​</a></h3>
+<p>Reads a Polhemus Isotrak digitizer file, as mne.channels.read_dig_polhemus_isotrak does.</p>
+<p>The three fiducials become cardinal points (LPA, nasion, RPA). The remaining points become HPI coils for an .elp file and head shape points for .hsp/.eeg files, or EEG electrodes when <code>chNames</code> names them. Electrodes are numbered by the last three characters of their names when all of those are numbers, and 1..n otherwise. All points are in digitizer coordinates (FIFFV_COORD_UNKNOWN).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The .elp, .hsp or .eeg file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dig-point-set">FiffDigPointSet</a> &amp;</em>
+The digitizer points.</p>
+</li>
+<li class="">
+<p><strong>chNames</strong> : <em>const QStringList &amp;</em>
+Electrode names, one per non-fiducial point, or empty.</p>
+</li>
+<li class="">
+<p><strong>unit</strong> : <em>const QString &amp;</em>
+Unit of the file: &quot;m&quot;, &quot;cm&quot; or &quot;mm&quot;.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be read, the extension or unit is unknown, or the number of names does not match the number of points.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readpolhemusfastscanpath-points-unit-requireheader">readPolhemusFastscan(path, points, unit, requireHeader)<a href="#readpolhemusfastscanpath-points-unit-requireheader" class="hash-link" aria-label="Direct link to readPolhemusFastscan(path, points, unit, requireHeader)" title="Direct link to readPolhemusFastscan(path, points, unit, requireHeader)" translate="no">​</a></h3>
+<p>Reads the points of a Polhemus FastSCAN .txt file in metres, as mne.channels.read_polhemus_fastscan does.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The .txt file.</p>
+</li>
+<li class="">
+<p><strong>points</strong> : <em>Eigen::MatrixX3d &amp;</em>
+The points, one per row, in digitizer coordinates.</p>
+</li>
+<li class="">
+<p><strong>unit</strong> : <em>const QString &amp;</em>
+Unit of the file: &quot;m&quot;, &quot;cm&quot; or &quot;mm&quot;.</p>
+</li>
+<li class="">
+<p><strong>requireHeader</strong> : <em>bool</em>
+Reject files whose &quot;%&quot; header does not name FastSCAN.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be read, the extension, unit or header is wrong, or a row does not hold three numbers.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readcaptrakpath-dig-chnames">readCaptrak(path, dig, chNames)<a href="#readcaptrakpath-dig-chnames" class="hash-link" aria-label="Direct link to readCaptrak(path, dig, chNames)" title="Direct link to readCaptrak(path, dig, chNames)" translate="no">​</a></h3>
+<p>Reads a BrainVision CapTrak .bvct file, as mne.channels.read_dig_captrak does.</p>
+<p>The electrodes named Nasion, LPA and RPA become the cardinal points, every other electrode an EEG point; millimetres are converted to metres. The points are in digitizer coordinates (FIFFV_COORD_UNKNOWN), numbered as by readPolhemusIsotrak; a repeated name keeps its first place and its last position.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The .bvct file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dig-point-set">FiffDigPointSet</a> &amp;</em>
+The digitizer points.</p>
+</li>
+<li class="">
+<p><strong>chNames</strong> : *QStringList **
+If not null, the electrode names in the order of the EEG points.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be parsed or lacks one of the fiducials.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readegipath-dig-chnames">readEgi(path, dig, chNames)<a href="#readegipath-dig-chnames" class="hash-link" aria-label="Direct link to readEgi(path, dig, chNames)" title="Direct link to readEgi(path, dig, chNames)" translate="no">​</a></h3>
+<p>Reads the coordinates.xml of an EGI MFF recording, as mne.channels.read_dig_egi does.</p>
+<p>Sensors of type 0 become EEG points named &quot;EEG &lt;number&gt;&quot;, the reference (type 1) is numbered after the electrodes before it, and the nasion and periauricular points (type 2) become the cardinal points. Unlike mne.channels.read_dig_egi, which keeps the file&#x27;s centimetres as if they were metres, the positions are converted to metres (as mne.io.read_raw_egi does).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The coordinates.xml file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dig-point-set">FiffDigPointSet</a> &amp;</em>
+The digitizer points, in digitizer coordinates.</p>
+</li>
+<li class="">
+<p><strong>chNames</strong> : *QStringList **
+If not null, the electrode names in the order of the EEG points.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be parsed or lacks one of the fiducials.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readlocalitepath-dig-chnames-nasion-lpa-rpa">readLocalite(path, dig, chNames, nasion, lpa, rpa)<a href="#readlocalitepath-dig-chnames-nasion-lpa-rpa" class="hash-link" aria-label="Direct link to readLocalite(path, dig, chNames, nasion, lpa, rpa)" title="Direct link to readLocalite(path, dig, chNames, nasion, lpa, rpa)" translate="no">​</a></h3>
+<p>Reads a Localite .csv file (&quot;#,name,x,y,z&quot; in millimetres after a header row), as mne.channels.read_dig_localite does.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The .csv file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dig-point-set">FiffDigPointSet</a> &amp;</em>
+The digitizer points, in digitizer coordinates.</p>
+</li>
+<li class="">
+<p><strong>chNames</strong> : *QStringList **
+If not null, the electrode names in the order of the EEG points.</p>
+</li>
+<li class="">
+<p><strong>nasion</strong> : <em>const QString &amp;</em>
+Name of the point that is the nasion, or empty.</p>
+</li>
+<li class="">
+<p><strong>lpa</strong> : <em>const QString &amp;</em>
+Name of the point that is the left preauricular point, or empty.</p>
+</li>
+<li class="">
+<p><strong>rpa</strong> : <em>const QString &amp;</em>
+Name of the point that is the right preauricular point, or empty.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be read, a row is malformed or a named fiducial is missing.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="readneuroscandatpath-dig-chnames">readNeuroscanDat(path, dig, chNames)<a href="#readneuroscandatpath-dig-chnames" class="hash-link" aria-label="Direct link to readNeuroscanDat(path, dig, chNames)" title="Direct link to readNeuroscanDat(path, dig, chNames)" translate="no">​</a></h3>
+<p>Reads a Neuroscan .dat electrode file (&quot;name number x y z&quot; per line), as mne.channels.read_dig_dat does: point numbers 78, 76 and 82 are the nasion, LPA and RPA, 67 (the centroid) is skipped, and the coordinates are kept as they are.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>path</strong> : <em>const QString &amp;</em>
+The .dat file.</p>
+</li>
+<li class="">
+<p><strong>dig</strong> : <em><a class="" href="/dev/docs/api/fiff/fiff-dig-point-set">FiffDigPointSet</a> &amp;</em>
+The digitizer points, in digitizer coordinates.</p>
+</li>
+<li class="">
+<p><strong>chNames</strong> : *QStringList **
+If not null, the electrode names in the order of the EEG points.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — false if the file cannot be read or a line does not hold five entries.</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
 <ul>
 <li class="">Full source: <a href="https://github.com/mne-tools/mne-cpp/tree/staging/src/examples/ex_fiff_api/main.cpp" target="_blank" rel="noopener noreferrer" class=""><code>src/examples/ex_fiff_api/main.cpp</code></a></li>
@@ -233,6 +388,6 @@ The read digitizer point set.</p>
 <li class="">Ruben Doerfel &lt;<a href="mailto:doerfelruben@aol.com" target="_blank" rel="noopener noreferrer" class="">doerfelruben@aol.com</a>&gt;</li>
 <li class="">Juan GPC &lt;<a href="mailto:jgarciaprieto@mgh.harvard.edu" target="_blank" rel="noopener noreferrer" class="">jgarciaprieto@mgh.harvard.edu</a>&gt;</li>
 <li class="">Gabriel Motta &lt;<a href="mailto:gabrielbenmotta@gmail.com" target="_blank" rel="noopener noreferrer" class="">gabrielbenmotta@gmail.com</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-dig-point"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffDigPoint</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-digitizer-data"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffDigitizerData</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiffdigpointset-1" class="table-of-contents__link toc-highlight">FiffDigPointSet()</a></li><li><a href="#fiffdigpointsetp_fiffdigpointset" class="table-of-contents__link toc-highlight">FiffDigPointSet(p_FiffDigPointSet)</a></li><li><a href="#operatorother" class="table-of-contents__link toc-highlight">operator=(other)</a></li><li><a href="#fiffdigpointsetpointlist" class="table-of-contents__link toc-highlight">FiffDigPointSet(pointList)</a></li><li><a href="#fiffdigpointsetp_iodevice" class="table-of-contents__link toc-highlight">FiffDigPointSet(p_IODevice)</a></li><li><a href="#fiffdigpointset-2" class="table-of-contents__link toc-highlight">~FiffDigPointSet()</a></li><li><a href="#clear" class="table-of-contents__link toc-highlight">clear()</a></li><li><a href="#isempty" class="table-of-contents__link toc-highlight">isEmpty()</a></li><li><a href="#size" class="table-of-contents__link toc-highlight">size()</a></li><li><a href="#writep_iodevice" class="table-of-contents__link toc-highlight">write(p_IODevice)</a></li><li><a href="#writefilepath-errormessage" class="table-of-contents__link toc-highlight">write(filePath, errorMessage)</a></li><li><a href="#writetostreamp_pstream" class="table-of-contents__link toc-highlight">writeToStream(p_pStream)</a></li><li><a href="#operatoridx" class="table-of-contents__link toc-highlight">operator[](idx)</a></li><li><a href="#operatoridx-1" class="table-of-contents__link toc-highlight">operator[](idx)</a></li><li><a href="#picktypesincludetypes" class="table-of-contents__link toc-highlight">pickTypes(includeTypes)</a></li><li><a href="#operatordig" class="table-of-contents__link toc-highlight">operator&lt;&lt;(dig)</a></li><li><a href="#operatordig-1" class="table-of-contents__link toc-highlight">operator&lt;&lt;(dig)</a></li><li><a href="#applytransformcoordtrans-bapplyinverse" class="table-of-contents__link toc-highlight">applyTransform(coordTrans, bApplyInverse)</a></li><li><a href="#getlist" class="table-of-contents__link toc-highlight">getList()</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#readfromstreamp_stream-p_dig" class="table-of-contents__link toc-highlight">readFromStream(p_Stream, p_Dig)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-dig-point"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffDigPoint</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-digitizer-data"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffDigitizerData</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiffdigpointset-1" class="table-of-contents__link toc-highlight">FiffDigPointSet()</a></li><li><a href="#fiffdigpointsetp_fiffdigpointset" class="table-of-contents__link toc-highlight">FiffDigPointSet(p_FiffDigPointSet)</a></li><li><a href="#operatorother" class="table-of-contents__link toc-highlight">operator=(other)</a></li><li><a href="#fiffdigpointsetpointlist" class="table-of-contents__link toc-highlight">FiffDigPointSet(pointList)</a></li><li><a href="#fiffdigpointsetp_iodevice" class="table-of-contents__link toc-highlight">FiffDigPointSet(p_IODevice)</a></li><li><a href="#fiffdigpointset-2" class="table-of-contents__link toc-highlight">~FiffDigPointSet()</a></li><li><a href="#clear" class="table-of-contents__link toc-highlight">clear()</a></li><li><a href="#isempty" class="table-of-contents__link toc-highlight">isEmpty()</a></li><li><a href="#size" class="table-of-contents__link toc-highlight">size()</a></li><li><a href="#writep_iodevice" class="table-of-contents__link toc-highlight">write(p_IODevice)</a></li><li><a href="#writefilepath-errormessage" class="table-of-contents__link toc-highlight">write(filePath, errorMessage)</a></li><li><a href="#writetostreamp_pstream" class="table-of-contents__link toc-highlight">writeToStream(p_pStream)</a></li><li><a href="#operatoridx" class="table-of-contents__link toc-highlight">operator[](idx)</a></li><li><a href="#operatoridx-1" class="table-of-contents__link toc-highlight">operator[](idx)</a></li><li><a href="#picktypesincludetypes" class="table-of-contents__link toc-highlight">pickTypes(includeTypes)</a></li><li><a href="#operatordig" class="table-of-contents__link toc-highlight">operator&lt;&lt;(dig)</a></li><li><a href="#operatordig-1" class="table-of-contents__link toc-highlight">operator&lt;&lt;(dig)</a></li><li><a href="#applytransformcoordtrans-bapplyinverse" class="table-of-contents__link toc-highlight">applyTransform(coordTrans, bApplyInverse)</a></li><li><a href="#getlist" class="table-of-contents__link toc-highlight">getList()</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#readfromstreamp_stream-p_dig" class="table-of-contents__link toc-highlight">readFromStream(p_Stream, p_Dig)</a></li><li><a href="#readpolhemusisotrakpath-dig-chnames-unit" class="table-of-contents__link toc-highlight">readPolhemusIsotrak(path, dig, chNames, unit)</a></li><li><a href="#readpolhemusfastscanpath-points-unit-requireheader" class="table-of-contents__link toc-highlight">readPolhemusFastscan(path, points, unit, requireHeader)</a></li><li><a href="#readcaptrakpath-dig-chnames" class="table-of-contents__link toc-highlight">readCaptrak(path, dig, chNames)</a></li><li><a href="#readegipath-dig-chnames" class="table-of-contents__link toc-highlight">readEgi(path, dig, chNames)</a></li><li><a href="#readlocalitepath-dig-chnames-nasion-lpa-rpa" class="table-of-contents__link toc-highlight">readLocalite(path, dig, chNames, nasion, lpa, rpa)</a></li><li><a href="#readneuroscandatpath-dig-chnames" class="table-of-contents__link toc-highlight">readNeuroscanDat(path, dig, chNames)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

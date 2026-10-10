@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FIFFLIB::FiffEvents | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-events"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FIFFLIB::FiffEvents | MNE-CPP"><meta data-rh="true" name="description" content="Namespace FIFF Library"><meta data-rh="true" property="og:description" content="Namespace FIFF Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-events"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-events" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fiff/fiff-events" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"FIFF Library","item":"https://mne-cpp.github.io/dev/docs/api/fiff/"},{"@type":"ListItem","position":2,"name":"FiffEvents","item":"https://mne-cpp.github.io/dev/docs/api/fiff/fiff-events"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.47d9f953.js" defer="defer"></script>
-<script src="/dev/assets/js/main.900d2ced.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7a3383d4.js" defer="defer"></script>
+<script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -75,6 +75,62 @@ Sampling frequency for time column computation.</p>
 <p><strong>Returns:</strong></p>
 <ul>
 <li class=""><em>bool</em> — true if the event matrix has zero rows.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pickinclude-exclude-step">pick(include, exclude, step)<a href="#pickinclude-exclude-step" class="hash-link" aria-label="Direct link to pick(include, exclude, step)" title="Direct link to pick(include, exclude, step)" translate="no">​</a></h3>
+<p>Select events by code, like mne.pick_events.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>include</strong> : <em>const QList&lt; int &gt; &amp;</em>
+Codes to keep; if empty, all codes except <code>exclude</code> are kept.</p>
+</li>
+<li class="">
+<p><strong>exclude</strong> : <em>const QList&lt; int &gt; &amp;</em>
+Codes to drop when <code>include</code> is empty.</p>
+</li>
+<li class="">
+<p><strong>step</strong> : <em>bool</em>
+Also match the code before the step (column 1).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a></em> — The selected events in their original order.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mergeids-newid-replaceevents">merge(ids, newId, replaceEvents)<a href="#mergeids-newid-replaceevents" class="hash-link" aria-label="Direct link to merge(ids, newId, replaceEvents)" title="Direct link to merge(ids, newId, replaceEvents)" translate="no">​</a></h3>
+<p>Replace codes in both code columns by a new one, like mne.merge_events.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>ids</strong> : <em>const QList&lt; int &gt; &amp;</em>
+Codes to replace.</p>
+</li>
+<li class="">
+<p><strong>newId</strong> : <em>int</em>
+The new code.</p>
+</li>
+<li class="">
+<p><strong>replaceEvents</strong> : <em>bool</em>
+If false, the original events are kept as well, sorted by row.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a></em> — The merged events.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="countids">count(ids)<a href="#countids" class="hash-link" aria-label="Direct link to count(ids)" title="Direct link to count(ids)" translate="no">​</a></h3>
+<p>Count the events per code (column 2), like mne.count_events.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>ids</strong> : <em>const QList&lt; int &gt; &amp;</em>
+Codes to report (0 if absent); if empty, every code that occurs.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QMap&lt; int, int &gt;</em> — Code to count.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
@@ -190,6 +246,96 @@ Index of the current event row.</p>
 <li class=""><em>bool</em> — true if the event matches.</li>
 </ul>
 <hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="concatenateevents-firstsamps-lastsamps">concatenate(events, firstSamps, lastSamps)<a href="#concatenateevents-firstsamps-lastsamps" class="hash-link" aria-label="Direct link to concatenate(events, firstSamps, lastSamps)" title="Direct link to concatenate(events, firstSamps, lastSamps)" translate="no">​</a></h3>
+<p>Concatenate the events of consecutive recordings, like mne.concatenate_events.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>events</strong> : <em>const QList&lt; <a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a> &gt; &amp;</em>
+Events of each recording.</p>
+</li>
+<li class="">
+<p><strong>firstSamps</strong> : <em>const QList&lt; int &gt; &amp;</em>
+First sample of each recording.</p>
+</li>
+<li class="">
+<p><strong>lastSamps</strong> : <em>const QList&lt; int &gt; &amp;</em>
+Last sample of each recording.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a></em> — Events on the sample axis of the concatenated recording (empty if the list lengths differ).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="find_stim_stepsstimdata-firstsamp-padstart-padstop-merge">find_stim_steps(stimData, firstSamp, padStart, padStop, merge)<a href="#find_stim_stepsstimdata-firstsamp-padstart-padstop-merge" class="hash-link" aria-label="Direct link to find_stim_steps(stimData, firstSamp, padStart, padStop, merge)" title="Direct link to find_stim_steps(stimData, firstSamp, padStart, padStop, merge)" translate="no">​</a></h3>
+<p>Find the samples where all stimulus channels change at once, like mne.find_stim_steps.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>stimData</strong> : <em>const Eigen::MatrixXi &amp;</em>
+Stimulus channel data (channels x samples); steps carry the values of the first row.</p>
+</li>
+<li class="">
+<p><strong>firstSamp</strong> : <em>int</em>
+Sample number of the first column.</p>
+</li>
+<li class="">
+<p><strong>padStart</strong> : <em>std::optional&lt; int &gt;</em>
+If set, a step from this value at sample 0 is added when the data start elsewhere.</p>
+</li>
+<li class="">
+<p><strong>padStop</strong> : <em>std::optional&lt; int &gt;</em>
+If set, a step to this value after the last sample is added.</p>
+</li>
+<li class="">
+<p><strong>merge</strong> : <em>int</em>
+Merge steps at most |merge| samples apart (&gt; 0: into the later, &lt; 0: into the earlier).</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a></em> — Steps as [sample, value before, value after].</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="make_fixed_lengthraw-id-start-stop-duration-firstsamp-overlap">make_fixed_length(raw, id, start, stop, duration, firstSamp, overlap)<a href="#make_fixed_lengthraw-id-start-stop-duration-firstsamp-overlap" class="hash-link" aria-label="Direct link to make_fixed_length(raw, id, start, stop, duration, firstSamp, overlap)" title="Direct link to make_fixed_length(raw, id, start, stop, duration, firstSamp, overlap)" translate="no">​</a></h3>
+<p>Events at regular intervals, like mne.make_fixed_length_events.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>raw</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-raw-data">FiffRawData</a> &amp;</em>
+The recording.</p>
+</li>
+<li class="">
+<p><strong>id</strong> : <em>int</em>
+Event code.</p>
+</li>
+<li class="">
+<p><strong>start</strong> : <em>double</em>
+First event time in s.</p>
+</li>
+<li class="">
+<p><strong>stop</strong> : <em>double</em>
+Time in s after which no event may start (negative: end of the recording).</p>
+</li>
+<li class="">
+<p><strong>duration</strong> : <em>double</em>
+Duration of each segment in s.</p>
+</li>
+<li class="">
+<p><strong>firstSamp</strong> : <em>bool</em>
+Whether times count from the recording&#x27;s first sample (true) or from 0.</p>
+</li>
+<li class="">
+<p><strong>overlap</strong> : <em>double</em>
+Overlap of consecutive segments in s, 0 &lt;= overlap &lt; duration.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em><a class="" href="/dev/docs/api/fiff/fiff-events">FiffEvents</a></em> — The events (empty if none fit or the overlap is invalid).</li>
+</ul>
+<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
 <ul>
 <li class="">Full source: <a href="https://github.com/mne-tools/mne-cpp/tree/staging/src/examples/ex_fiff_api/main.cpp" target="_blank" rel="noopener noreferrer" class=""><code>src/examples/ex_fiff_api/main.cpp</code></a></li>
@@ -199,6 +345,6 @@ Index of the current event row.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>
 <li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-dir-node"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffDirNode</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-file-sharer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffFileSharer</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiffevents-1" class="table-of-contents__link toc-highlight">FiffEvents()</a></li><li><a href="#fiffeventsp_iodevice" class="table-of-contents__link toc-highlight">FiffEvents(p_IODevice)</a></li><li><a href="#write_to_fifp_iodevice" class="table-of-contents__link toc-highlight">write_to_fif(p_IODevice)</a></li><li><a href="#write_to_asciip_iodevice-sfreq" class="table-of-contents__link toc-highlight">write_to_ascii(p_IODevice, sfreq)</a></li><li><a href="#num_events" class="table-of-contents__link toc-highlight">num_events()</a></li><li><a href="#is_empty" class="table-of-contents__link toc-highlight">is_empty()</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#readt_seventname-t_filerawname-p_events" class="table-of-contents__link toc-highlight">read(t_sEventName, t_fileRawName, p_Events)</a></li><li><a href="#read_from_fifp_iodevice-p_events" class="table-of-contents__link toc-highlight">read_from_fif(p_IODevice, p_Events)</a></li><li><a href="#read_from_asciip_iodevice-p_events" class="table-of-contents__link toc-highlight">read_from_ascii(p_IODevice, p_Events)</a></li><li><a href="#detect_from_rawraw-p_events-triggerch-triggermask-leadingedge" class="table-of-contents__link toc-highlight">detect_from_raw(raw, p_Events, triggerCh, triggerMask, leadingEdge)</a></li><li><a href="#matcheventcat-events-eventidx" class="table-of-contents__link toc-highlight">matchEvent(cat, events, eventIdx)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/fiff/fiff-dir-node"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">FiffDirNode</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/fiff/fiff-file-sharer"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">FiffFileSharer</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#fiffevents-1" class="table-of-contents__link toc-highlight">FiffEvents()</a></li><li><a href="#fiffeventsp_iodevice" class="table-of-contents__link toc-highlight">FiffEvents(p_IODevice)</a></li><li><a href="#write_to_fifp_iodevice" class="table-of-contents__link toc-highlight">write_to_fif(p_IODevice)</a></li><li><a href="#write_to_asciip_iodevice-sfreq" class="table-of-contents__link toc-highlight">write_to_ascii(p_IODevice, sfreq)</a></li><li><a href="#num_events" class="table-of-contents__link toc-highlight">num_events()</a></li><li><a href="#is_empty" class="table-of-contents__link toc-highlight">is_empty()</a></li><li><a href="#pickinclude-exclude-step" class="table-of-contents__link toc-highlight">pick(include, exclude, step)</a></li><li><a href="#mergeids-newid-replaceevents" class="table-of-contents__link toc-highlight">merge(ids, newId, replaceEvents)</a></li><li><a href="#countids" class="table-of-contents__link toc-highlight">count(ids)</a></li></ul></li><li><a href="#static-methods" class="table-of-contents__link toc-highlight">Static Methods</a><ul><li><a href="#readt_seventname-t_filerawname-p_events" class="table-of-contents__link toc-highlight">read(t_sEventName, t_fileRawName, p_Events)</a></li><li><a href="#read_from_fifp_iodevice-p_events" class="table-of-contents__link toc-highlight">read_from_fif(p_IODevice, p_Events)</a></li><li><a href="#read_from_asciip_iodevice-p_events" class="table-of-contents__link toc-highlight">read_from_ascii(p_IODevice, p_Events)</a></li><li><a href="#detect_from_rawraw-p_events-triggerch-triggermask-leadingedge" class="table-of-contents__link toc-highlight">detect_from_raw(raw, p_Events, triggerCh, triggerMask, leadingEdge)</a></li><li><a href="#matcheventcat-events-eventidx" class="table-of-contents__link toc-highlight">matchEvent(cat, events, eventIdx)</a></li><li><a href="#concatenateevents-firstsamps-lastsamps" class="table-of-contents__link toc-highlight">concatenate(events, firstSamps, lastSamps)</a></li><li><a href="#find_stim_stepsstimdata-firstsamp-padstart-padstop-merge" class="table-of-contents__link toc-highlight">find_stim_steps(stimData, firstSamp, padStart, padStop, merge)</a></li><li><a href="#make_fixed_lengthraw-id-start-stop-duration-firstsamp-overlap" class="table-of-contents__link toc-highlight">make_fixed_length(raw, id, start, stop, duration, firstSamp, overlap)</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::EogRegression | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/dsp/eog-regression"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::EogRegression | MNE-CPP"><meta data-rh="true" name="description" content="Namespace DSP Library"><meta data-rh="true" property="og:description" content="Namespace DSP Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/dsp/eog-regression"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/dsp/eog-regression" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/dsp/eog-regression" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DSP Library","item":"https://mne-cpp.github.io/dev/docs/api/dsp/"},{"@type":"ListItem","position":2,"name":"EogRegression","item":"https://mne-cpp.github.io/dev/docs/api/dsp/eog-regression"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.47d9f953.js" defer="defer"></script>
-<script src="/dev/assets/js/main.900d2ced.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7a3383d4.js" defer="defer"></script>
+<script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -17,7 +17,7 @@
 <p><code>#include &lt;dsp/eog_regression.h&gt;</code></p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">UTILSLIB</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">EogRegression</span><br></div></code></pre></div></div>
 <p>Remove EOG artifacts via linear regression.</p>
-<p>Fits a least-squares model: data_ch = beta * EOG + residual, then subtracts beta * EOG from each non-EOG channel.</p>
+<p>As mne.preprocessing.EOGRegression: fits data_ch = beta * EOG + residual on time-demeaned signals for every good data channel and subtracts beta times the demeaned EOG.</p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockTitle_OeMC">src/examples/ex_dsp_artifacts/main.cpp</div><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">MatrixXd cleaned </span><span class="token operator">=</span><span class="token plain"> data</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">EogRegression regression</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">regression</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">fit</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">cleaned</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> info</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><span class="token plain"> </span><span class="token comment" style="color:rgb(98, 114, 164)">// EOG channels are found by kind</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">regression</span><span class="token punctuation" style="color:rgb(248, 248, 242)">.</span><span class="token function" style="color:rgb(80, 250, 123)">apply</span><span class="token punctuation" style="color:rgb(248, 248, 242)">(</span><span class="token plain">cleaned</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"> info</span><span class="token punctuation" style="color:rgb(248, 248, 242)">)</span><span class="token punctuation" style="color:rgb(248, 248, 242)">;</span><br></div></code></pre></div></div>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
@@ -26,7 +26,7 @@
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fitdata-info-eogchannels">fit(data, info, eogChannels)<a href="#fitdata-info-eogchannels" class="hash-link" aria-label="Direct link to fit(data, info, eogChannels)" title="Direct link to fit(data, info, eogChannels)" translate="no">​</a></h3>
 <p>Fit regression coefficients from EOG to all other channels.</p>
-<p>Uses ordinary least squares: beta = T * E^T * (E * E^T)^{-1}</p>
+<p>Ordinary least squares on demeaned signals: beta = T * E^T * (E * E^T)^{-1}, T being the good data channels (<a class="" href="/dev/docs/api/fiff/fiff-info-base">FiffInfoBase</a>::pick_data_channels without the bads).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
@@ -39,13 +39,13 @@ Measurement info (identifies EOG channels by kind == FIFFV_EOG_CH).</p>
 </li>
 <li class="">
 <p><strong>eogChannels</strong> : <em>const QStringList &amp;</em>
-Optional explicit EOG channel names. If empty, auto-detect from info.</p>
+Optional explicit EOG channel names. If empty, the good channels of kind FIFFV_EOG_CH.</p>
 </li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="applydata-info">apply(data, info)<a href="#applydata-info" class="hash-link" aria-label="Direct link to apply(data, info)" title="Direct link to apply(data, info)" translate="no">​</a></h3>
 <p>Apply the fitted regression to remove EOG artifacts in-place.</p>
-<p>Subtracts beta * EOG from all non-EOG channels. <code>fit()</code> must be called first.</p>
+<p>Subtracts beta times the demeaned EOG from the channels <code>fit()</code> regressed. <code>fit()</code> must be called first.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
