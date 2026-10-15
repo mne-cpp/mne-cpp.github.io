@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Release Guide | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/development/ci-releasecycle"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Release Guide | MNE-CPP"><meta data-rh="true" name="description" content="This page describes MNE-CPP&#x27;s branch model, the development workflow, and the complete process for creating a new release."><meta data-rh="true" property="og:description" content="This page describes MNE-CPP&#x27;s branch model, the development workflow, and the complete process for creating a new release."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/development/ci-releasecycle"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/ci-releasecycle" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/ci-releasecycle" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Continuous Integration","item":"https://mne-cpp.github.io/dev/docs/development/ci"},{"@type":"ListItem","position":2,"name":"Release Guide","item":"https://mne-cpp.github.io/dev/docs/development/ci-releasecycle"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.2601a2d6.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.b823bf18.js" defer="defer"></script>
 <script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
 </head>
 <body>
@@ -31,13 +31,17 @@
 <ul>
 <li class="">Every push to <code>staging</code> triggers:<!-- -->
 <ul>
-<li class="">Cross-platform builds (minimum and maximum supported Qt versions)</li>
-<li class="">Unit tests with <strong>code coverage</strong> — threshold checks (≥ 50%) and regression detection</li>
-<li class="">A rolling <strong>dev pre-release</strong> (<code>dev_build</code>) with binaries for all platforms</li>
-<li class="">Deployment of the <strong>dev</strong> version of the website (at <code>/dev/</code>) and Doxygen API docs (at <code>/dev/</code>)</li>
-<li class="">CodeQL security analysis</li>
+<li class="">Cross-platform tests with <strong>code coverage</strong> — threshold checks (≥ 50%) and regression detection — plus tests against the minimum supported Qt version on all platforms</li>
+<li class="">The <strong>WebAssembly</strong> build</li>
 </ul>
 </li>
+<li class="">Pushes that touch the build or packaging, nightly runs (when <code>staging</code> has changed) and manual runs also produce:<!-- -->
+<ul>
+<li class="">A rolling <strong>dev pre-release</strong> (<code>dev_build</code>) with binaries for all platforms</li>
+<li class="">Deployment of the <strong>dev</strong> version of the website (at <code>/dev/</code>) and Doxygen API docs (at <code>/dev/</code>)</li>
+</ul>
+</li>
+<li class="">CodeQL security analysis runs weekly</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="feature-branches">Feature Branches<a href="#feature-branches" class="hash-link" aria-label="Direct link to Feature Branches" title="Direct link to Feature Branches" translate="no">​</a></h3>
 <p>All development work happens on short-lived feature branches created from <code>staging</code>:</p>
@@ -51,7 +55,7 @@
 <table><thead><tr><th>From</th><th>To</th><th>How</th><th>When</th></tr></thead><tbody><tr><td><code>staging</code></td><td>feature branch</td><td><code>git checkout -b feature/x staging</code></td><td>Starting new work</td></tr><tr><td>feature branch</td><td><code>staging</code></td><td>Pull request (reviewed + CI passes)</td><td>Feature is complete</td></tr><tr><td><code>staging</code></td><td><code>main</code></td><td>Merge (maintainers only)</td><td>Code is release-ready</td></tr><tr><td><code>main</code></td><td>GitHub Release</td><td>Tag <code>v*</code> on <code>main</code></td><td>Cutting a release</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dual-version-documentation">Dual-Version Documentation<a href="#dual-version-documentation" class="hash-link" aria-label="Direct link to Dual-Version Documentation" title="Direct link to Dual-Version Documentation" translate="no">​</a></h2>
 <p>The website and Doxygen API docs are deployed in two versions simultaneously:</p>
-<table><thead><tr><th>Version</th><th>URL</th><th>Updated by</th></tr></thead><tbody><tr><td><strong>Stable</strong></td><td><code>mne-cpp.github.io</code> / <code>mne-cpp.github.io/doxygen-api</code></td><td>Pushes to <code>main</code></td></tr><tr><td><strong>Dev</strong></td><td><code>mne-cpp.github.io/dev/</code> / <code>mne-cpp.github.io/doxygen-api/dev/</code></td><td>Pushes to <code>staging</code></td></tr></tbody></table>
+<table><thead><tr><th>Version</th><th>URL</th><th>Updated by</th></tr></thead><tbody><tr><td><strong>Stable</strong></td><td><code>mne-cpp.github.io</code> / <code>mne-cpp.github.io/doxygen-api</code></td><td>Pushes to <code>main</code></td></tr><tr><td><strong>Dev</strong></td><td><code>mne-cpp.github.io/dev/</code> / <code>mne-cpp.github.io/doxygen-api/dev/</code></td><td>Nightly builds of <code>staging</code></td></tr></tbody></table>
 <p>Both versions are served from the same repository and branch (<code>gh-pages</code>), using subdirectory isolation — stable at the root, dev under <code>/dev/</code>. A version dropdown in the website header lets users switch between stable and dev documentation.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="release-steps">Release Steps<a href="#release-steps" class="hash-link" aria-label="Direct link to Release Steps" title="Direct link to Release Steps" translate="no">​</a></h2>
 <p>Once <code>staging</code> is considered stable and ready for release, the maintainers perform the following steps:</p>
