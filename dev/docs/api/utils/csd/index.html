@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">UTILSLIB::Csd | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/utils/csd"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UTILSLIB::Csd | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Utilities Library"><meta data-rh="true" property="og:description" content="Namespace Utilities Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/utils/csd"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/csd" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/utils/csd" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Utilities Library","item":"https://mne-cpp.github.io/dev/docs/api/utils/"},{"@type":"ListItem","position":2,"name":"Csd","item":"https://mne-cpp.github.io/dev/docs/api/utils/csd"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.e92cf7e4.js" defer="defer"></script>
-<script src="/dev/assets/js/main.7288d8ab.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.05b4f79d.js" defer="defer"></script>
+<script src="/dev/assets/js/main.900d2ced.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -46,7 +46,7 @@ Half-bandwidth parameter (NW) for DPSS tapers (default 4).</p>
 </li>
 <li class="">
 <p><strong>nTapers</strong> : <em>int</em>
-Number of tapers; -1 → floor(2*halfBandwidth - 1) (default -1).</p>
+Number of tapers; -1 → as MNE-Python: those of the first floor(2*halfBandwidth) with concentration &gt; 0.9 (default -1).</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -56,6 +56,7 @@ Number of tapers; -1 → floor(2*halfBandwidth - 1) (default -1).</p>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="computefouriermatdata-sfreq-fmin-fmax-nfft-overlap">computeFourier(matData, sfreq, fmin, fmax, nFft, overlap)<a href="#computefouriermatdata-sfreq-fmin-fmax-nfft-overlap" class="hash-link" aria-label="Direct link to computeFourier(matData, sfreq, fmin, fmax, nFft, overlap)" title="Direct link to computeFourier(matData, sfreq, fmin, fmax, nFft, overlap)" translate="no">​</a></h3>
 <p>Compute CSD using Welch-style Fourier segmented estimation.</p>
+<p>Each segment is treated like an epoch of mne.time_frequency.csd_array_fourier (demeaned, Hann window, same scaling); DC is never returned.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
@@ -89,7 +90,7 @@ Fractional overlap between adjacent segments, in [0, 1) (default 0.5).</p>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="computemorletmatdata-sfreq-frequencies-ncycles">computeMorlet(matData, sfreq, frequencies, nCycles)<a href="#computemorletmatdata-sfreq-frequencies-ncycles" class="hash-link" aria-label="Direct link to computeMorlet(matData, sfreq, frequencies, nCycles)" title="Direct link to computeMorlet(matData, sfreq, frequencies, nCycles)" translate="no">​</a></h3>
-<p>Compute CSD using Morlet wavelet convolution.</p>
+<p>Compute CSD using Morlet wavelet convolution, scaled like mne.time_frequency.csd_array_morlet.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
