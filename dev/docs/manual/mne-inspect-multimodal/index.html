@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNE Inspect — Multimodal Workflow | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNE Inspect — Multimodal Workflow | MNE-CPP"><meta data-rh="true" name="description" content="Screenshots will be captured against the v2.3.0 release build."><meta data-rh="true" property="og:description" content="Screenshots will be captured against the v2.3.0 release build."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual","item":"https://mne-cpp.github.io/dev/docs/manual/intro"},{"@type":"ListItem","position":2,"name":"MNE Inspect Multimodal","item":"https://mne-cpp.github.io/dev/docs/manual/mne-inspect-multimodal"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.e7cbf352.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.b9c6df86.js" defer="defer"></script>
 <script src="/dev/assets/js/main.879690dc.js" defer="defer"></script>
 </head>
 <body>
@@ -88,6 +88,13 @@ strip or grid (ECoG), from a declared type or from the contact spacing.
 The implantation is shown as one <code>SceneLayer</code> of kind <code>Electrode</code>; the
 lead type drives the geometry (shafts for depths, ties for strips and grids).</p>
 <p><img decoding="async" loading="lazy" alt="Electrode loader" src="/dev/assets/images/load-electrodes-86d0e705187bccea3fd68b18e4a208d8.png" width="1440" height="900" class="img_ev3q"></p>
+<p><code>File ▸ Load Electrode Values…</code> then reads one value per contact (for
+example high-gamma power) from a tab- or comma-separated file with the
+columns <code>name, value</code>; a header row and <code>#</code> comments are skipped. The
+contacts are coloured by value and the values are painted onto the pial
+(or white) surface around them, like MNE-Python&#x27;s <code>stc_near_sensors</code>.
+Names that match no loaded contact are ignored, and loading new
+electrodes clears the values.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-toggle-modalities-in-the-layers-dock">5. Toggle modalities in the Layers dock<a href="#5-toggle-modalities-in-the-layers-dock" class="hash-link" aria-label="Direct link to 5. Toggle modalities in the Layers dock" title="Direct link to 5. Toggle modalities in the Layers dock" translate="no">​</a></h3>
 <p>The <strong>Layers</strong> dock lists every registered <code>SceneLayer</code> grouped by
 modality. For each row you can:</p>
