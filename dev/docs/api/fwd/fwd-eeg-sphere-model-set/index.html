@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">FWDLIB::FwdEegSphereModelSet | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model-set"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FWDLIB::FwdEegSphereModelSet | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Forward Library"><meta data-rh="true" property="og:description" content="Namespace Forward Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model-set"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model-set" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model-set" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forward Library","item":"https://mne-cpp.github.io/dev/docs/api/fwd/"},{"@type":"ListItem","position":2,"name":"FwdEegSphereModelSet","item":"https://mne-cpp.github.io/dev/docs/api/fwd/fwd-eeg-sphere-model-set"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.b9c6df86.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.1fe5dd5a.js" defer="defer"></script>
 <script src="/dev/assets/js/main.879690dc.js" defer="defer"></script>
 </head>
 <body>
@@ -43,7 +43,7 @@ Name of the model to find.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model">FwdEegSphereModel</a> ** — A duplicat of the found model.</li>
+<li class=""><em><a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model">FwdEegSphereModel</a>::UPtr</em> — A duplicat of the found model.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwd_list_eeg_sphere_models">fwd_list_eeg_sphere_models()<a href="#fwd_list_eeg_sphere_models" class="hash-link" aria-label="Direct link to fwd_list_eeg_sphere_models()" title="Direct link to fwd_list_eeg_sphere_models()" translate="no">​</a></h3>
@@ -63,7 +63,7 @@ Name of the model to find.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>s</strong> : *<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> **
+<p><strong>s</strong> : <em>UPtr</em>
 The model set (created if nullptr).</p>
 </li>
 <li class="">
@@ -73,19 +73,19 @@ The model to add (ownership transferred).</p>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> ** — The model set.</li>
+<li class=""><em>UPtr</em> — The model set.</li>
 </ul>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwd_add_default_eeg_sphere_models">fwd_add_default_eeg_sphere_model(s)<a href="#fwd_add_default_eeg_sphere_models" class="hash-link" aria-label="Direct link to fwd_add_default_eeg_sphere_model(s)" title="Direct link to fwd_add_default_eeg_sphere_model(s)" translate="no"> ​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwd_add_default_eeg_sphere_models">fwd_add_default_eeg_sphere_model(s)<a href="#fwd_add_default_eeg_sphere_models" class="hash-link" aria-label="Direct link to fwd_add_default_eeg_sphere_model(s)" title="Direct link to fwd_add_default_eeg_sphere_model(s)" translate="no">​</a></h3>
 <p>Choose and setup the default EEG sphere model Refactored from: fwd_eeg_sphere_models.c.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>s</strong> : *<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> **
+<li class=""><strong>s</strong> : <em>UPtr</em>
 The model set to which loaded models are added.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> ** — The model set with the default model (s + default models).</li>
+<li class=""><em>UPtr</em> — The model set with the default model (s + default models).</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="fwd_load_eeg_sphere_modelsp_sfilename-now">fwd_load_eeg_sphere_models(p_sFileName, now)<a href="#fwd_load_eeg_sphere_modelsp_sfilename-now" class="hash-link" aria-label="Direct link to fwd_load_eeg_sphere_models(p_sFileName, now)" title="Direct link to fwd_load_eeg_sphere_models(p_sFileName, now)" translate="no">​</a></h3>
@@ -97,13 +97,13 @@ The model set to which loaded models are added.</li>
 file name to load models from.</p>
 </li>
 <li class="">
-<p><strong>now</strong> : *<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> **
+<p><strong>now</strong> : <em>UPtr</em>
 The model set to which loaded models are added.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/fwd/fwd-eeg-sphere-model-set">FwdEegSphereModelSet</a> ** — The loaded model set (now + loaded models).</li>
+<li class=""><em>UPtr</em> — The loaded model set (now + loaded models).</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>

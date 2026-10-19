@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNELIB::MNEMeasData | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/mne/mne-meas-data"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNELIB::MNEMeasData | MNE-CPP"><meta data-rh="true" name="description" content="Namespace MNE Library"><meta data-rh="true" property="og:description" content="Namespace MNE Library"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-meas-data"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-meas-data" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/mne/mne-meas-data" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MNE Library","item":"https://mne-cpp.github.io/dev/docs/api/mne/"},{"@type":"ListItem","position":2,"name":"MNEMeasData","item":"https://mne-cpp.github.io/dev/docs/api/mne/mne-meas-data"}]}</script><link rel="stylesheet" href="/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.fbbc22b1.css">
-<script src="/dev/assets/js/runtime~main.b9c6df86.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.1fe5dd5a.js" defer="defer"></script>
 <script src="/dev/assets/js/main.879690dc.js" defer="defer"></script>
 </head>
 <body>
@@ -47,7 +47,7 @@ Baseline window end (seconds).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="static-methods">Static Methods<a href="#static-methods" class="hash-link" aria-label="Direct link to Static Methods" title="Direct link to Static Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mne_read_meas_data_addname-set-op-fwd-namesp-nnamesp-add_to">mne_read_meas_data_add(name, set, op, fwd, namesp, nnamesp, add_to)<a href="#mne_read_meas_data_addname-set-op-fwd-namesp-nnamesp-add_to" class="hash-link" aria-label="Direct link to mne_read_meas_data_add(name, set, op, fwd, namesp, nnamesp, add_to)" title="Direct link to mne_read_meas_data_add(name, set, op, fwd, namesp, nnamesp, add_to)" translate="no">​</a></h3>
 <p>Read an evoked-response data set and append it to an existing container.</p>
-<p>If <code>add_to</code> is <code>nullptr</code> a new <a class="" href="/dev/docs/api/mne/mne-meas-data"><code>MNEMeasData</code></a> is created; otherwise the loaded epoch is appended to <code>add_to&#x27;s</code> set list.</p>
+<p>The loaded epoch is appended to <code>add_to&#x27;s</code> set list; its channel list selects the channels read from the file.</p>
 <p>Refactored from <code>mne_read_meas_data_add</code> (mne_read_data.c).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
@@ -76,18 +76,17 @@ Explicit channel name list (fallback if <code>op</code> and <code>fwd</code> are
 Number of entries in <code>namesp</code>.</p>
 </li>
 <li class="">
-<p><strong>add_to</strong> : *<a class="" href="/dev/docs/api/mne/mne-meas-data">MNEMeasData</a> **
-Existing container to append to, or <code>nullptr</code> to create a new one.</p>
+<p><strong>add_to</strong> : <em><a class="" href="/dev/docs/api/mne/mne-meas-data">MNEMeasData</a> &amp;</em>
+Existing container to append to.</p>
 </li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/mne/mne-meas-data">MNEMeasData</a> ** — Pointer to the (new or existing) container, or <code>nullptr</code> on failure.</li>
+<li class=""><em>bool</em> — True if the data set was read and appended.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mne_read_meas_dataname-set-op-fwd-namesp-nnamesp">mne_read_meas_data(name, set, op, fwd, namesp, nnamesp)<a href="#mne_read_meas_dataname-set-op-fwd-namesp-nnamesp" class="hash-link" aria-label="Direct link to mne_read_meas_data(name, set, op, fwd, namesp, nnamesp)" title="Direct link to mne_read_meas_data(name, set, op, fwd, namesp, nnamesp)" translate="no">​</a></h3>
 <p>Read an evoked-response data set into a new container.</p>
-<p>Convenience wrapper around <code>mne_read_meas_data_add()</code> with <code>add_to</code> = <code>nullptr</code>.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
@@ -117,7 +116,7 @@ Number of entries in <code>namesp</code>.</p>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class="">*<a class="" href="/dev/docs/api/mne/mne-meas-data">MNEMeasData</a> ** — Pointer to the new container, or <code>nullptr</code> on failure.</li>
+<li class=""><em>std::unique_ptr&lt; <a class="" href="/dev/docs/api/mne/mne-meas-data">MNEMeasData</a> &gt;</em> — The new container, or <code>nullptr</code> on failure.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
