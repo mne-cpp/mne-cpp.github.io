@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Code signing policy | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/code-signing-policy/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Code signing policy | MNE-CPP"><meta data-rh="true" name="description" content="How MNE-CPP signs its Windows releases with SignPath, who approves signing requests, and what the signed applications send over the network."><meta data-rh="true" property="og:description" content="How MNE-CPP signs its Windows releases with SignPath, who approves signing requests, and what the signed applications send over the network."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/code-signing-policy/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/code-signing-policy/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/code-signing-policy/" hreflang="x-default"><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.8a5df092.css">
-<script src="/dev/assets/js/runtime~main.b39d8f0a.js" defer="defer"></script>
-<script src="/dev/assets/js/main.5fa1d80e.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7d0e1656.js" defer="defer"></script>
+<script src="/dev/assets/js/main.8166d397.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -19,10 +19,10 @@
 It is maintained in the repository next to the pipeline it describes; changes to it are
 reviewed like code.</p>
 <div class="mc-callout mc-callout--amber"><p><strong>Current status.</strong> The release pipeline is ready to sign, but no MNE-CPP release carries a
-SignPath Foundation signature yet. For v2.4.0, SignPath rejected the signing requests because
-the project&#x27;s release signing policy was not yet active, so v2.4.0 was published without Windows
-downloads. This page will name the first signed release once it exists. Until then, check
-every download against its <a class="" href="/dev/download/#verifying">SHA-256 checksum</a>.</p></div>
+SignPath Foundation signature yet: the project&#x27;s release signing policy in SignPath is not
+active yet. The next release is published once its Windows binaries can be signed, and this
+page will name it. Until then, check every download against its
+<a class="" href="/dev/download/#verifying">SHA-256 checksum</a>.</p></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-signed">What is signed<a href="#what-is-signed" class="hash-link" aria-label="Direct link to What is signed" title="Direct link to What is signed" translate="no">​</a></h2>
 <p>Only binaries that the MNE-CPP team builds from its own source code are signed with the
 SignPath Foundation certificate:</p>
