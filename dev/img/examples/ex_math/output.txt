@@ -1,6 +1,5 @@
 ok   pinv = numpy.linalg.pinv (max error 1.9984e-15)
   ok   condition number 2.61803 = numpy.linalg.cond
-[Numerics::rescale] Applying baseline correction ... (mode: percent)
   ok   percent baseline = mne.baseline.rescale (max error 0)
   ok   gcd(84, 36) = 12, 10 choose 2 = 45
   ok   PSD peaks at 10 Hz; 101 bins match numpy.fft.rfftfreq

@@ -8,5 +8,6 @@ ok   DPSS concentration ratios = scipy (max error 6.66134e-16)
   ok   resampled to 100 Hz: 20 Hz kept, 55 Hz removed (max error 0.0389095)
   ok   Butterworth gain at 10/30/60 Hz = scipy
   ok   zero-phase low-pass: 55 Hz removed, 20 Hz in phase (deviation 0.0259255, scipy 0.02593)
+  ok   block-wise streaming filter = one pass, bit for bit
   ok   peaks [1, 3, 5, 7], prominences [1, 3, 2, 5], prominence >= 2.5 keeps [3, 7] (scipy)
 All dsp spectral checks passed.

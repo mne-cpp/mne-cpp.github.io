@@ -103,9 +103,9 @@ Go through all guess source locations...
 [done 627 sources]
 
   ok   InvDipoleFitData/InvGuessData/InvDipoleForward/InvEcd: one sample fits the dipole like mne.fit_dipole
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Exploring resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -122,9 +122,9 @@ Line frequency is not defined
 
 >> Processing Left Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -158,9 +158,9 @@ Line frequency is not defined
 
 >> Processing Right Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -194,9 +194,9 @@ Line frequency is not defined
 
 >> Processing Left visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -230,9 +230,9 @@ Line frequency is not defined
 
 >> Processing Right visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -264,17 +264,17 @@ Line frequency is not defined
 
 	No baseline correction applied
 
-[FiffEvokedSet::save] Saved 1 average(s) to "/var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif"
+[FiffEvokedSet::save] Saved 1 average(s) to /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
   ok   FiffEvokedSet writes the synthetic field
 Sphere model     : origin at (   0.00    0.00   40.00) mm
 Using standard MEG coil definitions.
 Spherical guess space, rad = 80.0 mm
 Guess grid       :   10.0 mm
 Guess exclude    :   20.0 mm
-Data             : /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif
+Data             : /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
 SSP sources      :
-	/var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif
-dip output      : /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/fit.dat
+	/var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
+dip output      : /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/fit.dat
 ---- Setting up...
 
 Coordinate transformation: MRI (surface RAS) -> head
@@ -282,15 +282,15 @@ Coordinate transformation: MRI (surface RAS) -> head
 	 0.000000  1.000000  0.000000	   0.00 mm
 	 0.000000  0.000000  1.000000	   0.00 mm
 	 0.000000  0.000000  0.000000      1.00
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
 Coordinate transformation: MEG device -> head
 	 0.991420 -0.039936 -0.124467	  -6.13 mm
 	 0.060661  0.984012  0.167456	   0.06 mm
 	 0.115790 -0.173570  0.977991	  64.74 mm
 	 0.000000  0.000000  0.000000      1.00
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
 0 bad channels total.
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -303,16 +303,16 @@ Line frequency is not defined
 
 		Average EEG reference (1 x 60) active
 
-Will use 305 MEG channels from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif
+Will use 305 MEG channels from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
 84 coil definitions read
 Head coordinate coil definitions created.
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
 No coils to duplicate
 Sphere model origin :    0.0    0.0   40.0 mm.
 No coils to duplicate
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
-Loaded projection from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif:
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+Loaded projection from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif:
 	# 1 : PCA-v1 : 1 vecs : 102 chs MEG active
 	# 2 : PCA-v2 : 1 vecs : 102 chs MEG active
 	# 3 : PCA-v3 : 1 vecs : 102 chs MEG active
@@ -331,9 +331,9 @@ Decomposition not needed for a diagonal covariance matrix.
 
 ---- Reading data...
 
-Reading /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif ...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+Reading /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif ...
 
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -361,26 +361,26 @@ Line frequency is not defined
 
 	No baseline correction applied
 
-	Measurement file id: 1.3 0x200000 Sat Oct 24 14:09:21 2026
+	Measurement file id: 1.3 0x200000 Sat Nov  7 02:09:51 2026
 
 	Data time range:      0.0 ...      1.7 ms
 
 	Using MEG <-> head transform from the present data set
 
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
-	Loaded projection from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif:
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+	Loaded projection from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif:
 
 		# 1 : PCA-v1 : 1 vecs : 102 chs MEG active
 		# 2 : PCA-v2 : 1 vecs : 102 chs MEG active
 		# 3 : PCA-v3 : 1 vecs : 102 chs MEG active
 		# 4 : Average EEG reference : 1 vecs : 60 chs EEG active
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif...
-	0 bad channels read from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif...
+	0 bad channels read from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
 
-	Loaded dataset Left Auditory from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif
+	Loaded dataset Left Auditory from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif
 	No baseline setting in effect.
-	Read data set 1 from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/synthetic-ave.fif : 305 MEG and 0 EEG
+	Read data set 1 from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/synthetic-ave.fif : 305 MEG and 0 EEG
 
 ---- Computing the forward solution for the guesses...
 
@@ -441,9 +441,9 @@ Go through all guess source locations...
 
 [done]
 1 dipoles fitted
-Save 1 dipoles in dip format to /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/fit.dip
+Save 1 dipoles in dip format to /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/fit.dip
 
-Read 1 dipoles in dip format from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-tzjCHZ/fit.dip
+Read 1 dipoles in dip format from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_dipole_fit-BTswNV/fit.dip
 
   ok   InvDipoleFitSettings/InvDipoleFit/InvEcdSet: the pipeline fit matches mne.fit_dipole and round-trips through .dip
 All dipole fit checks passed.

@@ -19,6 +19,8 @@ Ready.
   ok   FiffChInfo/FiffChPos: MEG0113 is a 3012 planar gradiometer at (-0.1066, 0.0464, -0.0604) m
   ok   FiffDigPointSet/FiffDigPoint: 146 points, LPA at x = -71.38 mm
 Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/all-trans.fif...
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/all-trans.fif...
+  ok   No MRI (surface RAS) -> MEG device coordinate transform in resources/data/mne-cpp-test-data/MEG/sample/all-trans.fif
   ok   FiffCoordTrans: device origin maps to (-6.13, 0.06, 64.74) mm in head coordinates
 Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/../../subjects/sample/mri/brain-neuromag/sets/COR.fif...
 Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/all-trans.fif...
@@ -40,12 +42,12 @@ Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_au
 		Average EEG reference (1 x 60) active
 
   ok   FiffCov: 366 channels, 15972 degrees of freedom, C[0,0] matches mne.read_cov
-Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_fiff_api-CHvkEq/sample-eve.fif...
+Creating tag directory for /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_fiff_api-aNQkgn/sample-eve.fif...
   ok   FiffEvents: 25 trigger events match mne.find_events and round-trip through -eve.fif
   ok   FiffAnnotations: events become onsets in seconds and back, with descriptions as codes
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Exploring resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -62,9 +64,9 @@ Line frequency is not defined
 
 >> Processing Left Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -98,9 +100,9 @@ Line frequency is not defined
 
 >> Processing Right Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -134,9 +136,9 @@ Line frequency is not defined
 
 >> Processing Left visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -170,9 +172,9 @@ Line frequency is not defined
 
 >> Processing Right visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -212,7 +214,7 @@ Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/all-trans
   ok   FiffDigitizerData moves the 3 cardinal fiducials into MRI coordinates
   ok   FiffSparseMatrix round-trips an Eigen sparse matrix
 Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis_trunc_raw.fif...
-  ok   Fiff::open and Fiff::read_bad_channels find the same 2 bads as FiffInfo
+  ok   Fiff::open and FiffStream::read_bad_channels find the same 2 bads as FiffInfo
 Opening fiff data resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 
 Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
@@ -228,9 +230,9 @@ Line frequency is not defined
 
 		Average EEG reference (1 x 60) active
 
-Opening raw data resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
+Opening raw data TCPSocket...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
+Creating tag directory for TCPSocket...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -243,14 +245,12 @@ Line frequency is not defined
 
 		Average EEG reference (1 x 60) active
 
-Maxshield data found
-
-No raw data in resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif
+No raw data in TCPSocket
 
 [FiffIO::read] Could not read raw data: Error during fiff setup raw read
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Exploring resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -267,9 +267,9 @@ Line frequency is not defined
 
 >> Processing Left Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -303,9 +303,9 @@ Line frequency is not defined
 
 >> Processing Right Auditory <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -339,9 +339,9 @@ Line frequency is not defined
 
 >> Processing Left visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -375,9 +375,9 @@ Line frequency is not defined
 
 >> Processing Right visual <<
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:

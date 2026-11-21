@@ -113,9 +113,9 @@ Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_au
 
 		Average EEG reference (1 x 60) active
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:

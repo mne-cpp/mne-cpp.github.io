@@ -125,8 +125,6 @@ Computing inverse operator with 305 channels.
 FiffProj::make_projector - No projectors nproj=0
 
 Warning in FiffCov::prepare_noise_cov: No projections applied since no projectors specified or projector dimensions do not match!
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG
 Creating non pca whitener.
 	Total rank is 302
 	Creating the depth weighting matrix...

@@ -62,9 +62,9 @@ Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_au
 
 		Average EEG reference (1 x 60) active
 
+Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Reading resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif ...
 
-Creating tag directory for resources/data/mne-cpp-test-data/MEG/sample/sample_audvis-ave.fif...
 Line frequency is not defined
 
 	Read a total of 4 projection items:
@@ -102,10 +102,6 @@ Line frequency is not defined
 Computing inverse operator with 364 channels.
 Created an SSP operator (subspace dimension = 4)
 
-Setting small MEG eigenvalues to zero.
-Not doing PCA for MEG
-Setting small EEG eigenvalues to zero.
-Not doing PCA for EEG
 Creating non pca whitener.
 	Total rank is 360
 	Creating the depth weighting matrix...
@@ -699,9 +695,9 @@ Fiff::read_named_matrix: Desired named matrix (kind = 3523) not available
   ok   InvGammaMap: 11 of 70 V1 sources keep a nonzero variance
   ok   InvTfMxne: 3 V1 sources, including the strongest MxNE source 8
   ok   tokenize/fromTokens: 126 tokens carry 5 x 10 samples and the dipole, coupling and connectivity layers
-Write source estimate to /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_api-SeDphN/v1-dspm-lh.stc...
+Write source estimate to /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_api-TsOuNo/v1-dspm-lh.stc...
 [done]
-Reading source estimate from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_api-SeDphN/v1-dspm-lh.stc...
+Reading source estimate from /var/folders/lk/dqv220515jx568p47_pgxkm80000gn/T/ex_inv_api-TsOuNo/v1-dspm-lh.stc...
 [done]
   ok   InvSourceEstimateIO/InvSourceEstimate: CSV and .stc round trips
 All inv checks passed.
