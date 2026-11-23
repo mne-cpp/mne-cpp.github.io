@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNE Analyze Studio Walkthrough | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNE Analyze Studio Walkthrough | MNE-CPP"><meta data-rh="true" name="description" content="This walkthrough follows the staging branch of MNE Analyze Studio. For an"><meta data-rh="true" property="og:description" content="This walkthrough follows the staging branch of MNE Analyze Studio. For an"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual","item":"https://mne-cpp.github.io/dev/docs/manual/intro"},{"@type":"ListItem","position":2,"name":"MNA Studio Walkthrough","item":"https://mne-cpp.github.io/dev/docs/manual/mne-analyze-studio"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.0f43b85b.js" defer="defer"></script>
-<script src="/dev/assets/js/main.fdcb20c6.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.0b8b545f.js" defer="defer"></script>
+<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -19,10 +19,10 @@ files referenced below, see <a class="" href="/dev/docs/manual/mna-format/">MNA 
 skills described below are implemented but not yet offered by the Skill Host, so they
 do not appear in the Skills sidebar.</p></div></div>
 <p>This page is an end-user walkthrough of MNE Analyze Studio. It uses the three demo
-workflows that ship under <code>src/applications/mne_analyze_studio/examples/workflows/</code>
+workflows that ship under <code>src/apps/mne_analyze_studio/examples/workflows/</code>
 to illustrate how an <strong>MNA</strong> (MNE Node Authoring) project is loaded, inspected
 and executed through the three project-level skills bundled with the Studio.</p>
-<p><img decoding="async" loading="lazy" alt="Full Workbench window with the Workflow Map and an MNA file open in an editor tab" src="/dev/assets/images/workbench-overview-4e73d533d3db291bf1e2811a136ebfb8.png" width="1440" height="900" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Full Workbench window with the Workflow Map and an MNA file open in an editor tab" src="/dev/assets/images/workbench-overview-1238249756f1d57fcbea86ec74d828f5.png" width="1440" height="900" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="mna-in-one-minute">MNA in one minute<a href="#mna-in-one-minute" class="hash-link" aria-label="Direct link to MNA in one minute" title="Direct link to MNA in one minute" translate="no">​</a></h2>
 <p>An <strong>MNA project</strong> is a declarative description of an analysis pipeline. It is a
 small JSON document (<code>.mna</code>) — or its compact CBOR sibling (<code>.mnx</code>) — listing:</p>
@@ -131,7 +131,7 @@ visualisation.</li>
 <p><img decoding="async" loading="lazy" alt="Workflow Map for source_estimation_multimodal_demo.mna showing the MEG/EEG and MRI branches converging at op_forward_solution and op_inverse_operator" src="/dev/assets/images/source-estimation-multimodal-demo-9197bf8d3063fa04825ac096fb321eb6.png" width="1440" height="900" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="skills-reference">Skills reference<a href="#skills-reference" class="hash-link" aria-label="Direct link to Skills reference" title="Direct link to Skills reference" translate="no">​</a></h2>
 <p>The three skills below live under
-<code>src/applications/mne_analyze_studio/extensions/mna_skills/</code> and ship in the
+<code>src/apps/mne_analyze_studio/extensions/mna_skills/</code> and ship in the
 <strong>MNA Project Skills</strong> extension (<code>extension_id: mna-skills</code>).</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="mneskillsread_mna--read-mna-project"><code>mne.skills.read_mna</code> — Read MNA Project<a href="#mneskillsread_mna--read-mna-project" class="hash-link" aria-label="Direct link to mneskillsread_mna--read-mna-project" title="Direct link to mneskillsread_mna--read-mna-project" translate="no">​</a></h3>
 <p>Loads an <code>.mna</code> (JSON) or <code>.mnx</code> (CBOR) project and reports a summary.</p>

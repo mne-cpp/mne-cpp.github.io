@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Build from Source | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Build from Source | MNE-CPP"><meta data-rh="true" name="description" content="MNE-CPP uses CMake as its build system and requires C++23 and Qt 6. This guide walks through compiling MNE-CPP from source on Windows, Linux, and macOS."><meta data-rh="true" property="og:description" content="MNE-CPP uses CMake as its build system and requires C++23 and Qt 6. This guide walks through compiling MNE-CPP from source on Windows, Linux, and macOS."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/development/buildguide-cmake/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Build from Source","item":"https://mne-cpp.github.io/dev/docs/development/buildguide-cmake"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.0f43b85b.js" defer="defer"></script>
-<script src="/dev/assets/js/main.fdcb20c6.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.0b8b545f.js" defer="defer"></script>
+<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -30,8 +30,8 @@
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">./out/Release/examples/ex_math</span><br></div></code></pre></div></div>
 <p>On Windows, the Qt libraries must be on the <code>PATH</code>:</p>
 <!-- -->
-<div class="language-bat codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bat codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">set PATH=%CD%\src\external\qt\dynamic\bin;%PATH%</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">out\Release\bin\ex_math.exe</span><br></div></code></pre></div></div>
-<p>These scripts download the MNE-CPP-maintained prerelease dependency bundles into <code>src/external/</code>:</p>
+<div class="language-bat codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bat codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">set PATH=%CD%\src\3rdparty\qt\dynamic\bin;%PATH%</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">out\Release\bin\ex_math.exe</span><br></div></code></pre></div></div>
+<p>These scripts download the MNE-CPP-maintained prerelease dependency bundles into <code>src/3rdparty/</code>:</p>
 <ul>
 <li class="">Qt 6 desktop binaries matching your platform and requested linkage</li>
 <li class="">Eigen 5.0.1 as a clean CMake package bundle</li>
@@ -54,15 +54,14 @@
 <ul>
 <li class="">The compiler target for your platform (e.g., <code>MSVC 2022 64-bit</code>, <code>Desktop gcc 64-bit</code>, or <code>macOS</code>)</li>
 <li class=""><strong>Qt Shader Tools</strong> (required)</li>
-<li class=""><strong>Qt SVG</strong> (required)</li>
 </ul>
-<p>MNE-CPP needs the Qt modules Core, Gui, Widgets, SVG and Shader Tools, plus Qt Test for the tests.
+<p>MNE-CPP needs the Qt modules Core, Gui, Widgets and Shader Tools, plus Qt Test for the tests.
 <code>scripts/quality/audit_qt_modules.py --check</code> keeps every target within the modules allowed for it in
 <code>scripts/quality/qt_usage_policy.json</code>.</p>
 </li>
 <li class="">
 <p>After installation, add the Qt <code>bin</code> folder to your <code>PATH</code>:
-The default Qt version is recorded as <code>QT_VERSION</code> in <code>src/external/external_deps.env</code>.</p>
+The default Qt version is recorded as <code>QT_VERSION</code> in <code>src/3rdparty/external_deps.env</code>.</p>
 <ul>
 <li class=""><strong>Windows:</strong> e.g. <code>C:\Qt\&lt;version&gt;\msvc2022_64\bin</code></li>
 <li class=""><strong>Linux:</strong> e.g. <code>$HOME/Qt/&lt;version&gt;/gcc_64/bin</code> — also add the <code>lib</code> folder to <code>LD_LIBRARY_PATH</code></li>
@@ -82,7 +81,7 @@ The default Qt version is recorded as <code>QT_VERSION</code> in <code>src/exter
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="via-command-line">Via Command Line<a href="#via-command-line" class="hash-link" aria-label="Direct link to Via Command Line" title="Direct link to Via Command Line" translate="no">​</a></h3>
 <p>Navigate to the <code>mne-cpp</code> root folder. We provide a cross-platform build script that automatically detects your platform, finds Qt, configures CMake, and builds:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token comment" style="color:rgb(98, 114, 164)"># Linux / macOS</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">./scripts/build/build_project.sh</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain"></span><span class="token comment" style="color:rgb(98, 114, 164)"># Windows</span><span class="token plain"></span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">.</span><span class="token punctuation" style="color:rgb(248, 248, 242)">\</span><span class="token plain">scripts</span><span class="token punctuation" style="color:rgb(248, 248, 242)">\</span><span class="token plain">build</span><span class="token punctuation" style="color:rgb(248, 248, 242)">\</span><span class="token plain">build_project.bat</span><br></div></code></pre></div></div>
-<p>If you ran <code>./init.sh</code> or <code>.\init.bat</code> first, the build script will also auto-detect the downloaded Qt bundle from <code>src/external/qt/</code>.</p>
+<p>If you ran <code>./init.sh</code> or <code>.\init.bat</code> first, the build script will also auto-detect the downloaded Qt bundle from <code>src/3rdparty/qt/</code>.</p>
 <p>Common options:</p>
 <table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr><td><code>help</code></td><td>Show all available options</td></tr><tr><td><code>all</code></td><td>Build everything (apps, examples, and tests)</td></tr><tr><td><code>static</code></td><td>Build with static linking</td></tr><tr><td><code>Debug</code></td><td>Build in Debug mode (default is Release)</td></tr><tr><td><code>clean</code></td><td>Remove previous build before building</td></tr><tr><td><code>qt=&lt;path&gt;</code></td><td>Use a custom Qt installation path (Windows: <code>qt &lt;path&gt;</code>)</td></tr></tbody></table>
 <p>Example — build everything in Release mode:</p>
@@ -110,7 +109,7 @@ Windows.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="via-qt-creator">Via Qt Creator<a href="#via-qt-creator" class="hash-link" aria-label="Direct link to Via Qt Creator" title="Direct link to Via Qt Creator" translate="no">​</a></h3>
 <ol>
 <li class="">Open Qt Creator and select <strong>File &gt; Open File or Project</strong>. Navigate to the <code>mne-cpp</code> root folder and select the top-level <code>CMakeLists.txt</code>.</li>
-<li class="">When prompted, select the desktop kit for the Qt version in <code>src/external/external_deps.env</code>.</li>
+<li class="">When prompted, select the desktop kit for the Qt version in <code>src/3rdparty/external_deps.env</code>.</li>
 <li class="">Select <strong>Release</strong> mode in the lower-left corner.</li>
 <li class="">In the Projects pane, right-click the top-level <code>mne_cpp</code> target and select <strong>Run CMake</strong>.</li>
 <li class="">Right-click again and select <strong>Build</strong> (this may take some time).</li>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">MNE Align | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/manual/mne-align/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MNE Align | MNE-CPP"><meta data-rh="true" name="description" content="mne_align is the standalone coregistration helper that ships with mne-cpp (since v2.3.0). It walks an operator through a seven-step wizard that takes a subject&#x27;s head BEM, the corresponding live or recorded digitisation, and produces a -trans.fif head→MRI transform suitable for downstream forward / inverse modelling."><meta data-rh="true" property="og:description" content="mne_align is the standalone coregistration helper that ships with mne-cpp (since v2.3.0). It walks an operator through a seven-step wizard that takes a subject&#x27;s head BEM, the corresponding live or recorded digitisation, and produces a -trans.fif head→MRI transform suitable for downstream forward / inverse modelling."><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/manual/mne-align/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-align/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/manual/mne-align/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Manual","item":"https://mne-cpp.github.io/dev/docs/manual/intro"},{"@type":"ListItem","position":2,"name":"MNE Align","item":"https://mne-cpp.github.io/dev/docs/manual/mne-align"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.0f43b85b.js" defer="defer"></script>
-<script src="/dev/assets/js/main.fdcb20c6.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.0b8b545f.js" defer="defer"></script>
+<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -60,7 +60,7 @@
 <p>A summary lists the BEM, cap, captured counts, ICP source / RMSE, and the path of the most recently saved <code>-trans.fif</code>. Use the <code>Back</code> button to refine and re-save at any time without restarting the session.</p>
 <p><img decoding="async" loading="lazy" alt="Step 7 — Done" src="/dev/assets/images/step7-done-517e004adb7a57a22311518a773743ae.png" width="1280" height="800" class="img_ev3q"></p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="hardware-polhemus-fastrak">Hardware: Polhemus FASTRAK<a href="#hardware-polhemus-fastrak" class="hash-link" aria-label="Direct link to Hardware: Polhemus FASTRAK" title="Direct link to Hardware: Polhemus FASTRAK" translate="no">​</a></h2>
-<p><code>mne_align</code> talks to the FASTRAK over a serial port through the <code>polhemus://</code> source of <code>mne_acq_devices</code> (<code>src/libraries/acq/devices/polhemus/</code>). Use <strong>Digitizer → Connect…</strong> to attach: a dialog lists the serial ports, USB-serial adapters first, and a <em>Simulated digitizer</em> that sweeps a stylus over a head for offline testing. A port not listed can be typed in.</p>
+<p><code>mne_align</code> talks to the FASTRAK over a serial port through the <code>polhemus://</code> source of <code>mne_acq_devices</code> (<code>src/libs/mne/acq/devices/polhemus/</code>). Use <strong>Digitizer → Connect…</strong> to attach: a dialog lists the serial ports, USB-serial adapters first, and a <em>Simulated digitizer</em> that sweeps a stylus over a head for offline testing. A port not listed can be typed in.</p>
 <p>The active pen station (1 – 4) is selected from the toolbar <code>Pen:</code> combo. Only samples from the active station are treated as captures — additional sensors (e.g. a reference attached to the subject&#x27;s forehead) can stream concurrently without polluting the capture buffer.</p>
 <p>On capture, the page reacts to either:</p>
 <ul>
@@ -82,12 +82,12 @@
 <p>The digitisation <code>.fif</code> written in parallel can be merged back into a raw recording via <code>mne_process_raw --dig</code> or <code>mne.io.read_raw_fif(..., preload=False).set_montage(...)</code>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="files-of-interest">Files of interest<a href="#files-of-interest" class="hash-link" aria-label="Direct link to Files of interest" title="Direct link to Files of interest" translate="no">​</a></h2>
 <ul>
-<li class=""><code>src/applications/mne_align/mne_align.{h,cpp}</code> — <code>QMainWindow</code> shell.</li>
-<li class=""><code>src/applications/mne_align/align_wizard.{h,cpp}</code> — seven-step wizard.</li>
-<li class=""><code>src/applications/mne_align/align_3d_view.{h,cpp}</code> — 3D scene + camera presets.</li>
-<li class=""><code>src/applications/mne_align/digitizer.{h,cpp}</code> — the <code>polhemus://</code> stream as Qt signals.</li>
-<li class=""><code>src/libraries/acq/devices/polhemus/</code> — the <code>polhemus://</code> source (FASTRAK records, serial port, simulator), the <code>AcquiredPoints</code> store and <code>PolhemusCoregistration</code>.</li>
-<li class=""><code>src/libraries/mne/mne_icp.{h,cpp}</code> — ICP refinement entry point (<code>mne::performIcp</code>).</li>
+<li class=""><code>src/apps/mne_align/mne_align.{h,cpp}</code> — <code>QMainWindow</code> shell.</li>
+<li class=""><code>src/apps/mne_align/align_wizard.{h,cpp}</code> — seven-step wizard.</li>
+<li class=""><code>src/apps/mne_align/align_3d_view.{h,cpp}</code> — 3D scene + camera presets.</li>
+<li class=""><code>src/apps/mne_align/digitizer.{h,cpp}</code> — the <code>polhemus://</code> stream as Qt signals.</li>
+<li class=""><code>src/libs/mne/acq/devices/polhemus/</code> — the <code>polhemus://</code> source (FASTRAK records, serial port, simulator), the <code>AcquiredPoints</code> store and <code>PolhemusCoregistration</code>.</li>
+<li class=""><code>src/libs/mne/mne/mne_icp.{h,cpp}</code> — ICP refinement entry point (<code>mne::performIcp</code>).</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-manual-pages">Related manual pages<a href="#related-manual-pages" class="hash-link" aria-label="Direct link to Related manual pages" title="Direct link to Related manual pages" translate="no">​</a></h2>
 <ul>
