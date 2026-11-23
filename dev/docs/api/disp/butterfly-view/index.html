@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::disp::ButterflyView | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/butterfly-view/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::disp::ButterflyView | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/butterflyview.h"><meta data-rh="true" property="og:description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/butterflyview.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/butterfly-view/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/butterfly-view/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/butterfly-view/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ButterflyView","item":"https://mne-cpp.github.io/dev/docs/api/disp/butterfly-view"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.81ede4b0.js" defer="defer"></script>
-<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7bc69944.js" defer="defer"></script>
+<script src="/dev/assets/js/main.913a63fc.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -68,14 +68,14 @@ The new evoked set model.</li>
 <p>Get the activation of the already created modality check boxes.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QMap&lt; QString, bool &gt;</em> — The current modality map.</li>
+<li class=""><em>std::map&lt; std::string, bool &gt;</em> — The current modality map.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setmodalitymapmodalitymap">setModalityMap(modalityMap)<a href="#setmodalitymapmodalitymap" class="hash-link" aria-label="Direct link to setModalityMap(modalityMap)" title="Direct link to setModalityMap(modalityMap)" translate="no">​</a></h3>
 <p>Set the modality checkboxes.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>modalityMap</strong> : <em>const QMap&lt; QString, bool &gt; &amp;</em>
+<li class=""><strong>modalityMap</strong> : <em>const std::map&lt; std::string, bool &gt; &amp;</em>
 The modality map.</li>
 </ul>
 <hr>
@@ -83,7 +83,7 @@ The modality map.</li>
 <p>Sets the scale map to scaleMap.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>scaleMap</strong> : <em>const QMap&lt; qint32, float &gt; &amp;</em>
+<li class=""><strong>scaleMap</strong> : <em>const std::map&lt; int, float &gt; &amp;</em>
 map with all channel types and their current scaling value.</li>
 </ul>
 <hr>
@@ -91,7 +91,7 @@ map with all channel types and their current scaling value.</li>
 <p>Set the selected channels.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selectedChannels</strong> : <em>const QList&lt; int &gt; &amp;</em>
+<li class=""><strong>selectedChannels</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
 The new selected channels.</li>
 </ul>
 <hr>
@@ -126,21 +126,21 @@ The file name and path where to store the screenshot.</li>
 <p>Get the current average colors.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>std::shared_ptr&lt; QMap&lt; QString, QColor &gt; &gt;</em> — Pointer to the current average colors.</li>
+<li class=""><em>std::shared_ptr&lt; std::map&lt; std::string, QColor &gt; &gt;</em> — Pointer to the current average colors.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getaverageactivation">getAverageActivation()<a href="#getaverageactivation" class="hash-link" aria-label="Direct link to getAverageActivation()" title="Direct link to getAverageActivation()" translate="no">​</a></h3>
 <p>Get the current average activations.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>std::shared_ptr&lt; QMap&lt; QString, bool &gt; &gt;</em> — Pointer to the current average activations.</li>
+<li class=""><em>std::shared_ptr&lt; std::map&lt; std::string, bool &gt; &gt;</em> — Pointer to the current average activations.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setaveragecolorqmapaveragecolor">setAverageColor(qMapAverageColor)<a href="#setaveragecolorqmapaveragecolor" class="hash-link" aria-label="Direct link to setAverageColor(qMapAverageColor)" title="Direct link to setAverageColor(qMapAverageColor)" translate="no">​</a></h3>
 <p>Set the average colors.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>qMapAverageColor</strong> : <em>const std::shared_ptr&lt; QMap&lt; QString, QColor &gt; &gt; &amp;</em>
+<li class=""><strong>qMapAverageColor</strong> : <em>const std::shared_ptr&lt; std::map&lt; std::string, QColor &gt; &gt; &amp;</em>
 Pointer to the new average colors.</li>
 </ul>
 <hr>
@@ -156,7 +156,7 @@ Color of averaged signal.</li>
 <p>Set the average activations.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>qMapAverageActivation</strong> : <em>const std::shared_ptr&lt; QMap&lt; QString, bool &gt; &gt; &amp;</em>
+<li class=""><strong>qMapAverageActivation</strong> : <em>const std::shared_ptr&lt; std::map&lt; std::string, bool &gt; &gt; &amp;</em>
 Pointer to the new average activations.</li>
 </ul>
 <hr>
@@ -172,7 +172,7 @@ The new channel info model.</li>
 <p>Only shows the channels defined in the QStringList selectedChannels.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selectedChannels</strong> : <em>const QStringList &amp;</em>
+<li class=""><strong>selectedChannels</strong> : <em>const std::vector&lt; std::string &gt; &amp;</em>
 list of all channel names which are currently selected in the selection manager.</li>
 </ul>
 <hr>
@@ -180,7 +180,7 @@ list of all channel names which are currently selected in the selection manager.
 <p>Shows selected channels based on a list of selected channel indices.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selectedChannelsIndexes</strong> : <em>const QList&lt; int &gt; &amp;</em>
+<li class=""><strong>selectedChannelsIndexes</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
 list of indices of channels channels to be displayed.</li>
 </ul>
 <hr>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::disp::SvgWriter | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/svg-writer/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::disp::SvgWriter | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/plots/helpers/svgwriter.h"><meta data-rh="true" property="og:description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/plots/helpers/svgwriter.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/svg-writer/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/svg-writer/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/svg-writer/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"SvgWriter","item":"https://mne-cpp.github.io/dev/docs/api/disp/svg-writer"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.81ede4b0.js" defer="defer"></script>
-<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7bc69944.js" defer="defer"></script>
+<script src="/dev/assets/js/main.913a63fc.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -36,15 +36,15 @@
 <p>Writes the document to the file <code>fileName</code>; clears a previously set output device.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>fileName</strong> : <em>const QString &amp;</em>
-Path of the SVG file.</li>
+<li class=""><strong>fileName</strong> : <em>const std::string &amp;</em>
+Path of the SVG file, UTF-8.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="filename">fileName()<a href="#filename" class="hash-link" aria-label="Direct link to fileName()" title="Direct link to fileName()" translate="no">​</a></h3>
 <p>Returns the file the document is written to, or an empty string when an output device is used.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QString</em> — The file name.</li>
+<li class=""><em>std::string</em> — The file name.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setoutputdevicedevice">setOutputDevice(device)<a href="#setoutputdevicedevice" class="hash-link" aria-label="Direct link to setOutputDevice(device)" title="Direct link to setOutputDevice(device)" translate="no">​</a></h3>
@@ -105,7 +105,7 @@ The view box.</li>
 <p>Sets the text of the document&#x27;s title element.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>title</strong> : <em>const QString &amp;</em>
+<li class=""><strong>title</strong> : <em>const std::string &amp;</em>
 The title; no title element is written when it is empty.</li>
 </ul>
 <hr>
@@ -113,14 +113,14 @@ The title; no title element is written when it is empty.</li>
 <p>Returns the title.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QString</em> — The title.</li>
+<li class=""><em>std::string</em> — The title.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setdescriptiondescription">setDescription(description)<a href="#setdescriptiondescription" class="hash-link" aria-label="Direct link to setDescription(description)" title="Direct link to setDescription(description)" translate="no">​</a></h3>
 <p>Sets the text of the document&#x27;s desc element.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>description</strong> : <em>const QString &amp;</em>
+<li class=""><strong>description</strong> : <em>const std::string &amp;</em>
 The description; no desc element is written when it is empty.</li>
 </ul>
 <hr>
@@ -128,7 +128,7 @@ The description; no desc element is written when it is empty.</li>
 <p>Returns the description.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QString</em> — The description.</li>
+<li class=""><em>std::string</em> — The description.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setresolutiondpi">setResolution(dpi)<a href="#setresolutiondpi" class="hash-link" aria-label="Direct link to setResolution(dpi)" title="Direct link to setResolution(dpi)" translate="no">​</a></h3>

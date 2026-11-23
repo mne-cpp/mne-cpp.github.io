@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::disp::RtFiffRawViewModel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::disp::RtFiffRawViewModel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/rtfiffrawviewmodel.h"><meta data-rh="true" property="og:description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/rtfiffrawviewmodel.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"RtFiffRawViewModel","item":"https://mne-cpp.github.io/dev/docs/api/disp/rt-fiff-raw-view-model"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.81ede4b0.js" defer="defer"></script>
-<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7bc69944.js" defer="defer"></script>
+<script src="/dev/assets/js/main.913a63fc.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -134,7 +134,7 @@ If data should be set to zero. Default is false.</p>
 <p>Adds multiple time points (QVector) for a channel set (VectorXd).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>data</strong> : <em>const QList&lt; Eigen::MatrixXd &gt; &amp;</em>
+<li class=""><strong>data</strong> : <em>std::span&lt; const Eigen::MatrixXd &gt;</em>
 data to add (Time points of channel samples).</li>
 </ul>
 <hr>
@@ -204,14 +204,14 @@ row for which the first value is to be returned.</li>
 <p>Returns a map which conatins the channel idx and its corresponding selection status.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>const QMap&lt; qint32, qint32 &gt; &amp;</em> — the channel idx to selection status.</li>
+<li class=""><em>const std::map&lt; int, int &gt; &amp;</em> — the channel idx to selection status.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="selectrowsselection">selectRows(selection)<a href="#selectrowsselection" class="hash-link" aria-label="Direct link to selectRows(selection)" title="Direct link to selectRows(selection)" translate="no">​</a></h3>
 <p>Selects the given list of channel indeces and unselect all other channels.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selection</strong> : <em>const QList&lt; qint32 &gt; &amp;</em>
+<li class=""><strong>selection</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
 channel index list to select.</li>
 </ul>
 <hr>
@@ -219,7 +219,7 @@ channel index list to select.</li>
 <p>Hides the given list of channel.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selection</strong> : <em>const QList&lt; qint32 &gt; &amp;</em>
+<li class=""><strong>selection</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
 channel index list to select.</li>
 </ul>
 <hr>
@@ -238,7 +238,7 @@ of the channel which has been double clicked.</li>
 <p>Set scaling channel scaling.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>p_qMapChScaling</strong> : <em>const QMap&lt; qint32, float &gt; &amp;</em>
+<li class=""><strong>p_qMapChScaling</strong> : <em>const std::map&lt; int, float &gt; &amp;</em>
 Map of scaling factors.</li>
 </ul>
 <hr>
@@ -271,7 +271,7 @@ The current state of teh SPHARA tool.</li>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>sSytemType</strong> : <em>const QString &amp;</em>
+<p><strong>sSytemType</strong> : <em>const std::string &amp;</em>
 The current acquisition system type (VectorView, BabyMEG, EEG).</p>
 </li>
 <li class="">
@@ -288,7 +288,7 @@ The new number of basis function to use for the second SPHARA operator.</p>
 <p>Set new filter parameters.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>filterData</strong> : <em>QList&lt; <a class="" href="/dev/docs/api/dsp/filter-kernel/">FilterKernel</a> &gt;</em>
+<li class=""><strong>filterData</strong> : <em>const std::vector&lt; <a class="" href="/dev/docs/api/dsp/filter-kernel/">FilterKernel</a> &gt; &amp;</em>
 list of the new filter.</li>
 </ul>
 <hr>
@@ -312,7 +312,7 @@ The background color.</li>
 <p>Sets the type of channel which are to be filtered.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>channelType</strong> : <em>const QString &amp;</em>
+<li class=""><strong>channelType</strong> : <em>const std::string &amp;</em>
 the channel type which is to be filtered (EEG, MEG, All).</li>
 </ul>
 <hr>
@@ -349,7 +349,7 @@ Mark as bad when true, as good when false.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
-<p><strong>colorMap</strong> : <em>const QMap&lt; double, QColor &gt; &amp;</em>
+<p><strong>colorMap</strong> : <em>const std::map&lt; double, QColor &gt; &amp;</em>
 color for each trigger channel.</p>
 </li>
 <li class="">
@@ -357,7 +357,7 @@ color for each trigger channel.</p>
 real time trigger detection active.</p>
 </li>
 <li class="">
-<p><strong>triggerCh</strong> : <em>QString</em>
+<p><strong>triggerCh</strong> : <em>const std::string &amp;</em>
 current trigger channel to scan.</p>
 </li>
 <li class="">
@@ -395,28 +395,28 @@ the new distance for the time spacers.</li>
 <p>Returns current scaling.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>const QMap&lt; qint32, float &gt; &amp;</em> — the current scaling.</li>
+<li class=""><em>const std::map&lt; int, float &gt; &amp;</em> — the current scaling.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getdetectedtriggers">getDetectedTriggers()<a href="#getdetectedtriggers" class="hash-link" aria-label="Direct link to getDetectedTriggers()" title="Direct link to getDetectedTriggers()" translate="no">​</a></h3>
 <p>Returns current detected trigger flanks.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QList&lt; QPair&lt; int, double &gt; &gt;</em> — the current detected trigger flanks.</li>
+<li class=""><em>std::vector&lt; std::pair&lt; int, double &gt; &gt;</em> — the current detected trigger flanks.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getdetectedtriggersold">getDetectedTriggersOld()<a href="#getdetectedtriggersold" class="hash-link" aria-label="Direct link to getDetectedTriggersOld()" title="Direct link to getDetectedTriggersOld()" translate="no">​</a></h3>
 <p>Returns old detected trigger flanks.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QList&lt; QPair&lt; int, double &gt; &gt;</em> — the old detected trigger flanks.</li>
+<li class=""><em>std::vector&lt; std::pair&lt; int, double &gt; &gt;</em> — the old detected trigger flanks.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gettriggercolor">getTriggerColor()<a href="#gettriggercolor" class="hash-link" aria-label="Direct link to getTriggerColor()" title="Direct link to getTriggerColor()" translate="no">​</a></h3>
 <p>Returns current trigger color.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QMap&lt; double, QColor &gt;</em> — the current trigger color map fpr each detected type.</li>
+<li class=""><em>std::map&lt; double, QColor &gt;</em> — the current trigger color map fpr each detected type.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getnumberoftimespacers">getNumberOfTimeSpacers()<a href="#getnumberoftimespacers" class="hash-link" aria-label="Direct link to getNumberOfTimeSpacers()" title="Direct link to getNumberOfTimeSpacers()" translate="no">​</a></h3>
@@ -437,7 +437,7 @@ the new distance for the time spacers.</li>
 <p>Returns the current trigger name.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QString</em> — the current trigger name.</li>
+<li class=""><em>std::string</em> — the current trigger name.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getcurrenttriggerindex">getCurrentTriggerIndex()<a href="#getcurrenttriggerindex" class="hash-link" aria-label="Direct link to getCurrentTriggerIndex()" title="Direct link to getCurrentTriggerIndex()" translate="no">​</a></h3>

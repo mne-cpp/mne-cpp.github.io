@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::disp::ChannelInfoModel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/channel-info-model/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::disp::ChannelInfoModel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/channelinfomodel.h"><meta data-rh="true" property="og:description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/channelinfomodel.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-info-model/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-info-model/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/channel-info-model/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"ChannelInfoModel","item":"https://mne-cpp.github.io/dev/docs/api/disp/channel-info-model"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.81ede4b0.js" defer="defer"></script>
-<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7bc69944.js" defer="defer"></script>
+<script src="/dev/assets/js/main.913a63fc.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -71,7 +71,7 @@ the filter operators which are currently active.</li>
 <p>Updates the layout map.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>layoutMap</strong> : <em>const QMap&lt; QString, QPointF &gt; &amp;</em>
+<li class=""><strong>layoutMap</strong> : <em>const std::map&lt; std::string, QPointF &gt; &amp;</em>
 the layout map with the 2D positions.</li>
 </ul>
 <hr>
@@ -79,14 +79,14 @@ the layout map with the 2D positions.</li>
 <p>Updates the layout map.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>const QStringList &amp;</em> — the current mapped channel list.</li>
+<li class=""><em>const std::vector&lt; std::string &gt; &amp;</em> — the current mapped channel list.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getindexfromorigchnamechname">getIndexFromOrigChName(chName)<a href="#getindexfromorigchnamechname" class="hash-link" aria-label="Direct link to getIndexFromOrigChName(chName)" title="Direct link to getIndexFromOrigChName(chName)" translate="no">​</a></h3>
 <p>Returns the model index for the given input channel fro mthe original channel list.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>chName</strong> : <em>QString</em>
+<li class=""><strong>chName</strong> : <em>const std::string &amp;</em>
 the channel name for which the model index is needed.</li>
 </ul>
 <p><strong>Returns:</strong></p>
@@ -98,7 +98,7 @@ the channel name for which the model index is needed.</li>
 <p>Returns the model index for the given input channel fro mthe mapped channel list.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>chName</strong> : <em>QString</em>
+<li class=""><strong>chName</strong> : <em>const std::string &amp;</em>
 the channel name for which the model index is needed.</li>
 </ul>
 <p><strong>Returns:</strong></p>

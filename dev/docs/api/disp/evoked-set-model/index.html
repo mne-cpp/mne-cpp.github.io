@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::disp::EvokedSetModel | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/disp/evoked-set-model/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::disp::EvokedSetModel | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/evokedsetmodel.h"><meta data-rh="true" property="og:description" content="Namespace Display Library &amp;nbsp;·&amp;nbsp; Source: disp/viewers/helpers/evokedsetmodel.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/disp/evoked-set-model/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/evoked-set-model/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/disp/evoked-set-model/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Display Library","item":"https://mne-cpp.github.io/dev/docs/api/disp/"},{"@type":"ListItem","position":2,"name":"EvokedSetModel","item":"https://mne-cpp.github.io/dev/docs/api/disp/evoked-set-model"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.81ede4b0.js" defer="defer"></script>
-<script src="/dev/assets/js/main.db36017f.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.7bc69944.js" defer="defer"></script>
+<script src="/dev/assets/js/main.913a63fc.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -151,21 +151,21 @@ The evoked set.</li>
 <p>Get the current average colors.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>std::shared_ptr&lt; QMap&lt; QString, QColor &gt; &gt;</em> — Pointer to the current average colors.</li>
+<li class=""><em>std::shared_ptr&lt; std::map&lt; std::string, QColor &gt; &gt;</em> — Pointer to the current average colors.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getaverageactivation">getAverageActivation()<a href="#getaverageactivation" class="hash-link" aria-label="Direct link to getAverageActivation()" title="Direct link to getAverageActivation()" translate="no">​</a></h3>
 <p>Get the current average activations.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>std::shared_ptr&lt; QMap&lt; QString, bool &gt; &gt;</em> — Pointer to the current average activations.</li>
+<li class=""><em>std::shared_ptr&lt; std::map&lt; std::string, bool &gt; &gt;</em> — Pointer to the current average activations.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setaveragecolorqmapaveragecolor">setAverageColor(qMapAverageColor)<a href="#setaveragecolorqmapaveragecolor" class="hash-link" aria-label="Direct link to setAverageColor(qMapAverageColor)" title="Direct link to setAverageColor(qMapAverageColor)" translate="no">​</a></h3>
 <p>Set the average colors.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>qMapAverageColor</strong> : <em>const std::shared_ptr&lt; QMap&lt; QString, QColor &gt; &gt; &amp;</em>
+<li class=""><strong>qMapAverageColor</strong> : <em>const std::shared_ptr&lt; std::map&lt; std::string, QColor &gt; &gt; &amp;</em>
 Pointer to the new average colors.</li>
 </ul>
 <hr>
@@ -173,7 +173,7 @@ Pointer to the new average colors.</li>
 <p>Set the average activations.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>qMapAverageActivation</strong> : <em>const std::shared_ptr&lt; QMap&lt; QString, bool &gt; &gt; &amp;</em>
+<li class=""><strong>qMapAverageActivation</strong> : <em>const std::shared_ptr&lt; std::map&lt; std::string, bool &gt; &gt; &amp;</em>
 Pointer to the new average activations.</li>
 </ul>
 <hr>
@@ -229,7 +229,7 @@ row number which correspodns to a given channel.</li>
 <p>Returns a map which conatins the channel idx and its corresponding selection status.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>const QMap&lt; qint32, qint32 &gt; &amp;</em> — the channel idx to selection status.</li>
+<li class=""><em>const std::map&lt; int, int &gt; &amp;</em> — the channel idx to selection status.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getnumberoftimespacers">getNumberOfTimeSpacers()<a href="#getnumberoftimespacers" class="hash-link" aria-label="Direct link to getNumberOfTimeSpacers()" title="Direct link to getNumberOfTimeSpacers()" translate="no">​</a></h3>
@@ -243,7 +243,7 @@ row number which correspodns to a given channel.</li>
 <p>Returns the current baseline information.</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>QPair&lt; QVariant, QVariant &gt;</em> — the current baseline information as a from to QPair.</li>
+<li class=""><em>std::pair&lt; float, float &gt;</em> — the current baseline information as a from to pair in seconds.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getnumaverages">getNumAverages()<a href="#getnumaverages" class="hash-link" aria-label="Direct link to getNumAverages()" title="Direct link to getNumAverages()" translate="no">​</a></h3>
@@ -271,7 +271,7 @@ row number which correspodns to a given channel.</li>
 <p>Selects the given list of channel indeces and unselect all other channels.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li class=""><strong>selection</strong> : <em>const QList&lt; qint32 &gt; &amp;</em>
+<li class=""><strong>selection</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
 channel index list to select.</li>
 </ul>
 <hr>
