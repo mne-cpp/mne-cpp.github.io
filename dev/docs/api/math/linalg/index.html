@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::Linalg | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/math/linalg/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::Linalg | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Math Library &amp;nbsp;·&amp;nbsp; Source: math/linalg.h"><meta data-rh="true" property="og:description" content="Namespace Math Library &amp;nbsp;·&amp;nbsp; Source: math/linalg.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/math/linalg/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/math/linalg/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/math/linalg/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Math Library","item":"https://mne-cpp.github.io/dev/docs/api/math/"},{"@type":"ListItem","position":2,"name":"Linalg","item":"https://mne-cpp.github.io/dev/docs/api/math/linalg"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.bda3c80b.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.222820b4.js" defer="defer"></script>
 <script src="/dev/assets/js/main.c9fd29d3.js" defer="defer"></script>
 </head>
 <body>
@@ -172,7 +172,7 @@ Relative threshold: biggest singular value multiplied with tol is smallest singu
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="thin_svda">thin_svd(A)<a href="#thin_svda" class="hash-link" aria-label="Direct link to thin_svd(A)" title="Direct link to thin_svd(A)" translate="no">​</a></h3>
 <p>Thin singular value decomposition that uses all cores for strongly rectangular matrices, such as whitened lead fields with a few hundred channels and tens of thousands of sources.</p>
-<p>The long dimension is split into blocks that are QR-factorised in parallel (tall-skinny QR); the stacked triangular factors are reduced by a second QR, whose small square factor goes to a divide-and-conquer SVD. Every step is Householder based, so the result is as accurate as a direct divide-and-conquer SVD; only the signs of singular vector pairs may differ. Nearly square or small matrices use the direct SVD.</p>
+<p>The long dimension is split into blocks that are QR-factorised in parallel (tall-skinny QR); the stacked triangular factors are reduced by a second QR, whose small square factor goes to a divide-and-conquer SVD. Every step is Householder based, so the result is as accurate as a direct divide-and-conquer SVD; only the signs of singular vector pairs may differ. Nearly square or small matrices use the direct SVD. The number of blocks does not depend on the number of cores, so every machine computes the same result.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class=""><strong>A</strong> : <em>const Eigen::MatrixXd &amp;</em>
@@ -184,7 +184,7 @@ Matrix to decompose.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parallel_producta-b">parallel_product(A, B)<a href="#parallel_producta-b" class="hash-link" aria-label="Direct link to parallel_product(A, B)" title="Direct link to parallel_product(A, B)" translate="no">​</a></h3>
-<p>Matrix product A * B computed on all cores, by splitting B into column blocks.</p>
+<p>Matrix product A * B computed on all cores, by splitting B into a fixed number of column blocks, so the result does not depend on the number of cores.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class="">
@@ -275,7 +275,7 @@ Right index-value pair.</p>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
-<li class=""><em>bool</em>   — True if the value of lhs is greater than the value of rhs.</li>
+<li class=""><em>bool</em> — True if the value of lhs is greater than the value of rhs.</li>
 </ul>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compareidxvaluepairsmallerthanlhs-rhs">compareIdxValuePairSmallerThan(lhs, rhs)<a href="#compareidxvaluepairsmallerthanlhs-rhs" class="hash-link" aria-label="Direct link to compareIdxValuePairSmallerThan(lhs, rhs)" title="Direct link to compareIdxValuePairSmallerThan(lhs, rhs)" translate="no">​</a></h3>
