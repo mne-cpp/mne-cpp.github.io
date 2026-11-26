@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-api/viz-qt/channel-rhi-renderer" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">mne::viz::qt::ChannelRhiRenderer | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/viz-qt/channel-rhi-renderer/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::viz::qt::ChannelRhiRenderer | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Visualization viz/backends/qt/viewers/helpers/channelrhirenderer.h"><meta data-rh="true" property="og:description" content="Namespace Visualization viz/backends/qt/viewers/helpers/channelrhirenderer.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/channel-rhi-renderer/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/channel-rhi-renderer/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/channel-rhi-renderer/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visualization: Qt Backend","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/"},{"@type":"ListItem","position":2,"name":"ChannelRhiRenderer","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/channel-rhi-renderer"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
+<script src="/dev/assets/js/runtime~main.3691324e.js" defer="defer"></script>
+<script src="/dev/assets/js/main.c224bb18.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/dev/"><div class="navbar__logo"><img src="/dev/img/logo.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/dev/img/logo-dark.svg" alt="MNE-CPP Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/dev/docs/overview/">Documentation</a><a class="navbar__item navbar__link" href="/dev/docs/development/buildguide-cmake/">Development</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/dev/docs/api/">API</a><a class="navbar__item navbar__link" href="/dev/docs/examples/">Examples</a><a class="navbar__item navbar__link" href="/dev/docs/performance/">Performance</a><a class="navbar__item navbar__link" href="/dev/download/">Download</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link navbar-version-dropdown">dev (latest)</a><ul class="dropdown__menu"><li><a href="https://mne-cpp.github.io/" target="_blank" rel="noopener noreferrer" class="dropdown__link">v2.4.0 (Stable)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li><a href="https://mne-cpp.github.io/dev/" target="_blank" rel="noopener noreferrer" class="dropdown__link">dev (Latest Development)<svg width="12" height="12" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><svg aria-hidden="true" class="searchIcon_T3tP" focusable="false" viewBox="0 0 16 16"><path fill="currentColor" d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"></path></svg><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/"><span class="categoryLinkLabel_W154">Overview</span></a><button aria-label="Collapse sidebar category &#x27;Overview&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/namespaces/"><span class="linkLabel_WmDU">Namespaces</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/classes/"><span class="linkLabel_WmDU">Classes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/files/"><span class="linkLabel_WmDU">Files</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/hierarchy/"><span class="linkLabel_WmDU">Class Hierarchy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/class-members/"><span class="linkLabel_WmDU">Class Members</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/namespace-members/"><span class="linkLabel_WmDU">Namespace Members</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fiff/"><span class="categoryLinkLabel_W154">FIFF Library</span></a><button aria-label="Expand sidebar category &#x27;FIFF Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mne/"><span class="categoryLinkLabel_W154">MNE Library</span></a><button aria-label="Expand sidebar category &#x27;MNE Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fwd/"><span class="categoryLinkLabel_W154">Forward Library</span></a><button aria-label="Expand sidebar category &#x27;Forward Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/inv/"><span class="categoryLinkLabel_W154">Inverse Library</span></a><button aria-label="Expand sidebar category &#x27;Inverse Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/dsp/"><span class="categoryLinkLabel_W154">DSP Library</span></a><button aria-label="Expand sidebar category &#x27;DSP Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/connectivity/"><span class="categoryLinkLabel_W154">Connectivity Library</span></a><button aria-label="Expand sidebar category &#x27;Connectivity Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/decoding/"><span class="categoryLinkLabel_W154">Decoding Library</span></a><button aria-label="Expand sidebar category &#x27;Decoding Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/ml/"><span class="categoryLinkLabel_W154">Machine Learning Library</span></a><button aria-label="Expand sidebar category &#x27;Machine Learning Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/sts/"><span class="categoryLinkLabel_W154">Statistics Library</span></a><button aria-label="Expand sidebar category &#x27;Statistics Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/fs/"><span class="categoryLinkLabel_W154">FreeSurfer Library</span></a><button aria-label="Expand sidebar category &#x27;FreeSurfer Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/math/"><span class="categoryLinkLabel_W154">Math Library</span></a><button aria-label="Expand sidebar category &#x27;Math Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mri/"><span class="categoryLinkLabel_W154">MRI Library</span></a><button aria-label="Expand sidebar category &#x27;MRI Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/bids/"><span class="categoryLinkLabel_W154">BIDS Library</span></a><button aria-label="Expand sidebar category &#x27;BIDS Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/base/"><span class="categoryLinkLabel_W154">Base Library</span></a><button aria-label="Expand sidebar category &#x27;Base Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/channels/"><span class="categoryLinkLabel_W154">Channels Library</span></a><button aria-label="Expand sidebar category &#x27;Channels Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/pybridge/"><span class="categoryLinkLabel_W154">Python Bridge Library</span></a><button aria-label="Expand sidebar category &#x27;Python Bridge Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/report/"><span class="categoryLinkLabel_W154">Report Library</span></a><button aria-label="Expand sidebar category &#x27;Report Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/com/"><span class="categoryLinkLabel_W154">Communication Library</span></a><button aria-label="Expand sidebar category &#x27;Communication Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/lsl/"><span class="categoryLinkLabel_W154">LSL Library</span></a><button aria-label="Expand sidebar category &#x27;LSL Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/mna/"><span class="categoryLinkLabel_W154">MNA Library</span></a><button aria-label="Expand sidebar category &#x27;MNA Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/viz/"><span class="categoryLinkLabel_W154">Visualization Library</span></a><button aria-label="Expand sidebar category &#x27;Visualization Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/dev/docs/api/viz-qt/"><span class="categoryLinkLabel_W154">Visualization: Qt Backend</span></a><button aria-label="Collapse sidebar category &#x27;Visualization: Qt Backend&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/abstract-view/"><span class="linkLabel_WmDU">AbstractView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/apply-to-view/"><span class="linkLabel_WmDU">ApplyToView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/artifact-settings-view/"><span class="linkLabel_WmDU">ArtifactSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/average-layout-view/"><span class="linkLabel_WmDU">AverageLayoutView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/average-selection-view/"><span class="linkLabel_WmDU">AverageSelectionView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/averaging-settings-view/"><span class="linkLabel_WmDU">AveragingSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/bar/"><span class="linkLabel_WmDU">Bar</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/bids-view/"><span class="linkLabel_WmDU">BidsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/bids-view-model/"><span class="linkLabel_WmDU">BidsViewModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/butterfly-view/"><span class="linkLabel_WmDU">ButterflyView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-data-model/"><span class="linkLabel_WmDU">ChannelDataModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-data-view/"><span class="linkLabel_WmDU">ChannelDataView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-info-model/"><span class="linkLabel_WmDU">ChannelInfoModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-label-panel/"><span class="linkLabel_WmDU">ChannelLabelPanel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-rhi-view/"><span class="linkLabel_WmDU">ChannelRhiView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-selection-view/"><span class="linkLabel_WmDU">ChannelSelectionView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/color-map/"><span class="linkLabel_WmDU">ColorMap</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/compensator-view/"><span class="linkLabel_WmDU">CompensatorView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/connectivity-settings-view/"><span class="linkLabel_WmDU">ConnectivitySettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/control3-d-view/"><span class="linkLabel_WmDU">Control3DView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/coreg-settings-view/"><span class="linkLabel_WmDU">CoregSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/covariance-settings-view/"><span class="linkLabel_WmDU">CovarianceSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/dipole-fit-view/"><span class="linkLabel_WmDU">DipoleFitView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/draggable-frameless-widget/"><span class="linkLabel_WmDU">DraggableFramelessWidget</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/evoked-set-model/"><span class="linkLabel_WmDU">EvokedSetModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/fiff-raw-view-settings/"><span class="linkLabel_WmDU">FiffRawViewSettings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/filter-design-view/"><span class="linkLabel_WmDU">FilterDesignView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/filter-plot/"><span class="linkLabel_WmDU">FilterPlot</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/filter-settings-view/"><span class="linkLabel_WmDU">FilterSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/frequency-spectrum-delegate/"><span class="linkLabel_WmDU">FrequencySpectrumDelegate</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/frequency-spectrum-model/"><span class="linkLabel_WmDU">FrequencySpectrumModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/fwd-settings-view/"><span class="linkLabel_WmDU">FwdSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/graph/"><span class="linkLabel_WmDU">Graph</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/hpi-settings-view/"><span class="linkLabel_WmDU">HpiSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/image-sc/"><span class="linkLabel_WmDU">ImageSc</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/line-plot/"><span class="linkLabel_WmDU">LinePlot</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/figure-exporter/"><span class="linkLabel_WmDU">FigureExporter</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/svg-writer/"><span class="linkLabel_WmDU">SvgWriter</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/mne-operator/"><span class="linkLabel_WmDU">MNEOperator</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/minimum-norm-settings-view/"><span class="linkLabel_WmDU">MinimumNormSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/modality-selection-view/"><span class="linkLabel_WmDU">ModalitySelectionView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/multi-view/"><span class="linkLabel_WmDU">MultiView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/multi-view-window/"><span class="linkLabel_WmDU">MultiViewWindow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/overview-bar-widget/"><span class="linkLabel_WmDU">OverviewBarWidget</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/plot/"><span class="linkLabel_WmDU">Plot</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/progress-view/"><span class="linkLabel_WmDU">ProgressView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/project-settings-view/"><span class="linkLabel_WmDU">ProjectSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/projectors-view/"><span class="linkLabel_WmDU">ProjectorsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/quick-control-view/"><span class="linkLabel_WmDU">QuickControlView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-fiff-raw-view/"><span class="linkLabel_WmDU">RtFiffRawView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-fiff-raw-view-delegate/"><span class="linkLabel_WmDU">RtFiffRawViewDelegate</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-fiff-raw-view-model/"><span class="linkLabel_WmDU">RtFiffRawViewModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/scale-control/"><span class="linkLabel_WmDU">ScaleControl</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/scaling-view/"><span class="linkLabel_WmDU">ScalingView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/selection-item/"><span class="linkLabel_WmDU">SelectionItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/spectrum-settings-view/"><span class="linkLabel_WmDU">SpectrumSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/spectrum-view/"><span class="linkLabel_WmDU">SpectrumView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/sphara-settings-view/"><span class="linkLabel_WmDU">SpharaSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/spline/"><span class="linkLabel_WmDU">Spline</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/t-fplot/"><span class="linkLabel_WmDU">TFplot</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/tf-settings-view/"><span class="linkLabel_WmDU">TfSettingsView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/time-ruler-widget/"><span class="linkLabel_WmDU">TimeRulerWidget</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/trigger-detection-view/"><span class="linkLabel_WmDU">TriggerDetectionView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/electrode-object/"><span class="linkLabel_WmDU">ElectrodeObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/geometry-info/"><span class="linkLabel_WmDU">GeometryInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/interpolation/"><span class="linkLabel_WmDU">Interpolation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/multimodal-scene/"><span class="linkLabel_WmDU">MultimodalScene</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/periodic-task/"><span class="linkLabel_WmDU">PeriodicTask</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-sensor-data-worker/"><span class="linkLabel_WmDU">RtSensorDataWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-sensor-interpolation-mat-worker/"><span class="linkLabel_WmDU">RtSensorInterpolationMatWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-source-data-worker/"><span class="linkLabel_WmDU">RtSourceDataWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-source-interpolation-mat-worker/"><span class="linkLabel_WmDU">RtSourceInterpolationMatWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/slice-object/"><span class="linkLabel_WmDU">SliceObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/video-overlay/"><span class="linkLabel_WmDU">VideoOverlay</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/pick-result/"><span class="linkLabel_WmDU">PickResult</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/scene-layer/"><span class="linkLabel_WmDU">SceneLayer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-display-info/"><span class="linkLabel_WmDU">ChannelDisplayInfo</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/time-ruler-event-mark/"><span class="linkLabel_WmDU">TimeRulerEventMark</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/time-ruler-reference-mark/"><span class="linkLabel_WmDU">TimeRulerReferenceMark</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/abstract-tree-item/"><span class="linkLabel_WmDU">AbstractTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/bem-tree-item/"><span class="linkLabel_WmDU">BemTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-renderer/"><span class="linkLabel_WmDU">BrainRenderer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-surface/"><span class="linkLabel_WmDU">BrainSurface</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-tree-model/"><span class="linkLabel_WmDU">BrainTreeModel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-view/"><span class="linkLabel_WmDU">BrainView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/camera-controller/"><span class="linkLabel_WmDU">CameraController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/camera-result/"><span class="linkLabel_WmDU">CameraResult</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/data-loader/"><span class="linkLabel_WmDU">DataLoader</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/digitizer-set-tree-item/"><span class="linkLabel_WmDU">DigitizerSetTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/digitizer-tree-item/"><span class="linkLabel_WmDU">DigitizerTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/dipole-object/"><span class="linkLabel_WmDU">DipoleObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/dipole-tree-item/"><span class="linkLabel_WmDU">DipoleTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/live-marker/"><span class="linkLabel_WmDU">LiveMarker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/mesh-factory/"><span class="linkLabel_WmDU">MeshFactory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/multi-view-layout/"><span class="linkLabel_WmDU">MultiViewLayout</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/network-object/"><span class="linkLabel_WmDU">NetworkObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/network-tree-item/"><span class="linkLabel_WmDU">NetworkTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/polyline-object/"><span class="linkLabel_WmDU">PolylineObject</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/ray-hit/"><span class="linkLabel_WmDU">RayHit</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/ray-picker/"><span class="linkLabel_WmDU">RayPicker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-sensor-data-controller/"><span class="linkLabel_WmDU">RtSensorDataController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-sensor-stream-manager/"><span class="linkLabel_WmDU">RtSensorStreamManager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rt-source-data-controller/"><span class="linkLabel_WmDU">RtSourceDataController</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/sensor-field-mapper/"><span class="linkLabel_WmDU">SensorFieldMapper</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/sensor-tree-item/"><span class="linkLabel_WmDU">SensorTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/source-estimate-manager/"><span class="linkLabel_WmDU">SourceEstimateManager</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/source-estimate-overlay/"><span class="linkLabel_WmDU">SourceEstimateOverlay</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/source-space-tree-item/"><span class="linkLabel_WmDU">SourceSpaceTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/stc-loading-worker/"><span class="linkLabel_WmDU">StcLoadingWorker</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/sub-view/"><span class="linkLabel_WmDU">SubView</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/surface-tree-item/"><span class="linkLabel_WmDU">SurfaceTreeItem</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/vertex-data/"><span class="linkLabel_WmDU">VertexData</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/view-visibility-profile/"><span class="linkLabel_WmDU">ViewVisibilityProfile</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/gpu-stream/"><span class="linkLabel_WmDU">GpuStream</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/instanced-streams/"><span class="linkLabel_WmDU">InstancedStreams</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/render-key/"><span class="linkLabel_WmDU">RenderKey</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/qt-text-metrics/"><span class="linkLabel_WmDU">QtTextMetrics</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/scene-viewport/"><span class="linkLabel_WmDU">SceneViewport</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/sensor-layout-widget/"><span class="linkLabel_WmDU">SensorLayoutWidget</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/average-layout-widget/"><span class="linkLabel_WmDU">AverageLayoutWidget</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/dev/docs/api/viz-qt/channel-rhi-renderer/"><span class="linkLabel_WmDU">ChannelRhiRenderer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-rhi-host/"><span class="linkLabel_WmDU">ChannelRhiHost</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/channel-window/"><span class="linkLabel_WmDU">ChannelWindow</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/rhi-frame-renderer/"><span class="linkLabel_WmDU">RhiFrameRenderer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/settings-panel/"><span class="linkLabel_WmDU">SettingsPanel</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-view-core/"><span class="linkLabel_WmDU">BrainViewCore</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-view-host/"><span class="linkLabel_WmDU">BrainViewHost</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/dev/docs/api/viz-qt/brain-window/"><span class="linkLabel_WmDU">BrainWindow</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/ieeg/"><span class="categoryLinkLabel_W154">iEEG Library</span></a><button aria-label="Expand sidebar category &#x27;iEEG Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/dev/docs/api/acq/"><span class="categoryLinkLabel_W154">Acquisition Library</span></a><button aria-label="Expand sidebar category &#x27;Acquisition Library&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/dev/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/dev/docs/api/viz-qt/"><span>Visualization: Qt Backend</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">ChannelRhiRenderer</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ChannelRhiRenderer</h1></header>
+<p><strong>Namespace:</strong> <code>mne::viz::qt</code>  ·  <strong>Library:</strong> Visualization: Qt Backend  ·  <strong>Source:</strong> <a href="https://github.com/mne-tools/mne-cpp/blob/staging/src/libs/mne/viz/backends/qt/viewers/helpers/channelrhirenderer.h" target="_blank" rel="noopener noreferrer" class=""><code>viz/backends/qt/viewers/helpers/channelrhirenderer.h</code></a></p>
+<p><code>#include &lt;mne/viz/backends/qt/channelrhirenderer.h&gt;</code></p>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">mne</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">viz</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">qt</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">ChannelRhiRenderer</span><br></div></code></pre></div></div>
+<p>Widgets-free QRhi renderer and input handler of the raw-data channel trace view.</p>
+<p>Draws the channel traces, the per-second bands and grid, events, annotations and epoch markers, and, as a textured alpha-blended quad on top, the crosshair, scalebars, ruler and annotation-selection overlay. Mouse and wheel events of the host are handled by the handle*() functions.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inheritance">Inheritance<a href="#inheritance" class="hash-link" aria-label="Direct link to Inheritance" title="Direct link to Inheritance" translate="no">​</a></h3>
+<!-- -->
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="channelrhirendererhost-parent">ChannelRhiRenderer(host, parent)<a href="#channelrhirendererhost-parent" class="hash-link" aria-label="Direct link to ChannelRhiRenderer(host, parent)" title="Direct link to ChannelRhiRenderer(host, parent)" translate="no">​</a></h3>
+<p>Constructs the renderer.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>host</strong> : *<a class="" href="/dev/docs/api/viz-qt/channel-rhi-host/">ChannelRhiHost</a> **
+Host surface services; not owned, may be nullptr (then the view size is empty).</p>
+</li>
+<li class="">
+<p><strong>parent</strong> : *QObject **
+Optional QObject parent.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="channelrhirenderer-1">~ChannelRhiRenderer()<a href="#channelrhirenderer-1" class="hash-link" aria-label="Direct link to ~ChannelRhiRenderer()" title="Direct link to ~ChannelRhiRenderer()" translate="no">​</a></h3>
+<p>Destroys the renderer and its GPU resources.</p>
+<p>Call <code>releaseResources()</code> before the QRhi goes away.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sethosthost">setHost(host)<a href="#sethosthost" class="hash-link" aria-label="Direct link to setHost(host)" title="Direct link to setHost(host)" translate="no">​</a></h3>
+<p>Sets the host surface services.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>host</strong> : *<a class="" href="/dev/docs/api/viz-qt/channel-rhi-host/">ChannelRhiHost</a> **
+Host; not owned, may be nullptr.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="host">host()<a href="#host" class="hash-link" aria-label="Direct link to host()" title="Direct link to host()" translate="no">​</a></h3>
+<p>Returns the host surface services.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class="">*<a class="" href="/dev/docs/api/viz-qt/channel-rhi-host/">ChannelRhiHost</a> ** — The host or nullptr.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="initializeresources">initializeResources()<a href="#initializeresources" class="hash-link" aria-label="Direct link to initializeResources()" title="Direct link to initializeResources()" translate="no">​</a></h3>
+<p>Marks all GPU resources for (re)creation, e.g.</p>
+<p>after the host obtained a new QRhi.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="releaseresources">releaseResources()<a href="#releaseresources" class="hash-link" aria-label="Direct link to releaseResources()" title="Direct link to releaseResources()" translate="no">​</a></h3>
+<p>Releases all GPU resources.</p>
+<p>Must be called before the QRhi that created them is destroyed.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="renderframerhi-target-cb">renderFrame(rhi, target, cb)<a href="#renderframerhi-target-cb" class="hash-link" aria-label="Direct link to renderFrame(rhi, target, cb)" title="Direct link to renderFrame(rhi, target, cb)" translate="no">​</a></h3>
+<p>Records one frame (traces, bands/events/annotations overlay and the crosshair/scalebar/ruler overlay) into <code>target</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>rhi</strong> : *QRhi **
+The QRhi that owns <code>target</code> and the renderer&#x27;s GPU resources.</p>
+</li>
+<li class="">
+<p><strong>target</strong> : *QRhiRenderTarget **
+Render target sized like the host&#x27;s logical size times its device pixel ratio.</p>
+</li>
+<li class="">
+<p><strong>cb</strong> : *QRhiCommandBuffer **
+<a class="" href="/dev/docs/api/viz/command/"><code>Command</code></a> buffer of the current frame.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hudvisible">hudVisible()<a href="#hudvisible" class="hash-link" aria-label="Direct link to hudVisible()" title="Direct link to hudVisible()" translate="no">​</a></h3>
+<p>Returns whether the crosshair, scalebar, ruler or annotation-selection overlay is currently shown, i.e.</p>
+<p>whether <code>renderFrame()</code> draws the overlay quad.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the overlay quad is drawn.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="painthudpainter">paintHud(painter)<a href="#painthudpainter" class="hash-link" aria-label="Direct link to paintHud(painter)" title="Direct link to paintHud(painter)" translate="no">​</a></h3>
+<p>Paints the crosshair, scalebars, ruler and annotation-selection overlay in logical coordinates.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>painter</strong> : <em>QPainter &amp;</em>
+Painter on a device of the host&#x27;s logical size.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hudimage">hudImage()<a href="#hudimage" class="hash-link" aria-label="Direct link to hudImage()" title="Direct link to hudImage()" translate="no">​</a></h3>
+<p>Returns the overlay image (crosshair, scalebars, ruler, annotation selection) uploaded by the last <code>renderFrame()</code> that drew the overlay quad.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QImage</em> — The overlay image (premultiplied alpha is not used), or a null image.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handlewheelevent">handleWheel(event)<a href="#handlewheelevent" class="hash-link" aria-label="Direct link to handleWheel(event)" title="Direct link to handleWheel(event)" translate="no">​</a></h3>
+<p>Handles a wheel event: Ctrl zooms, horizontal swipes scroll time, the vertical wheel scrolls channels or time.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>event</strong> : *QWheelEvent **
+The wheel event in host coordinates.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the event was handled.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handlemousepressevent">handleMousePress(event)<a href="#handlemousepressevent" class="hash-link" aria-label="Direct link to handleMousePress(event)" title="Direct link to handleMousePress(event)" translate="no">​</a></h3>
+<p>Handles a mouse press (ruler, annotation selection, panning, annotation boundary drag, clicks).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>event</strong> : *QMouseEvent **
+The mouse event in host coordinates.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the event was handled; otherwise the host passes it to its base class.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handlemousemoveevent">handleMouseMove(event)<a href="#handlemousemoveevent" class="hash-link" aria-label="Direct link to handleMouseMove(event)" title="Direct link to handleMouseMove(event)" translate="no">​</a></h3>
+<p>Handles a mouse move (drags, ruler, crosshair tracking, annotation boundary hover).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>event</strong> : *QMouseEvent **
+The mouse event in host coordinates.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the event was handled; otherwise the host passes it to its base class.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handlemousereleaseevent">handleMouseRelease(event)<a href="#handlemousereleaseevent" class="hash-link" aria-label="Direct link to handleMouseRelease(event)" title="Direct link to handleMouseRelease(event)" translate="no">​</a></h3>
+<p>Handles a mouse release (ends drags, emits clicks and selections, starts inertial scrolling).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>event</strong> : *QMouseEvent **
+The mouse event in host coordinates.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the event was handled; otherwise the host passes it to its base class.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handlemousedoubleclickevent">handleMouseDoubleClick(event)<a href="#handlemousedoubleclickevent" class="hash-link" aria-label="Direct link to handleMouseDoubleClick(event)" title="Direct link to handleMouseDoubleClick(event)" translate="no">​</a></h3>
+<p>Handles a double click: toggles the bad state of the channel under the cursor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>event</strong> : *QMouseEvent **
+The mouse event in host coordinates.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if the event was handled; otherwise the host passes it to its base class.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="handleresize">handleResize()<a href="#handleresize" class="hash-link" aria-label="Direct link to handleResize()" title="Direct link to handleResize()" translate="no">​</a></h3>
+<p>Must be called by the host after its surface was resized; emits <code>viewResized()</code>.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setmodelmodel">setModel(model)<a href="#setmodelmodel" class="hash-link" aria-label="Direct link to setModel(model)" title="Direct link to setModel(model)" translate="no">​</a></h3>
+<p>Attach the data model.</p>
+<p>The renderer does NOT take ownership.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>model</strong> : *<a class="" href="/dev/docs/api/viz-qt/channel-data-model/">ChannelDataModel</a> **
+The channel data model to render.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="model">model()<a href="#model" class="hash-link" aria-label="Direct link to model()" title="Direct link to model()" translate="no">​</a></h3>
+<p>Returns the attached data model.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class="">*<a class="" href="/dev/docs/api/viz-qt/channel-data-model/">ChannelDataModel</a> ** — The model or nullptr.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seteventsevents">setEvents(events)<a href="#seteventsevents" class="hash-link" aria-label="Direct link to setEvents(events)" title="Direct link to setEvents(events)" translate="no">​</a></h3>
+<p>Set the list of stimulus / event markers to overlay on the traces.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>events</strong> : <em>const std::vector&lt; EventMarker &gt; &amp;</em>
+List of <code>EventMarker</code> objects; empty to clear.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setepochmarkerstriggersamples">setEpochMarkers(triggerSamples)<a href="#setepochmarkerstriggersamples" class="hash-link" aria-label="Direct link to setEpochMarkers(triggerSamples)" title="Direct link to setEpochMarkers(triggerSamples)" translate="no">​</a></h3>
+<p>Set the epoch trigger samples drawn as dashed vertical lines.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>triggerSamples</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
+Absolute trigger sample indices.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setepochmarkersvisiblevisible">setEpochMarkersVisible(visible)<a href="#setepochmarkersvisiblevisible" class="hash-link" aria-label="Direct link to setEpochMarkersVisible(visible)" title="Direct link to setEpochMarkersVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide the epoch trigger markers.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw them.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="epochmarkersvisible">epochMarkersVisible()<a href="#epochmarkersvisible" class="hash-link" aria-label="Direct link to epochMarkersVisible()" title="Direct link to epochMarkersVisible()" translate="no">​</a></h3>
+<p>Returns whether the epoch trigger markers are drawn.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setclippingvisiblevisible">setClippingVisible(visible)<a href="#setclippingvisiblevisible" class="hash-link" aria-label="Direct link to setClippingVisible(visible)" title="Direct link to setClippingVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide the red highlight of clipped trace segments.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to highlight clipping.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clippingvisible">clippingVisible()<a href="#clippingvisible" class="hash-link" aria-label="Direct link to clippingVisible()" title="Direct link to clippingVisible()" translate="no">​</a></h3>
+<p>Returns whether clipped segments are highlighted.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if highlighted.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setzscoremodeenabled">setZScoreMode(enabled)<a href="#setzscoremodeenabled" class="hash-link" aria-label="Direct link to setZScoreMode(enabled)" title="Direct link to setZScoreMode(enabled)" translate="no">​</a></h3>
+<p>Toggle z-score display: every trace is normalised to (y - mean) / std over the loaded window.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to enable z-score mode.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zscoremode">zScoreMode()<a href="#zscoremode" class="hash-link" aria-label="Direct link to zScoreMode()" title="Direct link to zScoreMode()" translate="no">​</a></h3>
+<p>Returns whether z-score mode is on.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if enabled.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationsannotations">setAnnotations(annotations)<a href="#setannotationsannotations" class="hash-link" aria-label="Direct link to setAnnotations(annotations)" title="Direct link to setAnnotations(annotations)" translate="no">​</a></h3>
+<p>Set the list of time-span annotations to overlay on the traces.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>annotations</strong> : <em>const std::vector&lt; AnnotationSpan &gt; &amp;</em>
+List of <code>AnnotationSpan</code> objects.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationselectionenabledenabled">setAnnotationSelectionEnabled(enabled)<a href="#setannotationselectionenabledenabled" class="hash-link" aria-label="Direct link to setAnnotationSelectionEnabled(enabled)" title="Direct link to setAnnotationSelectionEnabled(enabled)" translate="no">​</a></h3>
+<p>Enable or disable annotation range selection (right-drag) and boundary dragging.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to enable annotation editing.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seteventsvisiblevisible">setEventsVisible(visible)<a href="#seteventsvisiblevisible" class="hash-link" aria-label="Direct link to setEventsVisible(visible)" title="Direct link to setEventsVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide the event markers.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw them.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="eventsvisible">eventsVisible()<a href="#eventsvisible" class="hash-link" aria-label="Direct link to eventsVisible()" title="Direct link to eventsVisible()" translate="no">​</a></h3>
+<p>Returns whether event markers are drawn.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationsvisiblevisible">setAnnotationsVisible(visible)<a href="#setannotationsvisiblevisible" class="hash-link" aria-label="Direct link to setAnnotationsVisible(visible)" title="Direct link to setAnnotationsVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide the annotation spans.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw them.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="annotationsvisible">annotationsVisible()<a href="#annotationsvisible" class="hash-link" aria-label="Direct link to annotationsVisible()" title="Direct link to annotationsVisible()" translate="no">​</a></h3>
+<p>Returns whether annotation spans are drawn.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scrollsample">scrollSample()<a href="#scrollsample" class="hash-link" aria-label="Direct link to scrollSample()" title="Direct link to scrollSample()" translate="no">​</a></h3>
+<p>Returns the absolute sample at the left edge.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — The scroll position in samples.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="samplesperpixel">samplesPerPixel()<a href="#samplesperpixel" class="hash-link" aria-label="Direct link to samplesPerPixel()" title="Direct link to samplesPerPixel()" translate="no">​</a></h3>
+<p>Returns the horizontal zoom.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Samples per logical pixel.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscrollsamplesample">setScrollSample(sample)<a href="#setscrollsamplesample" class="hash-link" aria-label="Direct link to setScrollSample(sample)" title="Direct link to setScrollSample(sample)" translate="no">​</a></h3>
+<p>Set the left-edge scroll position (clamped to the file bounds).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>sample</strong> : <em>float</em>
+Absolute sample index for the left viewport edge.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsamplesperpixelspp">setSamplesPerPixel(spp)<a href="#setsamplesperpixelspp" class="hash-link" aria-label="Direct link to setSamplesPerPixel(spp)" title="Direct link to setSamplesPerPixel(spp)" translate="no">​</a></h3>
+<p>Set the horizontal zoom (samples per screen pixel).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>spp</strong> : <em>float</em>
+Samples per pixel (&gt; 1 = zoomed out, &lt; 1 = zoomed in).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scrolltotargetsample-durationms">scrollTo(targetSample, durationMs)<a href="#scrolltotargetsample-durationms" class="hash-link" aria-label="Direct link to scrollTo(targetSample, durationMs)" title="Direct link to scrollTo(targetSample, durationMs)" translate="no">​</a></h3>
+<p>Smoothly animate the scroll position.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>targetSample</strong> : <em>float</em>
+Target left-edge sample index.</p>
+</li>
+<li class="">
+<p><strong>durationMs</strong> : <em>int</em>
+Animation duration in milliseconds (0 = instant).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scrollbydeltasamples-durationms">scrollBy(deltaSamples, durationMs)<a href="#scrollbydeltasamples-durationms" class="hash-link" aria-label="Direct link to scrollBy(deltaSamples, durationMs)" title="Direct link to scrollBy(deltaSamples, durationMs)" translate="no">​</a></h3>
+<p>Smoothly scroll by a number of samples; steps during a running animation add up.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>deltaSamples</strong> : <em>float</em>
+Samples to scroll (negative = earlier).</p>
+</li>
+<li class="">
+<p><strong>durationMs</strong> : <em>int</em>
+Animation duration in milliseconds (0 = instant).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zoomtotargetspp-durationms">zoomTo(targetSpp, durationMs)<a href="#zoomtotargetspp-durationms" class="hash-link" aria-label="Direct link to zoomTo(targetSpp, durationMs)" title="Direct link to zoomTo(targetSpp, durationMs)" translate="no">​</a></h3>
+<p>Smoothly animate the zoom level.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class="">
+<p><strong>targetSpp</strong> : <em>float</em>
+Target samples-per-pixel.</p>
+</li>
+<li class="">
+<p><strong>durationMs</strong> : <em>int</em>
+Animation duration in milliseconds (0 = instant).</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbackgroundcolorcolor">setBackgroundColor(color)<a href="#setbackgroundcolorcolor" class="hash-link" aria-label="Direct link to setBackgroundColor(color)" title="Direct link to setBackgroundColor(color)" translate="no">​</a></h3>
+<p>Background colour of the render surface.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>color</strong> : <em>const QColor &amp;</em>
+The new background colour.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="backgroundcolor">backgroundColor()<a href="#backgroundcolor" class="hash-link" aria-label="Direct link to backgroundColor()" title="Direct link to backgroundColor()" translate="no">​</a></h3>
+<p>Returns the background colour.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QColor</em> — The background colour.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setprefetchfactorfactor">setPrefetchFactor(factor)<a href="#setprefetchfactorfactor" class="hash-link" aria-label="Direct link to setPrefetchFactor(factor)" title="Direct link to setPrefetchFactor(factor)" translate="no">​</a></h3>
+<p>How many visible windows to prefetch on each side of the viewport.</p>
+<p>Default = 1.0.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>factor</strong> : <em>float</em>
+Prefetch factor.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblefirstsample">visibleFirstSample()<a href="#visiblefirstsample" class="hash-link" aria-label="Direct link to visibleFirstSample()" title="Direct link to visibleFirstSample()" translate="no">​</a></h3>
+<p>Returns the absolute sample index shown at the left edge.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — scrollSample() truncated to int.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblesamplecount">visibleSampleCount()<a href="#visiblesamplecount" class="hash-link" aria-label="Direct link to visibleSampleCount()" title="Direct link to visibleSampleCount()" translate="no">​</a></h3>
+<p>Returns the number of samples currently visible.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Logical width times samples per pixel, truncated to int.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setchannelindicesindices">setChannelIndices(indices)<a href="#setchannelindicesindices" class="hash-link" aria-label="Direct link to setChannelIndices(indices)" title="Direct link to setChannelIndices(indices)" translate="no">​</a></h3>
+<p>Restrict rendering to a subset of channel indices; empty shows all channels.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>indices</strong> : <em>const std::vector&lt; int &gt; &amp;</em>
+Ordered list of model channel indices to display.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="totallogicalchannels">totalLogicalChannels()<a href="#totallogicalchannels" class="hash-link" aria-label="Direct link to totalLogicalChannels()" title="Direct link to totalLogicalChannels()" translate="no">​</a></h3>
+<p>Total number of logical channels available for scrolling (respects filter and bad hiding).</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Number of logical channels.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfirstvisiblechannelch">setFirstVisibleChannel(ch)<a href="#setfirstvisiblechannelch" class="hash-link" aria-label="Direct link to setFirstVisibleChannel(ch)" title="Direct link to setFirstVisibleChannel(ch)" translate="no">​</a></h3>
+<p>Set the index of the first visible channel row.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>ch</strong> : <em>int</em>
+Zero-based logical channel index.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="firstvisiblechannel">firstVisibleChannel()<a href="#firstvisiblechannel" class="hash-link" aria-label="Direct link to firstVisibleChannel()" title="Direct link to firstVisibleChannel()" translate="no">​</a></h3>
+<p>Returns the first visible logical channel row.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Zero-based logical channel index.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvisiblechannelcountcount">setVisibleChannelCount(count)<a href="#setvisiblechannelcountcount" class="hash-link" aria-label="Direct link to setVisibleChannelCount(count)" title="Direct link to setVisibleChannelCount(count)" translate="no">​</a></h3>
+<p>Set how many channel rows are displayed simultaneously.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>count</strong> : <em>int</em>
+Number of rows (at least 1).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="visiblechannelcount">visibleChannelCount()<a href="#visiblechannelcount" class="hash-link" aria-label="Direct link to visibleChannelCount()" title="Direct link to visibleChannelCount()" translate="no">​</a></h3>
+<p>Returns the number of displayed channel rows.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Row count.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfrozenfrozen">setFrozen(frozen)<a href="#setfrozenfrozen" class="hash-link" aria-label="Direct link to setFrozen(frozen)" title="Direct link to setFrozen(frozen)" translate="no">​</a></h3>
+<p>Freeze or unfreeze drag-panning (mouse drag and inertia).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>frozen</strong> : <em>bool</em>
+True to disable drag-panning.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isfrozen">isFrozen()<a href="#isfrozen" class="hash-link" aria-label="Direct link to isFrozen()" title="Direct link to isFrozen()" translate="no">​</a></h3>
+<p>Returns whether drag-panning is frozen.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if frozen.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setgridvisiblevisible">setGridVisible(visible)<a href="#setgridvisiblevisible" class="hash-link" aria-label="Direct link to setGridVisible(visible)" title="Direct link to setGridVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide the time grid and alternating per-second bands.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw the grid.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gridvisible">gridVisible()<a href="#gridvisible" class="hash-link" aria-label="Direct link to gridVisible()" title="Direct link to gridVisible()" translate="no">​</a></h3>
+<p>Returns whether the grid is drawn.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsfreqsfreq">setSfreq(sfreq)<a href="#setsfreqsfreq" class="hash-link" aria-label="Direct link to setSfreq(sfreq)" title="Direct link to setSfreq(sfreq)" translate="no">​</a></h3>
+<p>Set the sampling frequency (Hz) used for time labels, bands and grid.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>sfreq</strong> : <em>float</em>
+Sampling frequency in Hz.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setfirstfilesamplefirst">setFirstFileSample(first)<a href="#setfirstfilesamplefirst" class="hash-link" aria-label="Direct link to setFirstFileSample(first)" title="Direct link to setFirstFileSample(first)" translate="no">​</a></h3>
+<p>Set the absolute sample index of the first sample in the file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>first</strong> : <em>int</em>
+Absolute sample index of the file&#x27;s first sample.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setlastfilesamplelast">setLastFileSample(last)<a href="#setlastfilesamplelast" class="hash-link" aria-label="Direct link to setLastFileSample(last)" title="Direct link to setLastFileSample(last)" translate="no">​</a></h3>
+<p>Set the absolute sample index of the last sample in the file (-1 = unlimited).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>last</strong> : <em>int</em>
+Absolute sample index of the file&#x27;s last sample.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lastfilesample">lastFileSample()<a href="#lastfilesample" class="hash-link" aria-label="Direct link to lastFileSample()" title="Direct link to lastFileSample()" translate="no">​</a></h3>
+<p>Returns the last file sample used to clamp scrolling.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>int</em> — Absolute sample index or -1.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setwheelscrollschannelschannelsmode">setWheelScrollsChannels(channelsMode)<a href="#setwheelscrollschannelschannelsmode" class="hash-link" aria-label="Direct link to setWheelScrollsChannels(channelsMode)" title="Direct link to setWheelScrollsChannels(channelsMode)" translate="no">​</a></h3>
+<p>Control whether the vertical mouse wheel scrolls channels (true) or time (false).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>channelsMode</strong> : <em>bool</em>
+true = vertical wheel → channels.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="wheelscrollschannels">wheelScrollsChannels()<a href="#wheelscrollschannels" class="hash-link" aria-label="Direct link to wheelScrollsChannels()" title="Direct link to wheelScrollsChannels()" translate="no">​</a></h3>
+<p>Returns whether the vertical wheel scrolls channels.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True for channel scrolling.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscrollspeedfactorfactor">setScrollSpeedFactor(factor)<a href="#setscrollspeedfactorfactor" class="hash-link" aria-label="Direct link to setScrollSpeedFactor(factor)" title="Direct link to setScrollSpeedFactor(factor)" translate="no">​</a></h3>
+<p>Set the multiplier for wheel scrolling (clamped to 0.25–4).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>factor</strong> : <em>float</em>
+Scroll speed factor.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scrollspeedfactor">scrollSpeedFactor()<a href="#scrollspeedfactor" class="hash-link" aria-label="Direct link to scrollSpeedFactor()" title="Direct link to scrollSpeedFactor()" translate="no">​</a></h3>
+<p>Returns the wheel scroll multiplier.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>float</em> — Scroll speed factor.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sethidebadchannelshide">setHideBadChannels(hide)<a href="#sethidebadchannelshide" class="hash-link" aria-label="Direct link to setHideBadChannels(hide)" title="Direct link to setHideBadChannels(hide)" translate="no">​</a></h3>
+<p>Remove bad channels from the logical channel list (true) or show them (false).</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>hide</strong> : <em>bool</em>
+True to hide bad channels.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="hidebadchannels">hideBadChannels()<a href="#hidebadchannels" class="hash-link" aria-label="Direct link to hideBadChannels()" title="Direct link to hideBadChannels()" translate="no">​</a></h3>
+<p>Returns whether bad channels are hidden.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if hidden.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcrosshairenabledenabled">setCrosshairEnabled(enabled)<a href="#setcrosshairenabledenabled" class="hash-link" aria-label="Direct link to setCrosshairEnabled(enabled)" title="Direct link to setCrosshairEnabled(enabled)" translate="no">​</a></h3>
+<p>Enable or disable the crosshair cursor; while enabled, mouse moves emit <code>cursorDataChanged()</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to show the crosshair.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="crosshairenabled">crosshairEnabled()<a href="#crosshairenabled" class="hash-link" aria-label="Direct link to crosshairEnabled()" title="Direct link to crosshairEnabled()" translate="no">​</a></h3>
+<p>Returns whether the crosshair is enabled.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if enabled.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setclocktimeformatuseclock">setClockTimeFormat(useClock)<a href="#setclocktimeformatuseclock" class="hash-link" aria-label="Direct link to setClockTimeFormat(useClock)" title="Direct link to setClockTimeFormat(useClock)" translate="no">​</a></h3>
+<p>Set whether the crosshair label uses clock time (mm<!-- -->:ss<!-- -->.ms) or seconds.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>useClock</strong> : <em>bool</em>
+True for clock time, false for float seconds.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="clocktimeformat">clockTimeFormat()<a href="#clocktimeformat" class="hash-link" aria-label="Direct link to clockTimeFormat()" title="Direct link to clockTimeFormat()" translate="no">​</a></h3>
+<p>Returns whether the crosshair label uses clock time.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True for clock time.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rendertoimagesize">renderToImage(size)<a href="#rendertoimagesize" class="hash-link" aria-label="Direct link to renderToImage(size)" title="Direct link to renderToImage(size)" translate="no">​</a></h3>
+<p>Render the current view into an image with QPainter, without the GPU.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>size</strong> : <em>const QSize &amp;</em>
+Output size in pixels; an invalid size uses the host&#x27;s logical size.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>QImage</em> — The rendered image, or a null image if there is no model or the size is empty.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setscalebarsvisiblevisible">setScalebarsVisible(visible)<a href="#setscalebarsvisiblevisible" class="hash-link" aria-label="Direct link to setScalebarsVisible(visible)" title="Direct link to setScalebarsVisible(visible)" translate="no">​</a></h3>
+<p>Show or hide per-channel-type scalebars in the bottom-right corner.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>visible</strong> : <em>bool</em>
+True to draw the scalebars.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="scalebarsvisible">scalebarsVisible()<a href="#scalebarsvisible" class="hash-link" aria-label="Direct link to scalebarsVisible()" title="Direct link to scalebarsVisible()" translate="no">​</a></h3>
+<p>Returns whether scalebars are drawn.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if visible.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbutterflymodeenabled">setButterflyMode(enabled)<a href="#setbutterflymodeenabled" class="hash-link" aria-label="Direct link to setButterflyMode(enabled)" title="Direct link to setButterflyMode(enabled)" translate="no">​</a></h3>
+<p>Toggle butterfly mode: all channels of the same type are overlaid in a single lane.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li class=""><strong>enabled</strong> : <em>bool</em>
+True to enable butterfly mode.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="butterflymode">butterflyMode()<a href="#butterflymode" class="hash-link" aria-label="Direct link to butterflyMode()" title="Direct link to butterflyMode()" translate="no">​</a></h3>
+<p>Returns whether butterfly mode is on.</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li class=""><em>bool</em> — True if enabled.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
+<p>No example of its own: Rendering core used through the ChannelRhiView and ChannelWindow hosts rather than on its own.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
+<ul>
+<li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/average-layout-widget/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">AverageLayoutWidget</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/channel-rhi-host/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ChannelRhiHost</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#channelrhirendererhost-parent" class="table-of-contents__link toc-highlight">ChannelRhiRenderer(host, parent)</a></li><li><a href="#channelrhirenderer-1" class="table-of-contents__link toc-highlight">~ChannelRhiRenderer()</a></li><li><a href="#sethosthost" class="table-of-contents__link toc-highlight">setHost(host)</a></li><li><a href="#host" class="table-of-contents__link toc-highlight">host()</a></li><li><a href="#initializeresources" class="table-of-contents__link toc-highlight">initializeResources()</a></li><li><a href="#releaseresources" class="table-of-contents__link toc-highlight">releaseResources()</a></li><li><a href="#renderframerhi-target-cb" class="table-of-contents__link toc-highlight">renderFrame(rhi, target, cb)</a></li><li><a href="#hudvisible" class="table-of-contents__link toc-highlight">hudVisible()</a></li><li><a href="#painthudpainter" class="table-of-contents__link toc-highlight">paintHud(painter)</a></li><li><a href="#hudimage" class="table-of-contents__link toc-highlight">hudImage()</a></li><li><a href="#handlewheelevent" class="table-of-contents__link toc-highlight">handleWheel(event)</a></li><li><a href="#handlemousepressevent" class="table-of-contents__link toc-highlight">handleMousePress(event)</a></li><li><a href="#handlemousemoveevent" class="table-of-contents__link toc-highlight">handleMouseMove(event)</a></li><li><a href="#handlemousereleaseevent" class="table-of-contents__link toc-highlight">handleMouseRelease(event)</a></li><li><a href="#handlemousedoubleclickevent" class="table-of-contents__link toc-highlight">handleMouseDoubleClick(event)</a></li><li><a href="#handleresize" class="table-of-contents__link toc-highlight">handleResize()</a></li><li><a href="#setmodelmodel" class="table-of-contents__link toc-highlight">setModel(model)</a></li><li><a href="#model" class="table-of-contents__link toc-highlight">model()</a></li><li><a href="#seteventsevents" class="table-of-contents__link toc-highlight">setEvents(events)</a></li><li><a href="#setepochmarkerstriggersamples" class="table-of-contents__link toc-highlight">setEpochMarkers(triggerSamples)</a></li><li><a href="#setepochmarkersvisiblevisible" class="table-of-contents__link toc-highlight">setEpochMarkersVisible(visible)</a></li><li><a href="#epochmarkersvisible" class="table-of-contents__link toc-highlight">epochMarkersVisible()</a></li><li><a href="#setclippingvisiblevisible" class="table-of-contents__link toc-highlight">setClippingVisible(visible)</a></li><li><a href="#clippingvisible" class="table-of-contents__link toc-highlight">clippingVisible()</a></li><li><a href="#setzscoremodeenabled" class="table-of-contents__link toc-highlight">setZScoreMode(enabled)</a></li><li><a href="#zscoremode" class="table-of-contents__link toc-highlight">zScoreMode()</a></li><li><a href="#setannotationsannotations" class="table-of-contents__link toc-highlight">setAnnotations(annotations)</a></li><li><a href="#setannotationselectionenabledenabled" class="table-of-contents__link toc-highlight">setAnnotationSelectionEnabled(enabled)</a></li><li><a href="#seteventsvisiblevisible" class="table-of-contents__link toc-highlight">setEventsVisible(visible)</a></li><li><a href="#eventsvisible" class="table-of-contents__link toc-highlight">eventsVisible()</a></li><li><a href="#setannotationsvisiblevisible" class="table-of-contents__link toc-highlight">setAnnotationsVisible(visible)</a></li><li><a href="#annotationsvisible" class="table-of-contents__link toc-highlight">annotationsVisible()</a></li><li><a href="#scrollsample" class="table-of-contents__link toc-highlight">scrollSample()</a></li><li><a href="#samplesperpixel" class="table-of-contents__link toc-highlight">samplesPerPixel()</a></li><li><a href="#setscrollsamplesample" class="table-of-contents__link toc-highlight">setScrollSample(sample)</a></li><li><a href="#setsamplesperpixelspp" class="table-of-contents__link toc-highlight">setSamplesPerPixel(spp)</a></li><li><a href="#scrolltotargetsample-durationms" class="table-of-contents__link toc-highlight">scrollTo(targetSample, durationMs)</a></li><li><a href="#scrollbydeltasamples-durationms" class="table-of-contents__link toc-highlight">scrollBy(deltaSamples, durationMs)</a></li><li><a href="#zoomtotargetspp-durationms" class="table-of-contents__link toc-highlight">zoomTo(targetSpp, durationMs)</a></li><li><a href="#setbackgroundcolorcolor" class="table-of-contents__link toc-highlight">setBackgroundColor(color)</a></li><li><a href="#backgroundcolor" class="table-of-contents__link toc-highlight">backgroundColor()</a></li><li><a href="#setprefetchfactorfactor" class="table-of-contents__link toc-highlight">setPrefetchFactor(factor)</a></li><li><a href="#visiblefirstsample" class="table-of-contents__link toc-highlight">visibleFirstSample()</a></li><li><a href="#visiblesamplecount" class="table-of-contents__link toc-highlight">visibleSampleCount()</a></li><li><a href="#setchannelindicesindices" class="table-of-contents__link toc-highlight">setChannelIndices(indices)</a></li><li><a href="#totallogicalchannels" class="table-of-contents__link toc-highlight">totalLogicalChannels()</a></li><li><a href="#setfirstvisiblechannelch" class="table-of-contents__link toc-highlight">setFirstVisibleChannel(ch)</a></li><li><a href="#firstvisiblechannel" class="table-of-contents__link toc-highlight">firstVisibleChannel()</a></li><li><a href="#setvisiblechannelcountcount" class="table-of-contents__link toc-highlight">setVisibleChannelCount(count)</a></li><li><a href="#visiblechannelcount" class="table-of-contents__link toc-highlight">visibleChannelCount()</a></li><li><a href="#setfrozenfrozen" class="table-of-contents__link toc-highlight">setFrozen(frozen)</a></li><li><a href="#isfrozen" class="table-of-contents__link toc-highlight">isFrozen()</a></li><li><a href="#setgridvisiblevisible" class="table-of-contents__link toc-highlight">setGridVisible(visible)</a></li><li><a href="#gridvisible" class="table-of-contents__link toc-highlight">gridVisible()</a></li><li><a href="#setsfreqsfreq" class="table-of-contents__link toc-highlight">setSfreq(sfreq)</a></li><li><a href="#setfirstfilesamplefirst" class="table-of-contents__link toc-highlight">setFirstFileSample(first)</a></li><li><a href="#setlastfilesamplelast" class="table-of-contents__link toc-highlight">setLastFileSample(last)</a></li><li><a href="#lastfilesample" class="table-of-contents__link toc-highlight">lastFileSample()</a></li><li><a href="#setwheelscrollschannelschannelsmode" class="table-of-contents__link toc-highlight">setWheelScrollsChannels(channelsMode)</a></li><li><a href="#wheelscrollschannels" class="table-of-contents__link toc-highlight">wheelScrollsChannels()</a></li><li><a href="#setscrollspeedfactorfactor" class="table-of-contents__link toc-highlight">setScrollSpeedFactor(factor)</a></li><li><a href="#scrollspeedfactor" class="table-of-contents__link toc-highlight">scrollSpeedFactor()</a></li><li><a href="#sethidebadchannelshide" class="table-of-contents__link toc-highlight">setHideBadChannels(hide)</a></li><li><a href="#hidebadchannels" class="table-of-contents__link toc-highlight">hideBadChannels()</a></li><li><a href="#setcrosshairenabledenabled" class="table-of-contents__link toc-highlight">setCrosshairEnabled(enabled)</a></li><li><a href="#crosshairenabled" class="table-of-contents__link toc-highlight">crosshairEnabled()</a></li><li><a href="#setclocktimeformatuseclock" class="table-of-contents__link toc-highlight">setClockTimeFormat(useClock)</a></li><li><a href="#clocktimeformat" class="table-of-contents__link toc-highlight">clockTimeFormat()</a></li><li><a href="#rendertoimagesize" class="table-of-contents__link toc-highlight">renderToImage(size)</a></li><li><a href="#setscalebarsvisiblevisible" class="table-of-contents__link toc-highlight">setScalebarsVisible(visible)</a></li><li><a href="#scalebarsvisible" class="table-of-contents__link toc-highlight">scalebarsVisible()</a></li><li><a href="#setbutterflymodeenabled" class="table-of-contents__link toc-highlight">setButterflyMode(enabled)</a></li><li><a href="#butterflymode" class="table-of-contents__link toc-highlight">butterflyMode()</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
