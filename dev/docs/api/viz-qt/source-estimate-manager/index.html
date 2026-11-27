@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::viz::qt::SourceEstimateManager | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/viz-qt/source-estimate-manager/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::viz::qt::SourceEstimateManager | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Visualization viz/backends/qt/3d/scene/sourceestimatemanager.h"><meta data-rh="true" property="og:description" content="Namespace Visualization viz/backends/qt/3d/scene/sourceestimatemanager.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/source-estimate-manager/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/source-estimate-manager/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/source-estimate-manager/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visualization: Qt Backend","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/"},{"@type":"ListItem","position":2,"name":"SourceEstimateManager","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/source-estimate-manager"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.6ca48f34.js" defer="defer"></script>
-<script src="/dev/assets/js/main.7548e302.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.07169561.js" defer="defer"></script>
+<script src="/dev/assets/js/main.f8c9470a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -15,9 +15,7 @@
 <p><strong>Namespace:</strong> <code>mne::viz::qt</code>  ·  <strong>Library:</strong> Visualization: Qt Backend  ·  <strong>Source:</strong> <a href="https://github.com/mne-tools/mne-cpp/blob/staging/src/libs/mne/viz/backends/qt/3d/scene/sourceestimatemanager.h" target="_blank" rel="noopener noreferrer" class=""><code>viz/backends/qt/3d/scene/sourceestimatemanager.h</code></a></p>
 <p><code>#include &lt;mne/viz/backends/qt/sourceestimatemanager.h&gt;</code></p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">mne</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">viz</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">qt</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">SourceEstimateManager</span><br></div></code></pre></div></div>
-<p>Manages source estimate data: async loading, time-point navigation, colormap/threshold control, and real-time streaming via <a class="" href="/dev/docs/api/viz-qt/rt-source-data-controller/"><code>RtSourceDataController</code></a>.</p>
-<p><a class="" href="/dev/docs/api/viz-qt/brain-view/"><code>BrainView</code></a> delegates all source-estimate operations to this component, keeping its own code free of STC lifecycle details.</p>
-<p>Source estimate lifecycle manager.</p>
+<p>Qt face of <a class="" href="/dev/docs/api/viz/source-estimate-session/"><code>SourceEstimateSession</code></a> as a QObject: the same API, with the results as signals on this object&#x27;s thread.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inheritance">Inheritance<a href="#inheritance" class="hash-link" aria-label="Direct link to Inheritance" title="Direct link to Inheritance" translate="no">​</a></h3>
 <!-- -->
 <hr>
@@ -33,188 +31,6 @@ Parent QObject.</li>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sourceestimatemanager-1">~SourceEstimateManager()<a href="#sourceestimatemanager-1" class="hash-link" aria-label="Direct link to ~SourceEstimateManager()" title="Direct link to ~SourceEstimateManager()" translate="no">​</a></h3>
 <p>Destructor.</p>
 <hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="loadlhpath-rhpath-surfaces-activesurfacetype">load(lhPath, rhPath, surfaces, activeSurfaceType)<a href="#loadlhpath-rhpath-surfaces-activesurfacetype" class="hash-link" aria-label="Direct link to load(lhPath, rhPath, surfaces, activeSurfaceType)" title="Direct link to load(lhPath, rhPath, surfaces, activeSurfaceType)" translate="no">​</a></h3>
-<p>Start async STC file loading on a background thread.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>lhPath</strong> : <em>const std::filesystem::path &amp;</em>
-Path to left-hemisphere STC file.</p>
-</li>
-<li class="">
-<p><strong>rhPath</strong> : <em>const std::filesystem::path &amp;</em>
-Path to right-hemisphere STC file.</p>
-</li>
-<li class="">
-<p><strong>surfaces</strong> : <em>const std::map&lt; std::string, std::shared_ptr&lt; <a class="" href="/dev/docs/api/viz/brain-surface/">BrainSurface</a> &gt; &gt; &amp;</em>
-<a class="" href="/dev/docs/api/fs/fs-surface/"><code>FsSurface</code></a> map for finding lh/rh brain surfaces.</p>
-</li>
-<li class="">
-<p><strong>activeSurfaceType</strong> : <em>const std::string &amp;</em>
-Active surface type name (e.g. &quot;pial&quot;).</p>
-</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — true if loading was started, false on error.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cancelloading">cancelLoading()<a href="#cancelloading" class="hash-link" aria-label="Direct link to cancelLoading()" title="Direct link to cancelLoading()" translate="no">​</a></h3>
-<p>Cancel any in-progress STC loading / interpolation and wait for the thread to finish.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isloading">isLoading()<a href="#isloading" class="hash-link" aria-label="Direct link to isLoading()" title="Direct link to isLoading()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — true while an async STC load is in progress.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isloaded">isLoaded()<a href="#isloaded" class="hash-link" aria-label="Direct link to isLoaded()" title="Direct link to isLoaded()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — true if source estimate data has been loaded successfully.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settimepointindex-surfaces-singleview-subviews">setTimePoint(index, surfaces, singleView, subViews)<a href="#settimepointindex-surfaces-singleview-subviews" class="hash-link" aria-label="Direct link to setTimePoint(index, surfaces, singleView, subViews)" title="Direct link to setTimePoint(index, surfaces, singleView, subViews)" translate="no">​</a></h3>
-<p>Set the current STC time-point and apply colours to matching surfaces.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>index</strong> : <em>int</em>
-Time-point index.</p>
-</li>
-<li class="">
-<p><strong>surfaces</strong> : <em>const std::map&lt; std::string, std::shared_ptr&lt; <a class="" href="/dev/docs/api/viz/brain-surface/">BrainSurface</a> &gt; &gt; &amp;</em>
-<a class="" href="/dev/docs/api/fs/fs-surface/"><code>FsSurface</code></a> map.</p>
-</li>
-<li class="">
-<p><strong>singleView</strong> : <em>const <a class="" href="/dev/docs/api/viz/sub-view/">SubView</a> &amp;</em>
-Single-view state (for active surface type).</p>
-</li>
-<li class="">
-<p><strong>subViews</strong> : <em>const std::vector&lt; <a class="" href="/dev/docs/api/viz/sub-view/">SubView</a> &gt; &amp;</em>
-Multi-view states.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="currenttimepoint">currentTimePoint()<a href="#currenttimepoint" class="hash-link" aria-label="Direct link to currentTimePoint()" title="Direct link to currentTimePoint()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>int</em> — current time-point index.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tstep">tstep()<a href="#tstep" class="hash-link" aria-label="Direct link to tstep()" title="Direct link to tstep()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>float</em> — time step between STC samples (seconds), or 0.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tmin">tmin()<a href="#tmin" class="hash-link" aria-label="Direct link to tmin()" title="Direct link to tmin()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>float</em> — start time of the STC data (seconds), or 0.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="numtimepoints">numTimePoints()<a href="#numtimepoints" class="hash-link" aria-label="Direct link to numTimePoints()" title="Direct link to numTimePoints()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>int</em> — number of time points, or 0.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="closestindextimesec">closestIndex(timeSec)<a href="#closestindextimesec" class="hash-link" aria-label="Direct link to closestIndex(timeSec)" title="Direct link to closestIndex(timeSec)" translate="no">​</a></h3>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>timeSec</strong> : <em>float</em>
-Time in seconds.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>int</em> — index closest to <code>timeSec</code>, or -1.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcolormapname">setColormap(name)<a href="#setcolormapname" class="hash-link" aria-label="Direct link to setColormap(name)" title="Direct link to setColormap(name)" translate="no">​</a></h3>
-<p>Set the colormap used for source estimate visualisation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>name</strong> : <em>const std::string &amp;</em>
-<code>Colormap</code> name (e.g. &quot;Hot&quot;, &quot;Jet&quot;).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setthresholdsmin-mid-max">setThresholds(min, mid, max)<a href="#setthresholdsmin-mid-max" class="hash-link" aria-label="Direct link to setThresholds(min, mid, max)" title="Direct link to setThresholds(min, mid, max)" translate="no">​</a></h3>
-<p>Set source estimate thresholds.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>min</strong> : <em>float</em>
-Minimum threshold.</p>
-</li>
-<li class="">
-<p><strong>mid</strong> : <em>float</em>
-Mid threshold.</p>
-</li>
-<li class="">
-<p><strong>max</strong> : <em>float</em>
-Maximum threshold.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="startstreamingsurfaces-singleview-subviews">startStreaming(surfaces, singleView, subViews)<a href="#startstreamingsurfaces-singleview-subviews" class="hash-link" aria-label="Direct link to startStreaming(surfaces, singleView, subViews)" title="Direct link to startStreaming(surfaces, singleView, subViews)" translate="no">​</a></h3>
-<p>Start real-time playback.</p>
-<p>Feeds all STC time-points into the streaming queue and begins the interpolation pipeline.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>surfaces</strong> : <em>const std::map&lt; std::string, std::shared_ptr&lt; <a class="" href="/dev/docs/api/viz/brain-surface/">BrainSurface</a> &gt; &gt; &amp;</em>
-<a class="" href="/dev/docs/api/fs/fs-surface/"><code>FsSurface</code></a> map (for colour application).</p>
-</li>
-<li class="">
-<p><strong>singleView</strong> : <em>const <a class="" href="/dev/docs/api/viz/sub-view/">SubView</a> &amp;</em>
-Single-view state.</p>
-</li>
-<li class="">
-<p><strong>subViews</strong> : <em>const std::vector&lt; <a class="" href="/dev/docs/api/viz/sub-view/">SubView</a> &gt; &amp;</em>
-Multi-view states.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="stopstreaming">stopStreaming()<a href="#stopstreaming" class="hash-link" aria-label="Direct link to stopStreaming()" title="Direct link to stopStreaming()" translate="no">​</a></h3>
-<p>Stop real-time streaming.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isstreaming">isStreaming()<a href="#isstreaming" class="hash-link" aria-label="Direct link to isStreaming()" title="Direct link to isStreaming()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — true while real-time streaming is active.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="pushdatadata">pushData(data)<a href="#pushdatadata" class="hash-link" aria-label="Direct link to pushData(data)" title="Direct link to pushData(data)" translate="no">​</a></h3>
-<p>Push a single column of source data into the streaming queue.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>data</strong> : <em>const Eigen::VectorXd &amp;</em>
-Source amplitudes for one time point; ignored if no controller exists.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setintervalmsec">setInterval(msec)<a href="#setintervalmsec" class="hash-link" aria-label="Direct link to setInterval(msec)" title="Direct link to setInterval(msec)" translate="no">​</a></h3>
-<p>Set the streaming playback interval in milliseconds.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>msec</strong> : <em>int</em>
-Interval between streamed time points in milliseconds.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setloopingenabled">setLooping(enabled)<a href="#setloopingenabled" class="hash-link" aria-label="Direct link to setLooping(enabled)" title="Direct link to setLooping(enabled)" translate="no">​</a></h3>
-<p>Enable or disable looping of the streaming queue.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>enabled</strong> : <em>bool</em>
-True to replay the queue from the start when it ends.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="overlay">overlay()<a href="#overlay" class="hash-link" aria-label="Direct link to overlay()" title="Direct link to overlay()" translate="no">​</a></h3>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class="">*const <a class="" href="/dev/docs/api/viz/source-estimate-overlay/">SourceEstimateOverlay</a> ** — read-only pointer to the overlay (may be null).</li>
-</ul>
-<hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example" translate="no">​</a></h2>
 <p>No example of its own: Source-estimate loading and playback state owned privately by BrainView; exercised through BrainView (test_disp3d_brainview).</p>
 <p>It is exercised by:</p>
@@ -223,6 +39,6 @@ True to replay the queue from the start when it ends.</li>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>
 <li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/sensor-tree-item/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">SensorTreeItem</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/source-space-tree-item/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SourceSpaceTreeItem</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#sourceestimatemanagerparent" class="table-of-contents__link toc-highlight">SourceEstimateManager(parent)</a></li><li><a href="#sourceestimatemanager-1" class="table-of-contents__link toc-highlight">~SourceEstimateManager()</a></li><li><a href="#loadlhpath-rhpath-surfaces-activesurfacetype" class="table-of-contents__link toc-highlight">load(lhPath, rhPath, surfaces, activeSurfaceType)</a></li><li><a href="#cancelloading" class="table-of-contents__link toc-highlight">cancelLoading()</a></li><li><a href="#isloading" class="table-of-contents__link toc-highlight">isLoading()</a></li><li><a href="#isloaded" class="table-of-contents__link toc-highlight">isLoaded()</a></li><li><a href="#settimepointindex-surfaces-singleview-subviews" class="table-of-contents__link toc-highlight">setTimePoint(index, surfaces, singleView, subViews)</a></li><li><a href="#currenttimepoint" class="table-of-contents__link toc-highlight">currentTimePoint()</a></li><li><a href="#tstep" class="table-of-contents__link toc-highlight">tstep()</a></li><li><a href="#tmin" class="table-of-contents__link toc-highlight">tmin()</a></li><li><a href="#numtimepoints" class="table-of-contents__link toc-highlight">numTimePoints()</a></li><li><a href="#closestindextimesec" class="table-of-contents__link toc-highlight">closestIndex(timeSec)</a></li><li><a href="#setcolormapname" class="table-of-contents__link toc-highlight">setColormap(name)</a></li><li><a href="#setthresholdsmin-mid-max" class="table-of-contents__link toc-highlight">setThresholds(min, mid, max)</a></li><li><a href="#startstreamingsurfaces-singleview-subviews" class="table-of-contents__link toc-highlight">startStreaming(surfaces, singleView, subViews)</a></li><li><a href="#stopstreaming" class="table-of-contents__link toc-highlight">stopStreaming()</a></li><li><a href="#isstreaming" class="table-of-contents__link toc-highlight">isStreaming()</a></li><li><a href="#pushdatadata" class="table-of-contents__link toc-highlight">pushData(data)</a></li><li><a href="#setintervalmsec" class="table-of-contents__link toc-highlight">setInterval(msec)</a></li><li><a href="#setloopingenabled" class="table-of-contents__link toc-highlight">setLooping(enabled)</a></li><li><a href="#overlay" class="table-of-contents__link toc-highlight">overlay()</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/sensor-tree-item/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">SensorTreeItem</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/source-space-tree-item/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SourceSpaceTreeItem</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#sourceestimatemanagerparent" class="table-of-contents__link toc-highlight">SourceEstimateManager(parent)</a></li><li><a href="#sourceestimatemanager-1" class="table-of-contents__link toc-highlight">~SourceEstimateManager()</a></li></ul></li><li><a href="#example" class="table-of-contents__link toc-highlight">Example</a></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>

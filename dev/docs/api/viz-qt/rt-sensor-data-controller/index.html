@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::viz::qt::RtSensorDataController | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-sensor-data-controller/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::viz::qt::RtSensorDataController | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Visualization viz/backends/qt/3d/workers/rtsensordatacontroller.h"><meta data-rh="true" property="og:description" content="Namespace Visualization viz/backends/qt/3d/workers/rtsensordatacontroller.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-sensor-data-controller/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-sensor-data-controller/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-sensor-data-controller/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visualization: Qt Backend","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/"},{"@type":"ListItem","position":2,"name":"RtSensorDataController","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-sensor-data-controller"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.6ca48f34.js" defer="defer"></script>
-<script src="/dev/assets/js/main.7548e302.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.07169561.js" defer="defer"></script>
+<script src="/dev/assets/js/main.f8c9470a.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -15,24 +15,14 @@
 <p><strong>Namespace:</strong> <code>mne::viz::qt</code>  ·  <strong>Library:</strong> Visualization: Qt Backend  ·  <strong>Source:</strong> <a href="https://github.com/mne-tools/mne-cpp/blob/staging/src/libs/mne/viz/backends/qt/3d/workers/rtsensordatacontroller.h" target="_blank" rel="noopener noreferrer" class=""><code>viz/backends/qt/3d/workers/rtsensordatacontroller.h</code></a></p>
 <p><code>#include &lt;mne/viz/backends/qt/rtsensordatacontroller.h&gt;</code></p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">mne</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">viz</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">qt</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">RtSensorDataController</span><br></div></code></pre></div></div>
-<p><a class="" href="/dev/docs/api/viz-qt/rt-sensor-data-controller/"><code>RtSensorDataController</code></a> orchestrates real-time sensor data streaming.</p>
-<p>It manages a background data worker thread, a background interpolation matrix worker thread, and a timer that drives the data flow.</p>
-<p>Unlike the source-estimate controller (which uses sparse interpolation matrices split by hemisphere), this controller uses a single dense mapping matrix produced by mne::<a class="" href="/dev/docs/api/fwd/fwd-field-map/">FwdFieldMap</a>::computeMeg/EegMapping() that maps sensor measurements directly to surface vertex values.</p>
-<p>The controller can either accept a precomputed mapping matrix via <code>setMappingMatrix()</code>, or compute one on-the-fly in a background thread by providing evoked data, surface geometry, and transforms via the setInterpolationInfo() / <code>setEvoked()</code> / <code>setTransform()</code> methods. When parameters change, <code>recomputeMapping()</code> triggers an asynchronous recomputation; the new matrix is automatically forwarded to the data worker.</p>
-<p>Usage:
-Create controller</p>
-<p>Either set mapping matrix via <code>setMappingMatrix()</code>, or configure interpolation parameters and call <code>recomputeMapping()</code></p>
-<p>Connect <code>newSensorColorsAvailable()</code> to your rendering update slot</p>
-<p>Call <code>addData()</code> to push sensor measurement vectors</p>
-<p>Call setStreamingState(true) to start streaming</p>
-<p>Controller for real-time sensor data streaming.</p>
+<p>Qt face of <a class="" href="/dev/docs/api/viz/rt-sensor-stream/"><code>RtSensorStream</code></a> as a QObject: the same API, with the results as signals on this object&#x27;s thread.</p>
+<p>The streaming and interpolation threads of the stream hand their results over to this object&#x27;s thread, so slots connected to the signals may touch the GUI.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inheritance">Inheritance<a href="#inheritance" class="hash-link" aria-label="Direct link to Inheritance" title="Direct link to Inheritance" translate="no">​</a></h3>
 <!-- -->
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rtsensordatacontrollerparent">RtSensorDataController(parent)<a href="#rtsensordatacontrollerparent" class="hash-link" aria-label="Direct link to RtSensorDataController(parent)" title="Direct link to RtSensorDataController(parent)" translate="no">​</a></h3>
 <p>Constructor.</p>
-<p>Creates the worker and background thread.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class=""><strong>parent</strong> : *QObject **
@@ -41,195 +31,11 @@ Parent QObject.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rtsensordatacontroller-1">~RtSensorDataController()<a href="#rtsensordatacontroller-1" class="hash-link" aria-label="Direct link to ~RtSensorDataController()" title="Direct link to ~RtSensorDataController()" translate="no">​</a></h3>
 <p>Destructor.</p>
-<p>Stops the worker thread and cleans up.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="adddatadata">addData(data)<a href="#adddatadata" class="hash-link" aria-label="Direct link to addData(data)" title="Direct link to addData(data)" translate="no">​</a></h3>
-<p>Add a sensor measurement vector to the streaming queue.</p>
-<p>The vector should contain one value per picked sensor channel (matching the mapping matrix column count).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>data</strong> : <em>const Eigen::VectorXf &amp;</em>
-Sensor measurement vector (nChannels x 1).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setmappingmatrixsurfacekey-mat">setMappingMatrix(surfaceKey, mat)<a href="#setmappingmatrixsurfacekey-mat" class="hash-link" aria-label="Direct link to setMappingMatrix(surfaceKey, mat)" title="Direct link to setMappingMatrix(surfaceKey, mat)" translate="no">​</a></h3>
-<p>Set the dense mapping matrix (sensor → surface vertices).</p>
-<p>Size: (nVertices × nChannels).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>surfaceKey</strong> : <em>const std::string &amp;</em>
-<code>Key</code> of the surface the matrix maps onto; colours are emitted for it.</p>
-</li>
-<li class="">
-<p><strong>mat</strong> : <em>std::shared_ptr&lt; Eigen::MatrixXf &gt;</em>
-Dense mapping matrix.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setstreamingstatestate">setStreamingState(state)<a href="#setstreamingstatestate" class="hash-link" aria-label="Direct link to setStreamingState(state)" title="Direct link to setStreamingState(state)" translate="no">​</a></h3>
-<p>Start or stop the streaming.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>state</strong> : <em>bool</em>
-True to start, false to stop.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isstreaming">isStreaming()<a href="#isstreaming" class="hash-link" aria-label="Direct link to isStreaming()" title="Direct link to isStreaming()" translate="no">​</a></h3>
-<p>Check if streaming is active.</p>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — True if streaming is running.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settimeintervalmsec">setTimeInterval(msec)<a href="#settimeintervalmsec" class="hash-link" aria-label="Direct link to setTimeInterval(msec)" title="Direct link to setTimeInterval(msec)" translate="no">​</a></h3>
-<p>Set the streaming interval (time between frames).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>msec</strong> : <em>int</em>
-Interval in milliseconds (default: 17ms ≈ 60fps).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setnumberaveragesnumavr">setNumberAverages(numAvr)<a href="#setnumberaveragesnumavr" class="hash-link" aria-label="Direct link to setNumberAverages(numAvr)" title="Direct link to setNumberAverages(numAvr)" translate="no">​</a></h3>
-<p>Set the number of samples to average before emitting.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>numAvr</strong> : <em>int</em>
-Number of averages (1 = no averaging).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcolormaptypename">setColormapType(name)<a href="#setcolormaptypename" class="hash-link" aria-label="Direct link to setColormapType(name)" title="Direct link to setColormapType(name)" translate="no">​</a></h3>
-<p>Set the colormap type.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>name</strong> : <em>const std::string &amp;</em>
-<code>Colormap</code> name (&quot;MNE&quot;, &quot;Hot&quot;, &quot;Jet&quot;, &quot;Viridis&quot;, &quot;Cool&quot;, &quot;RedBlue&quot;).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setthresholdsmin-max">setThresholds(min, max)<a href="#setthresholdsmin-max" class="hash-link" aria-label="Direct link to setThresholds(min, max)" title="Direct link to setThresholds(min, max)" translate="no">​</a></h3>
-<p>Set explicit normalization thresholds for sensor data.</p>
-<p>Pass min == 0 and max == 0 to re-enable symmetric auto-normalization.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>min</strong> : <em>double</em>
-Lower threshold.</p>
-</li>
-<li class="">
-<p><strong>max</strong> : <em>double</em>
-Upper threshold.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setloopstateenabled">setLoopState(enabled)<a href="#setloopstateenabled" class="hash-link" aria-label="Direct link to setLoopState(enabled)" title="Direct link to setLoopState(enabled)" translate="no">​</a></h3>
-<p>Enable or disable looping (replay data when queue is exhausted).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>enabled</strong> : <em>bool</em>
-True to enable looping.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsfreqsfreq">setSFreq(sFreq)<a href="#setsfreqsfreq" class="hash-link" aria-label="Direct link to setSFreq(sFreq)" title="Direct link to setSFreq(sFreq)" translate="no">​</a></h3>
-<p>Set the sampling frequency of the incoming data.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>sFreq</strong> : <em>double</em>
-Sampling frequency in Hz.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleardata">clearData()<a href="#cleardata" class="hash-link" aria-label="Direct link to clearData()" title="Direct link to clearData()" translate="no">​</a></h3>
-<p>Clear all queued data and reset the worker state.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setstreamsmootheddatabstreamsmootheddata">setStreamSmoothedData(bStreamSmoothedData)<a href="#setstreamsmootheddatabstreamsmootheddata" class="hash-link" aria-label="Direct link to setStreamSmoothedData(bStreamSmoothedData)" title="Direct link to setStreamSmoothedData(bStreamSmoothedData)" translate="no">​</a></h3>
-<p>Toggle between emitting per-vertex color data (smoothed) and raw sensor values.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>bStreamSmoothedData</strong> : <em>bool</em>
-True for smoothed colors (default), false for raw.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setevokedevoked">setEvoked(evoked)<a href="#setevokedevoked" class="hash-link" aria-label="Direct link to setEvoked(evoked)" title="Direct link to setEvoked(evoked)" translate="no">​</a></h3>
-<p>Set the evoked data that contains channel info and sensor definitions.</p>
-<p>This configures the interpolation worker for on-the-fly recomputation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>evoked</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-evoked/">FiffEvoked</a> &amp;</em>
-The evoked dataset.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settransformtrans-applysensortrans">setTransform(trans, applySensorTrans)<a href="#settransformtrans-applysensortrans" class="hash-link" aria-label="Direct link to setTransform(trans, applySensorTrans)" title="Direct link to setTransform(trans, applySensorTrans)" translate="no">​</a></h3>
-<p>Set the head-to-MRI coordinate transform for the interpolation worker.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>trans</strong> : <em>const <a class="" href="/dev/docs/api/fiff/fiff-coord-trans/">FiffCoordTrans</a> &amp;</em>
-The transform.</p>
-</li>
-<li class="">
-<p><strong>applySensorTrans</strong> : <em>bool</em>
-Whether to apply the transform.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setmegfieldmaponheadonhead">setMegFieldMapOnHead(onHead)<a href="#setmegfieldmaponheadonhead" class="hash-link" aria-label="Direct link to setMegFieldMapOnHead(onHead)" title="Direct link to setMegFieldMapOnHead(onHead)" translate="no">​</a></h3>
-<p>Set whether the MEG field should be mapped onto the head (BEM) surface rather than the helmet surface.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>onHead</strong> : <em>bool</em>
-True to map onto head.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setmegsurfacesurfacekey-vertices-normals-triangles">setMegSurface(surfaceKey, vertices, normals, triangles)<a href="#setmegsurfacesurfacekey-vertices-normals-triangles" class="hash-link" aria-label="Direct link to setMegSurface(surfaceKey, vertices, normals, triangles)" title="Direct link to setMegSurface(surfaceKey, vertices, normals, triangles)" translate="no">​</a></h3>
-<p>Set the MEG target surface geometry for on-the-fly mapping.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>surfaceKey</strong> : <em>const std::string &amp;</em>
-The key identifying the surface.</p>
-</li>
-<li class="">
-<p><strong>vertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
-Vertex positions (nVerts x 3).</p>
-</li>
-<li class="">
-<p><strong>normals</strong> : <em>const Eigen::MatrixX3f &amp;</em>
-Vertex normals (nVerts x 3).</p>
-</li>
-<li class="">
-<p><strong>triangles</strong> : <em>const Eigen::MatrixX3i &amp;</em>
-Triangle indices (nTris x 3).</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="seteegsurfacesurfacekey-vertices">setEegSurface(surfaceKey, vertices)<a href="#seteegsurfacesurfacekey-vertices" class="hash-link" aria-label="Direct link to setEegSurface(surfaceKey, vertices)" title="Direct link to setEegSurface(surfaceKey, vertices)" translate="no">​</a></h3>
-<p>Set the EEG target surface geometry for on-the-fly mapping.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>surfaceKey</strong> : <em>const std::string &amp;</em>
-The key identifying the surface.</p>
-</li>
-<li class="">
-<p><strong>vertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
-Vertex positions (nVerts x 3).</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setbadchannelsbads">setBadChannels(bads)<a href="#setbadchannelsbads" class="hash-link" aria-label="Direct link to setBadChannels(bads)" title="Direct link to setBadChannels(bads)" translate="no">​</a></h3>
-<p>Set bad channels for the interpolation worker.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>bads</strong> : <em>const std::vector&lt; std::string &gt; &amp;</em>
-List of bad channel names.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recomputemapping">recomputeMapping()<a href="#recomputemapping" class="hash-link" aria-label="Direct link to recomputeMapping()" title="Direct link to recomputeMapping()" translate="no">​</a></h3>
-<p>Trigger an asynchronous recomputation of the mapping matrix.</p>
-<p>The new matrix will be automatically forwarded to the data worker when ready.</p>
+<p>Stops the threads of the stream before the signals go away.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>
 <li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/ray-picker/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RayPicker</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/rt-sensor-stream-manager/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">RtSensorStreamManager</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#rtsensordatacontrollerparent" class="table-of-contents__link toc-highlight">RtSensorDataController(parent)</a></li><li><a href="#rtsensordatacontroller-1" class="table-of-contents__link toc-highlight">~RtSensorDataController()</a></li><li><a href="#adddatadata" class="table-of-contents__link toc-highlight">addData(data)</a></li><li><a href="#setmappingmatrixsurfacekey-mat" class="table-of-contents__link toc-highlight">setMappingMatrix(surfaceKey, mat)</a></li><li><a href="#setstreamingstatestate" class="table-of-contents__link toc-highlight">setStreamingState(state)</a></li><li><a href="#isstreaming" class="table-of-contents__link toc-highlight">isStreaming()</a></li><li><a href="#settimeintervalmsec" class="table-of-contents__link toc-highlight">setTimeInterval(msec)</a></li><li><a href="#setnumberaveragesnumavr" class="table-of-contents__link toc-highlight">setNumberAverages(numAvr)</a></li><li><a href="#setcolormaptypename" class="table-of-contents__link toc-highlight">setColormapType(name)</a></li><li><a href="#setthresholdsmin-max" class="table-of-contents__link toc-highlight">setThresholds(min, max)</a></li><li><a href="#setloopstateenabled" class="table-of-contents__link toc-highlight">setLoopState(enabled)</a></li><li><a href="#setsfreqsfreq" class="table-of-contents__link toc-highlight">setSFreq(sFreq)</a></li><li><a href="#cleardata" class="table-of-contents__link toc-highlight">clearData()</a></li><li><a href="#setstreamsmootheddatabstreamsmootheddata" class="table-of-contents__link toc-highlight">setStreamSmoothedData(bStreamSmoothedData)</a></li><li><a href="#setevokedevoked" class="table-of-contents__link toc-highlight">setEvoked(evoked)</a></li><li><a href="#settransformtrans-applysensortrans" class="table-of-contents__link toc-highlight">setTransform(trans, applySensorTrans)</a></li><li><a href="#setmegfieldmaponheadonhead" class="table-of-contents__link toc-highlight">setMegFieldMapOnHead(onHead)</a></li><li><a href="#setmegsurfacesurfacekey-vertices-normals-triangles" class="table-of-contents__link toc-highlight">setMegSurface(surfaceKey, vertices, normals, triangles)</a></li><li><a href="#seteegsurfacesurfacekey-vertices" class="table-of-contents__link toc-highlight">setEegSurface(surfaceKey, vertices)</a></li><li><a href="#setbadchannelsbads" class="table-of-contents__link toc-highlight">setBadChannels(bads)</a></li><li><a href="#recomputemapping" class="table-of-contents__link toc-highlight">recomputeMapping()</a></li></ul></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/ray-picker/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RayPicker</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/rt-sensor-stream-manager/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">RtSensorStreamManager</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#rtsensordatacontrollerparent" class="table-of-contents__link toc-highlight">RtSensorDataController(parent)</a></li><li><a href="#rtsensordatacontroller-1" class="table-of-contents__link toc-highlight">~RtSensorDataController()</a></li></ul></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
