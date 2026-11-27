@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">mne::viz::qt::RtSourceDataController | MNE-CPP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" name="twitter:image" content="https://mne-cpp.github.io/dev/img/mne-cpp-social-card.png"><meta data-rh="true" property="og:url" content="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-source-data-controller/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="mne::viz::qt::RtSourceDataController | MNE-CPP"><meta data-rh="true" name="description" content="Namespace Visualization viz/backends/qt/3d/workers/rtsourcedatacontroller.h"><meta data-rh="true" property="og:description" content="Namespace Visualization viz/backends/qt/3d/workers/rtsourcedatacontroller.h"><link data-rh="true" rel="icon" href="/dev/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-source-data-controller/"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-source-data-controller/" hreflang="en"><link data-rh="true" rel="alternate" href="https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-source-data-controller/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Visualization: Qt Backend","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/"},{"@type":"ListItem","position":2,"name":"RtSourceDataController","item":"https://mne-cpp.github.io/dev/docs/api/viz-qt/rt-source-data-controller"}]}</script><link rel="stylesheet" href="/dev/katex.min.css"><link rel="stylesheet" href="/dev/assets/css/styles.5b76b575.css">
-<script src="/dev/assets/js/runtime~main.6ca48f34.js" defer="defer"></script>
-<script src="/dev/assets/js/main.7548e302.js" defer="defer"></script>
+<script src="/dev/assets/js/runtime~main.995d9155.js" defer="defer"></script>
+<script src="/dev/assets/js/main.344a792e.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -15,37 +15,14 @@
 <p><strong>Namespace:</strong> <code>mne::viz::qt</code>  ·  <strong>Library:</strong> Visualization: Qt Backend  ·  <strong>Source:</strong> <a href="https://github.com/mne-tools/mne-cpp/blob/staging/src/libs/mne/viz/backends/qt/3d/workers/rtsourcedatacontroller.h" target="_blank" rel="noopener noreferrer" class=""><code>viz/backends/qt/3d/workers/rtsourcedatacontroller.h</code></a></p>
 <p><code>#include &lt;mne/viz/backends/qt/rtsourcedatacontroller.h&gt;</code></p>
 <div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token keyword" style="color:rgb(189, 147, 249);font-style:italic">class</span><span class="token plain"> </span><span class="token class-name">mne</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">viz</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">qt</span><span class="token double-colon punctuation" style="color:rgb(248, 248, 242)">::</span><span class="token plain">RtSourceDataController</span><br></div></code></pre></div></div>
-<p><a class="" href="/dev/docs/api/viz-qt/rt-source-data-controller/"><code>RtSourceDataController</code></a> orchestrates real-time source estimate streaming.</p>
-<p>It manages a background data worker thread, an optional background interpolation matrix worker thread, and a timer that drives the data flow.</p>
-<p>The controller provides a simple public API for:</p>
-<ul>
-<li class="">Pushing new source estimate data</li>
-<li class="">Setting interpolation matrices (LH/RH) directly or triggering on-the-fly recomputation when parameters change</li>
-<li class="">Configuring streaming parameters (speed, looping, averaging)</li>
-<li class="">Configuring visualization parameters (colormap, thresholds)</li>
-<li class="">Starting/stopping the streaming</li>
-</ul>
-<p>On-the-fly recomputation:</p>
-<ul>
-<li class="">Set surface/source geometry via setInterpolationInfoLeft/Right()</li>
-<li class="">Configure interpolation function and cancel distance via <code>setInterpolationFunction()</code> / <code>setCancelDistance()</code></li>
-<li class="">Call <code>recomputeInterpolation()</code> to trigger background computation</li>
-<li class="">The new matrices are automatically forwarded to the data worker</li>
-</ul>
-<p>Usage:
-Create controller</p>
-<p>Set interpolation matrices via setInterpolationMatrixLeft/Right()</p>
-<p>Connect <code>newSmoothedDataAvailable()</code> to your rendering update slot</p>
-<p>Call <code>addData()</code> to push source estimate vectors</p>
-<p>Call setStreamingState(true) to start streaming</p>
-<p>Controller for real-time source estimate streaming.</p>
+<p>Qt face of <a class="" href="/dev/docs/api/viz/rt-source-stream/"><code>RtSourceStream</code></a> as a QObject: the same API, with the results as signals on this object&#x27;s thread.</p>
+<p>The streaming and interpolation threads of the stream hand their results over to this object&#x27;s thread, so slots connected to the signals may touch the GUI.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inheritance">Inheritance<a href="#inheritance" class="hash-link" aria-label="Direct link to Inheritance" title="Direct link to Inheritance" translate="no">​</a></h3>
 <!-- -->
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-methods">Public Methods<a href="#public-methods" class="hash-link" aria-label="Direct link to Public Methods" title="Direct link to Public Methods" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rtsourcedatacontrollerparent">RtSourceDataController(parent)<a href="#rtsourcedatacontrollerparent" class="hash-link" aria-label="Direct link to RtSourceDataController(parent)" title="Direct link to RtSourceDataController(parent)" translate="no">​</a></h3>
 <p>Constructor.</p>
-<p>Creates the worker and background thread.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li class=""><strong>parent</strong> : *QObject **
@@ -54,238 +31,11 @@ Parent QObject.</li>
 <hr>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rtsourcedatacontroller-1">~RtSourceDataController()<a href="#rtsourcedatacontroller-1" class="hash-link" aria-label="Direct link to ~RtSourceDataController()" title="Direct link to ~RtSourceDataController()" translate="no">​</a></h3>
 <p>Destructor.</p>
-<p>Stops the worker thread and cleans up.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="adddatadata">addData(data)<a href="#adddatadata" class="hash-link" aria-label="Direct link to addData(data)" title="Direct link to addData(data)" translate="no">​</a></h3>
-<p>Add a source estimate data vector to the streaming queue.</p>
-<p>The vector should contain source values for all sources (LH + RH concatenated).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>data</strong> : <em>const Eigen::VectorXd &amp;</em>
-Source activity vector (nSourcesLH + nSourcesRH).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setinterpolationmatrixleftmat">setInterpolationMatrixLeft(mat)<a href="#setinterpolationmatrixleftmat" class="hash-link" aria-label="Direct link to setInterpolationMatrixLeft(mat)" title="Direct link to setInterpolationMatrixLeft(mat)" translate="no">​</a></h3>
-<p>Set the interpolation matrix for the left hemisphere.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>mat</strong> : <em>std::shared_ptr&lt; Eigen::SparseMatrix&lt; float &gt; &gt;</em>
-Sparse interpolation matrix (nVerticesLH x nSourcesLH).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setinterpolationmatrixrightmat">setInterpolationMatrixRight(mat)<a href="#setinterpolationmatrixrightmat" class="hash-link" aria-label="Direct link to setInterpolationMatrixRight(mat)" title="Direct link to setInterpolationMatrixRight(mat)" translate="no">​</a></h3>
-<p>Set the interpolation matrix for the right hemisphere.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>mat</strong> : <em>std::shared_ptr&lt; Eigen::SparseMatrix&lt; float &gt; &gt;</em>
-Sparse interpolation matrix (nVerticesRH x nSourcesRH).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setstreamingstatestate">setStreamingState(state)<a href="#setstreamingstatestate" class="hash-link" aria-label="Direct link to setStreamingState(state)" title="Direct link to setStreamingState(state)" translate="no">​</a></h3>
-<p>Start or stop the streaming.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>state</strong> : <em>bool</em>
-True to start, false to stop.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="isstreaming">isStreaming()<a href="#isstreaming" class="hash-link" aria-label="Direct link to isStreaming()" title="Direct link to isStreaming()" translate="no">​</a></h3>
-<p>Check if streaming is active.</p>
-<p><strong>Returns:</strong></p>
-<ul>
-<li class=""><em>bool</em> — True if streaming is running.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="settimeintervalmsec">setTimeInterval(msec)<a href="#settimeintervalmsec" class="hash-link" aria-label="Direct link to setTimeInterval(msec)" title="Direct link to setTimeInterval(msec)" translate="no">​</a></h3>
-<p>Set the streaming interval (time between frames).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>msec</strong> : <em>int</em>
-Interval in milliseconds (default: 17ms ≈ 60fps).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setnumberaveragesnumavr">setNumberAverages(numAvr)<a href="#setnumberaveragesnumavr" class="hash-link" aria-label="Direct link to setNumberAverages(numAvr)" title="Direct link to setNumberAverages(numAvr)" translate="no">​</a></h3>
-<p>Set the number of samples to average before emitting.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>numAvr</strong> : <em>int</em>
-Number of averages (1 = no averaging).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcolormaptypename">setColormapType(name)<a href="#setcolormaptypename" class="hash-link" aria-label="Direct link to setColormapType(name)" title="Direct link to setColormapType(name)" translate="no">​</a></h3>
-<p>Set the colormap type.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>name</strong> : <em>const std::string &amp;</em>
-<code>Colormap</code> name (&quot;Hot&quot;, &quot;Jet&quot;, &quot;Viridis&quot;, &quot;Cool&quot;, &quot;RedBlue&quot;).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setthresholdsmin-mid-max">setThresholds(min, mid, max)<a href="#setthresholdsmin-mid-max" class="hash-link" aria-label="Direct link to setThresholds(min, mid, max)" title="Direct link to setThresholds(min, mid, max)" translate="no">​</a></h3>
-<p>Set the normalization thresholds.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>min</strong> : <em>double</em>
-Lower threshold.</p>
-</li>
-<li class="">
-<p><strong>mid</strong> : <em>double</em>
-Mid-point threshold.</p>
-</li>
-<li class="">
-<p><strong>max</strong> : <em>double</em>
-Upper threshold.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setloopstateenabled">setLoopState(enabled)<a href="#setloopstateenabled" class="hash-link" aria-label="Direct link to setLoopState(enabled)" title="Direct link to setLoopState(enabled)" translate="no">​</a></h3>
-<p>Enable or disable looping (replay data when queue is exhausted).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>enabled</strong> : <em>bool</em>
-True to enable looping.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsfreqsfreq">setSFreq(sFreq)<a href="#setsfreqsfreq" class="hash-link" aria-label="Direct link to setSFreq(sFreq)" title="Direct link to setSFreq(sFreq)" translate="no">​</a></h3>
-<p>Set the sampling frequency of the incoming data.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>sFreq</strong> : <em>double</em>
-Sampling frequency in Hz.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cleardata">clearData()<a href="#cleardata" class="hash-link" aria-label="Direct link to clearData()" title="Direct link to clearData()" translate="no">​</a></h3>
-<p>Clear all queued data and reset the worker state.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setsurfacecolorbasecolorslh-basecolorsrh">setSurfaceColor(baseColorsLh, baseColorsRh)<a href="#setsurfacecolorbasecolorslh-basecolorsrh" class="hash-link" aria-label="Direct link to setSurfaceColor(baseColorsLh, baseColorsRh)" title="Direct link to setSurfaceColor(baseColorsLh, baseColorsRh)" translate="no">​</a></h3>
-<p>Set the base surface colors for both hemispheres.</p>
-<p>Sub-threshold vertices will display these colors (e.g., curvature or annotation coloring) instead of being transparent.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>baseColorsLh</strong> : <em>const std::vector&lt; uint32_t &gt; &amp;</em>
-Per-vertex ABGR colors for the left hemisphere.</p>
-</li>
-<li class="">
-<p><strong>baseColorsRh</strong> : <em>const std::vector&lt; uint32_t &gt; &amp;</em>
-Per-vertex ABGR colors for the right hemisphere.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setstreamsmootheddatabstreamsmootheddata">setStreamSmoothedData(bStreamSmoothedData)<a href="#setstreamsmootheddatabstreamsmootheddata" class="hash-link" aria-label="Direct link to setStreamSmoothedData(bStreamSmoothedData)" title="Direct link to setStreamSmoothedData(bStreamSmoothedData)" translate="no">​</a></h3>
-<p>Toggle between emitting interpolated color data (smoothed) and raw source values split by hemisphere.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>bStreamSmoothedData</strong> : <em>bool</em>
-True for smoothed colors (default), false for raw.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setinterpolationfunctionsinterpolationfunction">setInterpolationFunction(sInterpolationFunction)<a href="#setinterpolationfunctionsinterpolationfunction" class="hash-link" aria-label="Direct link to setInterpolationFunction(sInterpolationFunction)" title="Direct link to setInterpolationFunction(sInterpolationFunction)" translate="no">​</a></h3>
-<p>Set the interpolation function for on-the-fly matrix computation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>sInterpolationFunction</strong> : <em>const std::string &amp;</em>
-Function name (&quot;linear&quot;, &quot;gaussian&quot;, &quot;square&quot;, &quot;cubic&quot;).</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setcanceldistancedcanceldist">setCancelDistance(dCancelDist)<a href="#setcanceldistancedcanceldist" class="hash-link" aria-label="Direct link to setCancelDistance(dCancelDist)" title="Direct link to setCancelDistance(dCancelDist)" translate="no">​</a></h3>
-<p>Set the cancel distance for on-the-fly matrix computation.</p>
-<p>Distances larger than this are ignored in the interpolation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>dCancelDist</strong> : <em>double</em>
-Cancel distance in meters.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setinterpolationinfoleftmatvertices-vecneighborvertices-vecsourcevertices">setInterpolationInfoLeft(matVertices, vecNeighborVertices, vecSourceVertices)<a href="#setinterpolationinfoleftmatvertices-vecneighborvertices-vecsourcevertices" class="hash-link" aria-label="Direct link to setInterpolationInfoLeft(matVertices, vecNeighborVertices, vecSourceVertices)" title="Direct link to setInterpolationInfoLeft(matVertices, vecNeighborVertices, vecSourceVertices)" translate="no">​</a></h3>
-<p>Set the surface and source geometry for the left hemisphere.</p>
-<p>Used for on-the-fly interpolation matrix computation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>matVertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
-Vertex positions (nVerts x 3).</p>
-</li>
-<li class="">
-<p><strong>vecNeighborVertices</strong> : <em>const std::vector&lt; Eigen::VectorXi &gt; &amp;</em>
-Per-vertex neighbor index lists.</p>
-</li>
-<li class="">
-<p><strong>vecSourceVertices</strong> : <em>const Eigen::VectorXi &amp;</em>
-Source vertex indices into the surface.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setinterpolationinforightmatvertices-vecneighborvertices-vecsourcevertices">setInterpolationInfoRight(matVertices, vecNeighborVertices, vecSourceVertices)<a href="#setinterpolationinforightmatvertices-vecneighborvertices-vecsourcevertices" class="hash-link" aria-label="Direct link to setInterpolationInfoRight(matVertices, vecNeighborVertices, vecSourceVertices)" title="Direct link to setInterpolationInfoRight(matVertices, vecNeighborVertices, vecSourceVertices)" translate="no">​</a></h3>
-<p>Set the surface and source geometry for the right hemisphere.</p>
-<p>Used for on-the-fly interpolation matrix computation.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>matVertices</strong> : <em>const Eigen::MatrixX3f &amp;</em>
-Vertex positions (nVerts x 3).</p>
-</li>
-<li class="">
-<p><strong>vecNeighborVertices</strong> : <em>const std::vector&lt; Eigen::VectorXi &gt; &amp;</em>
-Per-vertex neighbor index lists.</p>
-</li>
-<li class="">
-<p><strong>vecSourceVertices</strong> : <em>const Eigen::VectorXi &amp;</em>
-Source vertex indices into the surface.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="recomputeinterpolation">recomputeInterpolation()<a href="#recomputeinterpolation" class="hash-link" aria-label="Direct link to recomputeInterpolation()" title="Direct link to recomputeInterpolation()" translate="no">​</a></h3>
-<p>Trigger an asynchronous recomputation of the interpolation matrices.</p>
-<p>The new matrices will be automatically forwarded to the data worker.</p>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setvisualizationtypeivistype">setVisualizationType(iVisType)<a href="#setvisualizationtypeivistype" class="hash-link" aria-label="Direct link to setVisualizationType(iVisType)" title="Direct link to setVisualizationType(iVisType)" translate="no">​</a></h3>
-<p>Set the visualization type (interpolation-based or annotation-based).</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class=""><strong>iVisType</strong> : <em>int</em>
-0 = InterpolationBased, 1 = AnnotationBased.</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationinfoleftveclabelids-llabels-vecvertno">setAnnotationInfoLeft(vecLabelIds, lLabels, vecVertNo)<a href="#setannotationinfoleftveclabelids-llabels-vecvertno" class="hash-link" aria-label="Direct link to setAnnotationInfoLeft(vecLabelIds, lLabels, vecVertNo)" title="Direct link to setAnnotationInfoLeft(vecLabelIds, lLabels, vecVertNo)" translate="no">​</a></h3>
-<p>Set annotation info for the left hemisphere.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>vecLabelIds</strong> : <em>const Eigen::VectorXi &amp;</em>
-Per-vertex label IDs.</p>
-</li>
-<li class="">
-<p><strong>lLabels</strong> : <em>const std::vector&lt; <a class="" href="/dev/docs/api/fs/fs-label/">FsLabel</a> &gt; &amp;</em>
-FreeSurfer Labels.</p>
-</li>
-<li class="">
-<p><strong>vecVertNo</strong> : <em>const Eigen::VectorXi &amp;</em>
-Source vertex numbers.</p>
-</li>
-</ul>
-<hr>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="setannotationinforightveclabelids-llabels-vecvertno">setAnnotationInfoRight(vecLabelIds, lLabels, vecVertNo)<a href="#setannotationinforightveclabelids-llabels-vecvertno" class="hash-link" aria-label="Direct link to setAnnotationInfoRight(vecLabelIds, lLabels, vecVertNo)" title="Direct link to setAnnotationInfoRight(vecLabelIds, lLabels, vecVertNo)" translate="no">​</a></h3>
-<p>Set annotation info for the right hemisphere.</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li class="">
-<p><strong>vecLabelIds</strong> : <em>const Eigen::VectorXi &amp;</em>
-Per-vertex label IDs.</p>
-</li>
-<li class="">
-<p><strong>lLabels</strong> : <em>const std::vector&lt; <a class="" href="/dev/docs/api/fs/fs-label/">FsLabel</a> &gt; &amp;</em>
-FreeSurfer Labels.</p>
-</li>
-<li class="">
-<p><strong>vecVertNo</strong> : <em>const Eigen::VectorXi &amp;</em>
-Source vertex numbers.</p>
-</li>
-</ul>
+<p>Stops the threads of the stream before the signals go away.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="authors-of-this-file">Authors of this file<a href="#authors-of-this-file" class="hash-link" aria-label="Direct link to Authors of this file" title="Direct link to Authors of this file" translate="no">​</a></h2>
 <ul>
 <li class="">Christoph Dinh &lt;<a href="mailto:christoph.dinh@mne-cpp.org" target="_blank" rel="noopener noreferrer" class="">christoph.dinh@mne-cpp.org</a>&gt;</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/rt-sensor-stream-manager/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RtSensorStreamManager</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/sensor-tree-item/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SensorTreeItem</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#rtsourcedatacontrollerparent" class="table-of-contents__link toc-highlight">RtSourceDataController(parent)</a></li><li><a href="#rtsourcedatacontroller-1" class="table-of-contents__link toc-highlight">~RtSourceDataController()</a></li><li><a href="#adddatadata" class="table-of-contents__link toc-highlight">addData(data)</a></li><li><a href="#setinterpolationmatrixleftmat" class="table-of-contents__link toc-highlight">setInterpolationMatrixLeft(mat)</a></li><li><a href="#setinterpolationmatrixrightmat" class="table-of-contents__link toc-highlight">setInterpolationMatrixRight(mat)</a></li><li><a href="#setstreamingstatestate" class="table-of-contents__link toc-highlight">setStreamingState(state)</a></li><li><a href="#isstreaming" class="table-of-contents__link toc-highlight">isStreaming()</a></li><li><a href="#settimeintervalmsec" class="table-of-contents__link toc-highlight">setTimeInterval(msec)</a></li><li><a href="#setnumberaveragesnumavr" class="table-of-contents__link toc-highlight">setNumberAverages(numAvr)</a></li><li><a href="#setcolormaptypename" class="table-of-contents__link toc-highlight">setColormapType(name)</a></li><li><a href="#setthresholdsmin-mid-max" class="table-of-contents__link toc-highlight">setThresholds(min, mid, max)</a></li><li><a href="#setloopstateenabled" class="table-of-contents__link toc-highlight">setLoopState(enabled)</a></li><li><a href="#setsfreqsfreq" class="table-of-contents__link toc-highlight">setSFreq(sFreq)</a></li><li><a href="#cleardata" class="table-of-contents__link toc-highlight">clearData()</a></li><li><a href="#setsurfacecolorbasecolorslh-basecolorsrh" class="table-of-contents__link toc-highlight">setSurfaceColor(baseColorsLh, baseColorsRh)</a></li><li><a href="#setstreamsmootheddatabstreamsmootheddata" class="table-of-contents__link toc-highlight">setStreamSmoothedData(bStreamSmoothedData)</a></li><li><a href="#setinterpolationfunctionsinterpolationfunction" class="table-of-contents__link toc-highlight">setInterpolationFunction(sInterpolationFunction)</a></li><li><a href="#setcanceldistancedcanceldist" class="table-of-contents__link toc-highlight">setCancelDistance(dCancelDist)</a></li><li><a href="#setinterpolationinfoleftmatvertices-vecneighborvertices-vecsourcevertices" class="table-of-contents__link toc-highlight">setInterpolationInfoLeft(matVertices, vecNeighborVertices, vecSourceVertices)</a></li><li><a href="#setinterpolationinforightmatvertices-vecneighborvertices-vecsourcevertices" class="table-of-contents__link toc-highlight">setInterpolationInfoRight(matVertices, vecNeighborVertices, vecSourceVertices)</a></li><li><a href="#recomputeinterpolation" class="table-of-contents__link toc-highlight">recomputeInterpolation()</a></li><li><a href="#setvisualizationtypeivistype" class="table-of-contents__link toc-highlight">setVisualizationType(iVisType)</a></li><li><a href="#setannotationinfoleftveclabelids-llabels-vecvertno" class="table-of-contents__link toc-highlight">setAnnotationInfoLeft(vecLabelIds, lLabels, vecVertNo)</a></li><li><a href="#setannotationinforightveclabelids-llabels-vecvertno" class="table-of-contents__link toc-highlight">setAnnotationInfoRight(vecLabelIds, lLabels, vecVertNo)</a></li></ul></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/dev/docs/api/viz-qt/rt-sensor-stream-manager/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">RtSensorStreamManager</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/dev/docs/api/viz-qt/sensor-tree-item/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SensorTreeItem</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#inheritance" class="table-of-contents__link toc-highlight">Inheritance</a></li><li><a href="#public-methods" class="table-of-contents__link toc-highlight">Public Methods</a><ul><li><a href="#rtsourcedatacontrollerparent" class="table-of-contents__link toc-highlight">RtSourceDataController(parent)</a></li><li><a href="#rtsourcedatacontroller-1" class="table-of-contents__link toc-highlight">~RtSourceDataController()</a></li></ul></li><li><a href="#authors-of-this-file" class="table-of-contents__link toc-highlight">Authors of this file</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/get-started/">Get Started</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/manual/intro/">Manual</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/performance/">Performance</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/publications/">Publications</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Development</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/buildguide-cmake/">Build from Source</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/development/contribute/">Contribute</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/api/">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/examples/">Examples</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/mne-tools/mne-cpp" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/cite/">How to Cite</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/code-signing-policy/">Code signing policy</a></li><li class="footer__item"><a class="footer__link-item" href="/dev/docs/overview/#legal-notice">Legal Notice</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 MNE-CPP. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
